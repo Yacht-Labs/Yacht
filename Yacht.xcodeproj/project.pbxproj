@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891C428B52E9B00B501B6 /* AppDelegate.swift */; };
+		7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */; };
+		7F2891C928B52E9B00B501B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891C828B52E9B00B501B6 /* ViewController.swift */; };
+		7F2891CC28B52E9B00B501B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891CA28B52E9B00B501B6 /* Main.storyboard */; };
+		7F2891CF28B52E9B00B501B6 /* Yacht.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891CD28B52E9B00B501B6 /* Yacht.xcdatamodeld */; };
+		7F2891D128B52EA000B501B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891D028B52EA000B501B6 /* Assets.xcassets */; };
+		7F2891D428B52EA000B501B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891D228B52EA000B501B6 /* LaunchScreen.storyboard */; };
+		7F2891DF28B52EA000B501B6 /* YachtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891DE28B52EA000B501B6 /* YachtTests.swift */; };
+		7F2891E928B52EA000B501B6 /* YachtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891E828B52EA000B501B6 /* YachtUITests.swift */; };
+		7F2891EB28B52EA000B501B6 /* YachtUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891EA28B52EA000B501B6 /* YachtUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F2891DB28B52EA000B501B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F2891B928B52E9B00B501B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F2891C028B52E9B00B501B6;
+			remoteInfo = Yacht;
+		};
+		7F2891E528B52EA000B501B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F2891B928B52E9B00B501B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F2891C028B52E9B00B501B6;
+			remoteInfo = Yacht;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7F2891C128B52E9B00B501B6 /* Yacht.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yacht.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2891C428B52E9B00B501B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7F2891C828B52E9B00B501B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7F2891CB28B52E9B00B501B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F2891CE28B52E9B00B501B6 /* Yacht.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yacht.xcdatamodel; sourceTree = "<group>"; };
+		7F2891D028B52EA000B501B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F2891D328B52EA000B501B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F2891D528B52EA000B501B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F2891DA28B52EA000B501B6 /* YachtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YachtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2891DE28B52EA000B501B6 /* YachtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtTests.swift; sourceTree = "<group>"; };
+		7F2891E428B52EA000B501B6 /* YachtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YachtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2891E828B52EA000B501B6 /* YachtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtUITests.swift; sourceTree = "<group>"; };
+		7F2891EA28B52EA000B501B6 /* YachtUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F2891BE28B52E9B00B501B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2891D728B52EA000B501B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2891E128B52EA000B501B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F2891B828B52E9B00B501B6 = {
+			isa = PBXGroup;
+			children = (
+				7F2891C328B52E9B00B501B6 /* Yacht */,
+				7F2891DD28B52EA000B501B6 /* YachtTests */,
+				7F2891E728B52EA000B501B6 /* YachtUITests */,
+				7F2891C228B52E9B00B501B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7F2891C228B52E9B00B501B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F2891C128B52E9B00B501B6 /* Yacht.app */,
+				7F2891DA28B52EA000B501B6 /* YachtTests.xctest */,
+				7F2891E428B52EA000B501B6 /* YachtUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F2891C328B52E9B00B501B6 /* Yacht */ = {
+			isa = PBXGroup;
+			children = (
+				7F2891C428B52E9B00B501B6 /* AppDelegate.swift */,
+				7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */,
+				7F2891C828B52E9B00B501B6 /* ViewController.swift */,
+				7F2891CA28B52E9B00B501B6 /* Main.storyboard */,
+				7F2891D028B52EA000B501B6 /* Assets.xcassets */,
+				7F2891D228B52EA000B501B6 /* LaunchScreen.storyboard */,
+				7F2891D528B52EA000B501B6 /* Info.plist */,
+				7F2891CD28B52E9B00B501B6 /* Yacht.xcdatamodeld */,
+			);
+			path = Yacht;
+			sourceTree = "<group>";
+		};
+		7F2891DD28B52EA000B501B6 /* YachtTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F2891DE28B52EA000B501B6 /* YachtTests.swift */,
+			);
+			path = YachtTests;
+			sourceTree = "<group>";
+		};
+		7F2891E728B52EA000B501B6 /* YachtUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7F2891E828B52EA000B501B6 /* YachtUITests.swift */,
+				7F2891EA28B52EA000B501B6 /* YachtUITestsLaunchTests.swift */,
+			);
+			path = YachtUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F2891C028B52E9B00B501B6 /* Yacht */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F2891EE28B52EA000B501B6 /* Build configuration list for PBXNativeTarget "Yacht" */;
+			buildPhases = (
+				7F2891BD28B52E9B00B501B6 /* Sources */,
+				7F2891BE28B52E9B00B501B6 /* Frameworks */,
+				7F2891BF28B52E9B00B501B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Yacht;
+			productName = Yacht;
+			productReference = 7F2891C128B52E9B00B501B6 /* Yacht.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7F2891D928B52EA000B501B6 /* YachtTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F2891F128B52EA000B501B6 /* Build configuration list for PBXNativeTarget "YachtTests" */;
+			buildPhases = (
+				7F2891D628B52EA000B501B6 /* Sources */,
+				7F2891D728B52EA000B501B6 /* Frameworks */,
+				7F2891D828B52EA000B501B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F2891DC28B52EA000B501B6 /* PBXTargetDependency */,
+			);
+			name = YachtTests;
+			productName = YachtTests;
+			productReference = 7F2891DA28B52EA000B501B6 /* YachtTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7F2891E328B52EA000B501B6 /* YachtUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F2891F428B52EA000B501B6 /* Build configuration list for PBXNativeTarget "YachtUITests" */;
+			buildPhases = (
+				7F2891E028B52EA000B501B6 /* Sources */,
+				7F2891E128B52EA000B501B6 /* Frameworks */,
+				7F2891E228B52EA000B501B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F2891E628B52EA000B501B6 /* PBXTargetDependency */,
+			);
+			name = YachtUITests;
+			productName = YachtUITests;
+			productReference = 7F2891E428B52EA000B501B6 /* YachtUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F2891B928B52E9B00B501B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					7F2891C028B52E9B00B501B6 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					7F2891D928B52EA000B501B6 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 7F2891C028B52E9B00B501B6;
+					};
+					7F2891E328B52EA000B501B6 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 7F2891C028B52E9B00B501B6;
+					};
+				};
+			};
+			buildConfigurationList = 7F2891BC28B52E9B00B501B6 /* Build configuration list for PBXProject "Yacht" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F2891B828B52E9B00B501B6;
+			productRefGroup = 7F2891C228B52E9B00B501B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F2891C028B52E9B00B501B6 /* Yacht */,
+				7F2891D928B52EA000B501B6 /* YachtTests */,
+				7F2891E328B52EA000B501B6 /* YachtUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F2891BF28B52E9B00B501B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2891D428B52EA000B501B6 /* LaunchScreen.storyboard in Resources */,
+				7F2891D128B52EA000B501B6 /* Assets.xcassets in Resources */,
+				7F2891CC28B52E9B00B501B6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2891D828B52EA000B501B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2891E228B52EA000B501B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F2891BD28B52E9B00B501B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2891C928B52E9B00B501B6 /* ViewController.swift in Sources */,
+				7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */,
+				7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */,
+				7F2891CF28B52E9B00B501B6 /* Yacht.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2891D628B52EA000B501B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2891DF28B52EA000B501B6 /* YachtTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2891E028B52EA000B501B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2891EB28B52EA000B501B6 /* YachtUITestsLaunchTests.swift in Sources */,
+				7F2891E928B52EA000B501B6 /* YachtUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F2891DC28B52EA000B501B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F2891C028B52E9B00B501B6 /* Yacht */;
+			targetProxy = 7F2891DB28B52EA000B501B6 /* PBXContainerItemProxy */;
+		};
+		7F2891E628B52EA000B501B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F2891C028B52E9B00B501B6 /* Yacht */;
+			targetProxy = 7F2891E528B52EA000B501B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7F2891CA28B52E9B00B501B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F2891CB28B52E9B00B501B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7F2891D228B52EA000B501B6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F2891D328B52EA000B501B6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7F2891EC28B52EA000B501B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7F2891ED28B52EA000B501B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F2891EF28B52EA000B501B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Yacht/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YachtLabs.Yacht;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F2891F028B52EA000B501B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Yacht/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YachtLabs.Yacht;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7F2891F228B52EA000B501B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YachtLabs.YachtTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yacht.app/Yacht";
+			};
+			name = Debug;
+		};
+		7F2891F328B52EA000B501B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YachtLabs.YachtTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yacht.app/Yacht";
+			};
+			name = Release;
+		};
+		7F2891F528B52EA000B501B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YachtLabs.YachtUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Yacht;
+			};
+			name = Debug;
+		};
+		7F2891F628B52EA000B501B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YachtLabs.YachtUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Yacht;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F2891BC28B52E9B00B501B6 /* Build configuration list for PBXProject "Yacht" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2891EC28B52EA000B501B6 /* Debug */,
+				7F2891ED28B52EA000B501B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F2891EE28B52EA000B501B6 /* Build configuration list for PBXNativeTarget "Yacht" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2891EF28B52EA000B501B6 /* Debug */,
+				7F2891F028B52EA000B501B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F2891F128B52EA000B501B6 /* Build configuration list for PBXNativeTarget "YachtTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2891F228B52EA000B501B6 /* Debug */,
+				7F2891F328B52EA000B501B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F2891F428B52EA000B501B6 /* Build configuration list for PBXNativeTarget "YachtUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2891F528B52EA000B501B6 /* Debug */,
+				7F2891F628B52EA000B501B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7F2891CD28B52E9B00B501B6 /* Yacht.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7F2891CE28B52E9B00B501B6 /* Yacht.xcdatamodel */,
+			);
+			currentVersion = 7F2891CE28B52E9B00B501B6 /* Yacht.xcdatamodel */;
+			path = Yacht.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7F2891B928B52E9B00B501B6 /* Project object */;
+}
