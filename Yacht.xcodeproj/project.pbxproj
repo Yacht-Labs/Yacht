@@ -10,13 +10,21 @@
 		7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891C428B52E9B00B501B6 /* AppDelegate.swift */; };
 		7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */; };
 		7F2891C928B52E9B00B501B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891C828B52E9B00B501B6 /* ViewController.swift */; };
-		7F2891CC28B52E9B00B501B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891CA28B52E9B00B501B6 /* Main.storyboard */; };
+		7F2891CC28B52E9B00B501B6 /* EnterAddressFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891CA28B52E9B00B501B6 /* EnterAddressFlow.storyboard */; };
 		7F2891CF28B52E9B00B501B6 /* Yacht.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891CD28B52E9B00B501B6 /* Yacht.xcdatamodeld */; };
 		7F2891D128B52EA000B501B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891D028B52EA000B501B6 /* Assets.xcassets */; };
 		7F2891D428B52EA000B501B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891D228B52EA000B501B6 /* LaunchScreen.storyboard */; };
 		7F2891DF28B52EA000B501B6 /* YachtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891DE28B52EA000B501B6 /* YachtTests.swift */; };
 		7F2891E928B52EA000B501B6 /* YachtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891E828B52EA000B501B6 /* YachtUITests.swift */; };
 		7F2891EB28B52EA000B501B6 /* YachtUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891EA28B52EA000B501B6 /* YachtUITestsLaunchTests.swift */; };
+		7F28920028B5346200B501B6 /* BookmaniaRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891FA28B5346200B501B6 /* BookmaniaRegular.otf */; };
+		7F28920128B5346200B501B6 /* Akkurat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891FB28B5346200B501B6 /* Akkurat-Light.otf */; };
+		7F28920228B5346200B501B6 /* Akkurat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891FC28B5346200B501B6 /* Akkurat-Regular.ttf */; };
+		7F28920328B5346200B501B6 /* Akkurat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891FD28B5346200B501B6 /* Akkurat-Bold.otf */; };
+		7F28920428B5346200B501B6 /* Akkurat-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891FE28B5346200B501B6 /* Akkurat-Light-Italic.otf */; };
+		7F28920528B5346200B501B6 /* Akkurat-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891FF28B5346200B501B6 /* Akkurat-Bold-Italic.otf */; };
+		7F28920828B5394900B501B6 /* EnterAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28920728B5394900B501B6 /* EnterAddressViewController.swift */; };
+		7F28920B28B53A0000B501B6 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28920A28B53A0000B501B6 /* QRScannerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +49,7 @@
 		7F2891C428B52E9B00B501B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7F2891C828B52E9B00B501B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7F2891CB28B52E9B00B501B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F2891CB28B52E9B00B501B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EnterAddressFlow.storyboard; sourceTree = "<group>"; };
 		7F2891CE28B52E9B00B501B6 /* Yacht.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yacht.xcdatamodel; sourceTree = "<group>"; };
 		7F2891D028B52EA000B501B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F2891D328B52EA000B501B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +59,14 @@
 		7F2891E428B52EA000B501B6 /* YachtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YachtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2891E828B52EA000B501B6 /* YachtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtUITests.swift; sourceTree = "<group>"; };
 		7F2891EA28B52EA000B501B6 /* YachtUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YachtUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7F2891FA28B5346200B501B6 /* BookmaniaRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BookmaniaRegular.otf; sourceTree = "<group>"; };
+		7F2891FB28B5346200B501B6 /* Akkurat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Akkurat-Light.otf"; sourceTree = "<group>"; };
+		7F2891FC28B5346200B501B6 /* Akkurat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Akkurat-Regular.ttf"; sourceTree = "<group>"; };
+		7F2891FD28B5346200B501B6 /* Akkurat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Akkurat-Bold.otf"; sourceTree = "<group>"; };
+		7F2891FE28B5346200B501B6 /* Akkurat-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Akkurat-Light-Italic.otf"; sourceTree = "<group>"; };
+		7F2891FF28B5346200B501B6 /* Akkurat-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Akkurat-Bold-Italic.otf"; sourceTree = "<group>"; };
+		7F28920728B5394900B501B6 /* EnterAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAddressViewController.swift; sourceTree = "<group>"; };
+		7F28920A28B53A0000B501B6 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +117,13 @@
 		7F2891C328B52E9B00B501B6 /* Yacht */ = {
 			isa = PBXGroup;
 			children = (
+				7F2891F828B5344200B501B6 /* Assets */,
+				7F2891F728B5315800B501B6 /* Storyboards */,
+				7F28920628B538F400B501B6 /* ViewControllers */,
 				7F2891C428B52E9B00B501B6 /* AppDelegate.swift */,
 				7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */,
 				7F2891C828B52E9B00B501B6 /* ViewController.swift */,
-				7F2891CA28B52E9B00B501B6 /* Main.storyboard */,
 				7F2891D028B52EA000B501B6 /* Assets.xcassets */,
-				7F2891D228B52EA000B501B6 /* LaunchScreen.storyboard */,
 				7F2891D528B52EA000B501B6 /* Info.plist */,
 				7F2891CD28B52E9B00B501B6 /* Yacht.xcdatamodeld */,
 			);
@@ -128,6 +145,53 @@
 				7F2891EA28B52EA000B501B6 /* YachtUITestsLaunchTests.swift */,
 			);
 			path = YachtUITests;
+			sourceTree = "<group>";
+		};
+		7F2891F728B5315800B501B6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7F2891D228B52EA000B501B6 /* LaunchScreen.storyboard */,
+				7F2891CA28B52E9B00B501B6 /* EnterAddressFlow.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7F2891F828B5344200B501B6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7F2891F928B5344F00B501B6 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7F2891F928B5344F00B501B6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7F2891FF28B5346200B501B6 /* Akkurat-Bold-Italic.otf */,
+				7F2891FD28B5346200B501B6 /* Akkurat-Bold.otf */,
+				7F2891FE28B5346200B501B6 /* Akkurat-Light-Italic.otf */,
+				7F2891FB28B5346200B501B6 /* Akkurat-Light.otf */,
+				7F2891FC28B5346200B501B6 /* Akkurat-Regular.ttf */,
+				7F2891FA28B5346200B501B6 /* BookmaniaRegular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7F28920628B538F400B501B6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F28920928B539DB00B501B6 /* EnterAddressFlow */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7F28920928B539DB00B501B6 /* EnterAddressFlow */ = {
+			isa = PBXGroup;
+			children = (
+				7F28920728B5394900B501B6 /* EnterAddressViewController.swift */,
+				7F28920A28B53A0000B501B6 /* QRScannerViewController.swift */,
+			);
+			path = EnterAddressFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +300,13 @@
 			files = (
 				7F2891D428B52EA000B501B6 /* LaunchScreen.storyboard in Resources */,
 				7F2891D128B52EA000B501B6 /* Assets.xcassets in Resources */,
-				7F2891CC28B52E9B00B501B6 /* Main.storyboard in Resources */,
+				7F28920428B5346200B501B6 /* Akkurat-Light-Italic.otf in Resources */,
+				7F28920028B5346200B501B6 /* BookmaniaRegular.otf in Resources */,
+				7F28920228B5346200B501B6 /* Akkurat-Regular.ttf in Resources */,
+				7F28920328B5346200B501B6 /* Akkurat-Bold.otf in Resources */,
+				7F28920528B5346200B501B6 /* Akkurat-Bold-Italic.otf in Resources */,
+				7F28920128B5346200B501B6 /* Akkurat-Light.otf in Resources */,
+				7F2891CC28B52E9B00B501B6 /* EnterAddressFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +333,10 @@
 			files = (
 				7F2891C928B52E9B00B501B6 /* ViewController.swift in Sources */,
 				7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */,
+				7F28920B28B53A0000B501B6 /* QRScannerViewController.swift in Sources */,
 				7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */,
 				7F2891CF28B52E9B00B501B6 /* Yacht.xcdatamodeld in Sources */,
+				7F28920828B5394900B501B6 /* EnterAddressViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,12 +373,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7F2891CA28B52E9B00B501B6 /* Main.storyboard */ = {
+		7F2891CA28B52E9B00B501B6 /* EnterAddressFlow.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7F2891CB28B52E9B00B501B6 /* Base */,
 			);
-			name = Main.storyboard;
+			name = EnterAddressFlow.storyboard;
 			sourceTree = "<group>";
 		};
 		7F2891D228B52EA000B501B6 /* LaunchScreen.storyboard */ = {
@@ -449,6 +521,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +550,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

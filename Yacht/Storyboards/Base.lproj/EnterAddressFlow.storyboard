@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kZP-9H-SOK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Akkurat-Light-Italic.otf">
+            <string>Akkurat-LightItalic</string>
+        </array>
+        <array key="Akkurat-Regular.ttf">
+            <string>Akkurat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Enter Address View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="EnterAddressViewController" id="BYZ-38-t0r" customClass="EnterAddressViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter address to watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1A-x5-oRk">
+                                <rect key="frame" x="22" y="338" width="300" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="v4L-9a-LCl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="zUm-JW-MU1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="20"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ql-wy-DB9">
+                                <rect key="frame" x="167" y="464" width="80" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="GzV-QD-M72"/>
+                                    <constraint firstAttribute="height" constant="22" id="SZo-AQ-rmU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-LightItalic" family="Akkurat-LightItalic" pointSize="20"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="v8A-QU-7d8">
+                                <rect key="frame" x="18" y="368" width="378" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="7xt-vg-PDc"/>
+                                </constraints>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hpk-hd-Plh">
+                                <rect key="frame" x="158" y="558.5" width="98" height="81.5"/>
+                                <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="ArK-Cu-lFf"/>
+                                    <constraint firstAttribute="width" constant="98" id="TTS-mW-BPa"/>
+                                </constraints>
+                                <imageReference key="image" image="qrcode.viewfinder" catalog="system" renderingMode="hierarchical-single">
+                                    <hierarchicalColors>
+                                        <color systemColor="labelColor"/>
+                                        <color systemColor="secondaryLabelColor"/>
+                                        <color systemColor="tertiaryLabelColor"/>
+                                    </hierarchicalColors>
+                                </imageReference>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24j-fC-Njj">
+                                <rect key="frame" x="158" y="523" width="98" height="113"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="qrTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oSi-HN-l5Q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXG-Xr-8GB">
+                                <rect key="frame" x="163" y="524" width="88" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="Gkh-xE-jcI"/>
+                                    <constraint firstAttribute="height" constant="24" id="wWF-Jp-jnk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="20"/>
+                                <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F1A-x5-oRk" secondAttribute="trailing" symbolic="YES" id="35v-6F-eAc"/>
+                            <constraint firstItem="9Ql-wy-DB9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="8Ty-iA-WxV"/>
+                            <constraint firstItem="24j-fC-Njj" firstAttribute="centerY" secondItem="hpk-hd-Plh" secondAttribute="centerY" constant="-20" id="BR1-gc-7cr"/>
+                            <constraint firstItem="9Ql-wy-DB9" firstAttribute="top" secondItem="v8A-QU-7d8" secondAttribute="bottom" constant="38" id="FmX-JK-4ZD"/>
+                            <constraint firstItem="24j-fC-Njj" firstAttribute="height" secondItem="hpk-hd-Plh" secondAttribute="height" constant="30" id="HvV-o7-iaW"/>
+                            <constraint firstItem="v8A-QU-7d8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IYm-O5-kwI"/>
+                            <constraint firstItem="JXG-Xr-8GB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Sew-mR-Nto"/>
+                            <constraint firstItem="hpk-hd-Plh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VHb-wh-vJg"/>
+                            <constraint firstItem="v8A-QU-7d8" firstAttribute="top" secondItem="F1A-x5-oRk" secondAttribute="bottom" constant="6" id="Zsq-bk-eKR"/>
+                            <constraint firstItem="24j-fC-Njj" firstAttribute="width" secondItem="hpk-hd-Plh" secondAttribute="width" id="gSO-kJ-QPv"/>
+                            <constraint firstItem="24j-fC-Njj" firstAttribute="centerX" secondItem="hpk-hd-Plh" secondAttribute="centerX" id="ibe-jl-0gn"/>
+                            <constraint firstItem="F1A-x5-oRk" firstAttribute="leading" secondItem="v8A-QU-7d8" secondAttribute="leading" constant="4" id="jbf-9V-Vfg"/>
+                            <constraint firstItem="9Ql-wy-DB9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="l8p-70-Qhw"/>
+                            <constraint firstItem="JXG-Xr-8GB" firstAttribute="top" secondItem="9Ql-wy-DB9" secondAttribute="bottom" constant="38" id="nix-pA-iRE"/>
+                            <constraint firstAttribute="width" secondItem="v8A-QU-7d8" secondAttribute="width" constant="36" id="qaB-6N-YCU"/>
+                            <constraint firstItem="hpk-hd-Plh" firstAttribute="top" secondItem="JXG-Xr-8GB" secondAttribute="bottom" constant="10" id="uyO-CK-pNh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="y0J-05-CBq"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="v8A-QU-7d8" id="RKH-Tv-Gbo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jpc-kU-vy8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kZP-9H-SOK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wmj-Yh-kDi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SVN-Vq-kHA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1R-zy-tLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
