@@ -18,6 +18,46 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Scanner View Controller-->
+        <scene sceneID="QEu-bT-y6M">
+            <objects>
+                <viewController storyboardIdentifier="QRScannerViewController" id="0iR-XM-O9U" customClass="QRScannerViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aLc-3i-OBR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uK-Jg-tHw">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xvy-Rz-tbX">
+                                <rect key="frame" x="0.0" y="246.5" width="414" height="412.5"/>
+                                <color key="tintColor" red="0.9797254205" green="0.7750164866" blue="0.46012938019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xvy-Rz-tbX" secondAttribute="height" multiplier="1:1" id="TpN-nv-LBC"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="l0z-G1-77F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1uK-Jg-tHw" firstAttribute="width" secondItem="aLc-3i-OBR" secondAttribute="width" id="2Rp-Kd-Ph6"/>
+                            <constraint firstItem="1uK-Jg-tHw" firstAttribute="centerY" secondItem="l0z-G1-77F" secondAttribute="centerY" id="PQG-KR-6ue"/>
+                            <constraint firstItem="Xvy-Rz-tbX" firstAttribute="centerX" secondItem="l0z-G1-77F" secondAttribute="centerX" id="e1Q-T2-eUp"/>
+                            <constraint firstItem="1uK-Jg-tHw" firstAttribute="centerX" secondItem="l0z-G1-77F" secondAttribute="centerX" id="lJP-OR-OY7"/>
+                            <constraint firstItem="1uK-Jg-tHw" firstAttribute="height" secondItem="aLc-3i-OBR" secondAttribute="height" id="nyA-Sv-gzt"/>
+                            <constraint firstItem="Xvy-Rz-tbX" firstAttribute="width" secondItem="aLc-3i-OBR" secondAttribute="width" id="obn-jV-nPU"/>
+                            <constraint firstItem="Xvy-Rz-tbX" firstAttribute="centerY" secondItem="l0z-G1-77F" secondAttribute="centerY" id="qQv-ac-JdR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewContainerView" destination="1uK-Jg-tHw" id="EPn-m8-5K3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXr-dD-QJX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="-574.55357142857144"/>
+        </scene>
         <!--Enter Address View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>

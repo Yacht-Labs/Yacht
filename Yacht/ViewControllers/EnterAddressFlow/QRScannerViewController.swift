@@ -9,6 +9,7 @@ import AVFoundation
 import UIKit
 
 class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    @IBOutlet weak var previewContainerView: UIView!
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     var parentVC: EnterAddressViewController?
@@ -50,7 +51,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = view.layer.bounds
         previewLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(previewLayer)
+        previewContainerView.layer.addSublayer(previewLayer)
 
         captureSession.startRunning()
     }

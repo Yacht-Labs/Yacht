@@ -25,6 +25,7 @@
 		7F28920528B5346200B501B6 /* Akkurat-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891FF28B5346200B501B6 /* Akkurat-Bold-Italic.otf */; };
 		7F28920828B5394900B501B6 /* EnterAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28920728B5394900B501B6 /* EnterAddressViewController.swift */; };
 		7F28920B28B53A0000B501B6 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28920A28B53A0000B501B6 /* QRScannerViewController.swift */; };
+		7F5F833728B66358008B8EDB /* EnterAddressViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F833628B66358008B8EDB /* EnterAddressViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		7F2891FF28B5346200B501B6 /* Akkurat-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Akkurat-Bold-Italic.otf"; sourceTree = "<group>"; };
 		7F28920728B5394900B501B6 /* EnterAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAddressViewController.swift; sourceTree = "<group>"; };
 		7F28920A28B53A0000B501B6 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		7F5F833628B66358008B8EDB /* EnterAddressViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAddressViewControllerTests.swift; sourceTree = "<group>"; };
+		7F5F833928B697B8008B8EDB /* Yacht.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Yacht.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 		7F2891C328B52E9B00B501B6 /* Yacht */ = {
 			isa = PBXGroup;
 			children = (
+				7F5F833928B697B8008B8EDB /* Yacht.entitlements */,
 				7F2891F828B5344200B501B6 /* Assets */,
 				7F2891F728B5315800B501B6 /* Storyboards */,
 				7F28920628B538F400B501B6 /* ViewControllers */,
@@ -133,6 +137,7 @@
 		7F2891DD28B52EA000B501B6 /* YachtTests */ = {
 			isa = PBXGroup;
 			children = (
+				7F5F833528B66319008B8EDB /* ViewControllers */,
 				7F2891DE28B52EA000B501B6 /* YachtTests.swift */,
 			);
 			path = YachtTests;
@@ -190,6 +195,22 @@
 			children = (
 				7F28920728B5394900B501B6 /* EnterAddressViewController.swift */,
 				7F28920A28B53A0000B501B6 /* QRScannerViewController.swift */,
+			);
+			path = EnterAddressFlow;
+			sourceTree = "<group>";
+		};
+		7F5F833528B66319008B8EDB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F833828B663DC008B8EDB /* EnterAddressFlow */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7F5F833828B663DC008B8EDB /* EnterAddressFlow */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F833628B66358008B8EDB /* EnterAddressViewControllerTests.swift */,
 			);
 			path = EnterAddressFlow;
 			sourceTree = "<group>";
@@ -344,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F5F833728B66358008B8EDB /* EnterAddressViewControllerTests.swift in Sources */,
 				7F2891DF28B52EA000B501B6 /* YachtTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
@@ -540,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
