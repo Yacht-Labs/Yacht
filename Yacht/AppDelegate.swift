@@ -13,7 +13,28 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        var textAttributes: [NSAttributedString.Key: Any]
+        var titleTextAttributes: [NSAttributedString.Key: Any]
+        let fontColor = Constants.Colors.deepRed
+        let barItemCustomFont = UIFont(name: "Akkurat-Regular", size: 16)  // note we're not forcing anything here
+        let titleCustomFont = UIFont(name: "Bookmania-Regular", size: 28)
+        
+        if let customFont = barItemCustomFont, let titleCustomFont = titleCustomFont {
+            textAttributes = [NSAttributedString.Key.foregroundColor: fontColor, NSAttributedString.Key.font: customFont]
+            titleTextAttributes = [NSAttributedString.Key.foregroundColor: fontColor, NSAttributedString.Key.font: titleCustomFont]
+        } else {
+            // not found -> omit setting font name and proceed with system font
+            textAttributes = [NSAttributedString.Key.foregroundColor: fontColor]
+            titleTextAttributes = [NSAttributedString.Key.foregroundColor: fontColor]
+        }
+
+        // finally
+        UIBarButtonItem.appearance().setTitleTextAttributes(textAttributes, for: .normal)
+        UIBarButtonItem.appearance().tintColor = Constants.Colors.primaryColor
+
+        UINavigationBar.appearance().largeTitleTextAttributes = titleTextAttributes
+        UINavigationBar.appearance().tintColor = Constants.Colors.primaryColor
+        
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = self
         registerForPushNotifications()

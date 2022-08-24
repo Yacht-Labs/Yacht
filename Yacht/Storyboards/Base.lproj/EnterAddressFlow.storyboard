@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Akkurat-Bold-Italic.otf">
+            <string>Akkurat-BoldItalic</string>
+        </array>
         <array key="Akkurat-Light-Italic.otf">
             <string>Akkurat-LightItalic</string>
         </array>
@@ -129,6 +132,38 @@
                                 <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43S-rF-khV">
+                                <rect key="frame" x="18" y="794" width="378" height="58"/>
+                                <color key="backgroundColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="McS-aw-YpR"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Continue">
+                                    <fontDescription key="titleFontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="continueTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8on-bh-Gx4"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YachtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-zA-gEg">
+                                <rect key="frame" x="107" y="88" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5wh-zA-gEg" secondAttribute="height" multiplier="1:1" id="LMg-UF-eIQ"/>
+                                    <constraint firstAttribute="width" constant="200" id="yiT-CX-lAl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a valid Ethereum address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckw-rm-aw7">
+                                <rect key="frame" x="18" y="430" width="300" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="7Ks-kD-ngn"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="igP-yt-8pr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="12"/>
+                                <color key="textColor" red="0.44967889789999999" green="0.38736963270000002" blue="0.33796423669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -137,28 +172,119 @@
                             <constraint firstItem="9Ql-wy-DB9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="8Ty-iA-WxV"/>
                             <constraint firstItem="24j-fC-Njj" firstAttribute="centerY" secondItem="hpk-hd-Plh" secondAttribute="centerY" constant="-20" id="BR1-gc-7cr"/>
                             <constraint firstItem="9Ql-wy-DB9" firstAttribute="top" secondItem="v8A-QU-7d8" secondAttribute="bottom" constant="38" id="FmX-JK-4ZD"/>
+                            <constraint firstItem="43S-rF-khV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-36" id="G1G-8n-RhT"/>
+                            <constraint firstItem="5wh-zA-gEg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HRn-OX-of5"/>
                             <constraint firstItem="24j-fC-Njj" firstAttribute="height" secondItem="hpk-hd-Plh" secondAttribute="height" constant="30" id="HvV-o7-iaW"/>
                             <constraint firstItem="v8A-QU-7d8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IYm-O5-kwI"/>
+                            <constraint firstItem="43S-rF-khV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PCo-bj-YpP"/>
                             <constraint firstItem="JXG-Xr-8GB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Sew-mR-Nto"/>
                             <constraint firstItem="hpk-hd-Plh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VHb-wh-vJg"/>
+                            <constraint firstItem="ckw-rm-aw7" firstAttribute="leading" secondItem="v8A-QU-7d8" secondAttribute="leading" id="WUo-gT-dfE"/>
                             <constraint firstItem="v8A-QU-7d8" firstAttribute="top" secondItem="F1A-x5-oRk" secondAttribute="bottom" constant="6" id="Zsq-bk-eKR"/>
                             <constraint firstItem="24j-fC-Njj" firstAttribute="width" secondItem="hpk-hd-Plh" secondAttribute="width" id="gSO-kJ-QPv"/>
+                            <constraint firstItem="F1A-x5-oRk" firstAttribute="top" secondItem="5wh-zA-gEg" secondAttribute="bottom" constant="50" id="ghP-7O-6JO"/>
                             <constraint firstItem="24j-fC-Njj" firstAttribute="centerX" secondItem="hpk-hd-Plh" secondAttribute="centerX" id="ibe-jl-0gn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ckw-rm-aw7" secondAttribute="trailing" symbolic="YES" id="id6-9W-wv0"/>
                             <constraint firstItem="F1A-x5-oRk" firstAttribute="leading" secondItem="v8A-QU-7d8" secondAttribute="leading" constant="4" id="jbf-9V-Vfg"/>
                             <constraint firstItem="9Ql-wy-DB9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="l8p-70-Qhw"/>
                             <constraint firstItem="JXG-Xr-8GB" firstAttribute="top" secondItem="9Ql-wy-DB9" secondAttribute="bottom" constant="38" id="nix-pA-iRE"/>
                             <constraint firstAttribute="width" secondItem="v8A-QU-7d8" secondAttribute="width" constant="36" id="qaB-6N-YCU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="43S-rF-khV" secondAttribute="bottom" constant="10" id="u4q-0r-u7h"/>
                             <constraint firstItem="hpk-hd-Plh" firstAttribute="top" secondItem="JXG-Xr-8GB" secondAttribute="bottom" constant="10" id="uyO-CK-pNh"/>
+                            <constraint firstItem="ckw-rm-aw7" firstAttribute="top" secondItem="v8A-QU-7d8" secondAttribute="bottom" constant="4" id="xy7-iE-lLU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="y0J-05-CBq"/>
                     <connections>
                         <outlet property="addressTextField" destination="v8A-QU-7d8" id="RKH-Tv-Gbo"/>
+                        <outlet property="continueButton" destination="43S-rF-khV" id="leD-Lq-wmg"/>
+                        <outlet property="errorLabel" destination="ckw-rm-aw7" id="chj-Vn-Mvm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="97.767857142857139"/>
+        </scene>
+        <!--Enter Nickname View Controller-->
+        <scene sceneID="CjZ-ch-Rqs">
+            <objects>
+                <viewController storyboardIdentifier="EnterNicknameViewController" id="MK8-MR-M5U" customClass="EnterNicknameViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wFI-fJ-HqB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="DtK-i6-P2b">
+                                <rect key="frame" x="18" y="368" width="378" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="RcO-cY-G0u"/>
+                                </constraints>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiU-O4-lJ0">
+                                <rect key="frame" x="22" y="338" width="300" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="L9q-vP-6Rz"/>
+                                    <constraint firstAttribute="height" constant="24" id="aZj-jM-JzR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="20"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1m-lb-a3L">
+                                <rect key="frame" x="18" y="794" width="378" height="58"/>
+                                <color key="backgroundColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="QgO-vq-Osv"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Continue">
+                                    <fontDescription key="titleFontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="continueTouched:" destination="MK8-MR-M5U" eventType="touchUpInside" id="Gjf-Pn-Em8"/>
+                                    <action selector="continueTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGq-5M-DgU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max nickname length is 40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao0-iV-QfE">
+                                <rect key="frame" x="18" y="430" width="300" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="2sd-hO-QMl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Yl2-pt-6ri"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="12"/>
+                                <color key="textColor" red="0.44967889789999999" green="0.38736963270000002" blue="0.33796423669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d0f-HV-rwK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DtK-i6-P2b" firstAttribute="top" secondItem="xiU-O4-lJ0" secondAttribute="bottom" constant="6" id="5Ph-Vb-zaf"/>
+                            <constraint firstItem="w1m-lb-a3L" firstAttribute="trailing" secondItem="DtK-i6-P2b" secondAttribute="trailing" id="AIn-yS-WUD"/>
+                            <constraint firstItem="ao0-iV-QfE" firstAttribute="leading" secondItem="DtK-i6-P2b" secondAttribute="leading" id="HUN-Nf-dZH"/>
+                            <constraint firstItem="d0f-HV-rwK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ao0-iV-QfE" secondAttribute="trailing" symbolic="YES" id="SEm-97-5gl"/>
+                            <constraint firstItem="xiU-O4-lJ0" firstAttribute="leading" secondItem="DtK-i6-P2b" secondAttribute="leading" constant="4" id="Stc-V5-9g2"/>
+                            <constraint firstItem="DtK-i6-P2b" firstAttribute="centerX" secondItem="d0f-HV-rwK" secondAttribute="centerX" id="TZ5-Vm-HUa"/>
+                            <constraint firstItem="DtK-i6-P2b" firstAttribute="centerY" secondItem="d0f-HV-rwK" secondAttribute="centerY" constant="-56" id="W4x-jU-XzL"/>
+                            <constraint firstItem="d0f-HV-rwK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xiU-O4-lJ0" secondAttribute="trailing" symbolic="YES" id="XsF-Ri-re1"/>
+                            <constraint firstItem="d0f-HV-rwK" firstAttribute="bottom" secondItem="w1m-lb-a3L" secondAttribute="bottom" constant="10" id="ka3-cH-3hp"/>
+                            <constraint firstItem="ao0-iV-QfE" firstAttribute="top" secondItem="DtK-i6-P2b" secondAttribute="bottom" constant="4" id="kgM-kg-wll"/>
+                            <constraint firstItem="DtK-i6-P2b" firstAttribute="width" secondItem="wFI-fJ-HqB" secondAttribute="width" constant="-36" id="l36-zy-gtf"/>
+                            <constraint firstItem="w1m-lb-a3L" firstAttribute="centerX" secondItem="d0f-HV-rwK" secondAttribute="centerX" id="tQR-Gn-lyq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="w1m-lb-a3L" id="QTZ-Gg-G7j"/>
+                        <outlet property="errorLabel" destination="ao0-iV-QfE" id="Nli-FN-PRW"/>
+                        <outlet property="nicknameTextField" destination="DtK-i6-P2b" id="l0P-0a-oWk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uFn-s7-1RW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jpc-kU-vy8">
@@ -180,6 +306,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="YachtLogo" width="230" height="230"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

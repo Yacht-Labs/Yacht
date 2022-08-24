@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BookmaniaRegular.otf</string>
+		<string>Akkurat-Regular.otf</string>
+		<string>Akkurat-Bold-Italic.otf</string>
+		<string>Akkurat-Bold.otf</string>
+		<string>Akkurat-Light-Italic.otf</string>
+		<string>Akkurat-Light.otf</string>
+	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>We use the camera to scan address QR codes</string>
 	<key>UIApplicationSceneManifest</key>
