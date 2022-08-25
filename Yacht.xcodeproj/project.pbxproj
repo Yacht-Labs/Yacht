@@ -27,6 +27,19 @@
 		7F5F833728B66358008B8EDB /* EnterAddressViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F833628B66358008B8EDB /* EnterAddressViewControllerTests.swift */; };
 		7F5F833C28B6BC21008B8EDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F833B28B6BC21008B8EDB /* Constants.swift */; };
 		7F5F833E28B6C4F3008B8EDB /* EnterNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F833D28B6C4F3008B8EDB /* EnterNicknameViewController.swift */; };
+		7F5F834428B70D5F008B8EDB /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F834328B70D5F008B8EDB /* AddressTableViewCell.swift */; };
+		7F5F834628B70DD0008B8EDB /* AddressesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F834528B70DD0008B8EDB /* AddressesListViewController.swift */; };
+		7F5F834828B7A7FA008B8EDB /* Addresses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F5F834728B7A7FA008B8EDB /* Addresses.storyboard */; };
+		7F5F834B28B7C263008B8EDB /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F834A28B7C263008B8EDB /* AccountDetailViewController.swift */; };
+		7F5F834E28B7C461008B8EDB /* EulerDepositCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F5F834D28B7C461008B8EDB /* EulerDepositCollectionViewCell.xib */; };
+		7F5F835028B7C47D008B8EDB /* EulerLoanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F5F834F28B7C47D008B8EDB /* EulerLoanCollectionViewCell.xib */; };
+		7F5F835228B7C5E4008B8EDB /* EulerDepositCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835128B7C5E4008B8EDB /* EulerDepositCollectionViewCell.swift */; };
+		7F5F835428B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835328B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift */; };
+		7F5F835628B7C850008B8EDB /* LendingDepositTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835528B7C84F008B8EDB /* LendingDepositTableViewCell.swift */; };
+		7F5F835828B7C856008B8EDB /* LendingLoanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835728B7C856008B8EDB /* LendingLoanTableViewCell.swift */; };
+		7F5F835A28B7CBA6008B8EDB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835928B7CBA6008B8EDB /* Helpers.swift */; };
+		7F5F835C28B7D628008B8EDB /* HealthScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835B28B7D628008B8EDB /* HealthScoreTableViewCell.swift */; };
+		7F5F835E28B7E5C2008B8EDB /* AssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835D28B7E5C2008B8EDB /* AssetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +85,19 @@
 		7F5F833928B697B8008B8EDB /* Yacht.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Yacht.entitlements; sourceTree = "<group>"; };
 		7F5F833B28B6BC21008B8EDB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7F5F833D28B6C4F3008B8EDB /* EnterNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNicknameViewController.swift; sourceTree = "<group>"; };
+		7F5F834328B70D5F008B8EDB /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		7F5F834528B70DD0008B8EDB /* AddressesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesListViewController.swift; sourceTree = "<group>"; };
+		7F5F834728B7A7FA008B8EDB /* Addresses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Addresses.storyboard; sourceTree = "<group>"; };
+		7F5F834A28B7C263008B8EDB /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
+		7F5F834D28B7C461008B8EDB /* EulerDepositCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EulerDepositCollectionViewCell.xib; sourceTree = "<group>"; };
+		7F5F834F28B7C47D008B8EDB /* EulerLoanCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EulerLoanCollectionViewCell.xib; sourceTree = "<group>"; };
+		7F5F835128B7C5E4008B8EDB /* EulerDepositCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerDepositCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F5F835328B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerLoanCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F5F835528B7C84F008B8EDB /* LendingDepositTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LendingDepositTableViewCell.swift; sourceTree = "<group>"; };
+		7F5F835728B7C856008B8EDB /* LendingLoanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LendingLoanTableViewCell.swift; sourceTree = "<group>"; };
+		7F5F835928B7CBA6008B8EDB /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		7F5F835B28B7D628008B8EDB /* HealthScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthScoreTableViewCell.swift; sourceTree = "<group>"; };
+		7F5F835D28B7E5C2008B8EDB /* AssetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +150,9 @@
 			children = (
 				7F5F833928B697B8008B8EDB /* Yacht.entitlements */,
 				7F2891F828B5344200B501B6 /* Assets */,
+				7F5F834C28B7C3C6008B8EDB /* CollectionViewCells */,
 				7F2891F728B5315800B501B6 /* Storyboards */,
+				7F5F834228B70D14008B8EDB /* TableViewCells */,
 				7F5F833A28B6BBF0008B8EDB /* Util */,
 				7F28920628B538F400B501B6 /* ViewControllers */,
 				7F2891C428B52E9B00B501B6 /* AppDelegate.swift */,
@@ -159,6 +187,7 @@
 			children = (
 				7F2891D228B52EA000B501B6 /* LaunchScreen.storyboard */,
 				7F2891CA28B52E9B00B501B6 /* EnterAddressFlow.storyboard */,
+				7F5F834728B7A7FA008B8EDB /* Addresses.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -187,6 +216,7 @@
 		7F28920628B538F400B501B6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F5F834928B7AB1A008B8EDB /* Addresses */,
 				7F28920928B539DB00B501B6 /* EnterAddressFlow */,
 			);
 			path = ViewControllers;
@@ -221,9 +251,42 @@
 		7F5F833A28B6BBF0008B8EDB /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				7F5F835928B7CBA6008B8EDB /* Helpers.swift */,
 				7F5F833B28B6BC21008B8EDB /* Constants.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		7F5F834228B70D14008B8EDB /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F834328B70D5F008B8EDB /* AddressTableViewCell.swift */,
+				7F5F835528B7C84F008B8EDB /* LendingDepositTableViewCell.swift */,
+				7F5F835728B7C856008B8EDB /* LendingLoanTableViewCell.swift */,
+				7F5F835B28B7D628008B8EDB /* HealthScoreTableViewCell.swift */,
+				7F5F835D28B7E5C2008B8EDB /* AssetTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		7F5F834928B7AB1A008B8EDB /* Addresses */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F834528B70DD0008B8EDB /* AddressesListViewController.swift */,
+				7F5F834A28B7C263008B8EDB /* AccountDetailViewController.swift */,
+			);
+			path = Addresses;
+			sourceTree = "<group>";
+		};
+		7F5F834C28B7C3C6008B8EDB /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F835128B7C5E4008B8EDB /* EulerDepositCollectionViewCell.swift */,
+				7F5F834D28B7C461008B8EDB /* EulerDepositCollectionViewCell.xib */,
+				7F5F835328B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift */,
+				7F5F834F28B7C47D008B8EDB /* EulerLoanCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,8 +399,11 @@
 				7F28920028B5346200B501B6 /* BookmaniaRegular.otf in Resources */,
 				7F28920228B5346200B501B6 /* Akkurat-Regular.ttf in Resources */,
 				7F28920328B5346200B501B6 /* Akkurat-Bold.otf in Resources */,
+				7F5F834828B7A7FA008B8EDB /* Addresses.storyboard in Resources */,
+				7F5F834E28B7C461008B8EDB /* EulerDepositCollectionViewCell.xib in Resources */,
 				7F28920528B5346200B501B6 /* Akkurat-Bold-Italic.otf in Resources */,
 				7F28920128B5346200B501B6 /* Akkurat-Light.otf in Resources */,
+				7F5F835028B7C47D008B8EDB /* EulerLoanCollectionViewCell.xib in Resources */,
 				7F2891CC28B52E9B00B501B6 /* EnterAddressFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,12 +429,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F5F834628B70DD0008B8EDB /* AddressesListViewController.swift in Sources */,
+				7F5F835E28B7E5C2008B8EDB /* AssetTableViewCell.swift in Sources */,
+				7F5F835628B7C850008B8EDB /* LendingDepositTableViewCell.swift in Sources */,
+				7F5F834B28B7C263008B8EDB /* AccountDetailViewController.swift in Sources */,
 				7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */,
 				7F28920B28B53A0000B501B6 /* QRScannerViewController.swift in Sources */,
 				7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */,
 				7F2891CF28B52E9B00B501B6 /* Yacht.xcdatamodeld in Sources */,
+				7F5F835428B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift in Sources */,
 				7F5F833E28B6C4F3008B8EDB /* EnterNicknameViewController.swift in Sources */,
+				7F5F835228B7C5E4008B8EDB /* EulerDepositCollectionViewCell.swift in Sources */,
 				7F28920828B5394900B501B6 /* EnterAddressViewController.swift in Sources */,
+				7F5F835828B7C856008B8EDB /* LendingLoanTableViewCell.swift in Sources */,
+				7F5F834428B70D5F008B8EDB /* AddressTableViewCell.swift in Sources */,
+				7F5F835A28B7CBA6008B8EDB /* Helpers.swift in Sources */,
+				7F5F835C28B7D628008B8EDB /* HealthScoreTableViewCell.swift in Sources */,
 				7F5F833C28B6BC21008B8EDB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

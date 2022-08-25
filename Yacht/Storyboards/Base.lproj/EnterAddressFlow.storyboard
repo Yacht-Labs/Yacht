@@ -214,7 +214,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="DtK-i6-P2b">
-                                <rect key="frame" x="18" y="368" width="378" height="58"/>
+                                <rect key="frame" x="18" y="346" width="378" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="RcO-cY-G0u"/>
                                 </constraints>
@@ -223,7 +223,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiU-O4-lJ0">
-                                <rect key="frame" x="22" y="338" width="300" height="24"/>
+                                <rect key="frame" x="22" y="316" width="300" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="L9q-vP-6Rz"/>
                                     <constraint firstAttribute="height" constant="24" id="aZj-jM-JzR"/>
@@ -249,7 +249,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max nickname length is 40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao0-iV-QfE">
-                                <rect key="frame" x="18" y="430" width="300" height="18"/>
+                                <rect key="frame" x="18" y="408" width="300" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="2sd-hO-QMl"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Yl2-pt-6ri"/>
@@ -268,7 +268,7 @@
                             <constraint firstItem="d0f-HV-rwK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ao0-iV-QfE" secondAttribute="trailing" symbolic="YES" id="SEm-97-5gl"/>
                             <constraint firstItem="xiU-O4-lJ0" firstAttribute="leading" secondItem="DtK-i6-P2b" secondAttribute="leading" constant="4" id="Stc-V5-9g2"/>
                             <constraint firstItem="DtK-i6-P2b" firstAttribute="centerX" secondItem="d0f-HV-rwK" secondAttribute="centerX" id="TZ5-Vm-HUa"/>
-                            <constraint firstItem="DtK-i6-P2b" firstAttribute="centerY" secondItem="d0f-HV-rwK" secondAttribute="centerY" constant="-56" id="W4x-jU-XzL"/>
+                            <constraint firstItem="DtK-i6-P2b" firstAttribute="centerY" secondItem="d0f-HV-rwK" secondAttribute="centerY" constant="-78" id="W4x-jU-XzL"/>
                             <constraint firstItem="d0f-HV-rwK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xiU-O4-lJ0" secondAttribute="trailing" symbolic="YES" id="XsF-Ri-re1"/>
                             <constraint firstItem="d0f-HV-rwK" firstAttribute="bottom" secondItem="w1m-lb-a3L" secondAttribute="bottom" constant="10" id="ka3-cH-3hp"/>
                             <constraint firstItem="ao0-iV-QfE" firstAttribute="top" secondItem="DtK-i6-P2b" secondAttribute="bottom" constant="4" id="kgM-kg-wll"/>

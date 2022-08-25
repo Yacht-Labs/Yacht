@@ -15,23 +15,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         var textAttributes: [NSAttributedString.Key: Any]
         var titleTextAttributes: [NSAttributedString.Key: Any]
+        var smallTitleTextAttributes: [NSAttributedString.Key: Any]
         let fontColor = Constants.Colors.deepRed
         let barItemCustomFont = UIFont(name: "Akkurat-Regular", size: 16)  // note we're not forcing anything here
         let titleCustomFont = UIFont(name: "Bookmania-Regular", size: 28)
+        let smallTitleCustomFont = UIFont(name: "Bookmania-Regular", size: 18)
         
         if let customFont = barItemCustomFont, let titleCustomFont = titleCustomFont {
             textAttributes = [NSAttributedString.Key.foregroundColor: fontColor, NSAttributedString.Key.font: customFont]
             titleTextAttributes = [NSAttributedString.Key.foregroundColor: fontColor, NSAttributedString.Key.font: titleCustomFont]
+            smallTitleTextAttributes = [NSAttributedString.Key.foregroundColor: fontColor, NSAttributedString.Key.font: smallTitleCustomFont as Any]
         } else {
             // not found -> omit setting font name and proceed with system font
             textAttributes = [NSAttributedString.Key.foregroundColor: fontColor]
             titleTextAttributes = [NSAttributedString.Key.foregroundColor: fontColor]
+            smallTitleTextAttributes = [NSAttributedString.Key.foregroundColor: fontColor]
         }
 
         // finally
         UIBarButtonItem.appearance().setTitleTextAttributes(textAttributes, for: .normal)
         UIBarButtonItem.appearance().tintColor = Constants.Colors.primaryColor
 
+        UINavigationBar.appearance().titleTextAttributes = smallTitleTextAttributes
         UINavigationBar.appearance().largeTitleTextAttributes = titleTextAttributes
         UINavigationBar.appearance().tintColor = Constants.Colors.primaryColor
         
