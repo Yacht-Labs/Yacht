@@ -42,7 +42,11 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0,1,2:
+        case 0:
+            return 1
+        case 1:
+            return 1
+        case 2:
             return 1
         case 3:
             return 7
@@ -132,6 +136,17 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
         } else {
             addressLabel.isHidden = true
             copyAddressImage.isHidden = true
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "HealthNotificationViewController") as HealthNotificationViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            return
         }
     }
 }

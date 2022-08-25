@@ -40,6 +40,8 @@
 		7F5F835A28B7CBA6008B8EDB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835928B7CBA6008B8EDB /* Helpers.swift */; };
 		7F5F835C28B7D628008B8EDB /* HealthScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835B28B7D628008B8EDB /* HealthScoreTableViewCell.swift */; };
 		7F5F835E28B7E5C2008B8EDB /* AssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835D28B7E5C2008B8EDB /* AssetTableViewCell.swift */; };
+		7F5F836028B80EDC008B8EDB /* HealthNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835F28B80EDC008B8EDB /* HealthNotificationViewController.swift */; };
+		7F5F836228B81728008B8EDB /* Networking in Resources */ = {isa = PBXBuildFile; fileRef = 7F5F836128B81728008B8EDB /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		7F5F835928B7CBA6008B8EDB /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		7F5F835B28B7D628008B8EDB /* HealthScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthScoreTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F835D28B7E5C2008B8EDB /* AssetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTableViewCell.swift; sourceTree = "<group>"; };
+		7F5F835F28B80EDC008B8EDB /* HealthNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthNotificationViewController.swift; sourceTree = "<group>"; };
+		7F5F836128B81728008B8EDB /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 				7F2891F728B5315800B501B6 /* Storyboards */,
 				7F5F834228B70D14008B8EDB /* TableViewCells */,
 				7F5F833A28B6BBF0008B8EDB /* Util */,
+				7F5F836128B81728008B8EDB /* Networking */,
 				7F28920628B538F400B501B6 /* ViewControllers */,
 				7F2891C428B52E9B00B501B6 /* AppDelegate.swift */,
 				7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */,
@@ -274,6 +279,7 @@
 			children = (
 				7F5F834528B70DD0008B8EDB /* AddressesListViewController.swift */,
 				7F5F834A28B7C263008B8EDB /* AccountDetailViewController.swift */,
+				7F5F835F28B80EDC008B8EDB /* HealthNotificationViewController.swift */,
 			);
 			path = Addresses;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 			files = (
 				7F2891D428B52EA000B501B6 /* LaunchScreen.storyboard in Resources */,
 				7F2891D128B52EA000B501B6 /* Assets.xcassets in Resources */,
+				7F5F836228B81728008B8EDB /* Networking in Resources */,
 				7F28920428B5346200B501B6 /* Akkurat-Light-Italic.otf in Resources */,
 				7F28920028B5346200B501B6 /* BookmaniaRegular.otf in Resources */,
 				7F28920228B5346200B501B6 /* Akkurat-Regular.ttf in Resources */,
@@ -432,6 +439,7 @@
 				7F5F834628B70DD0008B8EDB /* AddressesListViewController.swift in Sources */,
 				7F5F835E28B7E5C2008B8EDB /* AssetTableViewCell.swift in Sources */,
 				7F5F835628B7C850008B8EDB /* LendingDepositTableViewCell.swift in Sources */,
+				7F5F836028B80EDC008B8EDB /* HealthNotificationViewController.swift in Sources */,
 				7F5F834B28B7C263008B8EDB /* AccountDetailViewController.swift in Sources */,
 				7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */,
 				7F28920B28B53A0000B501B6 /* QRScannerViewController.swift in Sources */,

@@ -138,7 +138,6 @@
                                                     <color key="backgroundColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="5" id="4io-e5-DB9"/>
-                                                        <constraint firstAttribute="width" constant="74" id="RHZ-Js-cr8"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1S-bt-A7N">
@@ -345,6 +344,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKQ-Ak-fNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4173.913043478261" y="97.767857142857139"/>
+        </scene>
+        <!--Health Notification View Controller-->
+        <scene sceneID="emh-m1-TYC">
+            <objects>
+                <viewController storyboardIdentifier="HealthNotificationViewController" id="eHM-Az-d9x" customClass="HealthNotificationViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YWz-xq-p1T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify if health score drops below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfB-BG-TWP">
+                                <rect key="frame" x="24" y="144" width="272.5" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="EYJ-ep-Kcu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="18"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.20000000000000001" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="1yV-Cg-b9C">
+                                <rect key="frame" x="22" y="198" width="370" height="31"/>
+                                <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbE-Q7-9pG">
+                                <rect key="frame" x="18" y="794" width="378" height="58"/>
+                                <color key="backgroundColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="RQf-B9-DSR"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <fontDescription key="titleFontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveTouched:" destination="eHM-Az-d9x" eventType="touchUpInside" id="EdG-wD-Ubf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZr-DF-hwI">
+                                <rect key="frame" x="364" y="144" width="26" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Pcd-DV-4TS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dM0-KJ-fcz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HbE-Q7-9pG" firstAttribute="width" secondItem="YWz-xq-p1T" secondAttribute="width" constant="-36" id="1jb-3Y-xm0"/>
+                            <constraint firstItem="dM0-KJ-fcz" firstAttribute="bottom" secondItem="HbE-Q7-9pG" secondAttribute="bottom" constant="10" id="5LZ-Ve-krF"/>
+                            <constraint firstItem="gfB-BG-TWP" firstAttribute="leading" secondItem="dM0-KJ-fcz" secondAttribute="leading" constant="24" id="FHg-kP-B3K"/>
+                            <constraint firstItem="1yV-Cg-b9C" firstAttribute="leading" secondItem="gfB-BG-TWP" secondAttribute="leading" id="Ib7-0v-YiD"/>
+                            <constraint firstItem="SZr-DF-hwI" firstAttribute="centerY" secondItem="gfB-BG-TWP" secondAttribute="centerY" id="M0P-3S-Hha"/>
+                            <constraint firstItem="SZr-DF-hwI" firstAttribute="trailing" secondItem="1yV-Cg-b9C" secondAttribute="trailing" id="Oc5-hx-EnR"/>
+                            <constraint firstItem="HbE-Q7-9pG" firstAttribute="centerX" secondItem="dM0-KJ-fcz" secondAttribute="centerX" id="SLC-J9-QNy"/>
+                            <constraint firstItem="gfB-BG-TWP" firstAttribute="top" secondItem="dM0-KJ-fcz" secondAttribute="top" constant="100" id="Z6j-xQ-LDh"/>
+                            <constraint firstItem="dM0-KJ-fcz" firstAttribute="trailing" secondItem="1yV-Cg-b9C" secondAttribute="trailing" constant="24" id="gtf-t0-dtb"/>
+                            <constraint firstItem="1yV-Cg-b9C" firstAttribute="top" secondItem="gfB-BG-TWP" secondAttribute="bottom" constant="20" id="pOs-zd-Nnk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="healthScoreLabel" destination="SZr-DF-hwI" id="p2J-Cu-k3l"/>
+                        <outlet property="saveButton" destination="HbE-Q7-9pG" id="tQR-u3-ZLg"/>
+                        <outlet property="slider" destination="1yV-Cg-b9C" id="Dj9-yA-daB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMD-Bl-9An" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5013.04347826087" y="97.767857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vdz-Zw-8nN">
