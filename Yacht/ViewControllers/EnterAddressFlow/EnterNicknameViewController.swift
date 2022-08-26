@@ -12,6 +12,7 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var yachtImage: UIImageView!
     
     var address: String?
     
@@ -21,12 +22,34 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        guard let deviceId = appDelegate.deviceId else {
+            // TODO error message about notifications
+            return
+        }
+        
         if checkIfValidNickname(nickname: nickname) {
-            createAddress(address: address, nickname: nickname)
-            
-            let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "AddressesListNavigationController") as UINavigationController
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
+            throbYacht()
+            continueButton.isEnabled = false
+            NetworkManager().postAccount(address: address, deviceId: deviceId, name: nickname) { account, error in
+                if error == nil {
+                    DispatchQueue.main.async {
+                        self.createAddressInCoreData(address: address, nickname: nickname, deviceId: deviceId, id: account?.id ?? "")
+                        let vc = HomeViewController()
+                        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.stopThrob()
+                        self.continueButton.isEnabled = true
+                    }
+                    // TODO give network fail error message
+                }
+            }
         } else {
             errorLabel.alpha = 1
         }
@@ -73,7 +96,7 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
         return nickname.count <= 40
     }
     
-    func createAddress(address: String, nickname: String) {
+    func createAddressInCoreData(address: String, nickname: String, deviceId: String, id: String) {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -107,5 +130,16 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
             return 0
         }
     }
+    
+    func throbYacht() {
+        UIView.animate(withDuration: 1.0, delay:0, options: [.repeat, .autoreverse], animations: {
+            self.yachtImage.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }, completion: nil)
+    }
+    
+    func stopThrob() {
+        self.yachtImage.layer.removeAllAnimations()
+    }
+    
    
 }

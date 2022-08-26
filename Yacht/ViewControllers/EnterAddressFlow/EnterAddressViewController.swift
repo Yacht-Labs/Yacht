@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import CoreData
 
 class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    var fromHome: Bool = false
     
     @IBAction func continueTouched(_ sender: Any) {
         if checkIfValidEthAddress(address: addressTextField.text!) {
@@ -32,6 +34,13 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if !fromHome {
+            if getAddressCount() > 0 {
+                let vc = HomeViewController()
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
+            }
+        }
 
         view.backgroundColor = Constants.Colors.viewBackgroundColor
         errorLabel.alpha = 0
@@ -86,5 +95,43 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
+    
+    func getAddressCount() -> Int {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+            return 0
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Address")
+        
+        do {
+            let addresses = try managedContext.fetch(fetchRequest)
+            return addresses.count
+        } catch {
+            return 0
+        }
+    }
 
+    func deleteAllAccountsInLocalDb()  {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        // Create Fetch Request
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Address")
+
+        // Create Batch Delete Request
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try managedContext.execute(batchDeleteRequest)
+
+        } catch {
+            
+        }
+    }
 }

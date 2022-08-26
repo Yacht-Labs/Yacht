@@ -41,7 +41,28 @@
 		7F5F835C28B7D628008B8EDB /* HealthScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835B28B7D628008B8EDB /* HealthScoreTableViewCell.swift */; };
 		7F5F835E28B7E5C2008B8EDB /* AssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835D28B7E5C2008B8EDB /* AssetTableViewCell.swift */; };
 		7F5F836028B80EDC008B8EDB /* HealthNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F835F28B80EDC008B8EDB /* HealthNotificationViewController.swift */; };
-		7F5F836228B81728008B8EDB /* Networking in Resources */ = {isa = PBXBuildFile; fileRef = 7F5F836128B81728008B8EDB /* Networking */; };
+		7F5F836428B82AA5008B8EDB /* IRNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F836328B82AA5008B8EDB /* IRNotificationViewController.swift */; };
+		7F5F836628B8482E008B8EDB /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F5F836528B8482E008B8EDB /* Settings.storyboard */; };
+		7F5F836A28B84908008B8EDB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F836928B84908008B8EDB /* SettingsViewController.swift */; };
+		7F5F836D28B84951008B8EDB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F836C28B84951008B8EDB /* HomeViewController.swift */; };
+		7F5F836F28B90B75008B8EDB /* SettingNetworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F836E28B90B75008B8EDB /* SettingNetworkTableViewCell.swift */; };
+		7F5F837128B90B85008B8EDB /* SettingNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837028B90B85008B8EDB /* SettingNotificationTableViewCell.swift */; };
+		7F5F837328B91963008B8EDB /* NetworkSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837228B91963008B8EDB /* NetworkSelectTableViewCell.swift */; };
+		7F5F837528B91A65008B8EDB /* NetworkSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837428B91A65008B8EDB /* NetworkSelectViewController.swift */; };
+		7F5F837828B91C91008B8EDB /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837728B91C91008B8EDB /* LocalStorageManager.swift */; };
+		7F5F837B28B94765008B8EDB /* UnsignedTx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837A28B94765008B8EDB /* UnsignedTx.swift */; };
+		7F5F837D28B947BD008B8EDB /* EulerToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837C28B947BD008B8EDB /* EulerToken.swift */; };
+		7F5F838628B94B69008B8EDB /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F838328B94B68008B8EDB /* URLParameterEncoder.swift */; };
+		7F5F838728B94B69008B8EDB /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F838428B94B69008B8EDB /* ParameterEncoding.swift */; };
+		7F5F838828B94B69008B8EDB /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F838528B94B69008B8EDB /* JSONParameterEncoder.swift */; };
+		7F5F838C28B94B87008B8EDB /* NotificationServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F838928B94B86008B8EDB /* NotificationServiceAPI.swift */; };
+		7F5F839028B94B8F008B8EDB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F838F28B94B8F008B8EDB /* NetworkManager.swift */; };
+		7F5F839628B94B9A008B8EDB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839128B94B9A008B8EDB /* Router.swift */; };
+		7F5F839728B94B9A008B8EDB /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839228B94B9A008B8EDB /* HTTPTask.swift */; };
+		7F5F839828B94B9A008B8EDB /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839328B94B9A008B8EDB /* EndPointType.swift */; };
+		7F5F839928B94B9A008B8EDB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839428B94B9A008B8EDB /* HTTPMethod.swift */; };
+		7F5F839A28B94B9A008B8EDB /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839528B94B9A008B8EDB /* NetworkRouter.swift */; };
+		7F5F839C28B9671F008B8EDB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839B28B9671F008B8EDB /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +122,28 @@
 		7F5F835B28B7D628008B8EDB /* HealthScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthScoreTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F835D28B7E5C2008B8EDB /* AssetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F835F28B80EDC008B8EDB /* HealthNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthNotificationViewController.swift; sourceTree = "<group>"; };
-		7F5F836128B81728008B8EDB /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
+		7F5F836328B82AA5008B8EDB /* IRNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRNotificationViewController.swift; sourceTree = "<group>"; };
+		7F5F836528B8482E008B8EDB /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		7F5F836928B84908008B8EDB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7F5F836C28B84951008B8EDB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7F5F836E28B90B75008B8EDB /* SettingNetworkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNetworkTableViewCell.swift; sourceTree = "<group>"; };
+		7F5F837028B90B85008B8EDB /* SettingNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		7F5F837228B91963008B8EDB /* NetworkSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSelectTableViewCell.swift; sourceTree = "<group>"; };
+		7F5F837428B91A65008B8EDB /* NetworkSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSelectViewController.swift; sourceTree = "<group>"; };
+		7F5F837728B91C91008B8EDB /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
+		7F5F837A28B94765008B8EDB /* UnsignedTx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsignedTx.swift; sourceTree = "<group>"; };
+		7F5F837C28B947BD008B8EDB /* EulerToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerToken.swift; sourceTree = "<group>"; };
+		7F5F838328B94B68008B8EDB /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		7F5F838428B94B69008B8EDB /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		7F5F838528B94B69008B8EDB /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		7F5F838928B94B86008B8EDB /* NotificationServiceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServiceAPI.swift; sourceTree = "<group>"; };
+		7F5F838F28B94B8F008B8EDB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7F5F839128B94B9A008B8EDB /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		7F5F839228B94B9A008B8EDB /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		7F5F839328B94B9A008B8EDB /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		7F5F839428B94B9A008B8EDB /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		7F5F839528B94B9A008B8EDB /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		7F5F839B28B9671F008B8EDB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +200,9 @@
 				7F2891F728B5315800B501B6 /* Storyboards */,
 				7F5F834228B70D14008B8EDB /* TableViewCells */,
 				7F5F833A28B6BBF0008B8EDB /* Util */,
-				7F5F836128B81728008B8EDB /* Networking */,
+				7F5F837628B91C6A008B8EDB /* Managers */,
+				7F5F837928B94721008B8EDB /* Models */,
+				7F5F837E28B94AD6008B8EDB /* Networking */,
 				7F28920628B538F400B501B6 /* ViewControllers */,
 				7F2891C428B52E9B00B501B6 /* AppDelegate.swift */,
 				7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */,
@@ -193,6 +237,7 @@
 				7F2891D228B52EA000B501B6 /* LaunchScreen.storyboard */,
 				7F2891CA28B52E9B00B501B6 /* EnterAddressFlow.storyboard */,
 				7F5F834728B7A7FA008B8EDB /* Addresses.storyboard */,
+				7F5F836528B8482E008B8EDB /* Settings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -223,6 +268,8 @@
 			children = (
 				7F5F834928B7AB1A008B8EDB /* Addresses */,
 				7F28920928B539DB00B501B6 /* EnterAddressFlow */,
+				7F5F836B28B8493C008B8EDB /* Home */,
+				7F5F836828B848F2008B8EDB /* Settings */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -270,6 +317,9 @@
 				7F5F835728B7C856008B8EDB /* LendingLoanTableViewCell.swift */,
 				7F5F835B28B7D628008B8EDB /* HealthScoreTableViewCell.swift */,
 				7F5F835D28B7E5C2008B8EDB /* AssetTableViewCell.swift */,
+				7F5F836E28B90B75008B8EDB /* SettingNetworkTableViewCell.swift */,
+				7F5F837028B90B85008B8EDB /* SettingNotificationTableViewCell.swift */,
+				7F5F837228B91963008B8EDB /* NetworkSelectTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -280,6 +330,7 @@
 				7F5F834528B70DD0008B8EDB /* AddressesListViewController.swift */,
 				7F5F834A28B7C263008B8EDB /* AccountDetailViewController.swift */,
 				7F5F835F28B80EDC008B8EDB /* HealthNotificationViewController.swift */,
+				7F5F836328B82AA5008B8EDB /* IRNotificationViewController.swift */,
 			);
 			path = Addresses;
 			sourceTree = "<group>";
@@ -293,6 +344,90 @@
 				7F5F834F28B7C47D008B8EDB /* EulerLoanCollectionViewCell.xib */,
 			);
 			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		7F5F836828B848F2008B8EDB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F836928B84908008B8EDB /* SettingsViewController.swift */,
+				7F5F837428B91A65008B8EDB /* NetworkSelectViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7F5F836B28B8493C008B8EDB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F836C28B84951008B8EDB /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7F5F837628B91C6A008B8EDB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F837728B91C91008B8EDB /* LocalStorageManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7F5F837928B94721008B8EDB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F837A28B94765008B8EDB /* UnsignedTx.swift */,
+				7F5F837C28B947BD008B8EDB /* EulerToken.swift */,
+				7F5F839B28B9671F008B8EDB /* Account.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7F5F837E28B94AD6008B8EDB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F838228B94B56008B8EDB /* Service */,
+				7F5F838128B94B4E008B8EDB /* Manager */,
+				7F5F838028B94B3B008B8EDB /* Endpoint */,
+				7F5F837F28B94B2B008B8EDB /* Encoding */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7F5F837F28B94B2B008B8EDB /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F838528B94B69008B8EDB /* JSONParameterEncoder.swift */,
+				7F5F838428B94B69008B8EDB /* ParameterEncoding.swift */,
+				7F5F838328B94B68008B8EDB /* URLParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		7F5F838028B94B3B008B8EDB /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F838928B94B86008B8EDB /* NotificationServiceAPI.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		7F5F838128B94B4E008B8EDB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F838F28B94B8F008B8EDB /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7F5F838228B94B56008B8EDB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7F5F839328B94B9A008B8EDB /* EndPointType.swift */,
+				7F5F839428B94B9A008B8EDB /* HTTPMethod.swift */,
+				7F5F839228B94B9A008B8EDB /* HTTPTask.swift */,
+				7F5F839528B94B9A008B8EDB /* NetworkRouter.swift */,
+				7F5F839128B94B9A008B8EDB /* Router.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,7 +536,6 @@
 			files = (
 				7F2891D428B52EA000B501B6 /* LaunchScreen.storyboard in Resources */,
 				7F2891D128B52EA000B501B6 /* Assets.xcassets in Resources */,
-				7F5F836228B81728008B8EDB /* Networking in Resources */,
 				7F28920428B5346200B501B6 /* Akkurat-Light-Italic.otf in Resources */,
 				7F28920028B5346200B501B6 /* BookmaniaRegular.otf in Resources */,
 				7F28920228B5346200B501B6 /* Akkurat-Regular.ttf in Resources */,
@@ -412,6 +546,7 @@
 				7F28920128B5346200B501B6 /* Akkurat-Light.otf in Resources */,
 				7F5F835028B7C47D008B8EDB /* EulerLoanCollectionViewCell.xib in Resources */,
 				7F2891CC28B52E9B00B501B6 /* EnterAddressFlow.storyboard in Resources */,
+				7F5F836628B8482E008B8EDB /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,23 +572,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F5F834628B70DD0008B8EDB /* AddressesListViewController.swift in Sources */,
+				7F5F837D28B947BD008B8EDB /* EulerToken.swift in Sources */,
+				7F5F837828B91C91008B8EDB /* LocalStorageManager.swift in Sources */,
+				7F5F838628B94B69008B8EDB /* URLParameterEncoder.swift in Sources */,
+				7F5F839628B94B9A008B8EDB /* Router.swift in Sources */,
 				7F5F835E28B7E5C2008B8EDB /* AssetTableViewCell.swift in Sources */,
 				7F5F835628B7C850008B8EDB /* LendingDepositTableViewCell.swift in Sources */,
+				7F5F836A28B84908008B8EDB /* SettingsViewController.swift in Sources */,
 				7F5F836028B80EDC008B8EDB /* HealthNotificationViewController.swift in Sources */,
+				7F5F836D28B84951008B8EDB /* HomeViewController.swift in Sources */,
+				7F5F838C28B94B87008B8EDB /* NotificationServiceAPI.swift in Sources */,
 				7F5F834B28B7C263008B8EDB /* AccountDetailViewController.swift in Sources */,
 				7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */,
 				7F28920B28B53A0000B501B6 /* QRScannerViewController.swift in Sources */,
+				7F5F839C28B9671F008B8EDB /* Account.swift in Sources */,
+				7F5F838728B94B69008B8EDB /* ParameterEncoding.swift in Sources */,
+				7F5F839A28B94B9A008B8EDB /* NetworkRouter.swift in Sources */,
+				7F5F839728B94B9A008B8EDB /* HTTPTask.swift in Sources */,
 				7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */,
+				7F5F839028B94B8F008B8EDB /* NetworkManager.swift in Sources */,
+				7F5F836428B82AA5008B8EDB /* IRNotificationViewController.swift in Sources */,
+				7F5F837128B90B85008B8EDB /* SettingNotificationTableViewCell.swift in Sources */,
+				7F5F839828B94B9A008B8EDB /* EndPointType.swift in Sources */,
+				7F5F839928B94B9A008B8EDB /* HTTPMethod.swift in Sources */,
 				7F2891CF28B52E9B00B501B6 /* Yacht.xcdatamodeld in Sources */,
 				7F5F835428B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift in Sources */,
+				7F5F836F28B90B75008B8EDB /* SettingNetworkTableViewCell.swift in Sources */,
 				7F5F833E28B6C4F3008B8EDB /* EnterNicknameViewController.swift in Sources */,
+				7F5F838828B94B69008B8EDB /* JSONParameterEncoder.swift in Sources */,
+				7F5F837328B91963008B8EDB /* NetworkSelectTableViewCell.swift in Sources */,
 				7F5F835228B7C5E4008B8EDB /* EulerDepositCollectionViewCell.swift in Sources */,
 				7F28920828B5394900B501B6 /* EnterAddressViewController.swift in Sources */,
+				7F5F837528B91A65008B8EDB /* NetworkSelectViewController.swift in Sources */,
 				7F5F835828B7C856008B8EDB /* LendingLoanTableViewCell.swift in Sources */,
 				7F5F834428B70D5F008B8EDB /* AddressTableViewCell.swift in Sources */,
 				7F5F835A28B7CBA6008B8EDB /* Helpers.swift in Sources */,
 				7F5F835C28B7D628008B8EDB /* HealthScoreTableViewCell.swift in Sources */,
 				7F5F833C28B6BC21008B8EDB /* Constants.swift in Sources */,
+				7F5F837B28B94765008B8EDB /* UnsignedTx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

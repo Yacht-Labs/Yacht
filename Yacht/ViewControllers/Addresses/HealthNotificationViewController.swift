@@ -19,9 +19,17 @@ class HealthNotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = Constants.Colors.viewBackgroundColor
         navigationItem.title = "Health Score Notification"
         healthScoreLabel.text = String(round(slider.value * 100) / 100.0)
         slider.addTarget(self, action: #selector(onSlide), for: UIControl.Event.valueChanged)
+        
+        let font = UIFont(name: "Akkurat-Bold", size: 18)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font!,
+            .foregroundColor: Constants.Colors.viewBackgroundColor
+        ]
+        saveButton.setAttributedTitle(NSAttributedString(string: "Save", attributes: attributes), for: .normal)
     }
     
     override func viewDidLayoutSubviews() {

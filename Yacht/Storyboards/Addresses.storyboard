@@ -109,7 +109,7 @@
         <!--Account Detail View Controller-->
         <scene sceneID="TwJ-QL-giB">
             <objects>
-                <viewController storyboardIdentifier="AccountDetailViewController" id="HaG-95-B1v" customClass="AccountDetailViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountDetailViewController" hidesBottomBarWhenPushed="YES" id="HaG-95-B1v" customClass="AccountDetailViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="13m-Mt-QpR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,7 +205,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wstETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCz-Ht-rz6">
-                                                    <rect key="frame" x="78" y="15" width="200" height="20"/>
+                                                    <rect key="frame" x="78" y="25" width="200" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="9Ft-Ea-0St"/>
                                                         <constraint firstAttribute="width" constant="200" id="xc7-Yn-TZA"/>
@@ -241,7 +241,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="oMT-EX-Q6a"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.44967889789999999" green="0.38736963270000002" blue="0.33796423669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: 22.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzI-Gy-yLA">
@@ -255,7 +255,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrapped staked ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWI-46-Ezw">
-                                                    <rect key="frame" x="78" y="35" width="200" height="20"/>
+                                                    <rect key="frame" x="78" y="45" width="200" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="2hd-zc-qso"/>
                                                         <constraint firstAttribute="width" constant="200" id="FyS-xc-nf0"/>
@@ -271,7 +271,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="RAw-KA-gA3"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -289,11 +289,16 @@
                                                 <constraint firstItem="vCz-Ht-rz6" firstAttribute="leading" secondItem="TlH-0j-Zx6" secondAttribute="trailing" constant="10" id="ipV-br-K6X"/>
                                                 <constraint firstItem="Sbi-jS-Sbu" firstAttribute="trailing" secondItem="TXf-mj-Vik" secondAttribute="trailing" id="rkv-YH-diA"/>
                                                 <constraint firstItem="Sbi-jS-Sbu" firstAttribute="top" secondItem="TXf-mj-Vik" secondAttribute="bottom" id="t41-aN-XOb"/>
-                                                <constraint firstItem="vCz-Ht-rz6" firstAttribute="top" secondItem="TlH-0j-Zx6" secondAttribute="top" constant="-2" id="tEH-Gd-OHR"/>
+                                                <constraint firstItem="vCz-Ht-rz6" firstAttribute="top" secondItem="TlH-0j-Zx6" secondAttribute="top" constant="8" id="tEH-Gd-OHR"/>
                                                 <constraint firstItem="jzI-Gy-yLA" firstAttribute="bottom" secondItem="TlH-0j-Zx6" secondAttribute="bottom" constant="2" id="yx2-ro-Stb"/>
                                                 <constraint firstItem="LWc-01-wat" firstAttribute="top" secondItem="J3k-i0-Oj8" secondAttribute="top" constant="10" id="zXx-GO-GGa"/>
                                                 <constraint firstItem="vR9-11-jMG" firstAttribute="trailing" secondItem="LWc-01-wat" secondAttribute="trailing" id="zg8-0K-0s0"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="jzI-Gy-yLA"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -313,7 +318,7 @@
                                 <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.on.clipboard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-qK-FkR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.on.doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-qK-FkR">
                                 <rect key="frame" x="148" y="39.5" width="20" height="32"/>
                                 <color key="tintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -348,7 +353,7 @@
         <!--Health Notification View Controller-->
         <scene sceneID="emh-m1-TYC">
             <objects>
-                <viewController storyboardIdentifier="HealthNotificationViewController" id="eHM-Az-d9x" customClass="HealthNotificationViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HealthNotificationViewController" hidesBottomBarWhenPushed="YES" id="eHM-Az-d9x" customClass="HealthNotificationViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YWz-xq-p1T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,6 +423,174 @@
             </objects>
             <point key="canvasLocation" x="5013.04347826087" y="97.767857142857139"/>
         </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="cXs-Xu-zZj">
+            <objects>
+                <viewController storyboardIdentifier="IRNotificationViewController" hidesBottomBarWhenPushed="YES" id="wmw-Tb-cOV" customClass="IRNotificationViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q3l-Xw-XaA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdN-lh-MPD">
+                                <rect key="frame" x="18" y="794" width="378" height="58"/>
+                                <color key="backgroundColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="KXM-17-CkA"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <fontDescription key="titleFontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveTouched:" destination="wmw-Tb-cOV" eventType="touchUpInside" id="ZQ7-15-YEh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify if Lend APY changes by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tD-mC-mKP">
+                                <rect key="frame" x="24" y="144" width="240.5" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="LPp-XJ-Jnf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="18"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Lend APY: 2.20%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9D8-3B-49u">
+                                <rect key="frame" x="24" y="248" width="204" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="qRB-KA-1Ly"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="18"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will notify below 1.98%, above 2.42%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNp-n4-qSd">
+                                <rect key="frame" x="24" y="286" width="311" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="RF5-yj-fgA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wstETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2x-x1-9nu">
+                                <rect key="frame" x="20" y="44" width="71.5" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="nvh-CP-feW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="20"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.20000000298023224" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="PA4-qS-Ug7">
+                                <rect key="frame" x="22" y="198" width="370" height="31"/>
+                                <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-hk-PVX">
+                                <rect key="frame" x="353" y="144" width="37" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="cqV-eQ-c49"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify if Borrow APY changes by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hu-dt-tXc">
+                                <rect key="frame" x="24" y="380" width="259" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="7JD-O0-yl9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="18"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Borrow APY: 2.20%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bv5-pM-TMS">
+                                <rect key="frame" x="24" y="484" width="222" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Eci-yf-xD8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="18"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will notify below 1.98%, above 2.42%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikB-dj-Xl5">
+                                <rect key="frame" x="24" y="522" width="311" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Hjt-Ex-eI0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.20000000298023224" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="EdY-BV-Y7L">
+                                <rect key="frame" x="22" y="434" width="370" height="31"/>
+                                <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeN-Iv-QWo">
+                                <rect key="frame" x="353" y="380" width="37" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="uqs-lL-TDB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KNt-3Q-tf1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1tD-mC-mKP" firstAttribute="top" secondItem="KNt-3Q-tf1" secondAttribute="top" constant="100" id="0fL-xj-t28"/>
+                            <constraint firstItem="KNt-3Q-tf1" firstAttribute="trailing" secondItem="PA4-qS-Ug7" secondAttribute="trailing" constant="24" id="2Vu-qg-EJh"/>
+                            <constraint firstItem="LdN-lh-MPD" firstAttribute="centerX" secondItem="KNt-3Q-tf1" secondAttribute="centerX" id="4Kh-vx-dL5"/>
+                            <constraint firstItem="FWw-hk-PVX" firstAttribute="centerY" secondItem="1tD-mC-mKP" secondAttribute="centerY" id="85A-xr-Fon"/>
+                            <constraint firstItem="B2x-x1-9nu" firstAttribute="leading" secondItem="KNt-3Q-tf1" secondAttribute="leading" constant="20" id="BJt-8D-RgZ"/>
+                            <constraint firstItem="PA4-qS-Ug7" firstAttribute="leading" secondItem="1tD-mC-mKP" secondAttribute="leading" id="DWe-1A-uEe"/>
+                            <constraint firstItem="KNt-3Q-tf1" firstAttribute="bottom" secondItem="LdN-lh-MPD" secondAttribute="bottom" constant="10" id="Dck-KY-Dvb"/>
+                            <constraint firstItem="9D8-3B-49u" firstAttribute="leading" secondItem="1tD-mC-mKP" secondAttribute="leading" id="Ef6-fc-0oF"/>
+                            <constraint firstItem="1tD-mC-mKP" firstAttribute="leading" secondItem="KNt-3Q-tf1" secondAttribute="leading" constant="24" id="KHa-j1-I5n"/>
+                            <constraint firstItem="eNp-n4-qSd" firstAttribute="leading" secondItem="9D8-3B-49u" secondAttribute="leading" id="N4r-JO-Y3o"/>
+                            <constraint firstItem="ikB-dj-Xl5" firstAttribute="leading" secondItem="Bv5-pM-TMS" secondAttribute="leading" id="PYg-zs-aAe"/>
+                            <constraint firstItem="KNt-3Q-tf1" firstAttribute="trailing" secondItem="EdY-BV-Y7L" secondAttribute="trailing" constant="24" id="PmN-Hz-Wfp"/>
+                            <constraint firstItem="3hu-dt-tXc" firstAttribute="top" secondItem="eNp-n4-qSd" secondAttribute="bottom" constant="60" id="RyF-Yg-L8n"/>
+                            <constraint firstItem="YeN-Iv-QWo" firstAttribute="centerY" secondItem="3hu-dt-tXc" secondAttribute="centerY" id="U5m-GB-fBr"/>
+                            <constraint firstItem="B2x-x1-9nu" firstAttribute="top" secondItem="KNt-3Q-tf1" secondAttribute="top" id="WOI-SE-quV"/>
+                            <constraint firstItem="9D8-3B-49u" firstAttribute="top" secondItem="PA4-qS-Ug7" secondAttribute="bottom" constant="20" id="Wh0-wW-mkN"/>
+                            <constraint firstItem="PA4-qS-Ug7" firstAttribute="top" secondItem="1tD-mC-mKP" secondAttribute="bottom" constant="20" id="X9e-kK-k0C"/>
+                            <constraint firstItem="Bv5-pM-TMS" firstAttribute="top" secondItem="EdY-BV-Y7L" secondAttribute="bottom" constant="20" id="auQ-bn-x2K"/>
+                            <constraint firstItem="LdN-lh-MPD" firstAttribute="width" secondItem="q3l-Xw-XaA" secondAttribute="width" constant="-36" id="av8-Nq-WAj"/>
+                            <constraint firstItem="3hu-dt-tXc" firstAttribute="leading" secondItem="eNp-n4-qSd" secondAttribute="leading" id="cbZ-TX-qHf"/>
+                            <constraint firstItem="EdY-BV-Y7L" firstAttribute="leading" secondItem="3hu-dt-tXc" secondAttribute="leading" id="dn5-WW-efd"/>
+                            <constraint firstItem="eNp-n4-qSd" firstAttribute="top" secondItem="9D8-3B-49u" secondAttribute="bottom" constant="4" id="evh-Cs-Egv"/>
+                            <constraint firstItem="FWw-hk-PVX" firstAttribute="trailing" secondItem="PA4-qS-Ug7" secondAttribute="trailing" id="k8P-jG-XgS"/>
+                            <constraint firstItem="ikB-dj-Xl5" firstAttribute="top" secondItem="Bv5-pM-TMS" secondAttribute="bottom" constant="4" id="lhd-Sr-286"/>
+                            <constraint firstItem="EdY-BV-Y7L" firstAttribute="top" secondItem="3hu-dt-tXc" secondAttribute="bottom" constant="20" id="lvu-RA-GA6"/>
+                            <constraint firstItem="Bv5-pM-TMS" firstAttribute="leading" secondItem="3hu-dt-tXc" secondAttribute="leading" id="nF2-fK-fbs"/>
+                            <constraint firstItem="YeN-Iv-QWo" firstAttribute="trailing" secondItem="EdY-BV-Y7L" secondAttribute="trailing" id="yKq-4X-qfA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomSlider" destination="EdY-BV-Y7L" id="w9t-Xx-OX5"/>
+                        <outlet property="changeByBottom" destination="3hu-dt-tXc" id="aoM-Ym-RYE"/>
+                        <outlet property="changeByTop" destination="1tD-mC-mKP" id="JYa-ZM-luU"/>
+                        <outlet property="changePercentBottom" destination="YeN-Iv-QWo" id="I5n-jg-h1A"/>
+                        <outlet property="changePercentTop" destination="FWw-hk-PVX" id="o1y-dU-B9l"/>
+                        <outlet property="currentBottom" destination="Bv5-pM-TMS" id="2o1-rE-IHJ"/>
+                        <outlet property="currentTop" destination="9D8-3B-49u" id="Kgh-gG-iOU"/>
+                        <outlet property="saveButton" destination="LdN-lh-MPD" id="HOV-mc-bFe"/>
+                        <outlet property="symbol" destination="B2x-x1-9nu" id="DIM-xG-FWD"/>
+                        <outlet property="topSlider" destination="PA4-qS-Ug7" id="O5U-tL-9tu"/>
+                        <outlet property="willNotifyBottom" destination="ikB-dj-Xl5" id="njw-6e-hRb"/>
+                        <outlet property="willNotifyTop" destination="eNp-n4-qSd" id="8qQ-ys-Kba"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dMH-Ux-99P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5768" y="98"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="vdz-Zw-8nN">
             <objects>
@@ -439,7 +612,7 @@
     </scenes>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="doc.on.clipboard" catalog="system" width="116" height="128"/>
+        <image name="doc.on.doc" catalog="system" width="116" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

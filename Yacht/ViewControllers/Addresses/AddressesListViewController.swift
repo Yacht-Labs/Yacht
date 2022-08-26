@@ -12,22 +12,33 @@ class AddressesListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var addresses: [NSManagedObject] = []
     
-  override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = Constants.Colors.viewBackgroundColor
-        navigationItem.title = "Accounts"
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
-      
+          
         tableView.delegate = self
         tableView.dataSource = self
 
         loadAddresses()
+          
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate,
+              let deviceId = appDelegate.deviceId  else {
+            return
+        }
+          
+        NetworkManager().getAccounts(deviceId: deviceId) { accounts, error in
+            print(accounts)
+        }
     }
     
     @objc func addTapped() {
-        
+        let storyboard = UIStoryboard(name: "EnterAddressFlow", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "EnterAddressViewController") as EnterAddressViewController
+        vc.fromHome = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func loadAddresses() {
@@ -58,6 +69,7 @@ extension AddressesListViewController: UITableViewDelegate, UITableViewDataSourc
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddressTableViewCell", for: indexPath) as? AddressTableViewCell else {
             return UITableViewCell()
         }
+        cell.contentView.backgroundColor = Constants.Colors.viewBackgroundColor
         
         let address = addresses[indexPath.row]
         cell.addressLabel.text = address.value(forKey: "address") as? String

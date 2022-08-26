@@ -14,6 +14,8 @@ class AccountDetailViewController: UIViewController {
     var address: String?
     var nickname: String?
     
+    var eulerTokens: [EulerToken] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,8 +32,20 @@ class AccountDetailViewController: UIViewController {
         
         view.backgroundColor = Constants.Colors.viewBackgroundColor
         tableView.backgroundColor = Constants.Colors.viewBackgroundColor
+        
+        getEulerTokens()
+        
+
     }
     
+    func getEulerTokens() {
+        NetworkManager().getEulerTokens { tokens, error in
+            self.eulerTokens = tokens ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegate {
@@ -49,7 +63,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
         case 2:
             return 1
         case 3:
-            return 7
+            return eulerTokens.count
         default:
             return 0
         }
@@ -111,7 +125,16 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             }
         } else if indexPath.section == 3 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell") as? AssetTableViewCell {
-                let url = URL(string: "https://i.imgur.com/FntEEy0.png")
+                
+                let eulerToken = eulerTokens[indexPath.row]
+                cell.symbol.text = eulerToken.symbol
+                cell.name.text = eulerToken.name
+                cell.borrowAPY.text = String(eulerToken.borrowAPY) + "%"
+                cell.lendAPY.text = String(eulerToken.supplyAPY) + "%"
+                
+                guard let urlString = Constants.tokenImage[eulerToken.address] else { return cell }
+                
+                let url = URL(string: urlString)
                 loadData(url: url!) { (data, _) in
                     if let data = data {
                         DispatchQueue.main.async {
@@ -119,6 +142,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                         }
                     }
                 }
+                
                 return cell
             }
         }
@@ -145,6 +169,11 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "HealthNotificationViewController") as HealthNotificationViewController
             self.navigationController?.pushViewController(vc, animated: true)
+        case 3:
+            let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "IRNotificationViewController") as IRNotificationViewController
+            vc.irNotificationType = .asset
+            self.navigationController?.pushViewController(vc, animated: true)
         default:
             return
         }
@@ -154,11 +183,19 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
 extension AccountDetailViewController: EDCollectionViewCellDelegate {
     func edCollectionViewCellTapped(collectionviewcell: EulerDepositCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingDepositTableViewCell) {
         print("You tapped the deposit cell \(index)")
+        let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "IRNotificationViewController") as IRNotificationViewController
+        vc.irNotificationType = .deposit
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension AccountDetailViewController: ELCollectionViewCellDelegate {
     func elCollectionViewCellTapped(collectionviewcell: EulerLoanCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingLoanTableViewCell) {
         print("You tapped the loan cell \(index)")
+        let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "IRNotificationViewController") as IRNotificationViewController
+        vc.irNotificationType = .loan
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

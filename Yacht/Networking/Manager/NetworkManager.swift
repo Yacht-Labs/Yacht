@@ -24,11 +24,25 @@ enum Result<String> {
 
 struct NetworkManager {
     static let environment: NetworkEnvironment = .localhost
-    private let router = Router<WalletServiceAPI>()
-
-    func makeWethDeposit(value: String, from: String, chainId: Int, contractAddress: String, completion: @escaping (_ unsignedTx: UnsignedTx?, _ error: String?) -> Void) {
-        router.request(.buildWethDeposit(value: value, from: from, chainId: chainId, contractAddress: contractAddress)) { data, response, error in
-            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: UnsignedTx.self)
+    private let router = Router<NotificationServiceAPI>()
+    
+    func getEulerTokens(completion: @escaping (_ tokens: [EulerToken]?, _ error: String?) -> Void) {
+        router.request(.getEulerTokens) { data, response, error in
+            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [EulerToken].self)
+            completion(result.0, result.1)
+        }
+    }
+    
+    func postAccount(address: String, deviceId: String, name: String, completion: @escaping (_ account: Account?, _ error: String?) -> Void) {
+        router.request(.postAccount(address: address, deviceId: deviceId, name: name)) { data, response, error in
+            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: Account.self)
+            completion(result.0, result.1)
+        }
+    }
+    
+    func getAccounts(deviceId: String, completion: @escaping (_ accounts: [Account]?, _ error: String?) -> Void) {
+        router.request(.getAccounts(deviceId: deviceId)) { data, response, error in
+            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [Account].self)
             completion(result.0, result.1)
         }
     }
