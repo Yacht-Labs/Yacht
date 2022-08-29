@@ -15,6 +15,7 @@ enum IRType {
 
 class IRNotificationViewController: UIViewController {
     var irNotificationType: IRType = .asset
+    @IBOutlet weak var yachtImage: UIImageView!
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var symbol: UILabel!

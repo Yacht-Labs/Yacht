@@ -16,6 +16,7 @@ class NetworkSelectViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
 
 }
@@ -45,5 +46,9 @@ extension NetworkSelectViewController: UITableViewDelegate, UITableViewDataSourc
         let lsm = LocalStorageManager()
         lsm.setSelectedChainId(chainId: chainId)
         tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }

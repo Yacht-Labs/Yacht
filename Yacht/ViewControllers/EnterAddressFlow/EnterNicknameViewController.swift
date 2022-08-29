@@ -27,15 +27,18 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        let networkManager = NetworkManager()
+        
         guard let deviceId = appDelegate.deviceId else {
             // TODO error message about notifications
+            networkManager.showErrorAlert(title: "Notifications Disabled", message: "Notifications must be enabled to use this app. Please turn on notifications in settings and hard restart the app", vc: self)
             return
         }
         
         if checkIfValidNickname(nickname: nickname) {
-            throbYacht()
+            networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: false)
             continueButton.isEnabled = false
-            NetworkManager().postAccount(address: address, deviceId: deviceId, name: nickname) { account, error in
+            networkManager.postAccount(address: address, deviceId: deviceId, name: nickname) { account, error in
                 if error == nil {
                     DispatchQueue.main.async {
                         self.createAddressInCoreData(address: address, nickname: nickname, deviceId: deviceId, id: account?.id ?? "")
@@ -44,8 +47,9 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.stopThrob()
+                        networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: false)
                         self.continueButton.isEnabled = true
+                        networkManager.showErrorAlert(title: "Network Error", message: "Failed to save. Check your network connection", vc: self)
                     }
                     // TODO give network fail error message
                 }
@@ -106,6 +110,9 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
         let newAddress = NSManagedObject(entity: addressEntity, insertInto: managedContext)
         newAddress.setValue(address, forKeyPath: "address")
         newAddress.setValue(nickname, forKeyPath: "nickname")
+        newAddress.setValue(deviceId, forKeyPath: "deviceId")
+        newAddress.setValue(id, forKeyPath: "id")
+        newAddress.setValue(true, forKeyPath: "isActive")
         
         do {
             try managedContext.save()
@@ -130,16 +137,4 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
             return 0
         }
     }
-    
-    func throbYacht() {
-        UIView.animate(withDuration: 1.0, delay:0, options: [.repeat, .autoreverse], animations: {
-            self.yachtImage.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        }, completion: nil)
-    }
-    
-    func stopThrob() {
-        self.yachtImage.layer.removeAllAnimations()
-    }
-    
-   
 }

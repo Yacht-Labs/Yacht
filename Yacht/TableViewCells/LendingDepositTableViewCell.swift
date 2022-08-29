@@ -15,11 +15,11 @@ class LendingDepositTableViewCell: UITableViewCell {
 
     var collectionView: UICollectionView?
     weak var edCellDelegate: EDCollectionViewCellDelegate?
+    var deposits: [EulerLoan] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-
     }
     
     override func layoutSubviews() {
@@ -62,20 +62,51 @@ extension LendingDepositTableViewCell: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return deposits.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EulerDepositCollectionViewCell", for: indexPath) as? EulerDepositCollectionViewCell {
             
-            let url = URL(string: "https://i.imgur.com/FntEEy0.png")
-            loadData(url: url!) { (data, _) in
-                if let data = data {
-                    DispatchQueue.main.async {
-                        cell.tokenImage.image = UIImage(data: data)
+            let deposit = deposits[indexPath.row]
+            
+            if let urlString = Constants.tokenImage[deposit.token.address] {
+                let url = URL(string: urlString)
+                loadData(url: url!) { (data, _) in
+                    if let data = data {
+                        DispatchQueue.main.async {
+                            cell.tokenImage.image = UIImage(data: data)
+                        }
                     }
                 }
             }
+            cell.tokenName.text = deposit.token.name
+            
+            let formatter = NumberFormatter()
+            
+            formatter.numberStyle = .decimal
+            formatter.maximumFractionDigits = 2
+            
+            let riskAdjustedValue = (Float(deposit.amount) ?? 0) * Float(deposit.token.collateralFactor)
+            cell.amountDeposited.text = (formatter.string(from: NSNumber(value: (Float(deposit.amount) ?? 0))) ?? "??") + " \(deposit.token.symbol)"
+            cell.riskAdjustedValue.text = (formatter.string(from: NSNumber(value: riskAdjustedValue)) ?? "??") + " \(deposit.token.symbol)"
+            
+            formatter.numberStyle = .currency
+            formatter.currencyCode = "USD"
+            formatter.maximumFractionDigits = 0
+            
+            cell.amountDepositedDollars.text = formatter.string(from: NSNumber(value: ((Float(deposit.amount) ?? 0) * (Float(deposit.token.price) ?? 0))))
+            cell.riskAdjustedValueDollars.text = formatter.string(from: NSNumber(value: riskAdjustedValue * (Float(deposit.token.price) ?? 0)))
+            
+            formatter.numberStyle = .percent
+            formatter.maximumFractionDigits = 2
+            
+            cell.lendAPY.text = formatter.string(from: NSNumber(value: deposit.token.supplyAPY / 100))
+            
+            formatter.numberStyle = .decimal
+            formatter.maximumFractionDigits = 2
+            
+            cell.collateralFactor.text = formatter.string(from: NSNumber(value: deposit.token.collateralFactor))
             
             return cell
         }

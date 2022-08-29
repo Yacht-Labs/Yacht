@@ -34,7 +34,7 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if !fromHome {
             if getAddressCount() > 0 {
                 let vc = HomeViewController()

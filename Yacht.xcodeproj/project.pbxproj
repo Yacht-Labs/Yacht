@@ -50,7 +50,6 @@
 		7F5F837328B91963008B8EDB /* NetworkSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837228B91963008B8EDB /* NetworkSelectTableViewCell.swift */; };
 		7F5F837528B91A65008B8EDB /* NetworkSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837428B91A65008B8EDB /* NetworkSelectViewController.swift */; };
 		7F5F837828B91C91008B8EDB /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837728B91C91008B8EDB /* LocalStorageManager.swift */; };
-		7F5F837B28B94765008B8EDB /* UnsignedTx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837A28B94765008B8EDB /* UnsignedTx.swift */; };
 		7F5F837D28B947BD008B8EDB /* EulerToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F837C28B947BD008B8EDB /* EulerToken.swift */; };
 		7F5F838628B94B69008B8EDB /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F838328B94B68008B8EDB /* URLParameterEncoder.swift */; };
 		7F5F838728B94B69008B8EDB /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F838428B94B69008B8EDB /* ParameterEncoding.swift */; };
@@ -63,6 +62,10 @@
 		7F5F839928B94B9A008B8EDB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839428B94B9A008B8EDB /* HTTPMethod.swift */; };
 		7F5F839A28B94B9A008B8EDB /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839528B94B9A008B8EDB /* NetworkRouter.swift */; };
 		7F5F839C28B9671F008B8EDB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839B28B9671F008B8EDB /* Account.swift */; };
+		7F5F839E28B9B04B008B8EDB /* EulerNotificationHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839D28B9B04B008B8EDB /* EulerNotificationHealth.swift */; };
+		7F5F83A028B9B15E008B8EDB /* EulerNotificationIR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839F28B9B15E008B8EDB /* EulerNotificationIR.swift */; };
+		7F5F83A228BCFEE2008B8EDB /* EulerLoan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A128BCFEE2008B8EDB /* EulerLoan.swift */; };
+		7F5F83A428BD0586008B8EDB /* EulerAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A328BD0586008B8EDB /* EulerAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +134,6 @@
 		7F5F837228B91963008B8EDB /* NetworkSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSelectTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F837428B91A65008B8EDB /* NetworkSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSelectViewController.swift; sourceTree = "<group>"; };
 		7F5F837728B91C91008B8EDB /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
-		7F5F837A28B94765008B8EDB /* UnsignedTx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsignedTx.swift; sourceTree = "<group>"; };
 		7F5F837C28B947BD008B8EDB /* EulerToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerToken.swift; sourceTree = "<group>"; };
 		7F5F838328B94B68008B8EDB /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		7F5F838428B94B69008B8EDB /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
@@ -144,6 +146,10 @@
 		7F5F839428B94B9A008B8EDB /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		7F5F839528B94B9A008B8EDB /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		7F5F839B28B9671F008B8EDB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		7F5F839D28B9B04B008B8EDB /* EulerNotificationHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerNotificationHealth.swift; sourceTree = "<group>"; };
+		7F5F839F28B9B15E008B8EDB /* EulerNotificationIR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerNotificationIR.swift; sourceTree = "<group>"; };
+		7F5F83A128BCFEE2008B8EDB /* EulerLoan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerLoan.swift; sourceTree = "<group>"; };
+		7F5F83A328BD0586008B8EDB /* EulerAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,9 +380,12 @@
 		7F5F837928B94721008B8EDB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7F5F837A28B94765008B8EDB /* UnsignedTx.swift */,
-				7F5F837C28B947BD008B8EDB /* EulerToken.swift */,
 				7F5F839B28B9671F008B8EDB /* Account.swift */,
+				7F5F83A328BD0586008B8EDB /* EulerAccount.swift */,
+				7F5F83A128BCFEE2008B8EDB /* EulerLoan.swift */,
+				7F5F839D28B9B04B008B8EDB /* EulerNotificationHealth.swift */,
+				7F5F839F28B9B15E008B8EDB /* EulerNotificationIR.swift */,
+				7F5F837C28B947BD008B8EDB /* EulerToken.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -582,6 +591,7 @@
 				7F5F836028B80EDC008B8EDB /* HealthNotificationViewController.swift in Sources */,
 				7F5F836D28B84951008B8EDB /* HomeViewController.swift in Sources */,
 				7F5F838C28B94B87008B8EDB /* NotificationServiceAPI.swift in Sources */,
+				7F5F83A028B9B15E008B8EDB /* EulerNotificationIR.swift in Sources */,
 				7F5F834B28B7C263008B8EDB /* AccountDetailViewController.swift in Sources */,
 				7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */,
 				7F28920B28B53A0000B501B6 /* QRScannerViewController.swift in Sources */,
@@ -589,14 +599,17 @@
 				7F5F838728B94B69008B8EDB /* ParameterEncoding.swift in Sources */,
 				7F5F839A28B94B9A008B8EDB /* NetworkRouter.swift in Sources */,
 				7F5F839728B94B9A008B8EDB /* HTTPTask.swift in Sources */,
+				7F5F839E28B9B04B008B8EDB /* EulerNotificationHealth.swift in Sources */,
 				7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */,
 				7F5F839028B94B8F008B8EDB /* NetworkManager.swift in Sources */,
+				7F5F83A228BCFEE2008B8EDB /* EulerLoan.swift in Sources */,
 				7F5F836428B82AA5008B8EDB /* IRNotificationViewController.swift in Sources */,
 				7F5F837128B90B85008B8EDB /* SettingNotificationTableViewCell.swift in Sources */,
 				7F5F839828B94B9A008B8EDB /* EndPointType.swift in Sources */,
 				7F5F839928B94B9A008B8EDB /* HTTPMethod.swift in Sources */,
 				7F2891CF28B52E9B00B501B6 /* Yacht.xcdatamodeld in Sources */,
 				7F5F835428B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift in Sources */,
+				7F5F83A428BD0586008B8EDB /* EulerAccount.swift in Sources */,
 				7F5F836F28B90B75008B8EDB /* SettingNetworkTableViewCell.swift in Sources */,
 				7F5F833E28B6C4F3008B8EDB /* EnterNicknameViewController.swift in Sources */,
 				7F5F838828B94B69008B8EDB /* JSONParameterEncoder.swift in Sources */,
@@ -609,7 +622,6 @@
 				7F5F835A28B7CBA6008B8EDB /* Helpers.swift in Sources */,
 				7F5F835C28B7D628008B8EDB /* HealthScoreTableViewCell.swift in Sources */,
 				7F5F833C28B6BC21008B8EDB /* Constants.swift in Sources */,
-				7F5F837B28B94765008B8EDB /* UnsignedTx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

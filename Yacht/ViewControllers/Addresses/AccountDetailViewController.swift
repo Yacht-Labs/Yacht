@@ -13,8 +13,11 @@ class AccountDetailViewController: UIViewController {
     @IBOutlet weak var copyAddressImage: UIImageView!
     var address: String?
     var nickname: String?
+    var accountId: String?
+    var deviceId: String?
     
     var eulerTokens: [EulerToken] = []
+    var eulerAccount: EulerAccount?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +35,25 @@ class AccountDetailViewController: UIViewController {
         
         view.backgroundColor = Constants.Colors.viewBackgroundColor
         tableView.backgroundColor = Constants.Colors.viewBackgroundColor
-        
-        getEulerTokens()
-        
 
+        getEulerAccount()
+  
+    }
+    
+    func getEulerAccount() {
+        let networkManager = NetworkManager()
+        networkManager.getEulerAccount(address: address ?? "0x0000000000000000000000000000000000000000") { account, error in
+            self.eulerAccount = account
+            self.getEulerTokens()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func getEulerTokens() {
-        NetworkManager().getEulerTokens { tokens, error in
+        let networkManager = NetworkManager()
+        networkManager.getEulerTokens { tokens, error in
             self.eulerTokens = tokens ?? []
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -110,17 +124,24 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HealthScoreTableViewCell") as? HealthScoreTableViewCell {
+                let healthScore = eulerAccount?.healthScore ?? 0
+                if healthScore > 0 {
+                    cell.healthScore = eulerAccount?.healthScore ?? 0
+                    cell.setHealthScore()
+                }
                 return cell
             }
         }
         if indexPath.section == 1 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "LendingDepositTableViewCell") as? LendingDepositTableViewCell {
                 cell.edCellDelegate = self
+                cell.deposits = eulerAccount?.supplies ?? []
                 return cell
             }
         } else if indexPath.section == 2 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "LendingLoanTableViewCell") as? LendingLoanTableViewCell {
                 cell.elCellDelegate = self
+                cell.borrows = eulerAccount?.borrows ?? []
                 return cell
             }
         } else if indexPath.section == 3 {
@@ -168,6 +189,8 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
         case 0:
             let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "HealthNotificationViewController") as HealthNotificationViewController
+            vc.accountId = accountId
+            vc.deviceId = deviceId
             self.navigationController?.pushViewController(vc, animated: true)
         case 3:
             let storyboard = UIStoryboard(name: "Addresses", bundle: nil)

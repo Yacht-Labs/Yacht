@@ -115,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0la-Se-HRh">
-                                <rect key="frame" x="0.0" y="54" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="822"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HealthScoreTableViewCell" rowHeight="60" id="P1a-Sn-Z5X" customClass="HealthScoreTableViewCell" customModule="Yacht" customModuleProvider="target">
@@ -141,7 +141,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1S-bt-A7N">
-                                                    <rect key="frame" x="226" y="15.5" width="2" height="12"/>
+                                                    <rect key="frame" x="26" y="15.5" width="2" height="12"/>
                                                     <color key="backgroundColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="3tA-fW-wld"/>
@@ -149,7 +149,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2B-zl-1Tf">
-                                                    <rect key="frame" x="215.5" y="32" width="23" height="20"/>
+                                                    <rect key="frame" x="15.5" y="32" width="23" height="20"/>
                                                     <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -159,7 +159,7 @@
                                             <constraints>
                                                 <constraint firstItem="10L-7I-hcZ" firstAttribute="leading" secondItem="JeZ-tk-Q6Y" secondAttribute="trailing" id="L5k-5l-zwf"/>
                                                 <constraint firstItem="JeZ-tk-Q6Y" firstAttribute="leading" secondItem="ebo-N1-1uz" secondAttribute="leading" constant="26" id="Mwn-Pa-9S1"/>
-                                                <constraint firstItem="X1S-bt-A7N" firstAttribute="leading" secondItem="JeZ-tk-Q6Y" secondAttribute="leading" constant="200" id="Uhi-Vh-YtM"/>
+                                                <constraint firstItem="X1S-bt-A7N" firstAttribute="leading" secondItem="JeZ-tk-Q6Y" secondAttribute="leading" id="Uhi-Vh-YtM"/>
                                                 <constraint firstItem="10L-7I-hcZ" firstAttribute="centerY" secondItem="JeZ-tk-Q6Y" secondAttribute="centerY" id="cf6-QU-r66"/>
                                                 <constraint firstItem="V2B-zl-1Tf" firstAttribute="centerX" secondItem="X1S-bt-A7N" secondAttribute="centerX" id="eFH-JK-NTL"/>
                                                 <constraint firstItem="V2B-zl-1Tf" firstAttribute="top" secondItem="X1S-bt-A7N" secondAttribute="bottom" constant="4.5" id="gsp-Gd-cgC"/>
@@ -169,6 +169,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="blackZone" destination="10L-7I-hcZ" id="cGU-Hs-qMq"/>
+                                            <outlet property="healthConstraint" destination="Uhi-Vh-YtM" id="FDz-y5-ufL"/>
+                                            <outlet property="healthScoreLabel" destination="V2B-zl-1Tf" id="Wtx-Dc-OP2"/>
+                                            <outlet property="redZone" destination="JeZ-tk-Q6Y" id="bQE-A7-aVu"/>
+                                            <outlet property="tick" destination="X1S-bt-A7N" id="4UE-MD-PiG"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LendingDepositTableViewCell" id="ZWq-Gu-VDp" customClass="LendingDepositTableViewCell" customModule="Yacht" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="104.5" width="414" height="44"/>
@@ -253,6 +260,12 @@
                                                     <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="6Xr-PZ-bcS"/>
+                                                            <exclude reference="Vxv-eV-e00"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrapped staked ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWI-46-Ezw">
                                                     <rect key="frame" x="78" y="45" width="200" height="20"/>
@@ -298,6 +311,10 @@
                                                 <mask key="subviews">
                                                     <exclude reference="jzI-Gy-yLA"/>
                                                 </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="Ia4-9M-poi"/>
+                                                    <exclude reference="yx2-ro-Stb"/>
+                                                </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -332,7 +349,7 @@
                         <constraints>
                             <constraint firstItem="0la-Se-HRh" firstAttribute="centerX" secondItem="ryd-L6-9kS" secondAttribute="centerX" id="AK9-AZ-QSz"/>
                             <constraint firstItem="cwA-qK-FkR" firstAttribute="centerY" secondItem="x4U-l4-98d" secondAttribute="centerY" id="Ewx-jI-m7p"/>
-                            <constraint firstItem="0la-Se-HRh" firstAttribute="top" secondItem="ryd-L6-9kS" secondAttribute="top" constant="10" id="JVd-YA-lyH"/>
+                            <constraint firstItem="0la-Se-HRh" firstAttribute="top" secondItem="ryd-L6-9kS" secondAttribute="top" constant="30" id="JVd-YA-lyH"/>
                             <constraint firstAttribute="bottom" secondItem="0la-Se-HRh" secondAttribute="bottom" id="YRJ-Vd-WHE"/>
                             <constraint firstItem="x4U-l4-98d" firstAttribute="top" secondItem="ryd-L6-9kS" secondAttribute="top" constant="4" id="dqo-Sp-QhA"/>
                             <constraint firstItem="x4U-l4-98d" firstAttribute="leading" secondItem="ryd-L6-9kS" secondAttribute="leading" constant="20" id="hrg-Ob-TZp"/>
@@ -397,6 +414,13 @@
                                 <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YachtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-sR-Um2">
+                                <rect key="frame" x="157" y="654" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Cni-Uj-B3K"/>
+                                    <constraint firstAttribute="width" secondItem="qVY-sR-Um2" secondAttribute="height" multiplier="1:1" id="rSR-bW-ShO"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dM0-KJ-fcz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -408,7 +432,9 @@
                             <constraint firstItem="SZr-DF-hwI" firstAttribute="centerY" secondItem="gfB-BG-TWP" secondAttribute="centerY" id="M0P-3S-Hha"/>
                             <constraint firstItem="SZr-DF-hwI" firstAttribute="trailing" secondItem="1yV-Cg-b9C" secondAttribute="trailing" id="Oc5-hx-EnR"/>
                             <constraint firstItem="HbE-Q7-9pG" firstAttribute="centerX" secondItem="dM0-KJ-fcz" secondAttribute="centerX" id="SLC-J9-QNy"/>
+                            <constraint firstItem="HbE-Q7-9pG" firstAttribute="top" secondItem="qVY-sR-Um2" secondAttribute="bottom" constant="40" id="Vk5-hD-l9H"/>
                             <constraint firstItem="gfB-BG-TWP" firstAttribute="top" secondItem="dM0-KJ-fcz" secondAttribute="top" constant="100" id="Z6j-xQ-LDh"/>
+                            <constraint firstItem="qVY-sR-Um2" firstAttribute="centerX" secondItem="dM0-KJ-fcz" secondAttribute="centerX" id="bp3-Ep-ubC"/>
                             <constraint firstItem="dM0-KJ-fcz" firstAttribute="trailing" secondItem="1yV-Cg-b9C" secondAttribute="trailing" constant="24" id="gtf-t0-dtb"/>
                             <constraint firstItem="1yV-Cg-b9C" firstAttribute="top" secondItem="gfB-BG-TWP" secondAttribute="bottom" constant="20" id="pOs-zd-Nnk"/>
                         </constraints>
@@ -417,6 +443,7 @@
                         <outlet property="healthScoreLabel" destination="SZr-DF-hwI" id="p2J-Cu-k3l"/>
                         <outlet property="saveButton" destination="HbE-Q7-9pG" id="tQR-u3-ZLg"/>
                         <outlet property="slider" destination="1yV-Cg-b9C" id="Dj9-yA-daB"/>
+                        <outlet property="yachtImage" destination="qVY-sR-Um2" id="hVT-Ug-GMi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMD-Bl-9An" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -482,7 +509,7 @@
                                 <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.20000000298023224" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="PA4-qS-Ug7">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="10" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="PA4-qS-Ug7">
                                 <rect key="frame" x="22" y="198" width="370" height="31"/>
                                 <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="maximumTrackTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -524,7 +551,7 @@
                                 <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.20000000298023224" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="EdY-BV-Y7L">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="10" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="EdY-BV-Y7L">
                                 <rect key="frame" x="22" y="434" width="370" height="31"/>
                                 <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="maximumTrackTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -539,6 +566,13 @@
                                 <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YachtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="qxR-du-dKQ">
+                                <rect key="frame" x="157" y="654" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qxR-du-dKQ" secondAttribute="height" multiplier="1:1" id="ID7-3X-ApT"/>
+                                    <constraint firstAttribute="width" constant="100" id="NQq-hP-VCv"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KNt-3Q-tf1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -557,6 +591,7 @@
                             <constraint firstItem="KNt-3Q-tf1" firstAttribute="trailing" secondItem="EdY-BV-Y7L" secondAttribute="trailing" constant="24" id="PmN-Hz-Wfp"/>
                             <constraint firstItem="3hu-dt-tXc" firstAttribute="top" secondItem="eNp-n4-qSd" secondAttribute="bottom" constant="60" id="RyF-Yg-L8n"/>
                             <constraint firstItem="YeN-Iv-QWo" firstAttribute="centerY" secondItem="3hu-dt-tXc" secondAttribute="centerY" id="U5m-GB-fBr"/>
+                            <constraint firstItem="qxR-du-dKQ" firstAttribute="centerX" secondItem="KNt-3Q-tf1" secondAttribute="centerX" id="Vvm-Ni-syL"/>
                             <constraint firstItem="B2x-x1-9nu" firstAttribute="top" secondItem="KNt-3Q-tf1" secondAttribute="top" id="WOI-SE-quV"/>
                             <constraint firstItem="9D8-3B-49u" firstAttribute="top" secondItem="PA4-qS-Ug7" secondAttribute="bottom" constant="20" id="Wh0-wW-mkN"/>
                             <constraint firstItem="PA4-qS-Ug7" firstAttribute="top" secondItem="1tD-mC-mKP" secondAttribute="bottom" constant="20" id="X9e-kK-k0C"/>
@@ -565,10 +600,12 @@
                             <constraint firstItem="3hu-dt-tXc" firstAttribute="leading" secondItem="eNp-n4-qSd" secondAttribute="leading" id="cbZ-TX-qHf"/>
                             <constraint firstItem="EdY-BV-Y7L" firstAttribute="leading" secondItem="3hu-dt-tXc" secondAttribute="leading" id="dn5-WW-efd"/>
                             <constraint firstItem="eNp-n4-qSd" firstAttribute="top" secondItem="9D8-3B-49u" secondAttribute="bottom" constant="4" id="evh-Cs-Egv"/>
+                            <constraint firstItem="qxR-du-dKQ" firstAttribute="width" secondItem="qxR-du-dKQ" secondAttribute="height" multiplier="1:1" id="h56-Rd-hKD"/>
                             <constraint firstItem="FWw-hk-PVX" firstAttribute="trailing" secondItem="PA4-qS-Ug7" secondAttribute="trailing" id="k8P-jG-XgS"/>
                             <constraint firstItem="ikB-dj-Xl5" firstAttribute="top" secondItem="Bv5-pM-TMS" secondAttribute="bottom" constant="4" id="lhd-Sr-286"/>
                             <constraint firstItem="EdY-BV-Y7L" firstAttribute="top" secondItem="3hu-dt-tXc" secondAttribute="bottom" constant="20" id="lvu-RA-GA6"/>
                             <constraint firstItem="Bv5-pM-TMS" firstAttribute="leading" secondItem="3hu-dt-tXc" secondAttribute="leading" id="nF2-fK-fbs"/>
+                            <constraint firstItem="LdN-lh-MPD" firstAttribute="top" secondItem="qxR-du-dKQ" secondAttribute="bottom" constant="40" id="nTL-lf-MFb"/>
                             <constraint firstItem="YeN-Iv-QWo" firstAttribute="trailing" secondItem="EdY-BV-Y7L" secondAttribute="trailing" id="yKq-4X-qfA"/>
                         </constraints>
                     </view>
@@ -585,6 +622,7 @@
                         <outlet property="topSlider" destination="PA4-qS-Ug7" id="O5U-tL-9tu"/>
                         <outlet property="willNotifyBottom" destination="ikB-dj-Xl5" id="njw-6e-hRb"/>
                         <outlet property="willNotifyTop" destination="eNp-n4-qSd" id="8qQ-ys-Kba"/>
+                        <outlet property="yachtImage" destination="qxR-du-dKQ" id="qXK-UN-R88"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMH-Ux-99P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -611,6 +649,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="YachtLogo" width="230" height="230"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="doc.on.doc" catalog="system" width="116" height="128"/>
         <systemColor name="systemBackgroundColor">

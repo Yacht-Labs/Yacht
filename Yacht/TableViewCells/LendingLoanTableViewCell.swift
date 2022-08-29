@@ -15,6 +15,7 @@ class LendingLoanTableViewCell: UITableViewCell {
 
     var collectionView: UICollectionView?
     weak var elCellDelegate: ELCollectionViewCellDelegate?
+    var borrows: [EulerLoan] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,20 +61,44 @@ extension LendingLoanTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return borrows.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EulerLoanCollectionViewCell", for: indexPath) as? EulerLoanCollectionViewCell {
             
-            let url = URL(string: "https://i.imgur.com/FntEEy0.png")
-            loadData(url: url!) { (data, _) in
-                if let data = data {
-                    DispatchQueue.main.async {
-                        cell.tokenImage.image = UIImage(data: data)
+            let borrow = borrows[indexPath.row]
+            
+            if let urlString = Constants.tokenImage[borrow.token.address] {
+                let url = URL(string: urlString)
+                loadData(url: url!) { (data, _) in
+                    if let data = data {
+                        DispatchQueue.main.async {
+                            cell.tokenImage.image = UIImage(data: data)
+                        }
                     }
                 }
             }
+            cell.tokenName.text = borrow.token.name
+            
+            let formatter = NumberFormatter()
+            
+            formatter.numberStyle = .decimal
+            formatter.maximumFractionDigits = 2
+            
+            cell.amountOwed.text = (formatter.string(from: NSNumber(value: (Float(borrow.amount) ?? 0))) ?? "??") + " \(borrow.token.symbol)"
+            
+            formatter.numberStyle = .currency
+            formatter.currencyCode = "USD"
+            formatter.maximumFractionDigits = 0
+            
+            cell.amountOwedDollars.text = formatter.string(from: NSNumber(value: ((Float(borrow.amount) ?? 0) * (Float(borrow.token.price) ?? 0))))
+            
+            formatter.numberStyle = .percent
+            formatter.maximumFractionDigits = 2
+            
+            cell.borrowAPY.text = formatter.string(from: NSNumber(value: borrow.token.borrowAPY / 100))
+            cell.eulAPY.text = formatter.string(from: NSNumber(value: borrow.token.eulAPY / 100))
             
             return cell
         }
