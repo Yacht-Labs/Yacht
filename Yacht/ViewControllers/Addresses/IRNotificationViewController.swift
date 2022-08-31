@@ -15,6 +15,10 @@ enum IRType {
 
 class IRNotificationViewController: UIViewController {
     var irNotificationType: IRType = .asset
+    var lendAPY: Double = 0
+    var borrowAPY: Double = 0
+    let numberFormatter: NumberFormatter = NumberFormatter()
+    
     @IBOutlet weak var yachtImage: UIImageView!
     
     @IBOutlet weak var saveButton: UIButton!
@@ -59,6 +63,34 @@ class IRNotificationViewController: UIViewController {
             .foregroundColor: Constants.Colors.viewBackgroundColor
         ]
         saveButton.setAttributedTitle(NSAttributedString(string: "Save", attributes: attributes), for: .normal)
+        
+        //let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .percent
+        numberFormatter.maximumFractionDigits = 0
+        
+        changePercentTop.text = numberFormatter.string(from: NSNumber(value: (topSlider.value / 100)))
+        topSlider.addTarget(self, action: #selector(onTopSlide), for: UIControl.Event.valueChanged)
+        numberFormatter.maximumFractionDigits = 2
+        let currentAPY = Float(lendAPY)
+        let upperbound = Float(topSlider.value / 100) * ((currentAPY / 100) + 1)
+        let lowerbound = Float(topSlider.value / 100) * (Float(lendAPY) / 100)
+        currentTop.text = "Current Lend APY: " + (numberFormatter.string(from: NSNumber(value: currentAPY / 100)) ?? "0")
+        willNotifyTop.text = "Will notify below " +
+        (numberFormatter.string(from: NSNumber(value: lowerbound)) ?? "0") + ", and above " +
+        (numberFormatter.string(from: NSNumber(value: upperbound)) ?? "0")
+    }
+    
+    @objc
+    func onTopSlide() {
+        numberFormatter.maximumFractionDigits = 0
+        changePercentTop.text = numberFormatter.string(from: NSNumber(value: (topSlider.value / 100)))
+        numberFormatter.maximumFractionDigits = 2
+        let currentAPY = Float(lendAPY)
+        let upperbound = Float(topSlider.value / 100) * ((currentAPY / 100) + 1)
+        let lowerbound = Float(topSlider.value / 100) * (Float(lendAPY) / 100)
+        willNotifyTop.text = "Will notify below " +
+        (numberFormatter.string(from: NSNumber(value: lowerbound)) ?? "0") + ", and above " +
+        (numberFormatter.string(from: NSNumber(value: upperbound)) ?? "0")
         
     }
     

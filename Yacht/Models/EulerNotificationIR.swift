@@ -12,10 +12,13 @@ struct EulerNotificationIR {
     let accountId: String
     let deviceId: String
     let tokenAddress: String
-    let borrowAPY: String?
-    let supplyAPY: String?
-    let borrowThreshold: String?
-    let supplyThreshold: String?
+    let borrowAPY: Float?
+    let supplyAPY: Float?
+    let borrowLowerThreshold: Int?
+    let borrowUpperThreshold: Int?
+    let supplyLowerThreshold: Int?
+    let supplyUpperThreshold: Int?
+    let isActive: Bool
 }
 
 extension EulerNotificationIR: Decodable {
@@ -27,8 +30,11 @@ extension EulerNotificationIR: Decodable {
         case tokenAddress
         case borrowAPY
         case supplyAPY
-        case borrowThreshold
-        case supplyThreshold
+        case borrowLowerThreshold
+        case borrowUpperThreshold
+        case supplyLowerThreshold
+        case supplyUpperThreshold
+        case isActive
     }
     
     init(from decoder: Decoder) throws {
@@ -38,10 +44,13 @@ extension EulerNotificationIR: Decodable {
         accountId = try values.decode(String.self, forKey: .accountId)
         deviceId = try values.decode(String.self, forKey: .deviceId)
         tokenAddress = try values.decode(String.self, forKey: .tokenAddress)
-        borrowAPY = try values.decodeIfPresent(String.self, forKey: .borrowAPY)
-        supplyAPY = try values.decodeIfPresent(String.self, forKey: .supplyAPY)
-        borrowThreshold = try values.decodeIfPresent(String.self, forKey: .borrowThreshold)
-        supplyThreshold = try values.decodeIfPresent(String.self, forKey: .supplyThreshold)
+        borrowAPY = try values.decodeIfPresent(Float.self, forKey: .borrowAPY)
+        supplyAPY = try values.decodeIfPresent(Float.self, forKey: .supplyAPY)
+        borrowLowerThreshold = try values.decodeIfPresent(Int.self, forKey: .borrowLowerThreshold)
+        borrowUpperThreshold = try values.decodeIfPresent(Int.self, forKey: .borrowUpperThreshold)
+        supplyLowerThreshold = try values.decodeIfPresent(Int.self, forKey: .supplyLowerThreshold)
+        supplyUpperThreshold = try values.decodeIfPresent(Int.self, forKey: .supplyUpperThreshold)
+        isActive = try values.decode(Bool.self, forKey: .isActive)
     }
     
 }

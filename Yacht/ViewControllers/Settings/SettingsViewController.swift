@@ -70,10 +70,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            let networkManager = NetworkManager()
+            networkManager.showErrorAlert(title: "Coming Soon", message: "Support for additional networks is on our roadmap! Follow us on twitter @Yacht_Labs for release updates", vc: self)
+        } else if indexPath.row == 1 {
             let storyboard = UIStoryboard(name: "Settings", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "NetworkSelectViewController") as NetworkSelectViewController
-            vc.chainId = chainId
+            let vc = storyboard.instantiateViewController(identifier: "ActiveNotificationsViewController") as ActiveNotificationsViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
+                    
     }
 }

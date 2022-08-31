@@ -48,9 +48,13 @@ struct NetworkManager {
         }
     }
     
+    // *********************************
+    // Euler Health Notification Methods
+    // *********************************
+    
     func postEulerNotificationHealth(accountId: String,
                                      deviceId: String,
-                                     thresholdValue: String,
+                                     thresholdValue: Float,
                                      completion: @escaping (_ notification: EulerNotificationHealth?, _ error: String?) -> Void) {
         router.request(.postEulerNotificationHealth(accountId: accountId,
                                                     deviceId: deviceId,
@@ -67,21 +71,43 @@ struct NetworkManager {
         }
     }
     
+    func putEulerNotificationHealth(id: String, thresholdValue: Float, completion: @escaping (_ notification: EulerNotificationHealth?, _ error: String?) -> Void) {
+        router.request(.putEulerNotificationHealth(id: id, thresholdValue: thresholdValue)) { data, response, error in
+            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationHealth.self)
+            completion(result.0, result.1)
+        }
+    }
+    
+    func deleteEulerNotificationHealth(id: String, completion: @escaping (_ notification: EulerNotificationHealth?, _ error: String?) -> Void) {
+        router.request(.deleteEulerNotificationHealth(id: id)) { data, response, error in
+            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationHealth.self)
+            completion(result.0, result.1)
+        }
+    }
+    
+    //*********************************
+    // Euler IR Notification Methods
+    //*********************************
+    
     func postEulerNotificationIR(accountId: String,
                                     deviceId: String,
                                     tokenAddress: String,
-                                    borrowAPY: String?,
-                                    supplyAPY: String?,
-                                    borrowThreshold: String?,
-                                    supplyThreshold:String?,
+                                    borrowAPY: Float?,
+                                    supplyAPY: Float?,
+                                    borrowLowerThreshold: Int?,
+                                    borrowUpperThreshold: Int?,
+                                    supplyLowerThreshold: Int?,
+                                    supplyUpperThreshold: Int?,
                                     completion: @escaping (_ notification: EulerNotificationIR?, _ error: String?) -> Void) {
         router.request(.postEulerNotificationIR(accountId: accountId,
                                                 deviceId: deviceId,
                                                 tokenAddress: tokenAddress,
                                                 borrowAPY: borrowAPY,
                                                 supplyAPY: supplyAPY,
-                                                borrowThreshold: borrowThreshold,
-                                                supplyThreshold: supplyThreshold)) { data, response, error in
+                                                borrowLowerThreshold: borrowLowerThreshold,
+                                                borrowUpperThreshold: borrowUpperThreshold,
+                                                supplyLowerThreshold: supplyLowerThreshold,
+                                                supplyUpperThreshold: supplyUpperThreshold)) { data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationIR.self)
             completion(result.0, result.1)
         }
@@ -93,6 +119,39 @@ struct NetworkManager {
             completion(result.0, result.1)
         }
     }
+    
+    func putEulerNotificationIR(id: String,
+                                    borrowAPY: Float?,
+                                    supplyAPY: Float?,
+                                    borrowLowerThreshold: Int?,
+                                    borrowUpperThreshold: Int?,
+                                    supplyLowerThreshold: Int?,
+                                    supplyUpperThreshold: Int?,
+                                    isActive: Bool?,
+                                    completion: @escaping (_ notification: EulerNotificationIR?, _ error: String?) -> Void) {
+        router.request(.putEulerNotificationIR(id: id,
+                                                borrowAPY: borrowAPY,
+                                                supplyAPY: supplyAPY,
+                                                borrowLowerThreshold: borrowLowerThreshold,
+                                                borrowUpperThreshold: borrowUpperThreshold,
+                                                supplyLowerThreshold: supplyLowerThreshold,
+                                                supplyUpperThreshold: supplyUpperThreshold,
+                                                isActive: isActive)) { data, response, error in
+            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationIR.self)
+            completion(result.0, result.1)
+        }
+    }
+    
+    func deleteEulerNotificationIR(id: String, completion: @escaping (_ notification: EulerNotificationIR?, _ error: String?) -> Void) {
+        router.request(.deleteEulerNotificationIR(id: id)) { data, response, error in
+            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationIR.self)
+            completion(result.0, result.1)
+        }
+    }
+    
+    //*********************************
+    // Euler Account Method
+    //*********************************
     
     func getEulerAccount(address: String, completion: @escaping (_ account: EulerAccount?, _ error: String?) -> Void) {
         router.request(.getEulerAccount(address: address)) { data, response, error in
@@ -127,10 +186,11 @@ struct NetworkManager {
     }
  
     fileprivate func getResult(_ response: HTTPURLResponse) -> Result<String> {
+        print(response)
         switch response.statusCode {
         case 200...299: return .success
-        case 401...500: return .failure(NetworkResponse.authenticationError.rawValue)
-        case 501...599: return .failure(NetworkResponse.badRequest.rawValue)
+        case 401...499: return .failure(NetworkResponse.authenticationError.rawValue)
+        case 500...599: return .failure(NetworkResponse.badRequest.rawValue)
         case 600: return .failure(NetworkResponse.outdated.rawValue)
         default: return .failure(NetworkResponse.failed.rawValue)
         }

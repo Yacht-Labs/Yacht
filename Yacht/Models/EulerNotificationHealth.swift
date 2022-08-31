@@ -11,7 +11,8 @@ struct EulerNotificationHealth {
     let id: String
     let accountId: String
     let deviceId: String
-    let thresholdValue: String
+    let thresholdValue: Float
+    let isActive: Bool
 }
 
 extension EulerNotificationHealth: Decodable {
@@ -21,6 +22,7 @@ extension EulerNotificationHealth: Decodable {
         case accountId
         case deviceId
         case thresholdValue
+        case isActive
     }
     
     init(from decoder: Decoder) throws {
@@ -29,7 +31,8 @@ extension EulerNotificationHealth: Decodable {
         id = try values.decode(String.self, forKey: .id)
         accountId = try values.decode(String.self, forKey: .accountId)
         deviceId = try values.decode(String.self, forKey: .deviceId)
-        thresholdValue = try values.decode(String.self, forKey: .thresholdValue)
+        thresholdValue = try values.decode(Float.self, forKey: .thresholdValue)
+        isActive = try values.decode(Bool.self, forKey: .isActive)
     }
     
 }

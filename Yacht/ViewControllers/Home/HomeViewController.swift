@@ -12,7 +12,7 @@ class HomeViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = Constants.Colors.viewBackgroundColor
         tabBar.tintColor = Constants.Colors.mediumRed
         setupVCs()

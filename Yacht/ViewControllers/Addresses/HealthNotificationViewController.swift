@@ -12,8 +12,12 @@ class HealthNotificationViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var yachtImage: UIImageView!
+    @IBOutlet weak var accountNameLabel: UILabel!
+    
     var accountId: String?
     var deviceId: String?
+    var accountName: String?
+    var notificationId: String?
     
     @IBAction func saveTouched(_ sender: Any) {
         guard let accountId = accountId,
@@ -23,13 +27,30 @@ class HealthNotificationViewController: UIViewController {
         let networkManager = NetworkManager()
         self.saveButton.isEnabled = false
         networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
-        networkManager.postEulerNotificationHealth(accountId: accountId, deviceId: deviceId, thresholdValue: String(round(slider.value * 100) / 100.0)) { notification, error in
-            if error == nil {
+        
+        if let notificationId = notificationId {
+            // Update existing notification
+            networkManager.putEulerNotificationHealth(id: notificationId, thresholdValue: (round(slider.value * 100) / 100.0)) { notification, error in
+                if error != nil {
+                    DispatchQueue.main.async {
+                        networkManager.showErrorAlert(title: "Server Error", message: "Unable to update notification", vc: self)
+                    }
+                }
                 DispatchQueue.main.async {
                     networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
                     self.saveButton.isEnabled = true
                 }
-            } else {
+            }
+        } else {
+            // Create new notification
+            networkManager.postEulerNotificationHealth(accountId: accountId, deviceId: deviceId, thresholdValue: (round(slider.value * 100) / 100.0)) { notification, error in
+                if error != nil {
+                    DispatchQueue.main.async {
+                        networkManager.showErrorAlert(title: "Server Error", message: "Unable to create notification", vc: self)
+                    }
+                } else {
+                    self.notificationId = notification?.id
+                }
                 DispatchQueue.main.async {
                     networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
                     self.saveButton.isEnabled = true
@@ -41,7 +62,11 @@ class HealthNotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        accountNameLabel.text = accountName
+        yachtImage.alpha = 0
+        
         let networkManager = NetworkManager()
+        self.saveButton.isEnabled = false
         if let deviceId = deviceId {
             networkManager.getEulerNotificationHealth(deviceId: deviceId) { notifications, error in
                 if error == nil {          
@@ -49,12 +74,18 @@ class HealthNotificationViewController: UIViewController {
                         return
                     }
                     for notification in notifications {
-                        if notification.accountId == self.accountId {
+                        // See if there is any active notification matching current account
+                        if notification.accountId == self.accountId && notification.isActive {
                             DispatchQueue.main.async {
-                                self.slider.setValue(Float(notification.thresholdValue) ?? 1, animated: true)
+                                self.notificationId = notification.id
+                                self.slider.setValue(notification.thresholdValue , animated: true)
+                                self.healthScoreLabel.text = String(notification.thresholdValue)
                             }
                         }
                     }
+                }
+                DispatchQueue.main.async {
+                    self.saveButton.isEnabled = true
                 }
             }
         }
@@ -70,7 +101,7 @@ class HealthNotificationViewController: UIViewController {
             .foregroundColor: Constants.Colors.viewBackgroundColor
         ]
         saveButton.setAttributedTitle(NSAttributedString(string: "Save", attributes: attributes), for: .normal)
-        yachtImage.alpha = 0
+        
     }
     
     override func viewDidLayoutSubviews() {

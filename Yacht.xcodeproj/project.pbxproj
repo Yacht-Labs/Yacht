@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0E3A8428BFAF730024FDB8 /* ActiveNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8328BFAF730024FDB8 /* ActiveNotificationsViewController.swift */; };
+		7F0E3A8628BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8528BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift */; };
+		7F0E3A8828BFDC2D0024FDB8 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8728BFDC2D0024FDB8 /* UINavigationControllerExtension.swift */; };
+		7F0E3A8E28BFF9A20024FDB8 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8D28BFF9A20024FDB8 /* ToastView.swift */; };
+		7F0E3A9028BFF9A70024FDB8 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8F28BFF9A70024FDB8 /* ToastView.xib */; };
 		7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891C428B52E9B00B501B6 /* AppDelegate.swift */; };
 		7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */; };
 		7F2891CC28B52E9B00B501B6 /* EnterAddressFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891CA28B52E9B00B501B6 /* EnterAddressFlow.storyboard */; };
@@ -66,6 +71,9 @@
 		7F5F83A028B9B15E008B8EDB /* EulerNotificationIR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F839F28B9B15E008B8EDB /* EulerNotificationIR.swift */; };
 		7F5F83A228BCFEE2008B8EDB /* EulerLoan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A128BCFEE2008B8EDB /* EulerLoan.swift */; };
 		7F5F83A428BD0586008B8EDB /* EulerAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A328BD0586008B8EDB /* EulerAccount.swift */; };
+		7F5F83A628BE658D008B8EDB /* SupplyNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A528BE658D008B8EDB /* SupplyNotificationViewController.swift */; };
+		7F5F83AA28BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */; };
+		7F5F83AC28BE712D008B8EDB /* SetIRNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +94,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F0E3A8328BFAF730024FDB8 /* ActiveNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNotificationsViewController.swift; sourceTree = "<group>"; };
+		7F0E3A8528BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		7F0E3A8728BFDC2D0024FDB8 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		7F0E3A8D28BFF9A20024FDB8 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		7F0E3A8F28BFF9A70024FDB8 /* ToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
 		7F2891C128B52E9B00B501B6 /* Yacht.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yacht.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2891C428B52E9B00B501B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +163,9 @@
 		7F5F839F28B9B15E008B8EDB /* EulerNotificationIR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerNotificationIR.swift; sourceTree = "<group>"; };
 		7F5F83A128BCFEE2008B8EDB /* EulerLoan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerLoan.swift; sourceTree = "<group>"; };
 		7F5F83A328BD0586008B8EDB /* EulerAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerAccount.swift; sourceTree = "<group>"; };
+		7F5F83A528BE658D008B8EDB /* SupplyNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyNotificationViewController.swift; sourceTree = "<group>"; };
+		7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyThresholdTableViewCell.swift; sourceTree = "<group>"; };
+		7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIRNotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +193,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F0E3A8928BFF9610024FDB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F0E3A8C28BFF9940024FDB8 /* ToastView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7F0E3A8C28BFF9940024FDB8 /* ToastView */ = {
+			isa = PBXGroup;
+			children = (
+				7F0E3A8D28BFF9A20024FDB8 /* ToastView.swift */,
+				7F0E3A8F28BFF9A70024FDB8 /* ToastView.xib */,
+			);
+			path = ToastView;
+			sourceTree = "<group>";
+		};
 		7F2891B828B52E9B00B501B6 = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +242,7 @@
 				7F5F837628B91C6A008B8EDB /* Managers */,
 				7F5F837928B94721008B8EDB /* Models */,
 				7F5F837E28B94AD6008B8EDB /* Networking */,
+				7F0E3A8928BFF9610024FDB8 /* Views */,
 				7F28920628B538F400B501B6 /* ViewControllers */,
 				7F2891C428B52E9B00B501B6 /* AppDelegate.swift */,
 				7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */,
@@ -311,6 +345,7 @@
 			children = (
 				7F5F835928B7CBA6008B8EDB /* Helpers.swift */,
 				7F5F833B28B6BC21008B8EDB /* Constants.swift */,
+				7F0E3A8728BFDC2D0024FDB8 /* UINavigationControllerExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -326,6 +361,8 @@
 				7F5F836E28B90B75008B8EDB /* SettingNetworkTableViewCell.swift */,
 				7F5F837028B90B85008B8EDB /* SettingNotificationTableViewCell.swift */,
 				7F5F837228B91963008B8EDB /* NetworkSelectTableViewCell.swift */,
+				7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */,
+				7F0E3A8528BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -337,6 +374,8 @@
 				7F5F834A28B7C263008B8EDB /* AccountDetailViewController.swift */,
 				7F5F835F28B80EDC008B8EDB /* HealthNotificationViewController.swift */,
 				7F5F836328B82AA5008B8EDB /* IRNotificationViewController.swift */,
+				7F5F83A528BE658D008B8EDB /* SupplyNotificationViewController.swift */,
+				7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */,
 			);
 			path = Addresses;
 			sourceTree = "<group>";
@@ -357,6 +396,7 @@
 			children = (
 				7F5F836928B84908008B8EDB /* SettingsViewController.swift */,
 				7F5F837428B91A65008B8EDB /* NetworkSelectViewController.swift */,
+				7F0E3A8328BFAF730024FDB8 /* ActiveNotificationsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -545,6 +585,7 @@
 			files = (
 				7F2891D428B52EA000B501B6 /* LaunchScreen.storyboard in Resources */,
 				7F2891D128B52EA000B501B6 /* Assets.xcassets in Resources */,
+				7F0E3A9028BFF9A70024FDB8 /* ToastView.xib in Resources */,
 				7F28920428B5346200B501B6 /* Akkurat-Light-Italic.otf in Resources */,
 				7F28920028B5346200B501B6 /* BookmaniaRegular.otf in Resources */,
 				7F28920228B5346200B501B6 /* Akkurat-Regular.ttf in Resources */,
@@ -581,6 +622,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F5F834628B70DD0008B8EDB /* AddressesListViewController.swift in Sources */,
+				7F0E3A8E28BFF9A20024FDB8 /* ToastView.swift in Sources */,
+				7F0E3A8428BFAF730024FDB8 /* ActiveNotificationsViewController.swift in Sources */,
 				7F5F837D28B947BD008B8EDB /* EulerToken.swift in Sources */,
 				7F5F837828B91C91008B8EDB /* LocalStorageManager.swift in Sources */,
 				7F5F838628B94B69008B8EDB /* URLParameterEncoder.swift in Sources */,
@@ -590,6 +633,7 @@
 				7F5F836A28B84908008B8EDB /* SettingsViewController.swift in Sources */,
 				7F5F836028B80EDC008B8EDB /* HealthNotificationViewController.swift in Sources */,
 				7F5F836D28B84951008B8EDB /* HomeViewController.swift in Sources */,
+				7F5F83AC28BE712D008B8EDB /* SetIRNotificationViewController.swift in Sources */,
 				7F5F838C28B94B87008B8EDB /* NotificationServiceAPI.swift in Sources */,
 				7F5F83A028B9B15E008B8EDB /* EulerNotificationIR.swift in Sources */,
 				7F5F834B28B7C263008B8EDB /* AccountDetailViewController.swift in Sources */,
@@ -599,6 +643,7 @@
 				7F5F838728B94B69008B8EDB /* ParameterEncoding.swift in Sources */,
 				7F5F839A28B94B9A008B8EDB /* NetworkRouter.swift in Sources */,
 				7F5F839728B94B9A008B8EDB /* HTTPTask.swift in Sources */,
+				7F0E3A8628BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift in Sources */,
 				7F5F839E28B9B04B008B8EDB /* EulerNotificationHealth.swift in Sources */,
 				7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */,
 				7F5F839028B94B8F008B8EDB /* NetworkManager.swift in Sources */,
@@ -606,6 +651,7 @@
 				7F5F836428B82AA5008B8EDB /* IRNotificationViewController.swift in Sources */,
 				7F5F837128B90B85008B8EDB /* SettingNotificationTableViewCell.swift in Sources */,
 				7F5F839828B94B9A008B8EDB /* EndPointType.swift in Sources */,
+				7F5F83A628BE658D008B8EDB /* SupplyNotificationViewController.swift in Sources */,
 				7F5F839928B94B9A008B8EDB /* HTTPMethod.swift in Sources */,
 				7F2891CF28B52E9B00B501B6 /* Yacht.xcdatamodeld in Sources */,
 				7F5F835428B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift in Sources */,
@@ -617,11 +663,13 @@
 				7F5F835228B7C5E4008B8EDB /* EulerDepositCollectionViewCell.swift in Sources */,
 				7F28920828B5394900B501B6 /* EnterAddressViewController.swift in Sources */,
 				7F5F837528B91A65008B8EDB /* NetworkSelectViewController.swift in Sources */,
+				7F5F83AA28BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift in Sources */,
 				7F5F835828B7C856008B8EDB /* LendingLoanTableViewCell.swift in Sources */,
 				7F5F834428B70D5F008B8EDB /* AddressTableViewCell.swift in Sources */,
 				7F5F835A28B7CBA6008B8EDB /* Helpers.swift in Sources */,
 				7F5F835C28B7D628008B8EDB /* HealthScoreTableViewCell.swift in Sources */,
 				7F5F833C28B6BC21008B8EDB /* Constants.swift in Sources */,
+				7F0E3A8828BFDC2D0024FDB8 /* UINavigationControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

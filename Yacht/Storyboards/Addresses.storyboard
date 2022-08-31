@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Akkurat-Bold-Italic.otf">
+            <string>Akkurat-BoldItalic</string>
+        </array>
         <array key="Akkurat-Bold.otf">
             <string>Akkurat-Bold</string>
         </array>
@@ -35,7 +38,7 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddressTableViewCell" id="pQp-oS-1af" customClass="AddressTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddressTableViewCell" id="pQp-oS-1af" customClass="AddressTableViewCell" customModule="Yacht" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pQp-oS-1af" id="Qqc-QK-phV">
@@ -118,7 +121,7 @@
                                 <rect key="frame" x="0.0" y="74" width="414" height="822"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HealthScoreTableViewCell" rowHeight="60" id="P1a-Sn-Z5X" customClass="HealthScoreTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HealthScoreTableViewCell" rowHeight="60" id="P1a-Sn-Z5X" customClass="HealthScoreTableViewCell" customModule="Yacht" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P1a-Sn-Z5X" id="ebo-N1-1uz">
@@ -177,7 +180,7 @@
                                             <outlet property="tick" destination="X1S-bt-A7N" id="4UE-MD-PiG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LendingDepositTableViewCell" id="ZWq-Gu-VDp" customClass="LendingDepositTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LendingDepositTableViewCell" id="ZWq-Gu-VDp" customClass="LendingDepositTableViewCell" customModule="Yacht" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="104.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZWq-Gu-VDp" id="0H0-ag-pov">
@@ -187,7 +190,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LendingLoanTableViewCell" id="yrB-zY-Q6Z" customClass="LendingLoanTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LendingLoanTableViewCell" id="yrB-zY-Q6Z" customClass="LendingLoanTableViewCell" customModule="Yacht" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="148.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yrB-zY-Q6Z" id="Thm-f8-LR8">
@@ -197,7 +200,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AssetTableViewCell" rowHeight="92" id="TvR-kc-pPr" customClass="AssetTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AssetTableViewCell" rowHeight="92" id="TvR-kc-pPr" customClass="AssetTableViewCell" customModule="Yacht" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="192.5" width="414" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TvR-kc-pPr" id="J3k-i0-Oj8">
@@ -335,6 +338,15 @@
                                 <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qh-gz-qKD">
+                                <rect key="frame" x="143" y="34" width="30" height="43.5"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="copyTouched:" destination="HaG-95-B1v" eventType="touchUpInside" id="wEa-kC-4ua"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.on.doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-qK-FkR">
                                 <rect key="frame" x="148" y="39.5" width="20" height="32"/>
                                 <color key="tintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -347,12 +359,16 @@
                         <viewLayoutGuide key="safeArea" id="ryd-L6-9kS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7qh-gz-qKD" firstAttribute="centerY" secondItem="cwA-qK-FkR" secondAttribute="centerY" id="7lv-d5-4NP"/>
                             <constraint firstItem="0la-Se-HRh" firstAttribute="centerX" secondItem="ryd-L6-9kS" secondAttribute="centerX" id="AK9-AZ-QSz"/>
                             <constraint firstItem="cwA-qK-FkR" firstAttribute="centerY" secondItem="x4U-l4-98d" secondAttribute="centerY" id="Ewx-jI-m7p"/>
                             <constraint firstItem="0la-Se-HRh" firstAttribute="top" secondItem="ryd-L6-9kS" secondAttribute="top" constant="30" id="JVd-YA-lyH"/>
+                            <constraint firstItem="7qh-gz-qKD" firstAttribute="width" secondItem="cwA-qK-FkR" secondAttribute="width" multiplier="1.5" id="U16-QR-ay8"/>
+                            <constraint firstItem="7qh-gz-qKD" firstAttribute="centerX" secondItem="cwA-qK-FkR" secondAttribute="centerX" id="W0C-hy-WPW"/>
                             <constraint firstAttribute="bottom" secondItem="0la-Se-HRh" secondAttribute="bottom" id="YRJ-Vd-WHE"/>
                             <constraint firstItem="x4U-l4-98d" firstAttribute="top" secondItem="ryd-L6-9kS" secondAttribute="top" constant="4" id="dqo-Sp-QhA"/>
                             <constraint firstItem="x4U-l4-98d" firstAttribute="leading" secondItem="ryd-L6-9kS" secondAttribute="leading" constant="20" id="hrg-Ob-TZp"/>
+                            <constraint firstItem="7qh-gz-qKD" firstAttribute="height" secondItem="cwA-qK-FkR" secondAttribute="height" multiplier="1.5" id="oXd-dr-OIg"/>
                             <constraint firstItem="0la-Se-HRh" firstAttribute="width" secondItem="13m-Mt-QpR" secondAttribute="width" id="ocy-VO-Km3"/>
                             <constraint firstItem="cwA-qK-FkR" firstAttribute="leading" secondItem="x4U-l4-98d" secondAttribute="trailing" constant="8" id="w2t-uc-1vx"/>
                         </constraints>
@@ -415,31 +431,43 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YachtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-sR-Um2">
-                                <rect key="frame" x="157" y="654" width="100" height="100"/>
+                                <rect key="frame" x="157" y="403" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Cni-Uj-B3K"/>
                                     <constraint firstAttribute="width" secondItem="qVY-sR-Um2" secondAttribute="height" multiplier="1:1" id="rSR-bW-ShO"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nighthawk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h6-Ny-pzG">
+                                <rect key="frame" x="20" y="44" width="100" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="hVN-Tl-XgX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="20"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dM0-KJ-fcz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HbE-Q7-9pG" firstAttribute="width" secondItem="YWz-xq-p1T" secondAttribute="width" constant="-36" id="1jb-3Y-xm0"/>
+                            <constraint firstItem="qVY-sR-Um2" firstAttribute="centerY" secondItem="dM0-KJ-fcz" secondAttribute="centerY" id="3Ni-VG-0wI"/>
                             <constraint firstItem="dM0-KJ-fcz" firstAttribute="bottom" secondItem="HbE-Q7-9pG" secondAttribute="bottom" constant="10" id="5LZ-Ve-krF"/>
                             <constraint firstItem="gfB-BG-TWP" firstAttribute="leading" secondItem="dM0-KJ-fcz" secondAttribute="leading" constant="24" id="FHg-kP-B3K"/>
                             <constraint firstItem="1yV-Cg-b9C" firstAttribute="leading" secondItem="gfB-BG-TWP" secondAttribute="leading" id="Ib7-0v-YiD"/>
                             <constraint firstItem="SZr-DF-hwI" firstAttribute="centerY" secondItem="gfB-BG-TWP" secondAttribute="centerY" id="M0P-3S-Hha"/>
                             <constraint firstItem="SZr-DF-hwI" firstAttribute="trailing" secondItem="1yV-Cg-b9C" secondAttribute="trailing" id="Oc5-hx-EnR"/>
+                            <constraint firstItem="2h6-Ny-pzG" firstAttribute="top" secondItem="dM0-KJ-fcz" secondAttribute="top" id="OjE-4P-eMm"/>
                             <constraint firstItem="HbE-Q7-9pG" firstAttribute="centerX" secondItem="dM0-KJ-fcz" secondAttribute="centerX" id="SLC-J9-QNy"/>
-                            <constraint firstItem="HbE-Q7-9pG" firstAttribute="top" secondItem="qVY-sR-Um2" secondAttribute="bottom" constant="40" id="Vk5-hD-l9H"/>
                             <constraint firstItem="gfB-BG-TWP" firstAttribute="top" secondItem="dM0-KJ-fcz" secondAttribute="top" constant="100" id="Z6j-xQ-LDh"/>
                             <constraint firstItem="qVY-sR-Um2" firstAttribute="centerX" secondItem="dM0-KJ-fcz" secondAttribute="centerX" id="bp3-Ep-ubC"/>
                             <constraint firstItem="dM0-KJ-fcz" firstAttribute="trailing" secondItem="1yV-Cg-b9C" secondAttribute="trailing" constant="24" id="gtf-t0-dtb"/>
                             <constraint firstItem="1yV-Cg-b9C" firstAttribute="top" secondItem="gfB-BG-TWP" secondAttribute="bottom" constant="20" id="pOs-zd-Nnk"/>
+                            <constraint firstItem="2h6-Ny-pzG" firstAttribute="leading" secondItem="dM0-KJ-fcz" secondAttribute="leading" constant="20" id="qOk-0S-ABg"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accountNameLabel" destination="2h6-Ny-pzG" id="QPZ-rF-lJg"/>
                         <outlet property="healthScoreLabel" destination="SZr-DF-hwI" id="p2J-Cu-k3l"/>
                         <outlet property="saveButton" destination="HbE-Q7-9pG" id="tQR-u3-ZLg"/>
                         <outlet property="slider" destination="1yV-Cg-b9C" id="Dj9-yA-daB"/>
@@ -646,6 +674,249 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wA-qa-C3U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2392.753623188406" y="97.767857142857139"/>
+        </scene>
+        <!--Supply Notification View Controller-->
+        <scene sceneID="8Mc-Df-IGc">
+            <objects>
+                <viewController storyboardIdentifier="SupplyNotificationViewController" hidesBottomBarWhenPushed="YES" id="e5L-ey-hrs" customClass="SupplyNotificationViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s1D-d8-gh2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kht-ou-Fbn">
+                                <rect key="frame" x="18" y="794" width="378" height="58"/>
+                                <color key="backgroundColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="u4e-cc-WfW"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <fontDescription key="titleFontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveTouched:" destination="e5L-ey-hrs" eventType="touchUpInside" id="4eH-y6-iH1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify if Lend APY changes by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYM-Lh-5uH">
+                                <rect key="frame" x="24" y="144" width="240.5" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="GX4-DX-8mo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="18"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Lend APY: 2.20%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgQ-yC-p61">
+                                <rect key="frame" x="24" y="248" width="204" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="blF-gH-Q5x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="18"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will notify below 1.98%, above 2.42%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkU-Mx-DeN">
+                                <rect key="frame" x="24" y="286" width="311" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="53R-gP-7hg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wstETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciG-a0-IpA">
+                                <rect key="frame" x="20" y="44" width="71.5" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="oRK-HF-Tab"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="20"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.10000000000000001" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="mhE-E3-YNQ">
+                                <rect key="frame" x="22" y="198" width="370" height="31"/>
+                                <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwJ-DA-xaQ">
+                                <rect key="frame" x="353" y="144" width="37" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="x9y-HZ-MPC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YachtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JSR-dx-gai">
+                                <rect key="frame" x="157" y="654" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="QB9-tK-Jjt"/>
+                                    <constraint firstAttribute="width" secondItem="JSR-dx-gai" secondAttribute="height" multiplier="1:1" id="opw-tz-dLI"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wf3-UH-Qjj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EgQ-yC-p61" firstAttribute="leading" secondItem="AYM-Lh-5uH" secondAttribute="leading" id="7hc-62-QTf"/>
+                            <constraint firstItem="IwJ-DA-xaQ" firstAttribute="trailing" secondItem="mhE-E3-YNQ" secondAttribute="trailing" id="FpN-Zc-bOx"/>
+                            <constraint firstItem="EgQ-yC-p61" firstAttribute="top" secondItem="mhE-E3-YNQ" secondAttribute="bottom" constant="20" id="L6h-5F-VYo"/>
+                            <constraint firstItem="wf3-UH-Qjj" firstAttribute="trailing" secondItem="mhE-E3-YNQ" secondAttribute="trailing" constant="24" id="MNd-lj-upH"/>
+                            <constraint firstItem="kht-ou-Fbn" firstAttribute="width" secondItem="s1D-d8-gh2" secondAttribute="width" constant="-36" id="TVC-El-aMb"/>
+                            <constraint firstItem="ciG-a0-IpA" firstAttribute="leading" secondItem="wf3-UH-Qjj" secondAttribute="leading" constant="20" id="ToV-gJ-pjy"/>
+                            <constraint firstItem="wf3-UH-Qjj" firstAttribute="bottom" secondItem="kht-ou-Fbn" secondAttribute="bottom" constant="10" id="VWr-mJ-zbN"/>
+                            <constraint firstItem="mhE-E3-YNQ" firstAttribute="leading" secondItem="AYM-Lh-5uH" secondAttribute="leading" id="WXe-5k-0oR"/>
+                            <constraint firstItem="kht-ou-Fbn" firstAttribute="top" secondItem="JSR-dx-gai" secondAttribute="bottom" constant="40" id="c5D-XV-Mxl"/>
+                            <constraint firstItem="VkU-Mx-DeN" firstAttribute="top" secondItem="EgQ-yC-p61" secondAttribute="bottom" constant="4" id="cIT-37-9fm"/>
+                            <constraint firstItem="JSR-dx-gai" firstAttribute="width" secondItem="JSR-dx-gai" secondAttribute="height" multiplier="1:1" id="hQJ-he-66P"/>
+                            <constraint firstItem="IwJ-DA-xaQ" firstAttribute="centerY" secondItem="AYM-Lh-5uH" secondAttribute="centerY" id="lRi-Am-vsx"/>
+                            <constraint firstItem="JSR-dx-gai" firstAttribute="centerX" secondItem="wf3-UH-Qjj" secondAttribute="centerX" id="mL1-W5-kgh"/>
+                            <constraint firstItem="VkU-Mx-DeN" firstAttribute="leading" secondItem="EgQ-yC-p61" secondAttribute="leading" id="odG-ST-FmF"/>
+                            <constraint firstItem="ciG-a0-IpA" firstAttribute="top" secondItem="wf3-UH-Qjj" secondAttribute="top" id="pmI-Hz-CJo"/>
+                            <constraint firstItem="AYM-Lh-5uH" firstAttribute="leading" secondItem="wf3-UH-Qjj" secondAttribute="leading" constant="24" id="qMg-88-p8r"/>
+                            <constraint firstItem="AYM-Lh-5uH" firstAttribute="top" secondItem="wf3-UH-Qjj" secondAttribute="top" constant="100" id="qyY-5C-NNa"/>
+                            <constraint firstItem="mhE-E3-YNQ" firstAttribute="top" secondItem="AYM-Lh-5uH" secondAttribute="bottom" constant="20" id="tMq-wZ-7F2"/>
+                            <constraint firstItem="kht-ou-Fbn" firstAttribute="centerX" secondItem="wf3-UH-Qjj" secondAttribute="centerX" id="ydh-3S-22I"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeBy" destination="IwJ-DA-xaQ" id="qGw-7g-vnS"/>
+                        <outlet property="currentLendAPY" destination="EgQ-yC-p61" id="fPc-ly-UvV"/>
+                        <outlet property="saveButton" destination="kht-ou-Fbn" id="QXR-HQ-qLV"/>
+                        <outlet property="slider" destination="mhE-E3-YNQ" id="uoo-r5-98I"/>
+                        <outlet property="symbol" destination="ciG-a0-IpA" id="CJg-rU-Pa9"/>
+                        <outlet property="willNotify" destination="VkU-Mx-DeN" id="XQL-3a-rlv"/>
+                        <outlet property="yachtImage" destination="JSR-dx-gai" id="X7b-RJ-j5u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PaO-9l-2Vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6517" y="98"/>
+        </scene>
+        <!--SetIR Notification View Controller-->
+        <scene sceneID="mb4-7y-MqN">
+            <objects>
+                <viewController storyboardIdentifier="SetIRNotificationViewController" hidesBottomBarWhenPushed="YES" id="Tha-jc-FeG" customClass="SetIRNotificationViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dAu-jS-Rv9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8kJ-4X-40F">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotifyThresholdTableViewCell" id="tOs-iv-oHL" customClass="NotifyThresholdTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tOs-iv-oHL" id="m1u-XQ-dYF">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify if Supply APY falls by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knd-yx-cqf">
+                                                    <rect key="frame" x="24" y="10" width="228" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="WI5-1c-qah"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="18"/>
+                                                    <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7C-0c-QIZ">
+                                                    <rect key="frame" x="353" y="4" width="37" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="rUO-cK-T4e"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                                    <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0si-NP-YoP">
+                                                    <rect key="frame" x="22" y="36" width="370" height="31"/>
+                                                    <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="thumbTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </slider>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will notify below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atS-XQ-zZQ">
+                                                    <rect key="frame" x="24" y="70" width="107.5" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="jIz-SA-ViG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="14"/>
+                                                    <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="atS-XQ-zZQ" firstAttribute="leading" secondItem="knd-yx-cqf" secondAttribute="leading" id="0To-FB-28Q"/>
+                                                <constraint firstItem="knd-yx-cqf" firstAttribute="leading" secondItem="m1u-XQ-dYF" secondAttribute="leading" constant="24" id="8JG-Db-TlA"/>
+                                                <constraint firstItem="0si-NP-YoP" firstAttribute="leading" secondItem="knd-yx-cqf" secondAttribute="leading" id="Avn-m7-J9l"/>
+                                                <constraint firstItem="n7C-0c-QIZ" firstAttribute="centerY" secondItem="knd-yx-cqf" secondAttribute="centerY" id="KXG-zr-c6D"/>
+                                                <constraint firstItem="0si-NP-YoP" firstAttribute="top" secondItem="knd-yx-cqf" secondAttribute="bottom" constant="4" id="NWR-jR-4cL"/>
+                                                <constraint firstItem="knd-yx-cqf" firstAttribute="top" secondItem="m1u-XQ-dYF" secondAttribute="top" constant="10" id="XXH-Wb-L8q"/>
+                                                <constraint firstAttribute="trailing" secondItem="n7C-0c-QIZ" secondAttribute="trailing" constant="24" id="Xt0-uw-SSf"/>
+                                                <constraint firstItem="atS-XQ-zZQ" firstAttribute="top" secondItem="0si-NP-YoP" secondAttribute="bottom" constant="4" id="jRS-iI-ypM"/>
+                                                <constraint firstItem="0si-NP-YoP" firstAttribute="trailing" secondItem="n7C-0c-QIZ" secondAttribute="trailing" id="q4q-ob-Iim"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="changesByText" destination="knd-yx-cqf" id="txl-cG-aEo"/>
+                                            <outlet property="slider" destination="0si-NP-YoP" id="UYj-Q0-OOU"/>
+                                            <outlet property="thresholdLabel" destination="n7C-0c-QIZ" id="75h-a9-MDJ"/>
+                                            <outlet property="willNotify" destination="atS-XQ-zZQ" id="cQ2-AU-SoX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMy-CV-6hr">
+                                <rect key="frame" x="18" y="794" width="378" height="58"/>
+                                <color key="backgroundColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="vdU-wl-Sz9"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <fontDescription key="titleFontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveTouched:" destination="e5L-ey-hrs" eventType="touchUpInside" id="gMN-JH-7ay"/>
+                                    <action selector="saveTouched:" destination="Tha-jc-FeG" eventType="touchUpInside" id="sNZ-gV-C5d"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YachtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="1YR-IV-Hdz">
+                                <rect key="frame" x="157" y="403" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5Jx-on-kTh"/>
+                                    <constraint firstAttribute="width" secondItem="1YR-IV-Hdz" secondAttribute="height" multiplier="1:1" id="Dcr-EX-KtX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DdV-re-5IY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DMy-CV-6hr" firstAttribute="centerX" secondItem="DdV-re-5IY" secondAttribute="centerX" id="142-Yx-kQw"/>
+                            <constraint firstItem="1YR-IV-Hdz" firstAttribute="width" secondItem="1YR-IV-Hdz" secondAttribute="height" multiplier="1:1" id="1r0-Zv-wyW"/>
+                            <constraint firstItem="1YR-IV-Hdz" firstAttribute="centerX" secondItem="DdV-re-5IY" secondAttribute="centerX" id="7OT-h9-v9r"/>
+                            <constraint firstItem="8kJ-4X-40F" firstAttribute="top" secondItem="DdV-re-5IY" secondAttribute="top" id="PrW-Yg-EgB"/>
+                            <constraint firstItem="DdV-re-5IY" firstAttribute="bottom" secondItem="8kJ-4X-40F" secondAttribute="bottom" id="VdS-ho-0ql"/>
+                            <constraint firstItem="8kJ-4X-40F" firstAttribute="width" secondItem="dAu-jS-Rv9" secondAttribute="width" id="WRP-tx-KQm"/>
+                            <constraint firstItem="8kJ-4X-40F" firstAttribute="centerX" secondItem="DdV-re-5IY" secondAttribute="centerX" id="YEq-eA-ug8"/>
+                            <constraint firstItem="1YR-IV-Hdz" firstAttribute="centerY" secondItem="DdV-re-5IY" secondAttribute="centerY" id="Zwy-ah-14e"/>
+                            <constraint firstItem="DdV-re-5IY" firstAttribute="bottom" secondItem="DMy-CV-6hr" secondAttribute="bottom" constant="10" id="lsv-zY-tDm"/>
+                            <constraint firstItem="1YR-IV-Hdz" firstAttribute="width" secondItem="1YR-IV-Hdz" secondAttribute="height" multiplier="1:1" id="rtN-sb-WRc"/>
+                            <constraint firstItem="DMy-CV-6hr" firstAttribute="width" secondItem="dAu-jS-Rv9" secondAttribute="width" constant="-36" id="x8Q-bI-l44"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="saveButton" destination="DMy-CV-6hr" id="WGw-YF-r3Z"/>
+                        <outlet property="tableView" destination="8kJ-4X-40F" id="SgK-sx-5ah"/>
+                        <outlet property="yachtImage" destination="1YR-IV-Hdz" id="jSz-xc-rw3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0N-5d-79X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7289.8550724637689" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>

@@ -177,6 +177,84 @@
             </objects>
             <point key="canvasLocation" x="1786.9565217391305" y="105.80357142857143"/>
         </scene>
+        <!--Active Notifications View Controller-->
+        <scene sceneID="sOB-Se-avU">
+            <objects>
+                <viewController storyboardIdentifier="ActiveNotificationsViewController" hidesBottomBarWhenPushed="YES" id="JzC-PC-SoQ" customClass="ActiveNotificationsViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9o0-7o-T1O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yxp-79-KKT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActiveNotificationTableViewCell" id="Nhu-Tw-Y29" customClass="ActiveNotificationTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nhu-Tw-Y29" id="LP8-kt-Lcy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oda-wS-44q">
+                                                    <rect key="frame" x="24" y="19" width="158" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="QVS-z2-UUT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="20"/>
+                                                    <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TR3-2h-5Ld">
+                                                    <rect key="frame" x="378" y="7.5" width="12" height="45.5"/>
+                                                    <color key="tintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="49" id="DcO-Q8-chh"/>
+                                                        <constraint firstAttribute="width" constant="12" id="Jv5-nQ-FQ2"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oda-wS-44q" firstAttribute="leading" secondItem="LP8-kt-Lcy" secondAttribute="leading" constant="24" id="OBk-xy-jDX"/>
+                                                <constraint firstAttribute="trailing" secondItem="TR3-2h-5Ld" secondAttribute="trailing" constant="24" id="bSL-7j-OzP"/>
+                                                <constraint firstItem="oda-wS-44q" firstAttribute="centerY" secondItem="LP8-kt-Lcy" secondAttribute="centerY" id="h76-IG-Brr"/>
+                                                <constraint firstItem="TR3-2h-5Ld" firstAttribute="centerY" secondItem="LP8-kt-Lcy" secondAttribute="centerY" id="mrv-DM-lH1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="notificationType" destination="oda-wS-44q" id="cIy-BY-3Jt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YachtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="cks-iD-uCE">
+                                <rect key="frame" x="157" y="403" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0Wx-uR-zde"/>
+                                    <constraint firstAttribute="width" constant="100" id="lVf-dl-EaQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mgk-4e-SZe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yxp-79-KKT" firstAttribute="top" secondItem="9o0-7o-T1O" secondAttribute="top" constant="44" id="43a-48-HJD"/>
+                            <constraint firstItem="cks-iD-uCE" firstAttribute="centerX" secondItem="mgk-4e-SZe" secondAttribute="centerX" id="6Un-Me-pHa"/>
+                            <constraint firstItem="cks-iD-uCE" firstAttribute="centerY" secondItem="mgk-4e-SZe" secondAttribute="centerY" id="X3Z-T3-qyu"/>
+                            <constraint firstItem="Yxp-79-KKT" firstAttribute="width" secondItem="9o0-7o-T1O" secondAttribute="width" id="adL-pX-SYY"/>
+                            <constraint firstItem="mgk-4e-SZe" firstAttribute="bottom" secondItem="Yxp-79-KKT" secondAttribute="bottom" id="mSL-bP-9gS"/>
+                            <constraint firstItem="Yxp-79-KKT" firstAttribute="centerX" secondItem="mgk-4e-SZe" secondAttribute="centerX" id="tiQ-qe-5fv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Yxp-79-KKT" id="nvx-Ta-HE4"/>
+                        <outlet property="yachtImage" destination="cks-iD-uCE" id="yux-kc-x8X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fMi-Iz-wIj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2568" y="106"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="aFB-rh-Zup">
             <objects>
@@ -197,6 +275,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="YachtLogo" width="230" height="230"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">

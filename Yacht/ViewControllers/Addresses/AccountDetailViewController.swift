@@ -11,6 +11,7 @@ class AccountDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var copyAddressImage: UIImageView!
+    var toastView: ToastView?
     var address: String?
     var nickname: String?
     var accountId: String?
@@ -19,11 +20,24 @@ class AccountDetailViewController: UIViewController {
     var eulerTokens: [EulerToken] = []
     var eulerAccount: EulerAccount?
     
+    @IBAction func copyTouched(_ sender: Any) {
+        if let address = address {
+            UIPasteboard.general.string = address
+            toastView?.titleLabel.text = "Success"
+            toastView?.bodyText.text = "Address can now be pasted from the clipboard"
+            toastView?.showToast()
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        toastView = ToastView.init(frame: CGRect(x: self.view.frame.origin.x, y: -80, width: self.view.frame.size.width, height: 80))
+        self.view.addSubview(toastView!)
         
         navigationItem.title = nickname ?? "Unknown"
         
@@ -106,7 +120,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
         let titleLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 200, height: 38))
         headerView.addSubview(titleLabel)
         titleLabel.textColor = Constants.Colors.deepRed
-        titleLabel.font = UIFont(name: "Akkurat-Bold", size: 20)
+        titleLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
         
         if section == 0 {
             titleLabel.text = "Health Score"
@@ -191,11 +205,19 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             let vc = storyboard.instantiateViewController(identifier: "HealthNotificationViewController") as HealthNotificationViewController
             vc.accountId = accountId
             vc.deviceId = deviceId
+            vc.accountName = nickname
             self.navigationController?.pushViewController(vc, animated: true)
         case 3:
             let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "IRNotificationViewController") as IRNotificationViewController
-            vc.irNotificationType = .asset
+            let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
+
+            let token = eulerTokens[indexPath.row]
+            vc.tokenAddress = token.address
+            vc.supplyAPY = token.supplyAPY
+            vc.borrowAPY = token.borrowAPY
+            vc.symbolValue = token.symbol
+            vc.accountId = accountId
+            vc.deviceId = deviceId
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             return
@@ -207,8 +229,15 @@ extension AccountDetailViewController: EDCollectionViewCellDelegate {
     func edCollectionViewCellTapped(collectionviewcell: EulerDepositCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingDepositTableViewCell) {
         print("You tapped the deposit cell \(index)")
         let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "IRNotificationViewController") as IRNotificationViewController
-        vc.irNotificationType = .deposit
+        let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
+
+        let deposit = eulerAccount?.supplies[index]
+        vc.tokenAddress = deposit?.token.address ?? "0x0000000000000000000000000000000000000000"
+        vc.supplyAPY = deposit?.token.supplyAPY ?? 0
+        vc.borrowAPY = deposit?.token.borrowAPY ?? 0
+        vc.symbolValue = deposit?.token.symbol ?? ""
+        vc.accountId = accountId
+        vc.deviceId = deviceId
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -217,8 +246,15 @@ extension AccountDetailViewController: ELCollectionViewCellDelegate {
     func elCollectionViewCellTapped(collectionviewcell: EulerLoanCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingLoanTableViewCell) {
         print("You tapped the loan cell \(index)")
         let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "IRNotificationViewController") as IRNotificationViewController
-        vc.irNotificationType = .loan
+        let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
+
+        let borrow = eulerAccount?.borrows[index]
+        vc.tokenAddress = borrow?.token.address ?? "0x0000000000000000000000000000000000000000"
+        vc.supplyAPY = borrow?.token.supplyAPY ?? 0
+        vc.borrowAPY = borrow?.token.borrowAPY ?? 0
+        vc.symbolValue = borrow?.token.symbol ?? ""
+        vc.accountId = accountId
+        vc.deviceId = deviceId
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
