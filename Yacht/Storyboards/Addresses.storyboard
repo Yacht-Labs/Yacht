@@ -846,6 +846,24 @@
                                                     <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiC-3o-wyo">
+                                                    <rect key="frame" x="305" y="67" width="85" height="26"/>
+                                                    <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain">
+                                                        <attributedString key="attributedTitle">
+                                                            <fragment content="Deactivate">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="12" name="Akkurat-Bold"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="activateTouched:" destination="tOs-iv-oHL" eventType="touchUpInside" id="Z1o-SO-Low"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="atS-XQ-zZQ" firstAttribute="leading" secondItem="knd-yx-cqf" secondAttribute="leading" id="0To-FB-28Q"/>
@@ -857,9 +875,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="n7C-0c-QIZ" secondAttribute="trailing" constant="24" id="Xt0-uw-SSf"/>
                                                 <constraint firstItem="atS-XQ-zZQ" firstAttribute="top" secondItem="0si-NP-YoP" secondAttribute="bottom" constant="4" id="jRS-iI-ypM"/>
                                                 <constraint firstItem="0si-NP-YoP" firstAttribute="trailing" secondItem="n7C-0c-QIZ" secondAttribute="trailing" id="q4q-ob-Iim"/>
+                                                <constraint firstItem="iiC-3o-wyo" firstAttribute="trailing" secondItem="n7C-0c-QIZ" secondAttribute="trailing" id="rgT-op-b8G"/>
+                                                <constraint firstItem="iiC-3o-wyo" firstAttribute="centerY" secondItem="atS-XQ-zZQ" secondAttribute="centerY" id="uUI-cA-NOk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activateButton" destination="iiC-3o-wyo" id="gcH-yV-E1a"/>
                                             <outlet property="changesByText" destination="knd-yx-cqf" id="txl-cG-aEo"/>
                                             <outlet property="slider" destination="0si-NP-YoP" id="UYj-Q0-OOU"/>
                                             <outlet property="thresholdLabel" destination="n7C-0c-QIZ" id="75h-a9-MDJ"/>

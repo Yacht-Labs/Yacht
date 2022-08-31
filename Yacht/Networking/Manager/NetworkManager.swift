@@ -186,7 +186,6 @@ struct NetworkManager {
     }
  
     fileprivate func getResult(_ response: HTTPURLResponse) -> Result<String> {
-        print(response)
         switch response.statusCode {
         case 200...299: return .success
         case 401...499: return .failure(NetworkResponse.authenticationError.rawValue)
