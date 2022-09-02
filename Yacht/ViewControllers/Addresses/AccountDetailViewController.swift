@@ -213,9 +213,12 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 
                 cell.symbol.text = eulerToken.symbol
                 cell.name.text = eulerToken.name
-                cell.borrowAPY.text = String(eulerToken.borrowAPY) + "%"
-                cell.lendAPY.text = String(eulerToken.supplyAPY) + "%"
                 cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(eulerToken.price) ?? 0)) ?? "??") + " / \(eulerToken.symbol)"
+                
+                numberFormatter.numberStyle = .percent
+                
+                cell.borrowAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.borrowAPY) / 1000)))
+                cell.lendAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.supplyAPY) / 1000)))
                 
                 guard let urlString = Constants.tokenImage[eulerToken.address] else { return cell }
                 

@@ -106,8 +106,8 @@ extension LendingLoanTableViewCell: UICollectionViewDelegate, UICollectionViewDa
             formatter.numberStyle = .percent
             formatter.maximumFractionDigits = 2
             
-            cell.borrowAPY.text = formatter.string(from: NSNumber(value: borrow.token.borrowAPY / 100))
-            cell.eulAPY.text = formatter.string(from: NSNumber(value: borrow.token.eulAPY / 100))
+            cell.borrowAPY.text = formatter.string(from: NSNumber(value: borrow.token.borrowAPY / 1000))
+            cell.eulAPY.text = formatter.string(from: NSNumber(value: borrow.token.eulAPY / 1000))
             
             return cell
         }

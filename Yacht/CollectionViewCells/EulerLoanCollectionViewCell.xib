@@ -73,17 +73,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borrow APY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="KzP-tB-GzV">
-                        <rect key="frame" x="10" y="119" width="60" height="16"/>
+                        <rect key="frame" x="10" y="119" width="70" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="4Lc-Re-nXD"/>
-                            <constraint firstAttribute="width" constant="60" id="USl-sD-ArS"/>
+                            <constraint firstAttribute="width" constant="70" id="USl-sD-ArS"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUL APY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="VUe-wp-ZEi">
-                        <rect key="frame" x="94" y="119" width="60" height="16"/>
+                        <rect key="frame" x="104" y="119" width="60" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="ShZ-xD-wh8"/>
                             <constraint firstAttribute="height" constant="16" id="q9r-Qc-5S1"/>
@@ -93,7 +93,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="qqX-gL-98o">
-                        <rect key="frame" x="10" y="141" width="60" height="18"/>
+                        <rect key="frame" x="15" y="141" width="60" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="NOU-1H-emw"/>
                             <constraint firstAttribute="height" constant="18" id="bfs-8V-stl"/>
@@ -103,7 +103,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="V6U-N4-NKy">
-                        <rect key="frame" x="94" y="141" width="60" height="18"/>
+                        <rect key="frame" x="104" y="141" width="60" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="ooD-0s-gda"/>
                             <constraint firstAttribute="width" constant="60" id="r0s-Qf-d4I"/>
