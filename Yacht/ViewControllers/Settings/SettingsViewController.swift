@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    var toastView: ToastView?
     var chainId: Int = 0
     
     override func viewDidLoad() {
@@ -16,6 +17,9 @@ class SettingsViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        toastView = ToastView.init(frame: CGRect(x: self.view.frame.origin.x, y: -80, width: self.view.frame.size.width, height: 80))
+        self.view.addSubview(toastView!)
     
     }
     
@@ -70,8 +74,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let networkManager = NetworkManager()
-            networkManager.showErrorAlert(title: "Coming Soon", message: "Support for additional networks is on our roadmap! Follow us on twitter @Yacht_Labs for release updates", vc: self)
+            toastView?.titleLabel.text = "Coming Soon"
+            toastView?.bodyText.text = "Support for additional networks is on our roadmap! Follow us on twitter @Yacht_Labs for release updates"
+            toastView?.showToast()
+            
         } else if indexPath.row == 1 {
             let storyboard = UIStoryboard(name: "Settings", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "ActiveNotificationsViewController") as ActiveNotificationsViewController

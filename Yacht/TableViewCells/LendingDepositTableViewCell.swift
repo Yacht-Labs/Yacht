@@ -12,7 +12,7 @@ protocol EDCollectionViewCellDelegate: AnyObject {
 }
 
 class LendingDepositTableViewCell: UITableViewCell {
-
+    var emptyLabel: UILabel?
     var collectionView: UICollectionView?
     weak var edCellDelegate: EDCollectionViewCellDelegate?
     var deposits: [EulerLoan] = []
@@ -20,11 +20,6 @@ class LendingDepositTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.itemSize = CGSize(width: 165, height: 215)
@@ -43,6 +38,21 @@ class LendingDepositTableViewCell: UITableViewCell {
         let cellNib = UINib(nibName: "EulerDepositCollectionViewCell", bundle: nil)
         collectionView?.register(cellNib, forCellWithReuseIdentifier: "EulerDepositCollectionViewCell")
         
+        emptyLabel = UILabel(frame: CGRect(x: 40, y: 4, width: self.bounds.width - 80, height: self.bounds.height - 8))
+        emptyLabel?.text = "Active deposits on Euler associated with this address will appear here"
+        emptyLabel?.textColor = Constants.Colors.oliveDrab
+        emptyLabel?.font = UIFont(name: "Akkurat-LightItalic", size: 14)
+        emptyLabel?.numberOfLines = 2
+        emptyLabel?.alpha = 0
+        if let emptyLabel = emptyLabel {
+            addSubview(emptyLabel)
+        }
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
         collectionView?.reloadData()
 
     }

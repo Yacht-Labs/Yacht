@@ -11,14 +11,16 @@ class AccountDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var copyAddressImage: UIImageView!
+    @IBOutlet weak var yachtImage: UIImageView!
     var toastView: ToastView?
     var address: String?
     var nickname: String?
     var accountId: String?
     var deviceId: String?
-    
     var eulerTokens: [EulerToken] = []
     var eulerAccount: EulerAccount?
+    let numberFormatter = NumberFormatter()
+    let networkManager = NetworkManager()
     
     @IBAction func copyTouched(_ sender: Any) {
         if let address = address {
@@ -40,6 +42,7 @@ class AccountDetailViewController: UIViewController {
         self.view.addSubview(toastView!)
         
         navigationItem.title = nickname ?? "Unknown"
+        yachtImage.alpha = 0
         
         let prefix = String((address ?? "0x0000000000000000000000000000000000000000").prefix(8))
         let suffix = String((address ?? "0x0000000000000000000000000000000000000000").suffix(4))
@@ -51,26 +54,40 @@ class AccountDetailViewController: UIViewController {
         tableView.backgroundColor = Constants.Colors.viewBackgroundColor
 
         getEulerAccount()
-  
+        
     }
     
     func getEulerAccount() {
-        let networkManager = NetworkManager()
+        networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
         networkManager.getEulerAccount(address: address ?? "0x0000000000000000000000000000000000000000") { account, error in
-            self.eulerAccount = account
-            self.getEulerTokens()
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+            if error == nil {
+                self.eulerAccount = account
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            } else {
+ 
             }
+            DispatchQueue.main.async {
+                self.getEulerTokens()
+            }
+
         }
     }
     
     func getEulerTokens() {
         let networkManager = NetworkManager()
         networkManager.getEulerTokens { tokens, error in
-            self.eulerTokens = tokens ?? []
+            if error == nil {
+                self.eulerTokens = tokens ?? []
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            } else {
+
+            }
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
             }
         }
     }
@@ -99,11 +116,23 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 60
+            if eulerAccount?.healthScore == nil  {
+                return 44
+            } else {
+                return 60
+            }
         } else if indexPath.section == 1 {
-            return 215
+            if eulerAccount?.supplies == nil || eulerAccount?.supplies.count == 0 {
+                return 44
+            } else {
+                return 215
+            }
         } else if indexPath.section == 2 {
-            return 168
+            if eulerAccount?.borrows == nil || eulerAccount?.borrows.count == 0 {
+                return 44
+            } else {
+                return 168
+            }
         } else if indexPath.section == 3 {
             return 92
         }
@@ -143,6 +172,11 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                     cell.healthScore = eulerAccount?.healthScore ?? 0
                     cell.setHealthScore()
                 }
+                if eulerAccount?.healthScore == nil  {
+                    cell.emptyLabel?.alpha = 1
+                } else {
+                    cell.emptyLabel?.alpha = 0
+                }
                 return cell
             }
         }
@@ -150,22 +184,38 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             if let cell = tableView.dequeueReusableCell(withIdentifier: "LendingDepositTableViewCell") as? LendingDepositTableViewCell {
                 cell.edCellDelegate = self
                 cell.deposits = eulerAccount?.supplies ?? []
+                if eulerAccount?.supplies == nil || eulerAccount?.supplies.count == 0 {
+                    cell.emptyLabel?.alpha = 1
+                } else {
+                    cell.emptyLabel?.alpha = 0
+                }
                 return cell
             }
         } else if indexPath.section == 2 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "LendingLoanTableViewCell") as? LendingLoanTableViewCell {
                 cell.elCellDelegate = self
                 cell.borrows = eulerAccount?.borrows ?? []
+                if eulerAccount?.borrows == nil || eulerAccount?.borrows.count == 0 {
+                    cell.emptyLabel?.alpha = 1
+                } else {
+                    cell.emptyLabel?.alpha = 0
+                }
                 return cell
             }
         } else if indexPath.section == 3 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell") as? AssetTableViewCell {
                 
                 let eulerToken = eulerTokens[indexPath.row]
+                
+                numberFormatter.numberStyle = .currency
+                numberFormatter.currencyCode = "USD"
+                numberFormatter.maximumFractionDigits = 2
+                
                 cell.symbol.text = eulerToken.symbol
                 cell.name.text = eulerToken.name
                 cell.borrowAPY.text = String(eulerToken.borrowAPY) + "%"
                 cell.lendAPY.text = String(eulerToken.supplyAPY) + "%"
+                cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(eulerToken.price) ?? 0)) ?? "??") + " / \(eulerToken.symbol)"
                 
                 guard let urlString = Constants.tokenImage[eulerToken.address] else { return cell }
                 

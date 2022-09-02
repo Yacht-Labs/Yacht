@@ -8,6 +8,7 @@
 import UIKit
 
 class HealthScoreTableViewCell: UITableViewCell {
+    var emptyLabel: UILabel?
     @IBOutlet weak var healthScoreLabel: UILabel!
     @IBOutlet weak var tick: UIView!
     @IBOutlet weak var healthConstraint: NSLayoutConstraint!
@@ -21,6 +22,18 @@ class HealthScoreTableViewCell: UITableViewCell {
         // Initialization code
         tick.alpha = 0
         healthScoreLabel.alpha = 0
+        redZone.alpha = 0
+        blackZone.alpha = 0
+        
+        emptyLabel = UILabel(frame: CGRect(x: 40, y: 4, width: self.bounds.width - 80, height: self.bounds.height - 8))
+        emptyLabel?.text = "Euler health score associated with this address will appear here"
+        emptyLabel?.textColor = Constants.Colors.oliveDrab
+        emptyLabel?.font = UIFont(name: "Akkurat-LightItalic", size: 14)
+        emptyLabel?.numberOfLines = 2
+        emptyLabel?.alpha = 0
+        if let emptyLabel = emptyLabel {
+            addSubview(emptyLabel)
+        }
         
     }
     
@@ -42,7 +55,8 @@ class HealthScoreTableViewCell: UITableViewCell {
         
         tick.alpha = 1
         self.healthScoreLabel.alpha = 1
-         
+        redZone.alpha = 1
+        blackZone.alpha = 1
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

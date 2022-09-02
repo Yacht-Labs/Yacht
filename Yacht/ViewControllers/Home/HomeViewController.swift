@@ -29,7 +29,7 @@ class HomeViewController: UITabBarController {
 
         viewControllers = [
             createNavController(for: vc1, tabTitle: "Accounts", viewTitle: "Accounts", image: UIImage(systemName: "house")!),
-            createNavController(for: vc2, tabTitle: "Settings", viewTitle: "Settings", image: UIImage(systemName: "bolt.horizontal.circle.fill")!),
+            createNavController(for: vc2, tabTitle: "Settings", viewTitle: "Settings", image: UIImage(systemName: "gearshape")!),
         ]
     }
     
