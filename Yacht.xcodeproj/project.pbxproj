@@ -12,6 +12,7 @@
 		7F0E3A8828BFDC2D0024FDB8 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8728BFDC2D0024FDB8 /* UINavigationControllerExtension.swift */; };
 		7F0E3A8E28BFF9A20024FDB8 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8D28BFF9A20024FDB8 /* ToastView.swift */; };
 		7F0E3A9028BFF9A70024FDB8 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8F28BFF9A70024FDB8 /* ToastView.xib */; };
+		7F0E3A9228C2ADBB0024FDB8 /* EmptyNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A9128C2ADBB0024FDB8 /* EmptyNotificationTableViewCell.swift */; };
 		7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891C428B52E9B00B501B6 /* AppDelegate.swift */; };
 		7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */; };
 		7F2891CC28B52E9B00B501B6 /* EnterAddressFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891CA28B52E9B00B501B6 /* EnterAddressFlow.storyboard */; };
@@ -99,6 +100,7 @@
 		7F0E3A8728BFDC2D0024FDB8 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		7F0E3A8D28BFF9A20024FDB8 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		7F0E3A8F28BFF9A70024FDB8 /* ToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
+		7F0E3A9128C2ADBB0024FDB8 /* EmptyNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		7F2891C128B52E9B00B501B6 /* Yacht.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yacht.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2891C428B52E9B00B501B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F2891C628B52E9B00B501B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				7F5F837228B91963008B8EDB /* NetworkSelectTableViewCell.swift */,
 				7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */,
 				7F0E3A8528BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift */,
+				7F0E3A9128C2ADBB0024FDB8 /* EmptyNotificationTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				7F0E3A8E28BFF9A20024FDB8 /* ToastView.swift in Sources */,
 				7F0E3A8428BFAF730024FDB8 /* ActiveNotificationsViewController.swift in Sources */,
 				7F5F837D28B947BD008B8EDB /* EulerToken.swift in Sources */,
+				7F0E3A9228C2ADBB0024FDB8 /* EmptyNotificationTableViewCell.swift in Sources */,
 				7F5F837828B91C91008B8EDB /* LocalStorageManager.swift in Sources */,
 				7F5F838628B94B69008B8EDB /* URLParameterEncoder.swift in Sources */,
 				7F5F839628B94B9A008B8EDB /* Router.swift in Sources */,

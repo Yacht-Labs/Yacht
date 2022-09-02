@@ -34,7 +34,13 @@ class NotifyThresholdTableViewCell: UITableViewCell {
     var type: NotifyThresholdType? {
         didSet {
             self.delegate?.sliderValueChanged(type: type!, value: Int(slider.value * 100) )
-            setWillNotify(value: slider.value)
+            
+            if !isActive {
+                willNotify.text = "Touch activate to set this notification"
+            } else {
+                setWillNotify(value: slider.value)
+            }
+            
             thresholdLabel.text = numberFormatter.string(from: NSNumber(value: slider.value))
             
             switch type {
@@ -160,9 +166,7 @@ class NotifyThresholdTableViewCell: UITableViewCell {
             ]
             self.activateButton.setAttributedTitle(NSAttributedString(string: "Activate", attributes: attributes), for: .normal)
             
-            
             self.delegate?.sliderValueChanged(type: type!, value: 0)
-            
             
             switch type {
             case .supplyLower:

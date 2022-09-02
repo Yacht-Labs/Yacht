@@ -26,11 +26,7 @@ class SetIRNotificationViewController: UIViewController {
     var borrowLowerThreshold: Int = 20
     
     @IBAction func saveTouched(_ sender: Any) {
-        print(supplyLowerThreshold)
-        print(supplyUpperThreshold)
-        print(borrowLowerThreshold)
-        print(borrowUpperThreshold)
-        
+      
         guard let accountId = accountId,
             let deviceId = deviceId,
             let tokenAddress = tokenAddress else {
@@ -74,7 +70,7 @@ class SetIRNotificationViewController: UIViewController {
                                                    supplyUpperThreshold: supplyUpperThreshold) { notification, error in
                 if error != nil {
                     DispatchQueue.main.async {
-                        networkManager.showErrorAlert(title: "Server Error", message: "Unable to update notification", vc: self)
+                        networkManager.showErrorAlert(title: "Server Error", message: "Unable to create notification", vc: self)
                     }
                 } else {
                     self.notificationId = notification?.id

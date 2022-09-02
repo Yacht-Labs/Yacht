@@ -280,7 +280,6 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
 
 extension AccountDetailViewController: EDCollectionViewCellDelegate {
     func edCollectionViewCellTapped(collectionviewcell: EulerDepositCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingDepositTableViewCell) {
-        print("You tapped the deposit cell \(index)")
         let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
 
@@ -297,7 +296,6 @@ extension AccountDetailViewController: EDCollectionViewCellDelegate {
 
 extension AccountDetailViewController: ELCollectionViewCellDelegate {
     func elCollectionViewCellTapped(collectionviewcell: EulerLoanCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingLoanTableViewCell) {
-        print("You tapped the loan cell \(index)")
         let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
 

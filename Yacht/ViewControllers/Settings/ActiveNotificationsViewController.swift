@@ -139,6 +139,7 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
                 cell.notificationType.text = account?.name ?? "Unknown Account"
                 return cell
             }
+            
         } else if indexPath.section == 1 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveNotificationTableViewCell") as? ActiveNotificationTableViewCell {
                 let notification = eulerIRNotifications[indexPath.row]
@@ -159,13 +160,29 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
         headerView.backgroundColor = Constants.Colors.viewBackgroundColor
         let titleLabel = UILabel(frame: CGRect(x: 20, y: 0, width: self.view.bounds.width, height: 38))
         headerView.addSubview(titleLabel)
-        titleLabel.textColor = Constants.Colors.deepRed
-        titleLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
+        
         
         if section == 0 {
-            titleLabel.text = "Euler Health Score"
+            if eulerHealthNotifications.isEmpty {
+                titleLabel.textColor = Constants.Colors.lightGray
+                titleLabel.font = UIFont(name: "Akkurat-Regular", size: 16)
+                titleLabel.text = "No active Euler health notifications"
+            } else {
+                titleLabel.textColor = Constants.Colors.deepRed
+                titleLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
+                titleLabel.text = "Euler Health Score"
+            }
+            
         } else if section == 1 {
-            titleLabel.text = "Euler Interest Rate"
+            if eulerIRNotifications.isEmpty {
+                titleLabel.textColor = Constants.Colors.lightGray
+                titleLabel.font = UIFont(name: "Akkurat-Regular", size: 16)
+                titleLabel.text = "No active Euler interest notifications"
+            } else {
+                titleLabel.textColor = Constants.Colors.deepRed
+                titleLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
+                titleLabel.text = "Euler Interest Rate"
+            }
         }
         
         return headerView
@@ -209,6 +226,7 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
                         DispatchQueue.main.async {
                             self.eulerHealthNotifications.remove(at: indexPath.row)
                             tableView.deleteRows(at: [indexPath], with: .fade)
+                            tableView.reloadData()
                             self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
                         }
                     } else {
@@ -226,6 +244,7 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
                         DispatchQueue.main.async {
                             self.eulerIRNotifications.remove(at: indexPath.row)
                             tableView.deleteRows(at: [indexPath], with: .fade)
+                            tableView.reloadData()
                             self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
                         }
                     } else {
