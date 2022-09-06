@@ -235,12 +235,13 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                     cell.borrowAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.borrowAPY) / 1000)))
                     cell.lendAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.supplyAPY) / 1000)))
                     
-                    guard let urlString = Constants.tokenImage[eulerToken.address] else { return cell }
+                    guard let urlString = eulerToken.logoURI else { return cell }
                     
                     let url = URL(string: urlString)
                     loadData(url: url!) { (data, _) in
                         if let data = data {
                             DispatchQueue.main.async {
+                                cell.tokenImage.layer.cornerRadius = cell.tokenImage.bounds.height / 2
                                 cell.tokenImage.image = UIImage(data: data)
                             }
                         }
@@ -316,12 +317,12 @@ extension AccountDetailViewController: UISearchBarDelegate {
         
     }
     
-    func reloadOnlyAssets() {
-        var indexPaths = []
-        for i in 1...shownEulerTokens.count {
-            
-        }
-    }
+//    func reloadOnlyAssets() {
+//        var indexPaths = []
+//        for i in 1...shownEulerTokens.count {
+//            
+//        }
+//    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()

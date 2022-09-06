@@ -176,6 +176,7 @@ struct NetworkManager {
                     let apiResponse = try JSONDecoder().decode(responseModelType.self, from: responseData)
                     return (apiResponse, nil)
                 } catch {
+                    print(error)
                     return (nil, NetworkResponse.unableToDecode.rawValue)
                 }
             case .failure(let networkFailureError):

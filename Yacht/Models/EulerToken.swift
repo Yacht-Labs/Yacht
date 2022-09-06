@@ -17,6 +17,7 @@ struct EulerToken {
     let borrowAPY: Double
     let collateralFactor: Double
     let eulAPY: Double
+    let logoURI: String?
 }
 
 extension EulerToken: Decodable {
@@ -31,6 +32,7 @@ extension EulerToken: Decodable {
         case borrowAPY
         case collateralFactor
         case eulAPY
+        case logoURI
     }
     
     init(from decoder: Decoder) throws {
@@ -45,6 +47,7 @@ extension EulerToken: Decodable {
         borrowAPY = try values.decode(Double.self, forKey: .borrowAPY)
         collateralFactor = try values.decode(Double.self, forKey: .collateralFactor)
         eulAPY = try values.decode(Double.self, forKey: .eulAPY)
+        logoURI = try values.decodeIfPresent(String.self, forKey: .logoURI)
     }
     
 }
