@@ -64,7 +64,7 @@ class HealthScoreTableViewCell: UITableViewCell {
         
         healthScoreLabel.text = formatter.string(from: NSNumber(value: self.healthScore))
         
-        tick.alpha = 1
+        //tick.alpha = 1
         self.healthScoreLabel.alpha = 1
         redZone.alpha = 1
         blackZone.alpha = 1
