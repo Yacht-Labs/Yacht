@@ -111,7 +111,7 @@ extension LendingDepositTableViewCell: UICollectionViewDelegate, UICollectionVie
             formatter.numberStyle = .percent
             formatter.maximumFractionDigits = 2
             
-            cell.lendAPY.text = formatter.string(from: NSNumber(value: deposit.token.supplyAPY / 1000))
+            cell.lendAPY.text = formatter.string(from: NSNumber(value: deposit.token.supplyAPY / 100))
             
             formatter.numberStyle = .decimal
             formatter.maximumFractionDigits = 2

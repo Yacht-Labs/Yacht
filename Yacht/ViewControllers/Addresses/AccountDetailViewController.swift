@@ -232,8 +232,8 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                     
                     numberFormatter.numberStyle = .percent
                     
-                    cell.borrowAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.borrowAPY) / 1000)))
-                    cell.lendAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.supplyAPY) / 1000)))
+                    cell.borrowAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.borrowAPY) / 100)))
+                    cell.lendAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.supplyAPY) / 100)))
                     
                     guard let urlString = eulerToken.logoURI else { return cell }
                     
@@ -307,25 +307,19 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
 extension AccountDetailViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if !searchText.isEmpty {
+            let lowersearch = searchText.lowercased()
             let results = allEulerTokens.filter { token in
-                token.name.localizedCaseInsensitiveContains(searchText) || token.symbol.localizedCaseInsensitiveContains(searchText)
+                token.symbol.lowercased().contains(lowersearch)
             }
             shownEulerTokens = results
         } else {
             shownEulerTokens = allEulerTokens
         }
-        
     }
-    
-//    func reloadOnlyAssets() {
-//        var indexPaths = []
-//        for i in 1...shownEulerTokens.count {
-//            
-//        }
-//    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        tableView.reloadData()
     }
 }
 
