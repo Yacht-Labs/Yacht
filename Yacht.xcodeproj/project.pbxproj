@@ -76,6 +76,7 @@
 		7F5F83AA28BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */; };
 		7F5F83AC28BE712D008B8EDB /* SetIRNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */; };
 		7FEA2D8228C7B71900FF6DAB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */; };
+		7FEA2D8428C7ED6000FF6DAB /* CopyAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyThresholdTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIRNotificationViewController.swift; sourceTree = "<group>"; };
 		7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAddressTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +371,7 @@
 				7F0E3A8528BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift */,
 				7F0E3A9128C2ADBB0024FDB8 /* EmptyNotificationTableViewCell.swift */,
 				7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */,
+				7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F5F834628B70DD0008B8EDB /* AddressesListViewController.swift in Sources */,
+				7FEA2D8428C7ED6000FF6DAB /* CopyAddressTableViewCell.swift in Sources */,
 				7F0E3A8E28BFF9A20024FDB8 /* ToastView.swift in Sources */,
 				7F0E3A8428BFAF730024FDB8 /* ActiveNotificationsViewController.swift in Sources */,
 				7F5F837D28B947BD008B8EDB /* EulerToken.swift in Sources */,

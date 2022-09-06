@@ -80,7 +80,7 @@ extension LendingDepositTableViewCell: UICollectionViewDelegate, UICollectionVie
             
             let deposit = deposits[indexPath.row]
             
-            if let urlString = Constants.tokenImage[deposit.token.address] {
+            if let urlString = deposit.token.logoURI {
                 let url = URL(string: urlString)
                 loadData(url: url!) { (data, _) in
                     if let data = data {

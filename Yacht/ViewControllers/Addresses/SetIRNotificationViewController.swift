@@ -92,6 +92,7 @@ class SetIRNotificationViewController: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Euler Interest Notification"
+        self.tableView.contentInsetAdjustmentBehavior = .never
         
         let font = UIFont(name: "Akkurat-Bold", size: 18)
         let attributes: [NSAttributedString.Key: Any] = [

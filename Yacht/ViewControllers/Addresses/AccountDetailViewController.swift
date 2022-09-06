@@ -9,8 +9,6 @@ import UIKit
 
 class AccountDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var copyAddressImage: UIImageView!
     @IBOutlet weak var yachtImage: UIImageView!
     var toastView: ToastView?
     var address: String?
@@ -22,16 +20,6 @@ class AccountDetailViewController: UIViewController {
     var eulerAccount: EulerAccount?
     let numberFormatter = NumberFormatter()
     let networkManager = NetworkManager()
-    
-    @IBAction func copyTouched(_ sender: Any) {
-        if let address = address {
-            UIPasteboard.general.string = address
-            toastView?.titleLabel.text = "Success"
-            toastView?.bodyText.text = "Address can now be pasted from the clipboard"
-            toastView?.showToast()
-            
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,17 +35,17 @@ class AccountDetailViewController: UIViewController {
         navigationItem.title = nickname ?? "Unknown"
         yachtImage.alpha = 0
         
-        let prefix = String((address ?? "0x0000000000000000000000000000000000000000").prefix(8))
-        let suffix = String((address ?? "0x0000000000000000000000000000000000000000").suffix(4))
-        
-        addressLabel.text = prefix + "..." + suffix
         navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.contentInsetAdjustmentBehavior = .never
         
         view.backgroundColor = Constants.Colors.viewBackgroundColor
         tableView.backgroundColor = Constants.Colors.viewBackgroundColor
 
         getEulerAccount()
-        
+
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0.0
+        }
     }
     
     func getEulerAccount() {
@@ -100,7 +88,7 @@ class AccountDetailViewController: UIViewController {
 extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,6 +100,8 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
         case 2:
             return 1
         case 3:
+            return 1
+        case 4:
             return shownEulerTokens.count
         default:
             return 0
@@ -120,52 +110,55 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
+            return 34
+        } else if indexPath.section == 1 {
             if eulerAccount?.healthScore == nil  {
                 return 44
             } else {
                 return 60
             }
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == 2 {
             if eulerAccount?.supplies == nil || eulerAccount?.supplies.count == 0 {
                 return 44
             } else {
                 return 215
             }
-        } else if indexPath.section == 2 {
+        } else if indexPath.section == 3 {
             if eulerAccount?.borrows == nil || eulerAccount?.borrows.count == 0 {
                 return 44
             } else {
                 return 168
             }
-        } else if indexPath.section == 3 {
-            if indexPath.row == 0 {
-                return 44
-            } else {
-                return 92
-            }
+        } else if indexPath.section == 4 {
+            return 92
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44
+        if section == 0 {
+            return 0
+        } else {
+            return 60
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = Constants.Colors.viewBackgroundColor
-        let titleLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 200, height: 38))
+        let titleLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 200, height: 40))
         headerView.addSubview(titleLabel)
         titleLabel.textColor = Constants.Colors.deepRed
         titleLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
         
-        if section == 0 {
+        if section == 1 {
             titleLabel.text = "Health Score"
-        } else if section == 1 {
-            titleLabel.text = "Deposits"
         } else if section == 2 {
-            titleLabel.text = "Outstanding Loans"
+            titleLabel.text = "Deposits"
         } else if section == 3 {
+            titleLabel.text = "Outstanding Loans"
+        } else if section == 4 {
             titleLabel.text = "Assets"
         }
         
@@ -174,10 +167,18 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "CopyAddressTableViewCell") as? CopyAddressTableViewCell {
+                let prefix = String((address ?? "0x0000000000000000000000000000000000000000").prefix(24))
+                let suffix = String((address ?? "0x0000000000000000000000000000000000000000").suffix(4))
+                cell.address.text = prefix + "..." + suffix
+                return cell
+            }
+        }
+        if indexPath.section == 1 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HealthScoreTableViewCell") as? HealthScoreTableViewCell {
                 let healthScore = eulerAccount?.healthScore ?? 0
                 if healthScore > 0 {
-                    cell.healthScore = eulerAccount?.healthScore ?? 0
+                    cell.healthScore = healthScore
                     cell.setHealthScore()
                 }
                 if eulerAccount?.healthScore == nil  {
@@ -188,7 +189,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 return cell
             }
         }
-        if indexPath.section == 1 {
+        if indexPath.section == 2 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "LendingDepositTableViewCell") as? LendingDepositTableViewCell {
                 cell.edCellDelegate = self
                 cell.deposits = eulerAccount?.supplies ?? []
@@ -199,7 +200,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 }
                 return cell
             }
-        } else if indexPath.section == 2 {
+        } else if indexPath.section == 3 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "LendingLoanTableViewCell") as? LendingLoanTableViewCell {
                 cell.elCellDelegate = self
                 cell.borrows = eulerAccount?.borrows ?? []
@@ -210,80 +211,66 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 }
                 return cell
             }
-        } else if indexPath.section == 3 {
+        } else if indexPath.section == 4 {
             // Show search bar on first cell
-            if indexPath.row == 0 {
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as? SearchTableViewCell {
-                    cell.searchBar.delegate = self
-                    return cell
-                }
-            } else {
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell") as? AssetTableViewCell {
-                    
-                    let eulerToken = shownEulerTokens[indexPath.row - 1]
-                    
-                    numberFormatter.numberStyle = .currency
-                    numberFormatter.currencyCode = "USD"
-                    numberFormatter.maximumFractionDigits = 2
-                    
-                    cell.symbol.text = eulerToken.symbol
-                    cell.name.text = eulerToken.name
-                    cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(eulerToken.price) ?? 0)) ?? "??") + " / \(eulerToken.symbol)"
-                    
-                    numberFormatter.numberStyle = .percent
-                    
-                    cell.borrowAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.borrowAPY) / 100)))
-                    cell.lendAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.supplyAPY) / 100)))
-                    
-                    guard let urlString = eulerToken.logoURI else { return cell }
-                    
-                    let url = URL(string: urlString)
-                    loadData(url: url!) { (data, _) in
-                        if let data = data {
-                            DispatchQueue.main.async {
-                                cell.tokenImage.layer.cornerRadius = cell.tokenImage.bounds.height / 2
-                                cell.tokenImage.image = UIImage(data: data)
-                            }
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell") as? AssetTableViewCell {
+                
+                let eulerToken = shownEulerTokens[indexPath.row]
+                
+                numberFormatter.numberStyle = .currency
+                numberFormatter.currencyCode = "USD"
+                numberFormatter.maximumFractionDigits = 2
+                
+                cell.symbol.text = eulerToken.symbol
+                cell.name.text = eulerToken.name
+                cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(eulerToken.price) ?? 0)) ?? "??") + " / \(eulerToken.symbol)"
+                
+                numberFormatter.numberStyle = .percent
+                
+                cell.borrowAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.borrowAPY) / 100)))
+                cell.lendAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.supplyAPY) / 100)))
+                
+                guard let urlString = eulerToken.logoURI else { return cell }
+                
+                let url = URL(string: urlString)
+                loadData(url: url!) { (data, _) in
+                    if let data = data {
+                        DispatchQueue.main.async {
+                            cell.tokenImage.layer.cornerRadius = cell.tokenImage.bounds.height / 2
+                            cell.tokenImage.image = UIImage(data: data)
                         }
                     }
-                    
-                    return cell
                 }
+                
+                return cell
             }
  
         }
         return UITableViewCell()
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let navBarHeight = navigationController?.navigationBar.frame.height else {
-            return
-        }
-
-        if navBarHeight > 44.0 {
-            addressLabel.isHidden = false
-            copyAddressImage.isHidden = false
-        } else {
-            addressLabel.isHidden = true
-            copyAddressImage.isHidden = true
-        }
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
+            if let address = address {
+                UIPasteboard.general.string = address
+                toastView?.titleLabel.text = "Success"
+                toastView?.bodyText.text = "Address can now be pasted from the clipboard"
+                toastView?.showToast()
+            }
+        case 1:
             let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "HealthNotificationViewController") as HealthNotificationViewController
             vc.accountId = accountId
             vc.deviceId = deviceId
             vc.accountName = nickname
             self.navigationController?.pushViewController(vc, animated: true)
-        case 3:
+        case 4:
             if indexPath.row != 0 {
                 let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
                 let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
 
-                let token = shownEulerTokens[indexPath.row - 1]
+                let token = shownEulerTokens[indexPath.row]
                 vc.tokenAddress = token.address
                 vc.supplyAPY = token.supplyAPY
                 vc.borrowAPY = token.borrowAPY

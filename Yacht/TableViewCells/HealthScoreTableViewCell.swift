@@ -12,8 +12,10 @@ class HealthScoreTableViewCell: UITableViewCell {
     @IBOutlet weak var healthScoreLabel: UILabel!
     @IBOutlet weak var tick: UIView!
     @IBOutlet weak var healthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var greenWidth: NSLayoutConstraint!
     @IBOutlet weak var redZone: UIView!
     @IBOutlet weak var blackZone: UIView!
+    @IBOutlet weak var greenView: UIView!
     
     var healthScore: Double = 0
     
@@ -24,6 +26,7 @@ class HealthScoreTableViewCell: UITableViewCell {
         healthScoreLabel.alpha = 0
         redZone.alpha = 0
         blackZone.alpha = 0
+        greenView.alpha = 0
         
         emptyLabel = UILabel(frame: CGRect(x: 40, y: 4, width: self.bounds.width - 80, height: self.bounds.height - 8))
         emptyLabel?.text = "Euler health score associated with this address will appear here"
@@ -45,6 +48,14 @@ class HealthScoreTableViewCell: UITableViewCell {
             healthConstraint.constant = CGFloat(totalWidth)
         } else {
             healthConstraint.constant = CGFloat(newConstraint)
+        }
+        
+        if newConstraint > redZone.frame.width {
+            greenWidth.constant = newConstraint - redZone.frame.width
+            greenView.alpha = 1
+            tick.backgroundColor = .systemGreen
+        } else {
+            tick.backgroundColor = Constants.Colors.mediumRed
         }
         
         let formatter = NumberFormatter()

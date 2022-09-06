@@ -78,7 +78,7 @@ extension LendingLoanTableViewCell: UICollectionViewDelegate, UICollectionViewDa
             
             let borrow = borrows[indexPath.row]
             
-            if let urlString = Constants.tokenImage[borrow.token.address] {
+            if let urlString = borrow.token.logoURI {
                 let url = URL(string: urlString)
                 loadData(url: url!) { (data, _) in
                     if let data = data {

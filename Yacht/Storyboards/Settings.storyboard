@@ -261,7 +261,7 @@
                         <viewLayoutGuide key="safeArea" id="mgk-4e-SZe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Yxp-79-KKT" firstAttribute="top" secondItem="9o0-7o-T1O" secondAttribute="top" constant="44" id="43a-48-HJD"/>
+                            <constraint firstItem="Yxp-79-KKT" firstAttribute="top" secondItem="mgk-4e-SZe" secondAttribute="top" id="43a-48-HJD"/>
                             <constraint firstItem="cks-iD-uCE" firstAttribute="centerX" secondItem="mgk-4e-SZe" secondAttribute="centerX" id="6Un-Me-pHa"/>
                             <constraint firstItem="cks-iD-uCE" firstAttribute="centerY" secondItem="mgk-4e-SZe" secondAttribute="centerY" id="X3Z-T3-qyu"/>
                             <constraint firstItem="Yxp-79-KKT" firstAttribute="width" secondItem="9o0-7o-T1O" secondAttribute="width" id="adL-pX-SYY"/>

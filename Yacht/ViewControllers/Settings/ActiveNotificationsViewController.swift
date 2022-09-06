@@ -31,7 +31,7 @@ class ActiveNotificationsViewController: UIViewController {
         
         navigationItem.title = "Active Notifications"
         navigationController?.navigationBar.prefersLargeTitles = true
-        extendedLayoutIncludesOpaqueBars = true
+        self.tableView.contentInsetAdjustmentBehavior = .never
         
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -44,7 +44,7 @@ class ActiveNotificationsViewController: UIViewController {
         }
         self.deviceId = deviceId
         getAccounts(deviceId: deviceId)
-    
+
     }
         
     func getAccounts(deviceId: String) {
