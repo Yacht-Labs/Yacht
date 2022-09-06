@@ -75,6 +75,7 @@
 		7F5F83A628BE658D008B8EDB /* SupplyNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A528BE658D008B8EDB /* SupplyNotificationViewController.swift */; };
 		7F5F83AA28BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */; };
 		7F5F83AC28BE712D008B8EDB /* SetIRNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */; };
+		7FEA2D8228C7B71900FF6DAB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,7 @@
 		7F5F83A528BE658D008B8EDB /* SupplyNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplyNotificationViewController.swift; sourceTree = "<group>"; };
 		7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyThresholdTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIRNotificationViewController.swift; sourceTree = "<group>"; };
+		7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +368,7 @@
 				7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */,
 				7F0E3A8528BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift */,
 				7F0E3A9128C2ADBB0024FDB8 /* EmptyNotificationTableViewCell.swift */,
+				7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				7F5F837528B91A65008B8EDB /* NetworkSelectViewController.swift in Sources */,
 				7F5F83AA28BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift in Sources */,
 				7F5F835828B7C856008B8EDB /* LendingLoanTableViewCell.swift in Sources */,
+				7FEA2D8228C7B71900FF6DAB /* SearchTableViewCell.swift in Sources */,
 				7F5F834428B70D5F008B8EDB /* AddressTableViewCell.swift in Sources */,
 				7F5F835A28B7CBA6008B8EDB /* Helpers.swift in Sources */,
 				7F5F835C28B7D628008B8EDB /* HealthScoreTableViewCell.swift in Sources */,

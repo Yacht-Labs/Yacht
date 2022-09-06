@@ -52,20 +52,18 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.05 wstETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="vma-d7-jET">
-                        <rect key="frame" x="10" y="89" width="88" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="5.05 wstETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="vma-d7-jET">
+                        <rect key="frame" x="10" y="89" width="85.5" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="88" id="aC4-ma-UNx"/>
                             <constraint firstAttribute="height" constant="18" id="fGt-p7-NAr"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9,510" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Z0H-Ya-nCG">
-                        <rect key="frame" x="100" y="89" width="55" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9,510" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Z0H-Ya-nCG">
+                        <rect key="frame" x="100.5" y="89" width="54.5" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="55" id="1W8-6g-r0c"/>
                             <constraint firstAttribute="height" constant="18" id="2qg-BB-1du"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="14"/>
@@ -126,6 +124,7 @@
                 <constraint firstItem="Zx9-BS-Fib" firstAttribute="leading" secondItem="umT-3e-yTl" secondAttribute="leading" id="DL4-oo-nCT"/>
                 <constraint firstItem="vma-d7-jET" firstAttribute="leading" secondItem="Zx9-BS-Fib" secondAttribute="leading" id="R8J-Ui-R0t"/>
                 <constraint firstItem="3Xz-QF-M04" firstAttribute="bottom" secondItem="umT-3e-yTl" secondAttribute="bottom" id="Uz6-zg-rXe"/>
+                <constraint firstItem="Z0H-Ya-nCG" firstAttribute="leading" secondItem="vma-d7-jET" secondAttribute="trailing" constant="5" id="Vw6-aR-hbH"/>
                 <constraint firstItem="V6U-N4-NKy" firstAttribute="centerY" secondItem="qqX-gL-98o" secondAttribute="centerY" id="ZkL-5S-Qh3"/>
                 <constraint firstItem="3Xz-QF-M04" firstAttribute="trailing" secondItem="Z0H-Ya-nCG" secondAttribute="trailing" id="ZqA-t9-dU0"/>
                 <constraint firstItem="Z0H-Ya-nCG" firstAttribute="centerY" secondItem="vma-d7-jET" secondAttribute="centerY" id="dap-HL-ghj"/>

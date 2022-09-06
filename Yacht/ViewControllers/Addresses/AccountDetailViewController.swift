@@ -17,7 +17,8 @@ class AccountDetailViewController: UIViewController {
     var nickname: String?
     var accountId: String?
     var deviceId: String?
-    var eulerTokens: [EulerToken] = []
+    var allEulerTokens: [EulerToken] = []
+    var shownEulerTokens: [EulerToken] = []
     var eulerAccount: EulerAccount?
     let numberFormatter = NumberFormatter()
     let networkManager = NetworkManager()
@@ -35,6 +36,8 @@ class AccountDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -79,7 +82,8 @@ class AccountDetailViewController: UIViewController {
         let networkManager = NetworkManager()
         networkManager.getEulerTokens { tokens, error in
             if error == nil {
-                self.eulerTokens = tokens ?? []
+                self.allEulerTokens = tokens ?? []
+                self.shownEulerTokens = tokens ?? []
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -108,7 +112,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
         case 2:
             return 1
         case 3:
-            return eulerTokens.count
+            return shownEulerTokens.count
         default:
             return 0
         }
@@ -134,7 +138,11 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 return 168
             }
         } else if indexPath.section == 3 {
-            return 92
+            if indexPath.row == 0 {
+                return 44
+            } else {
+                return 92
+            }
         }
         return 0
     }
@@ -203,36 +211,45 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 return cell
             }
         } else if indexPath.section == 3 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell") as? AssetTableViewCell {
-                
-                let eulerToken = eulerTokens[indexPath.row]
-                
-                numberFormatter.numberStyle = .currency
-                numberFormatter.currencyCode = "USD"
-                numberFormatter.maximumFractionDigits = 2
-                
-                cell.symbol.text = eulerToken.symbol
-                cell.name.text = eulerToken.name
-                cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(eulerToken.price) ?? 0)) ?? "??") + " / \(eulerToken.symbol)"
-                
-                numberFormatter.numberStyle = .percent
-                
-                cell.borrowAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.borrowAPY) / 1000)))
-                cell.lendAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.supplyAPY) / 1000)))
-                
-                guard let urlString = Constants.tokenImage[eulerToken.address] else { return cell }
-                
-                let url = URL(string: urlString)
-                loadData(url: url!) { (data, _) in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            cell.tokenImage.image = UIImage(data: data)
+            // Show search bar on first cell
+            if indexPath.row == 0 {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as? SearchTableViewCell {
+                    cell.searchBar.delegate = self
+                    return cell
+                }
+            } else {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell") as? AssetTableViewCell {
+                    
+                    let eulerToken = shownEulerTokens[indexPath.row - 1]
+                    
+                    numberFormatter.numberStyle = .currency
+                    numberFormatter.currencyCode = "USD"
+                    numberFormatter.maximumFractionDigits = 2
+                    
+                    cell.symbol.text = eulerToken.symbol
+                    cell.name.text = eulerToken.name
+                    cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(eulerToken.price) ?? 0)) ?? "??") + " / \(eulerToken.symbol)"
+                    
+                    numberFormatter.numberStyle = .percent
+                    
+                    cell.borrowAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.borrowAPY) / 1000)))
+                    cell.lendAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.supplyAPY) / 1000)))
+                    
+                    guard let urlString = Constants.tokenImage[eulerToken.address] else { return cell }
+                    
+                    let url = URL(string: urlString)
+                    loadData(url: url!) { (data, _) in
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                cell.tokenImage.image = UIImage(data: data)
+                            }
                         }
                     }
+                    
+                    return cell
                 }
-                
-                return cell
             }
+ 
         }
         return UITableViewCell()
     }
@@ -261,20 +278,53 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             vc.accountName = nickname
             self.navigationController?.pushViewController(vc, animated: true)
         case 3:
-            let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
+            if indexPath.row != 0 {
+                let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
 
-            let token = eulerTokens[indexPath.row]
-            vc.tokenAddress = token.address
-            vc.supplyAPY = token.supplyAPY
-            vc.borrowAPY = token.borrowAPY
-            vc.symbolValue = token.symbol
-            vc.accountId = accountId
-            vc.deviceId = deviceId
-            self.navigationController?.pushViewController(vc, animated: true)
+                let token = shownEulerTokens[indexPath.row - 1]
+                vc.tokenAddress = token.address
+                vc.supplyAPY = token.supplyAPY
+                vc.borrowAPY = token.borrowAPY
+                vc.symbolValue = token.symbol
+                vc.accountId = accountId
+                vc.deviceId = deviceId
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+
         default:
             return
         }
+    }
+    
+    @objc func keyboardWillShow(sender: NSNotification) {
+        let indexPath = IndexPath(item: 0, section: 3)
+        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+}
+
+extension AccountDetailViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if !searchText.isEmpty {
+            let results = allEulerTokens.filter { token in
+                token.name.localizedCaseInsensitiveContains(searchText) || token.symbol.localizedCaseInsensitiveContains(searchText)
+            }
+            shownEulerTokens = results
+        } else {
+            shownEulerTokens = allEulerTokens
+        }
+        
+    }
+    
+    func reloadOnlyAssets() {
+        var indexPaths = []
+        for i in 1...shownEulerTokens.count {
+            
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 

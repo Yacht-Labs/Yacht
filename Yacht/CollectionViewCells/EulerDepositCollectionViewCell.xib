@@ -7,6 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Akkurat-Bold-Italic.otf">
+            <string>Akkurat-BoldItalic</string>
+        </array>
         <array key="Akkurat-Bold.otf">
             <string>Akkurat-Bold</string>
         </array>
@@ -81,20 +84,18 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.05 wstETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-iH-NNo">
-                        <rect key="frame" x="10" y="89" width="88" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="5.05 wstETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-iH-NNo">
+                        <rect key="frame" x="10" y="89" width="85.5" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="88" id="SAg-Pe-xGl"/>
                             <constraint firstAttribute="height" constant="18" id="aha-de-RT9"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".12 wstETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="C2e-83-8PZ">
-                        <rect key="frame" x="10" y="138" width="88" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text=".12 wstETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="C2e-83-8PZ">
+                        <rect key="frame" x="10" y="138" width="77" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="88" id="0O2-A6-w6t"/>
                             <constraint firstAttribute="height" constant="18" id="icI-KS-v84"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="15"/>
@@ -111,23 +112,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9,510" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="W7k-ek-UjG">
-                        <rect key="frame" x="95" y="89" width="60" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9,510" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="W7k-ek-UjG">
+                        <rect key="frame" x="100.5" y="89" width="54.5" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="KTn-xL-gD9"/>
-                            <constraint firstAttribute="width" constant="60" id="Vxo-Vf-6Vx"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="14"/>
                         <color key="textColor" red="0.44967889789999999" green="0.38736963270000002" blue="0.33796423669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$190" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="f5W-vJ-3YX">
-                        <rect key="frame" x="95" y="138" width="60" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$190" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="f5W-vJ-3YX">
+                        <rect key="frame" x="92" y="138" width="63" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="ny9-at-fEt"/>
                             <constraint firstAttribute="height" constant="18" id="tlt-lP-FYz"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="14"/>
                         <color key="textColor" red="0.44967889789999999" green="0.38736963270000002" blue="0.33796423669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -156,6 +155,7 @@
                 <constraint firstItem="mRV-h7-S1u" firstAttribute="leading" secondItem="1zx-ps-jjV" secondAttribute="leading" id="GAr-AI-11v"/>
                 <constraint firstItem="C2e-83-8PZ" firstAttribute="leading" secondItem="mRV-h7-S1u" secondAttribute="leading" id="GGM-hf-7Sw"/>
                 <constraint firstItem="Wtg-uQ-VpU" firstAttribute="bottom" secondItem="J5U-lM-l6F" secondAttribute="bottom" id="GY8-Rm-47e"/>
+                <constraint firstItem="W7k-ek-UjG" firstAttribute="leading" secondItem="iaE-iH-NNo" secondAttribute="trailing" constant="5" id="HaC-Ck-IRZ"/>
                 <constraint firstItem="C2e-83-8PZ" firstAttribute="top" secondItem="mRV-h7-S1u" secondAttribute="bottom" constant="5" id="HeA-Dv-Gfk"/>
                 <constraint firstItem="1zx-ps-jjV" firstAttribute="top" secondItem="J5U-lM-l6F" secondAttribute="bottom" constant="8" id="HnI-fd-ghC"/>
                 <constraint firstAttribute="trailing" secondItem="W7k-ek-UjG" secondAttribute="trailing" constant="10" id="JJD-eJ-JcD"/>
@@ -168,6 +168,7 @@
                 <constraint firstItem="f5W-vJ-3YX" firstAttribute="trailing" secondItem="W7k-ek-UjG" secondAttribute="trailing" id="bz9-tB-8L3"/>
                 <constraint firstItem="iaE-iH-NNo" firstAttribute="leading" secondItem="1zx-ps-jjV" secondAttribute="leading" id="dxr-4O-2Fj"/>
                 <constraint firstItem="3HT-b0-XER" firstAttribute="centerY" secondItem="vJr-j2-EDH" secondAttribute="centerY" id="f44-t4-NIz"/>
+                <constraint firstItem="f5W-vJ-3YX" firstAttribute="leading" secondItem="C2e-83-8PZ" secondAttribute="trailing" constant="5" id="gZ4-m4-f5y"/>
                 <constraint firstItem="1zx-ps-jjV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="ihK-de-drG"/>
                 <constraint firstAttribute="trailing" secondItem="Wtg-uQ-VpU" secondAttribute="trailing" constant="10" id="lnL-Xi-bfn"/>
                 <constraint firstItem="eHu-L5-f72" firstAttribute="centerY" secondItem="d4F-CH-VZl" secondAttribute="centerY" id="vn3-Dc-olg"/>

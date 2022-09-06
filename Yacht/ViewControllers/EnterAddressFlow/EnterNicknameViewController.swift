@@ -13,8 +13,9 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var yachtImage: UIImageView!
-    
+    var deviceId: String = "NOTIFICATIONS_DISABLED"
     var address: String?
+    var toastView: ToastView?
     
     @IBAction func continueTouched(_ sender: Any) {
         guard let address = address,
@@ -29,10 +30,12 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
         
         let networkManager = NetworkManager()
         
-        guard let deviceId = appDelegate.deviceId else {
-            // TODO error message about notifications
-            networkManager.showErrorAlert(title: "Notifications Disabled", message: "Notifications must be enabled to use this app. Please turn on notifications in settings and hard restart the app", vc: self)
-            return
+        if appDelegate.deviceId == nil {
+            toastView?.titleLabel.text = "Coming Soon"
+            toastView?.bodyText.text = "Notifications must be enabled in order to receive alerts. Turn on notifications and hard restart app in order to enable active notifications"
+            toastView?.showToast()
+        } else if appDelegate.deviceId != nil {
+            deviceId = appDelegate.deviceId!
         }
         
         if checkIfValidNickname(nickname: nickname) {
@@ -40,8 +43,8 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
             continueButton.isEnabled = false
             networkManager.postAccount(address: address, deviceId: deviceId, name: nickname) { account, error in
                 if error == nil {
-                    DispatchQueue.main.async {
-                        self.createAddressInCoreData(address: address, nickname: nickname, deviceId: deviceId, id: account?.id ?? "")
+                    DispatchQueue.main.async { [self] in
+                        createAddressInCoreData(address: address, nickname: nickname, deviceId: deviceId, id: account?.id ?? "")
                         let vc = HomeViewController()
                         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
                     }
@@ -61,6 +64,9 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        toastView = ToastView.init(frame: CGRect(x: self.view.frame.origin.x, y: -80, width: self.view.frame.size.width, height: 80))
+        self.view.addSubview(toastView!)
         
         view.backgroundColor = Constants.Colors.viewBackgroundColor
         errorLabel.alpha = 0

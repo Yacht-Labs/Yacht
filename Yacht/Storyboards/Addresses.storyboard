@@ -343,6 +343,35 @@
                                             <outlet property="tokenImage" destination="TlH-0j-Zx6" id="9Gc-s9-XA0"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchTableViewCell" rowHeight="44" id="fHU-oq-mLE" customClass="SearchTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="284.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fHU-oq-mLE" id="d2I-x8-94S">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-pe-u7f">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <scopeButtonTitles>
+                                                        <string>Title</string>
+                                                        <string>Title</string>
+                                                    </scopeButtonTitles>
+                                                </searchBar>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="Ozr-pe-u7f" firstAttribute="centerX" secondItem="d2I-x8-94S" secondAttribute="centerX" id="HcA-8s-iff"/>
+                                                <constraint firstItem="Ozr-pe-u7f" firstAttribute="centerY" secondItem="d2I-x8-94S" secondAttribute="centerY" id="JoQ-eN-LCr"/>
+                                                <constraint firstItem="Ozr-pe-u7f" firstAttribute="top" secondItem="d2I-x8-94S" secondAttribute="top" id="SXA-a4-FUH"/>
+                                                <constraint firstItem="Ozr-pe-u7f" firstAttribute="leading" secondItem="d2I-x8-94S" secondAttribute="leading" id="TWd-Ra-2Nn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="searchBar" destination="Ozr-pe-u7f" id="1QP-tK-GPZ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0x000000...0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4U-l4-98d">
@@ -395,6 +424,11 @@
                             <constraint firstItem="0la-Se-HRh" firstAttribute="width" secondItem="13m-Mt-QpR" secondAttribute="width" id="ocy-VO-Km3"/>
                             <constraint firstItem="cwA-qK-FkR" firstAttribute="leading" secondItem="x4U-l4-98d" secondAttribute="trailing" constant="8" id="w2t-uc-1vx"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8wb-EO-BSH"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="x4U-l4-98d" id="AfE-Xi-Qkp"/>
@@ -861,8 +895,8 @@
                                                     <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="thumbTintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </slider>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will notify below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atS-XQ-zZQ">
-                                                    <rect key="frame" x="24" y="70" width="107.5" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will notify below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="atS-XQ-zZQ">
+                                                    <rect key="frame" x="24" y="70" width="281" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="jIz-SA-ViG"/>
                                                     </constraints>
@@ -871,10 +905,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiC-3o-wyo">
-                                                    <rect key="frame" x="305" y="67" width="85" height="26"/>
+                                                    <rect key="frame" x="305" y="74.5" width="85" height="11.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="85" id="pXH-ZJ-XHJ"/>
+                                                    </constraints>
                                                     <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain">
+                                                    <buttonConfiguration key="configuration" style="plain" buttonSize="small">
                                                         <attributedString key="attributedTitle">
                                                             <fragment content="Deactivate">
                                                                 <attributes>
@@ -883,6 +920,7 @@
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
+                                                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="activateTouched:" destination="tOs-iv-oHL" eventType="touchUpInside" id="Z1o-SO-Low"/>
@@ -893,6 +931,7 @@
                                                 <constraint firstItem="atS-XQ-zZQ" firstAttribute="leading" secondItem="knd-yx-cqf" secondAttribute="leading" id="0To-FB-28Q"/>
                                                 <constraint firstItem="knd-yx-cqf" firstAttribute="leading" secondItem="m1u-XQ-dYF" secondAttribute="leading" constant="24" id="8JG-Db-TlA"/>
                                                 <constraint firstItem="0si-NP-YoP" firstAttribute="leading" secondItem="knd-yx-cqf" secondAttribute="leading" id="Avn-m7-J9l"/>
+                                                <constraint firstItem="iiC-3o-wyo" firstAttribute="leading" secondItem="atS-XQ-zZQ" secondAttribute="trailing" id="Ihy-Tr-bMA"/>
                                                 <constraint firstItem="n7C-0c-QIZ" firstAttribute="centerY" secondItem="knd-yx-cqf" secondAttribute="centerY" id="KXG-zr-c6D"/>
                                                 <constraint firstItem="0si-NP-YoP" firstAttribute="top" secondItem="knd-yx-cqf" secondAttribute="bottom" constant="4" id="NWR-jR-4cL"/>
                                                 <constraint firstItem="knd-yx-cqf" firstAttribute="top" secondItem="m1u-XQ-dYF" secondAttribute="top" constant="10" id="XXH-Wb-L8q"/>
