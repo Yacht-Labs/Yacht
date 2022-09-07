@@ -73,7 +73,6 @@ class AccountDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.getEulerTokens()
             }
-
         }
     }
     
@@ -298,20 +297,16 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             vc.accountName = nickname
             self.navigationController?.pushViewController(vc, animated: true)
         case 4:
-            if indexPath.row != 0 {
-                let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
-
-                let token = shownEulerTokens[indexPath.row]
-                vc.tokenAddress = token.address
-                vc.supplyAPY = token.supplyAPY
-                vc.borrowAPY = token.borrowAPY
-                vc.symbolValue = token.symbol
-                vc.accountId = accountId
-                vc.deviceId = deviceId
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-
+            let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
+            let token = shownEulerTokens[indexPath.row]
+            vc.tokenAddress = token.address
+            vc.supplyAPY = token.supplyAPY
+            vc.borrowAPY = token.borrowAPY
+            vc.symbolValue = token.symbol
+            vc.accountId = accountId
+            vc.deviceId = deviceId
+            self.navigationController?.pushViewController(vc, animated: true)
         default:
             return
         }
@@ -324,7 +319,7 @@ extension AccountDetailViewController: UISearchResultsUpdating {
         if !searchText.isEmpty {
             let lowersearch = searchText.lowercased()
             let results = allEulerTokens.filter { token in
-                token.symbol.lowercased().contains(lowersearch)
+                token.symbol.lowercased().contains(lowersearch) || token.name.lowercased().contains(lowersearch)
             }
             shownEulerTokens = results
             isAssetView = true
