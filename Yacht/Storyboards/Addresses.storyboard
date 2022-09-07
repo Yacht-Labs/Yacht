@@ -402,8 +402,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0x0000000000000000000000...0000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lp4-7a-SOY">
-                                                    <rect key="frame" x="28" y="8.5" width="312" height="17.5"/>
-                                                    <fontDescription key="fontDescription" name="Akkurat-LightItalic" family="Akkurat-LightItalic" pointSize="20"/>
+                                                    <rect key="frame" x="28" y="5.5" width="312" height="23"/>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="20"/>
                                                     <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

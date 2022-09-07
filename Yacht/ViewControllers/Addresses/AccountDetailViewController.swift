@@ -8,9 +8,13 @@
 import UIKit
 
 class AccountDetailViewController: UIViewController {
+
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var yachtImage: UIImageView!
     var toastView: ToastView?
+    var searchController: UISearchController?
+    var isAssetView: Bool = false
     var address: String?
     var nickname: String?
     var accountId: String?
@@ -24,8 +28,6 @@ class AccountDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -46,6 +48,15 @@ class AccountDetailViewController: UIViewController {
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0.0
         }
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController?.searchResultsUpdater = self
+        searchController?.obscuresBackgroundDuringPresentation = false
+        searchController?.searchBar.placeholder = "Search Assets"
+        searchController?.searchBar.searchTextField.font = UIFont(name: "Akkurat-Regular", size: 14)
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     func getEulerAccount() {
@@ -110,24 +121,40 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 34
-        } else if indexPath.section == 1 {
-            if eulerAccount?.healthScore == nil  {
-                return 44
+            if !isAssetView {
+                return 34
             } else {
-                return 60
+                return 0
+            }
+        } else if indexPath.section == 1 {
+            if !isAssetView {
+                if eulerAccount?.healthScore == nil  {
+                    return 44
+                } else {
+                    return 60
+                }
+            } else {
+                return 0
             }
         } else if indexPath.section == 2 {
-            if eulerAccount?.supplies == nil || eulerAccount?.supplies.count == 0 {
-                return 44
+            if !isAssetView {
+                if eulerAccount?.supplies == nil || eulerAccount?.supplies.count == 0 {
+                    return 44
+                } else {
+                    return 215
+                }
             } else {
-                return 215
+                return 0
             }
         } else if indexPath.section == 3 {
-            if eulerAccount?.borrows == nil || eulerAccount?.borrows.count == 0 {
-                return 44
+            if !isAssetView {
+                if eulerAccount?.borrows == nil || eulerAccount?.borrows.count == 0 {
+                    return 44
+                } else {
+                    return 168
+                }
             } else {
-                return 168
+                return 0
             }
         } else if indexPath.section == 4 {
             return 92
@@ -138,8 +165,14 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 0
-        } else {
+        } else if section == 4 {
             return 60
+        } else {
+            if !isAssetView {
+                return 60
+            } else {
+                return 0
+            }
         }
         
     }
@@ -241,7 +274,6 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                         }
                     }
                 }
-                
                 return cell
             }
  
@@ -284,31 +316,27 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             return
         }
     }
-    
-    @objc func keyboardWillShow(sender: NSNotification) {
-        let indexPath = IndexPath(item: 0, section: 3)
-        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-    }
 }
 
-extension AccountDetailViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+extension AccountDetailViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else { return }
         if !searchText.isEmpty {
             let lowersearch = searchText.lowercased()
             let results = allEulerTokens.filter { token in
                 token.symbol.lowercased().contains(lowersearch)
             }
             shownEulerTokens = results
+            isAssetView = true
         } else {
             shownEulerTokens = allEulerTokens
+            isAssetView = false
         }
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
+
         tableView.reloadData()
     }
 }
+
 
 extension AccountDetailViewController: EDCollectionViewCellDelegate {
     func edCollectionViewCellTapped(collectionviewcell: EulerDepositCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingDepositTableViewCell) {
@@ -341,3 +369,4 @@ extension AccountDetailViewController: ELCollectionViewCellDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+
