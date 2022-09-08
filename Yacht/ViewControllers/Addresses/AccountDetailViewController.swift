@@ -241,8 +241,8 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CopyAddressTableViewCell") as? CopyAddressTableViewCell {
-                let prefix = String((shownEulerAccount?.subAccountId ?? "0x0000000000000000000000000000000000000000").prefix(24))
-                let suffix = String((shownEulerAccount?.subAccountId ?? "0x0000000000000000000000000000000000000000").suffix(4))
+                let prefix = String((address ?? "0x0000000000000000000000000000000000000000").prefix(24))
+                let suffix = String((address ?? "0x0000000000000000000000000000000000000000").suffix(4))
                 cell.address.text = prefix + "..." + suffix
                 return cell
             }

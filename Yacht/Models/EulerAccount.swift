@@ -11,7 +11,7 @@ struct EulerAccount {
     let supplies: [EulerLoan]
     let borrows: [EulerLoan]
     let healthScore: Double
-    let subAccountId: String
+    let subAccountId: Int
 }
 
 extension EulerAccount: Decodable {
@@ -29,7 +29,7 @@ extension EulerAccount: Decodable {
         supplies = try values.decode([EulerLoan].self, forKey: .supplies)
         borrows = try values.decode([EulerLoan].self, forKey: .borrows)
         healthScore = try values.decode(Double.self, forKey: .healthScore)
-        subAccountId = try values.decode(String.self, forKey: .subAccountId)
+        subAccountId = try values.decode(Int.self, forKey: .subAccountId)
     }
     
 }
