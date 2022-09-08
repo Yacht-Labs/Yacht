@@ -24,6 +24,9 @@
         <array key="Akkurat-Regular.ttf">
             <string>Akkurat-Regular</string>
         </array>
+        <array key="BookmaniaRegular.otf">
+            <string>Bookmania-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Addresses List View Controller-->
@@ -441,16 +444,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qh-gz-qKD">
-                                <rect key="frame" x="143" y="34" width="30" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="copyTouched:" destination="HaG-95-B1v" eventType="touchUpInside" id="wEa-kC-4ua"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YachtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="8wb-EO-BSH">
                                 <rect key="frame" x="157" y="403" width="100" height="100"/>
                                 <constraints>
@@ -479,6 +472,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKQ-Ak-fNe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4173.913043478261" y="97.767857142857139"/>
+        </scene>
+        <!--Sub Account Select View Controller-->
+        <scene sceneID="FtN-6d-lcG">
+            <objects>
+                <viewController storyboardIdentifier="SubAccountSelectViewController" id="lbg-WW-bc2" customClass="SubAccountSelectViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lWV-y6-RMy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Fm-dt-z7A">
+                                <rect key="frame" x="18" y="345" width="378" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYt-Iu-i40">
+                                <rect key="frame" x="18" y="794" width="378" height="58"/>
+                                <color key="backgroundColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="0JG-JY-LZf"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Select">
+                                    <fontDescription key="titleFontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveTouched:" destination="eHM-Az-d9x" eventType="touchUpInside" id="QWG-sk-YH8"/>
+                                    <action selector="selectTouched:" destination="lbg-WW-bc2" eventType="touchUpInside" id="z1U-ii-Q9h"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Euler Sub-Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoe-it-YTf">
+                                <rect key="frame" x="70.5" y="64" width="273" height="34"/>
+                                <fontDescription key="fontDescription" name="Bookmania-Regular" family="Bookmania" pointSize="24"/>
+                                <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="byM-2c-Asi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Fm-dt-z7A" firstAttribute="centerY" secondItem="byM-2c-Asi" secondAttribute="centerY" id="9CJ-xk-dvy"/>
+                            <constraint firstItem="5Fm-dt-z7A" firstAttribute="width" secondItem="lWV-y6-RMy" secondAttribute="width" constant="-36" id="X6s-qm-Yp9"/>
+                            <constraint firstItem="Yoe-it-YTf" firstAttribute="centerX" secondItem="byM-2c-Asi" secondAttribute="centerX" id="cwu-st-Cm0"/>
+                            <constraint firstItem="AYt-Iu-i40" firstAttribute="width" secondItem="lWV-y6-RMy" secondAttribute="width" constant="-36" id="fKd-kg-Yxp"/>
+                            <constraint firstItem="AYt-Iu-i40" firstAttribute="centerX" secondItem="byM-2c-Asi" secondAttribute="centerX" id="ilt-1A-6IY"/>
+                            <constraint firstItem="Yoe-it-YTf" firstAttribute="top" secondItem="byM-2c-Asi" secondAttribute="top" constant="20" id="mgY-dR-q6C"/>
+                            <constraint firstItem="byM-2c-Asi" firstAttribute="bottom" secondItem="AYt-Iu-i40" secondAttribute="bottom" constant="10" id="wAG-dT-b7U"/>
+                            <constraint firstItem="5Fm-dt-z7A" firstAttribute="centerX" secondItem="byM-2c-Asi" secondAttribute="centerX" id="xKu-cP-ljY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="5Fm-dt-z7A" id="Gcb-2d-iRY"/>
+                        <outlet property="selectButton" destination="AYt-Iu-i40" id="7YB-Xy-sH9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgp-bZ-U2X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4174" y="759"/>
         </scene>
         <!--Health Notification View Controller-->
         <scene sceneID="emh-m1-TYC">

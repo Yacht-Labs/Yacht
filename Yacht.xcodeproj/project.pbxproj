@@ -77,6 +77,7 @@
 		7F5F83AC28BE712D008B8EDB /* SetIRNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */; };
 		7FEA2D8228C7B71900FF6DAB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */; };
 		7FEA2D8428C7ED6000FF6DAB /* CopyAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */; };
+		7FEA2D8628CA50D500FF6DAB /* SubAccountSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIRNotificationViewController.swift; sourceTree = "<group>"; };
 		7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAddressTableViewCell.swift; sourceTree = "<group>"; };
+		7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAccountSelectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +387,7 @@
 				7F5F836328B82AA5008B8EDB /* IRNotificationViewController.swift */,
 				7F5F83A528BE658D008B8EDB /* SupplyNotificationViewController.swift */,
 				7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */,
+				7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */,
 			);
 			path = Addresses;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				7F5F835828B7C856008B8EDB /* LendingLoanTableViewCell.swift in Sources */,
 				7FEA2D8228C7B71900FF6DAB /* SearchTableViewCell.swift in Sources */,
 				7F5F834428B70D5F008B8EDB /* AddressTableViewCell.swift in Sources */,
+				7FEA2D8628CA50D500FF6DAB /* SubAccountSelectViewController.swift in Sources */,
 				7F5F835A28B7CBA6008B8EDB /* Helpers.swift in Sources */,
 				7F5F835C28B7D628008B8EDB /* HealthScoreTableViewCell.swift in Sources */,
 				7F5F833C28B6BC21008B8EDB /* Constants.swift in Sources */,

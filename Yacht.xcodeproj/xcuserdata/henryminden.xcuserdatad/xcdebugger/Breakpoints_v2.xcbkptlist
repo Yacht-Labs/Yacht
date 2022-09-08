@@ -574,8 +574,8 @@
             filePath = "Yacht/ViewControllers/Addresses/AccountDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "getEulerTokens()"
             landmarkType = "7">
          </BreakpointContent>
@@ -590,8 +590,8 @@
             filePath = "Yacht/ViewControllers/Addresses/AccountDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "getEulerTokens()"
             landmarkType = "7">
          </BreakpointContent>
@@ -610,6 +610,22 @@
             endingLineNumber = "180"
             landmarkName = "handleNetworkResponse(data:response:error:responseModelType:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FA712D1-0B72-413E-9CAF-2E950B08AFED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/ViewControllers/Addresses/AccountDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
+            landmarkName = "AccountDetailViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

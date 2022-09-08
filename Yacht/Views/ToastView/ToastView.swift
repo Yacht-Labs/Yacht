@@ -62,6 +62,7 @@ class ToastView: UIView {
         tap.numberOfTouchesRequired = 1
         tap.numberOfTapsRequired = 1
         self.addGestureRecognizer(tap)
+        self.layer.zPosition = 100
         
     }
     

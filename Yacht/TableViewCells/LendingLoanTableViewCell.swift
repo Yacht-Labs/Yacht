@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ELCollectionViewCellDelegate: AnyObject {
-    func elCollectionViewCellTapped(collectionviewcell: EulerLoanCollectionViewCell?, indexPath: IndexPath, didGetTappedInTableViewCell: LendingLoanTableViewCell)
+    func elCollectionViewCellTapped(collectionviewcell: EulerLoanCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingLoanTableViewCell)
 }
 
 class LendingLoanTableViewCell: UITableViewCell {
@@ -120,7 +120,7 @@ extension LendingLoanTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             let cell = collectionView.cellForItem(at: indexPath) as? EulerLoanCollectionViewCell
-        self.elCellDelegate?.elCollectionViewCellTapped(collectionviewcell: cell, indexPath: indexPath, didGetTappedInTableViewCell: self)
+        self.elCellDelegate?.elCollectionViewCellTapped(collectionviewcell: cell, index: indexPath.item, didGetTappedInTableViewCell: self)
     }
     
 }
