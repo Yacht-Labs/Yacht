@@ -237,10 +237,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wstETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCz-Ht-rz6">
-                                                    <rect key="frame" x="78" y="17" width="200" height="20"/>
+                                                    <rect key="frame" x="78" y="17" width="65" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="9Ft-Ea-0St"/>
-                                                        <constraint firstAttribute="width" constant="200" id="xc7-Yn-TZA"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
                                                     <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -301,12 +300,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDA-ue-n0d">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Supply: $12,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDA-ue-n0d">
                                                     <rect key="frame" x="78" y="59" width="228" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="nzc-tV-c4b"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="14"/>
                                                     <color key="textColor" red="0.44967889789999999" green="0.38736963270000002" blue="0.33796423669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -320,6 +319,15 @@
                                                     <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyE-Dd-yj8">
+                                                    <rect key="frame" x="153" y="19" width="52" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="xQS-nG-A3N"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="14"/>
+                                                    <color key="textColor" red="0.44967889789999999" green="0.38736963270000002" blue="0.33796423669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -331,8 +339,10 @@
                                                 <constraint firstItem="TXf-mj-Vik" firstAttribute="leading" secondItem="CWI-46-Ezw" secondAttribute="trailing" constant="20" id="KCk-HL-iO4"/>
                                                 <constraint firstItem="TlH-0j-Zx6" firstAttribute="leading" secondItem="J3k-i0-Oj8" secondAttribute="leading" constant="10" id="PBy-R0-7W7"/>
                                                 <constraint firstItem="Sbi-jS-Sbu" firstAttribute="bottom" secondItem="gDA-ue-n0d" secondAttribute="bottom" constant="2" id="PL1-FA-qDk"/>
+                                                <constraint firstItem="VyE-Dd-yj8" firstAttribute="centerY" secondItem="vCz-Ht-rz6" secondAttribute="centerY" id="RGZ-C7-ycS"/>
                                                 <constraint firstItem="gDA-ue-n0d" firstAttribute="leading" secondItem="vCz-Ht-rz6" secondAttribute="leading" id="Wos-bc-XJE"/>
                                                 <constraint firstItem="gDA-ue-n0d" firstAttribute="bottom" secondItem="TlH-0j-Zx6" secondAttribute="bottom" id="bMi-gI-0eQ"/>
+                                                <constraint firstItem="VyE-Dd-yj8" firstAttribute="leading" secondItem="vCz-Ht-rz6" secondAttribute="trailing" constant="10" id="djY-hf-6Fi"/>
                                                 <constraint firstItem="vR9-11-jMG" firstAttribute="top" secondItem="LWc-01-wat" secondAttribute="bottom" id="eiX-4G-T79"/>
                                                 <constraint firstItem="CWI-46-Ezw" firstAttribute="leading" secondItem="vCz-Ht-rz6" secondAttribute="leading" id="fuo-65-miG"/>
                                                 <constraint firstItem="vCz-Ht-rz6" firstAttribute="leading" secondItem="TlH-0j-Zx6" secondAttribute="trailing" constant="10" id="ipV-br-K6X"/>

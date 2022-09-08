@@ -21,7 +21,7 @@ class AccountDetailViewController: UIViewController {
     var deviceId: String?
     var allEulerTokens: [EulerToken] = []
     var shownEulerTokens: [EulerToken] = []
-    var eulerAccount: EulerAccount?
+    var eulerAccounts: [EulerAccount] = []
     let numberFormatter = NumberFormatter()
     let networkManager = NetworkManager()
     
@@ -61,9 +61,9 @@ class AccountDetailViewController: UIViewController {
     
     func getEulerAccount() {
         networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
-        networkManager.getEulerAccount(address: address ?? "0x0000000000000000000000000000000000000000") { account, error in
+        networkManager.getEulerAccounts(address: address ?? "0x0000000000000000000000000000000000000000") { accounts, error in
             if error == nil {
-                self.eulerAccount = account
+                self.eulerAccounts = accounts ?? []
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -106,11 +106,11 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
         case 0:
             return 1
         case 1:
-            return 1
+            return eulerAccounts.count
         case 2:
-            return 1
+            return eulerAccounts.count
         case 3:
-            return 1
+            return eulerAccounts.count
         case 4:
             return shownEulerTokens.count
         default:
@@ -127,7 +127,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             }
         } else if indexPath.section == 1 {
             if !isAssetView {
-                if eulerAccount?.healthScore == nil  {
+                if eulerAccounts.isEmpty  {
                     return 44
                 } else {
                     return 60
@@ -137,7 +137,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             }
         } else if indexPath.section == 2 {
             if !isAssetView {
-                if eulerAccount?.supplies == nil || eulerAccount?.supplies.count == 0 {
+                if eulerAccounts.isEmpty {
                     return 44
                 } else {
                     return 215
@@ -147,7 +147,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             }
         } else if indexPath.section == 3 {
             if !isAssetView {
-                if eulerAccount?.borrows == nil || eulerAccount?.borrows.count == 0 {
+                if eulerAccounts.isEmpty {
                     return 44
                 } else {
                     return 168
@@ -208,12 +208,12 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
         }
         if indexPath.section == 1 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HealthScoreTableViewCell") as? HealthScoreTableViewCell {
-                let healthScore = eulerAccount?.healthScore ?? 0
+                let healthScore = eulerAccounts[indexPath.row].healthScore
                 if healthScore > 0 {
                     cell.healthScore = healthScore
                     cell.setHealthScore()
                 }
-                if eulerAccount?.healthScore == nil  {
+                if eulerAccounts.isEmpty  {
                     cell.emptyLabel?.alpha = 1
                 } else {
                     cell.emptyLabel?.alpha = 0
@@ -224,8 +224,8 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
         if indexPath.section == 2 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "LendingDepositTableViewCell") as? LendingDepositTableViewCell {
                 cell.edCellDelegate = self
-                cell.deposits = eulerAccount?.supplies ?? []
-                if eulerAccount?.supplies == nil || eulerAccount?.supplies.count == 0 {
+                cell.deposits = eulerAccounts[indexPath.row].supplies
+                if eulerAccounts[indexPath.row].supplies.count == 0 {
                     cell.emptyLabel?.alpha = 1
                 } else {
                     cell.emptyLabel?.alpha = 0
@@ -235,8 +235,8 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
         } else if indexPath.section == 3 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "LendingLoanTableViewCell") as? LendingLoanTableViewCell {
                 cell.elCellDelegate = self
-                cell.borrows = eulerAccount?.borrows ?? []
-                if eulerAccount?.borrows == nil || eulerAccount?.borrows.count == 0 {
+                cell.borrows = eulerAccounts[indexPath.row].borrows
+                if eulerAccounts[indexPath.row].borrows.count == 0 {
                     cell.emptyLabel?.alpha = 1
                 } else {
                     cell.emptyLabel?.alpha = 0
@@ -334,15 +334,15 @@ extension AccountDetailViewController: UISearchResultsUpdating {
 
 
 extension AccountDetailViewController: EDCollectionViewCellDelegate {
-    func edCollectionViewCellTapped(collectionviewcell: EulerDepositCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingDepositTableViewCell) {
+    func edCollectionViewCellTapped(collectionviewcell: EulerDepositCollectionViewCell?, indexPath: IndexPath, didGetTappedInTableViewCell: LendingDepositTableViewCell) {
         let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
 
-        let deposit = eulerAccount?.supplies[index]
-        vc.tokenAddress = deposit?.token.address ?? "0x0000000000000000000000000000000000000000"
-        vc.supplyAPY = deposit?.token.supplyAPY ?? 0
-        vc.borrowAPY = deposit?.token.borrowAPY ?? 0
-        vc.symbolValue = deposit?.token.symbol ?? ""
+        let deposit = eulerAccounts[indexPath.section].supplies[indexPath.row]
+        vc.tokenAddress = deposit.token.address
+        vc.supplyAPY = deposit.token.supplyAPY
+        vc.borrowAPY = deposit.token.borrowAPY
+        vc.symbolValue = deposit.token.symbol
         vc.accountId = accountId
         vc.deviceId = deviceId
         self.navigationController?.pushViewController(vc, animated: true)
@@ -350,15 +350,15 @@ extension AccountDetailViewController: EDCollectionViewCellDelegate {
 }
 
 extension AccountDetailViewController: ELCollectionViewCellDelegate {
-    func elCollectionViewCellTapped(collectionviewcell: EulerLoanCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingLoanTableViewCell) {
+    func elCollectionViewCellTapped(collectionviewcell: EulerLoanCollectionViewCell?, indexPath: IndexPath, didGetTappedInTableViewCell: LendingLoanTableViewCell) {
         let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
 
-        let borrow = eulerAccount?.borrows[index]
-        vc.tokenAddress = borrow?.token.address ?? "0x0000000000000000000000000000000000000000"
-        vc.supplyAPY = borrow?.token.supplyAPY ?? 0
-        vc.borrowAPY = borrow?.token.borrowAPY ?? 0
-        vc.symbolValue = borrow?.token.symbol ?? ""
+        let borrow = eulerAccounts[indexPath.section].borrows[indexPath.row]
+        vc.tokenAddress = borrow.token.address
+        vc.supplyAPY = borrow.token.supplyAPY
+        vc.borrowAPY = borrow.token.borrowAPY
+        vc.symbolValue = borrow.token.symbol
         vc.accountId = accountId
         vc.deviceId = deviceId
         self.navigationController?.pushViewController(vc, animated: true)

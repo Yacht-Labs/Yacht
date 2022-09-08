@@ -153,9 +153,9 @@ struct NetworkManager {
     // Euler Account Method
     //*********************************
     
-    func getEulerAccount(address: String, completion: @escaping (_ account: EulerAccount?, _ error: String?) -> Void) {
+    func getEulerAccounts(address: String, completion: @escaping (_ accounts: [EulerAccount]?, _ error: String?) -> Void) {
         router.request(.getEulerAccount(address: address)) { data, response, error in
-            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerAccount.self)
+            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [EulerAccount].self)
             completion(result.0, result.1)
         }
     }
