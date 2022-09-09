@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToastView" customModule="YachtWallet" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToastView" customModule="Yacht" customModuleProvider="target">
             <connections>
                 <outlet property="bodyText" destination="L7p-TM-6cW" id="sDS-1W-cjx"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Qac-22-BHi"/>
@@ -77,7 +77,7 @@
                 <constraint firstItem="Qbo-Ei-RGJ" firstAttribute="leading" secondItem="EGg-yF-gHo" secondAttribute="leading" constant="-10" id="chC-Qn-4OV"/>
                 <constraint firstItem="L7p-TM-6cW" firstAttribute="trailing" secondItem="kgi-QH-pPu" secondAttribute="trailing" id="omk-Ge-mNa"/>
                 <constraint firstItem="L7p-TM-6cW" firstAttribute="top" secondItem="kgi-QH-pPu" secondAttribute="bottom" id="p3w-Dj-uJY"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Qbo-Ei-RGJ" secondAttribute="bottom" id="vcb-rP-IeC"/>
+                <constraint firstAttribute="bottom" secondItem="Qbo-Ei-RGJ" secondAttribute="bottom" id="vcb-rP-IeC"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

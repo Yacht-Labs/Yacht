@@ -19,6 +19,7 @@ struct EulerToken {
     let eulAPY: Double
     let logoURI: String?
     let totalSupplyUSD: String?
+    let tier: String?
 }
 
 extension EulerToken: Decodable {
@@ -35,6 +36,7 @@ extension EulerToken: Decodable {
         case eulAPY
         case logoURI
         case totalSupplyUSD
+        case tier
     }
     
     init(from decoder: Decoder) throws {
@@ -51,6 +53,7 @@ extension EulerToken: Decodable {
         eulAPY = try values.decode(Double.self, forKey: .eulAPY)
         logoURI = try values.decodeIfPresent(String.self, forKey: .logoURI)
         totalSupplyUSD = try values.decodeIfPresent(String.self, forKey: .totalSupplyUSD)
+        tier = try values.decodeIfPresent(String.self, forKey: .tier)
     }
     
     

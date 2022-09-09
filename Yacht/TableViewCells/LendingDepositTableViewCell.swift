@@ -22,11 +22,11 @@ class LendingDepositTableViewCell: UITableViewCell {
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 165, height: 215)
+        flowLayout.itemSize = CGSize(width: 145, height: 225)
         flowLayout.minimumLineSpacing = 10.0
         flowLayout.minimumInteritemSpacing = 10.0
         
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 215), collectionViewLayout: flowLayout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 225), collectionViewLayout: flowLayout)
         collectionView?.backgroundColor = Constants.Colors.viewBackgroundColor
         addSubview(collectionView!)
 

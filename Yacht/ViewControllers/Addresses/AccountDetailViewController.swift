@@ -182,7 +182,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 if shownEulerAccount?.supplies == nil || shownEulerAccount?.supplies.count == 0  {
                     return 44
                 } else {
-                    return 215
+                    return 225
                 }
             } else {
                 return 0
@@ -304,6 +304,18 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 cell.name.text = eulerToken.name
                 cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(eulerToken.price) ?? 0)) ?? "??")
                 cell.totalSupplyUSD.text = "Total Supply: " + (numberFormatter.string(from: NSNumber(value: Float(eulerToken.totalSupplyUSD ?? "0") ?? 0)) ?? "$0")
+                cell.tier.text = eulerToken.tier
+                
+                switch eulerToken.tier {
+                case "collateral":
+                    cell.tierContainer.backgroundColor = Constants.Colors.eulerCollateral
+                case "cross":
+                    cell.tierContainer.backgroundColor = Constants.Colors.eulerCross
+                case "isolated":
+                    cell.tierContainer.backgroundColor = Constants.Colors.eulerIsolated
+                default:
+                    break
+                }
                 
                 numberFormatter.numberStyle = .percent
                 

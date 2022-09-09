@@ -16,6 +16,8 @@ class AssetTableViewCell: UITableViewCell {
     @IBOutlet weak var borrowAPY: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var totalSupplyUSD: UILabel!
+    @IBOutlet weak var tier: UILabel!
+    @IBOutlet weak var tierContainer: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +33,8 @@ class AssetTableViewCell: UITableViewCell {
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = Constants.Colors.lightGray.cgColor
         contentView.clipsToBounds = true
+        tierContainer.layer.cornerRadius = 4
+        tierContainer.clipsToBounds = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

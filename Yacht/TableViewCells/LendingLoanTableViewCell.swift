@@ -22,7 +22,7 @@ class LendingLoanTableViewCell: UITableViewCell {
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 165, height: 168)
+        flowLayout.itemSize = CGSize(width: 145, height: 168)
         flowLayout.minimumLineSpacing = 10.0
         flowLayout.minimumInteritemSpacing = 5.0
         

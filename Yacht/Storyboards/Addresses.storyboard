@@ -323,12 +323,22 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyE-Dd-yj8">
-                                                    <rect key="frame" x="153" y="19" width="52" height="16"/>
+                                                    <rect key="frame" x="151" y="17" width="52" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="xQS-nG-A3N"/>
+                                                        <constraint firstAttribute="height" constant="20" id="xQS-nG-A3N"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="14"/>
                                                     <color key="textColor" red="0.44967889789999999" green="0.38736963270000002" blue="0.33796423669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPx-2F-q8n">
+                                                    <rect key="frame" x="211" y="19" width="63" height="16"/>
+                                                    <color key="backgroundColor" red="0.66494160889999998" green="0.72059953210000005" blue="0.74781721830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collateral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iq7-Oo-htX">
+                                                    <rect key="frame" x="215" y="21" width="55" height="12"/>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="12"/>
+                                                    <color key="textColor" red="0.90344257057062649" green="0.9614373943647504" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -338,17 +348,23 @@
                                                 <constraint firstItem="CWI-46-Ezw" firstAttribute="centerY" secondItem="J3k-i0-Oj8" secondAttribute="centerY" id="6wC-k3-lSK"/>
                                                 <constraint firstItem="TlH-0j-Zx6" firstAttribute="centerY" secondItem="J3k-i0-Oj8" secondAttribute="centerY" id="BfU-Th-xPX"/>
                                                 <constraint firstItem="TXf-mj-Vik" firstAttribute="trailing" secondItem="vR9-11-jMG" secondAttribute="trailing" id="Czh-cJ-k2i"/>
+                                                <constraint firstItem="iq7-Oo-htX" firstAttribute="leading" secondItem="mPx-2F-q8n" secondAttribute="leading" constant="4" id="DsK-ge-TSQ"/>
                                                 <constraint firstItem="jzI-Gy-yLA" firstAttribute="leading" secondItem="CWI-46-Ezw" secondAttribute="leading" id="Ia4-9M-poi"/>
+                                                <constraint firstItem="mPx-2F-q8n" firstAttribute="bottom" secondItem="vCz-Ht-rz6" secondAttribute="bottom" constant="-2" id="Jti-58-9Ec"/>
                                                 <constraint firstItem="TXf-mj-Vik" firstAttribute="leading" secondItem="CWI-46-Ezw" secondAttribute="trailing" constant="20" id="KCk-HL-iO4"/>
+                                                <constraint firstItem="iq7-Oo-htX" firstAttribute="trailing" secondItem="mPx-2F-q8n" secondAttribute="trailing" constant="-4" id="M9k-ce-EEu"/>
                                                 <constraint firstItem="TlH-0j-Zx6" firstAttribute="leading" secondItem="J3k-i0-Oj8" secondAttribute="leading" constant="10" id="PBy-R0-7W7"/>
                                                 <constraint firstItem="Sbi-jS-Sbu" firstAttribute="bottom" secondItem="gDA-ue-n0d" secondAttribute="bottom" constant="2" id="PL1-FA-qDk"/>
                                                 <constraint firstItem="VyE-Dd-yj8" firstAttribute="centerY" secondItem="vCz-Ht-rz6" secondAttribute="centerY" id="RGZ-C7-ycS"/>
                                                 <constraint firstItem="gDA-ue-n0d" firstAttribute="leading" secondItem="vCz-Ht-rz6" secondAttribute="leading" id="Wos-bc-XJE"/>
+                                                <constraint firstItem="mPx-2F-q8n" firstAttribute="leading" secondItem="VyE-Dd-yj8" secondAttribute="trailing" constant="8" id="ZwK-AD-Qhh"/>
+                                                <constraint firstItem="iq7-Oo-htX" firstAttribute="centerY" secondItem="mPx-2F-q8n" secondAttribute="centerY" id="aeR-yH-qco"/>
                                                 <constraint firstItem="gDA-ue-n0d" firstAttribute="bottom" secondItem="TlH-0j-Zx6" secondAttribute="bottom" id="bMi-gI-0eQ"/>
-                                                <constraint firstItem="VyE-Dd-yj8" firstAttribute="leading" secondItem="vCz-Ht-rz6" secondAttribute="trailing" constant="10" id="djY-hf-6Fi"/>
+                                                <constraint firstItem="VyE-Dd-yj8" firstAttribute="leading" secondItem="vCz-Ht-rz6" secondAttribute="trailing" constant="8" id="djY-hf-6Fi"/>
                                                 <constraint firstItem="vR9-11-jMG" firstAttribute="top" secondItem="LWc-01-wat" secondAttribute="bottom" id="eiX-4G-T79"/>
                                                 <constraint firstItem="CWI-46-Ezw" firstAttribute="leading" secondItem="vCz-Ht-rz6" secondAttribute="leading" id="fuo-65-miG"/>
                                                 <constraint firstItem="vCz-Ht-rz6" firstAttribute="leading" secondItem="TlH-0j-Zx6" secondAttribute="trailing" constant="10" id="ipV-br-K6X"/>
+                                                <constraint firstItem="mPx-2F-q8n" firstAttribute="top" secondItem="vCz-Ht-rz6" secondAttribute="top" constant="2" id="k2n-aR-ohL"/>
                                                 <constraint firstItem="gDA-ue-n0d" firstAttribute="trailing" secondItem="CWI-46-Ezw" secondAttribute="trailing" id="lUQ-j3-ACo"/>
                                                 <constraint firstItem="Sbi-jS-Sbu" firstAttribute="trailing" secondItem="TXf-mj-Vik" secondAttribute="trailing" id="rkv-YH-diA"/>
                                                 <constraint firstItem="Sbi-jS-Sbu" firstAttribute="top" secondItem="TXf-mj-Vik" secondAttribute="bottom" id="t41-aN-XOb"/>
@@ -375,6 +391,8 @@
                                             <outlet property="name" destination="CWI-46-Ezw" id="muZ-Uj-M8b"/>
                                             <outlet property="price" destination="VyE-Dd-yj8" id="bzl-5T-tZq"/>
                                             <outlet property="symbol" destination="vCz-Ht-rz6" id="AqB-W9-qhY"/>
+                                            <outlet property="tier" destination="iq7-Oo-htX" id="8gX-Wt-rez"/>
+                                            <outlet property="tierContainer" destination="mPx-2F-q8n" id="LBL-KV-xcG"/>
                                             <outlet property="tokenImage" destination="TlH-0j-Zx6" id="9Gc-s9-XA0"/>
                                             <outlet property="totalSupplyUSD" destination="gDA-ue-n0d" id="HbK-Ij-vHZ"/>
                                         </connections>

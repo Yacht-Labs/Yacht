@@ -25,6 +25,10 @@ struct Constants {
         static let deepRed = UIColor(red: 38/255, green: 18/255, blue: 1/255, alpha: 255/255)
         static let parchment = UIColor(red: 252/255, green: 251/255, blue: 238/255, alpha: 255/255)
         
+        static let eulerCollateral = UIColor(red: 38/255, green: 205/255, blue: 204/255, alpha: 255/255)
+        static let eulerCross = UIColor(red: 255/255, green: 185/255, blue: 68/255, alpha: 255/255)
+        static let eulerIsolated = UIColor(red: 238/255, green: 100/255, blue: 96/255, alpha: 255/255)
+        
     }
     
     struct LocalStorage {
