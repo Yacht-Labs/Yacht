@@ -302,7 +302,8 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 
                 cell.symbol.text = eulerToken.symbol
                 cell.name.text = eulerToken.name
-                cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(eulerToken.price) ?? 0)) ?? "??") + " / \(eulerToken.symbol)"
+                cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(eulerToken.price) ?? 0)) ?? "??")
+                cell.totalSupplyUSD.text = "Total Supply: " + (numberFormatter.string(from: NSNumber(value: Float(eulerToken.totalSupplyUSD ?? "0") ?? 0)) ?? "$0")
                 
                 numberFormatter.numberStyle = .percent
                 

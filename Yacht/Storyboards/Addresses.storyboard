@@ -373,9 +373,10 @@
                                             <outlet property="borrowAPY" destination="Sbi-jS-Sbu" id="rqb-kx-D94"/>
                                             <outlet property="lendAPY" destination="vR9-11-jMG" id="qFD-RU-pdo"/>
                                             <outlet property="name" destination="CWI-46-Ezw" id="muZ-Uj-M8b"/>
-                                            <outlet property="price" destination="gDA-ue-n0d" id="GVK-d8-Zx7"/>
+                                            <outlet property="price" destination="VyE-Dd-yj8" id="bzl-5T-tZq"/>
                                             <outlet property="symbol" destination="vCz-Ht-rz6" id="AqB-W9-qhY"/>
                                             <outlet property="tokenImage" destination="TlH-0j-Zx6" id="9Gc-s9-XA0"/>
+                                            <outlet property="totalSupplyUSD" destination="gDA-ue-n0d" id="HbK-Ij-vHZ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchTableViewCell" rowHeight="44" id="fHU-oq-mLE" customClass="SearchTableViewCell" customModule="Yacht" customModuleProvider="target">
