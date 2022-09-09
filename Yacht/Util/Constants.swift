@@ -23,6 +23,7 @@ struct Constants {
         static let mediumRed = UIColor(red: 173/255, green: 29/255, blue: 29/255, alpha: 255/255)
         static let oliveDrab = UIColor(red: 115/255, green: 99/255, blue: 86/255, alpha: 255/255)
         static let deepRed = UIColor(red: 38/255, green: 18/255, blue: 1/255, alpha: 255/255)
+        static let parchment = UIColor(red: 252/255, green: 251/255, blue: 238/255, alpha: 255/255)
         
     }
     

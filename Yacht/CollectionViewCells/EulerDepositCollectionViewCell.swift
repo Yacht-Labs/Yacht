@@ -22,14 +22,16 @@ class EulerDepositCollectionViewCell: UICollectionViewCell {
         // Initialization code
         tokenImage.layer.cornerRadius = tokenImage.frame.height / 2
         tokenImage.clipsToBounds = true
+        
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
         contentView.layer.cornerRadius = 18
+        contentView.backgroundColor = Constants.Colors.parchment
         contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = Constants.Colors.mediumRed.cgColor
+        contentView.layer.borderColor = Constants.Colors.lightGray.cgColor
         contentView.clipsToBounds = true
     }
 }
