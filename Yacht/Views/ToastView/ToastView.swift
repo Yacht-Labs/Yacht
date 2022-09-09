@@ -15,7 +15,7 @@ protocol ToastViewDelegate {
 class ToastView: UIView {
 
     var delegate: ToastViewDelegate?
-    
+    var parentViewHeight: CGFloat = 0
     @IBOutlet private var contentView: UIView?
     // other outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -23,7 +23,7 @@ class ToastView: UIView {
     @IBOutlet weak var toastContainer: UIView!
     
     let toastHeight: CGFloat = 80
-    let toastTopOffset: CGFloat = 140
+    let toastTopOffset: CGFloat = 180
     
     var beginY: CGFloat = 0
     var deltaY: CGFloat = 0
@@ -54,9 +54,9 @@ class ToastView: UIView {
         toastContainer.layer.insertSublayer(gradientLayer, at: 0)
         toastContainer.layer.cornerRadius = 18
         
-        let pan = UIPanGestureRecognizer.init(target: self, action: #selector(handlePan(recognizer:)))
-        pan.minimumNumberOfTouches = 1
-        self.addGestureRecognizer(pan)
+        //let pan = UIPanGestureRecognizer.init(target: self, action: #selector(handlePan(recognizer:)))
+        //pan.minimumNumberOfTouches = 1
+        //self.addGestureRecognizer(pan)
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(handleTap(recognizer:)))
         tap.numberOfTouchesRequired = 1
@@ -83,8 +83,8 @@ class ToastView: UIView {
         }
         
         if recognizer.state == UIGestureRecognizer.State.changed {
-            deltaY = touchLocation.y - beginY
-            if self.frame.origin.y + deltaY < toastTopOffset {
+            deltaY = touchLocation.y + beginY
+            if self.frame.origin.y + deltaY > toastTopOffset {
                 self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y + deltaY, width: self.frame.size.width, height: self.frame.size.height)
             }
         }
@@ -93,7 +93,7 @@ class ToastView: UIView {
             
             let newPos = self.frame.origin.y + deltaY
             
-            if newPos < (toastTopOffset - 40) {
+            if newPos > (toastTopOffset + 40) {
                 hideToast()
             } else {
                 showToast()
@@ -107,7 +107,7 @@ class ToastView: UIView {
         
         UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 18.0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
             
-            self.frame = CGRect(x: self.frame.origin.x, y: self.toastTopOffset, width: self.frame.size.width, height: self.frame.size.height)
+            self.frame = CGRect(x: self.frame.origin.x, y: self.parentViewHeight - self.toastTopOffset, width: self.frame.size.width, height: self.frame.size.height)
             
         }) { (_) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
@@ -121,7 +121,7 @@ class ToastView: UIView {
         
         UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 18.0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
             
-            self.frame = CGRect(x: self.frame.origin.x, y: -self.toastHeight, width: self.frame.size.width, height: self.frame.size.height)
+            self.frame = CGRect(x: self.frame.origin.x, y: self.parentViewHeight, width: self.frame.size.width, height: self.frame.size.height)
             
         }) { (_) in
             

@@ -34,7 +34,8 @@ class AccountDetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        toastView = ToastView.init(frame: CGRect(x: self.view.frame.origin.x, y: -80, width: self.view.frame.size.width, height: 80))
+        toastView = ToastView.init(frame: CGRect(x: self.view.frame.origin.x, y: self.view.bounds.height, width: self.view.frame.size.width, height: 80))
+        toastView?.parentViewHeight = self.view.bounds.height
         self.view.addSubview(toastView!)
         
         navigationItem.title = nickname ?? "Unknown"
@@ -97,7 +98,7 @@ class AccountDetailViewController: UIViewController {
         networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
         networkManager.getEulerAccounts(address: address ?? "0x0000000000000000000000000000000000000000") { accounts, error in
             if error == nil {
-                self.eulerAccounts = accounts ?? []
+                self.eulerAccounts = accounts?.sorted { $0.subAccountId < $1.subAccountId }  ?? []
                 self.shownEulerAccount = self.eulerAccounts[0]
                 if self.eulerAccounts.count > 1 {
                     DispatchQueue.main.async {
@@ -241,9 +242,14 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CopyAddressTableViewCell") as? CopyAddressTableViewCell {
-                let prefix = String((address ?? "0x0000000000000000000000000000000000000000").prefix(24))
+                let prefix = String((address ?? "0x0000000000000000000000000000000000000000").prefix(6))
                 let suffix = String((address ?? "0x0000000000000000000000000000000000000000").suffix(4))
                 cell.address.text = prefix + "..." + suffix
+                if shownEulerAccount?.subAccountId == 0 || shownEulerAccount?.subAccountId == nil {
+                    cell.account.text = "Main"
+                } else {
+                    cell.account.text = "Sub \(shownEulerAccount?.subAccountId ?? 0)"
+                }
                 return cell
             }
         }

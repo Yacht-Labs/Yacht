@@ -414,31 +414,39 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0x0000000000000000000000...0000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lp4-7a-SOY">
-                                                    <rect key="frame" x="28" y="5.5" width="312" height="23"/>
-                                                    <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0x9624...BC45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp4-7a-SOY">
+                                                    <rect key="frame" x="80" y="9.5" width="104" height="15"/>
+                                                    <fontDescription key="fontDescription" name="Akkurat-LightItalic" family="Akkurat-LightItalic" pointSize="16"/>
                                                     <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.on.doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="l9u-WX-iDm">
-                                                    <rect key="frame" x="346" y="5.5" width="28" height="23"/>
+                                                    <rect key="frame" x="190" y="5.5" width="28" height="23"/>
                                                     <color key="tintColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="28" id="lza-DU-eKB"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WgL-De-jMg">
+                                                    <rect key="frame" x="24" y="7" width="46" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="lp4-7a-SOY" firstAttribute="leading" secondItem="5Py-2z-3LP" secondAttribute="leading" constant="28" id="6yD-YZ-yqv"/>
                                                 <constraint firstItem="l9u-WX-iDm" firstAttribute="leading" secondItem="lp4-7a-SOY" secondAttribute="trailing" constant="6" id="KD2-yO-SSZ"/>
                                                 <constraint firstItem="l9u-WX-iDm" firstAttribute="centerY" secondItem="5Py-2z-3LP" secondAttribute="centerY" id="T6h-0R-NDY"/>
-                                                <constraint firstAttribute="trailing" secondItem="l9u-WX-iDm" secondAttribute="trailing" constant="40" id="jkj-rw-1pC"/>
+                                                <constraint firstItem="WgL-De-jMg" firstAttribute="leading" secondItem="5Py-2z-3LP" secondAttribute="leading" constant="24" id="oo9-n1-I6l"/>
                                                 <constraint firstItem="lp4-7a-SOY" firstAttribute="centerY" secondItem="5Py-2z-3LP" secondAttribute="centerY" id="r7A-HH-fI1"/>
+                                                <constraint firstItem="WgL-De-jMg" firstAttribute="centerY" secondItem="lp4-7a-SOY" secondAttribute="centerY" id="wAJ-g6-gFR"/>
+                                                <constraint firstItem="lp4-7a-SOY" firstAttribute="leading" secondItem="WgL-De-jMg" secondAttribute="trailing" constant="10" id="zAx-pP-1XJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="account" destination="WgL-De-jMg" id="9b1-is-shU"/>
                                             <outlet property="address" destination="lp4-7a-SOY" id="qer-0B-wH8"/>
                                         </connections>
                                     </tableViewCell>

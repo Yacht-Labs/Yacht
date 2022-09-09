@@ -9,6 +9,7 @@ import UIKit
 
 class CopyAddressTableViewCell: UITableViewCell {
     @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var account: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

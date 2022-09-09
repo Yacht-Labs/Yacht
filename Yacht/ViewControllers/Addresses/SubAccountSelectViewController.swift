@@ -80,10 +80,13 @@ extension SubAccountSelectViewController: UIPickerViewDelegate, UIPickerViewData
         
         let account = eulerAccounts[row]
         
-        let prefix = String(account.subAccountId).prefix(8)
-        let suffix = String(account.subAccountId).suffix(4)
+        if account.subAccountId == 0 {
+            return "Main Account"
+        } else {
+            return "Sub-Account \(account.subAccountId)"
+        }
 
-        return prefix + "..." + suffix
+        
         
     }
 }

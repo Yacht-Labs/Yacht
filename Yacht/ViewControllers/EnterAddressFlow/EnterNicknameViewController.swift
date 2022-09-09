@@ -65,7 +65,8 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        toastView = ToastView.init(frame: CGRect(x: self.view.frame.origin.x, y: -80, width: self.view.frame.size.width, height: 80))
+        toastView = ToastView.init(frame: CGRect(x: self.view.frame.origin.x, y: self.view.bounds.height, width: self.view.frame.size.width, height: 80))
+        toastView?.parentViewHeight = self.view.bounds.height
         self.view.addSubview(toastView!)
         
         view.backgroundColor = Constants.Colors.viewBackgroundColor
