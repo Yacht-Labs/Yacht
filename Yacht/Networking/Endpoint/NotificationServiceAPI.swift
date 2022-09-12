@@ -23,8 +23,7 @@ public enum NotificationServiceAPI {
     case putEulerNotificationHealth(id: String, thresholdValue: Float)
     case deleteEulerNotificationHealth(id: String)
     
-    case postEulerNotificationIR(accountId: String,
-                                 deviceId: String,
+    case postEulerNotificationIR(deviceId: String,
                                  tokenAddress: String,
                                  borrowAPY: Float?,
                                  supplyAPY: Float?,
@@ -156,7 +155,7 @@ extension NotificationServiceAPI: EndPointType {
         case .deleteEulerNotificationHealth:
             return .request
             
-        case .postEulerNotificationIR(let accountId,
+        case .postEulerNotificationIR(
             let deviceId,
             let tokenAddress,
             let borrowAPY,
@@ -166,7 +165,6 @@ extension NotificationServiceAPI: EndPointType {
             let supplyLowerThreshold,
             let supplyUpperThreshold):
             return .requestParameters(bodyParameters: [
-                "accountId": accountId,
                 "deviceId": deviceId,
                 "tokenAddress": tokenAddress,
                 "borrowAPY": borrowAPY as Any,

@@ -91,7 +91,7 @@ struct NetworkManager {
     // Euler IR Notification Methods
     //*********************************
     
-    func postEulerNotificationIR(accountId: String,
+    func postEulerNotificationIR(
                                     deviceId: String,
                                     tokenAddress: String,
                                     borrowAPY: Float?,
@@ -101,7 +101,7 @@ struct NetworkManager {
                                     supplyLowerThreshold: Int?,
                                     supplyUpperThreshold: Int?,
                                     completion: @escaping (_ notification: EulerNotificationIR?, _ error: String?) -> Void) {
-        router.request(.postEulerNotificationIR(accountId: accountId,
+        router.request(.postEulerNotificationIR(
                                                 deviceId: deviceId,
                                                 tokenAddress: tokenAddress,
                                                 borrowAPY: borrowAPY,

@@ -98,7 +98,9 @@ class AccountDetailViewController: UIViewController {
         networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
         networkManager.getEulerAccounts(address: address ?? "0x0000000000000000000000000000000000000000") { accounts, error in
             if error == nil {
-                self.eulerAccounts = accounts?.sorted { $0.subAccountId < $1.subAccountId }  ?? []
+                let sortedAccounts = accounts?.sorted { $0.subAccountId < $1.subAccountId }  ?? []
+                self.removeEmptyEntries(accounts: sortedAccounts)
+                self.eulerAccounts = sortedAccounts
                 self.shownEulerAccount = self.eulerAccounts[0]
                 if self.eulerAccounts.count > 1 {
                     DispatchQueue.main.async {
@@ -118,9 +120,15 @@ class AccountDetailViewController: UIViewController {
         }
     }
     
-    func removeEmptyEntries(account: EulerAccount) -> EulerAccount {
-   
-        return account
+    func removeEmptyEntries(accounts: [EulerAccount]) -> [EulerAccount] {
+        
+        for account in accounts {
+            for supply in account.supplies {
+                
+            }
+        }
+        
+        return accounts
     }
     
     func getEulerTokens() {
@@ -370,7 +378,6 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             vc.supplyAPY = token.supplyAPY
             vc.borrowAPY = token.borrowAPY
             vc.symbolValue = token.symbol
-            vc.accountId = accountId
             vc.deviceId = deviceId
             self.navigationController?.pushViewController(vc, animated: true)
         default:
@@ -414,7 +421,6 @@ extension AccountDetailViewController: EDCollectionViewCellDelegate {
         vc.supplyAPY = deposit?.token.supplyAPY ?? 0
         vc.borrowAPY = deposit?.token.borrowAPY ?? 0
         vc.symbolValue = deposit?.token.symbol ?? ""
-        vc.accountId = accountId
         vc.deviceId = deviceId
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -430,7 +436,6 @@ extension AccountDetailViewController: ELCollectionViewCellDelegate {
         vc.supplyAPY = borrow?.token.supplyAPY ?? 0
         vc.borrowAPY = borrow?.token.borrowAPY ?? 0
         vc.symbolValue = borrow?.token.symbol ?? ""
-        vc.accountId = accountId
         vc.deviceId = deviceId
         self.navigationController?.pushViewController(vc, animated: true)
     }

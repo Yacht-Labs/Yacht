@@ -210,7 +210,6 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
             vc.supplyAPY = token?.supplyAPY ?? 0
             vc.borrowAPY = token?.borrowAPY ?? 0
             vc.symbolValue = token?.symbol ?? ""
-            vc.accountId = notification.accountId
             vc.deviceId = self.deviceId
             self.navigationController?.pushViewController(vc, animated: true)
         }

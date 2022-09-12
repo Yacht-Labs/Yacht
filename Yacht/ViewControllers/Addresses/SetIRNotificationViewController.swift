@@ -11,7 +11,6 @@ class SetIRNotificationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var yachtImage: UIImageView!
-    var accountId: String?
     var deviceId: String?
     var notificationId: String?
     var tokenAddress: String?
@@ -27,8 +26,7 @@ class SetIRNotificationViewController: UIViewController {
     
     @IBAction func saveTouched(_ sender: Any) {
       
-        guard let accountId = accountId,
-            let deviceId = deviceId,
+        guard let deviceId = deviceId,
             let tokenAddress = tokenAddress else {
             return
         }
@@ -59,7 +57,7 @@ class SetIRNotificationViewController: UIViewController {
             
         } else {
             // Create new notification
-            networkManager.postEulerNotificationIR(accountId: accountId,
+            networkManager.postEulerNotificationIR(
                                                    deviceId: deviceId,
                                                    tokenAddress: tokenAddress,
                                                    borrowAPY: Float(borrowAPY),
