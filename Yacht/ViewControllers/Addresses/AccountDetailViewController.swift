@@ -16,6 +16,7 @@ class AccountDetailViewController: UIViewController {
     var searchController: UISearchController?
     var isAssetView: Bool = false
     var isSearching: Bool = false
+    var isLoading: Bool = true
     var address: String?
     var nickname: String?
     var accountId: String?
@@ -99,8 +100,7 @@ class AccountDetailViewController: UIViewController {
         networkManager.getEulerAccounts(address: address ?? "0x0000000000000000000000000000000000000000") { accounts, error in
             if error == nil {
                 let sortedAccounts = accounts?.sorted { $0.subAccountId < $1.subAccountId }  ?? []
-                self.removeEmptyEntries(accounts: sortedAccounts)
-                self.eulerAccounts = sortedAccounts
+                self.eulerAccounts = self.removeEmptyEntries(accounts: sortedAccounts)
                 self.shownEulerAccount = self.eulerAccounts[0]
                 if self.eulerAccounts.count > 1 {
                     DispatchQueue.main.async {
@@ -121,14 +121,30 @@ class AccountDetailViewController: UIViewController {
     }
     
     func removeEmptyEntries(accounts: [EulerAccount]) -> [EulerAccount] {
-        
+        var cleanAccounts:[EulerAccount] = []
         for account in accounts {
+            var cleanSupplies:[EulerLoan] = []
+            var cleanBorrows:[EulerLoan] = []
             for supply in account.supplies {
-                
+                let amount = Float(supply.amount) ?? 0
+                let dollarAmount = amount * (Float(supply.token.price) ?? 0)
+                if dollarAmount > 0.01 {
+                    cleanSupplies.append(supply)
+                }
             }
+            
+            for borrow in account.borrows {
+                let amount = Float(borrow.amount) ?? 0
+                let dollarAmount = amount * (Float(borrow.token.price) ?? 0)
+                if dollarAmount > 0.01 {
+                    cleanBorrows.append(borrow)
+                }
+            }
+            
+            cleanAccounts.append(EulerAccount(supplies: cleanSupplies, borrows: cleanBorrows, healthScore: account.healthScore, subAccountId: account.subAccountId))
         }
         
-        return accounts
+        return cleanAccounts
     }
     
     func getEulerTokens() {
@@ -144,6 +160,7 @@ class AccountDetailViewController: UIViewController {
 
             }
             DispatchQueue.main.async {
+                self.isLoading = false
                 self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
             }
         }
@@ -181,7 +198,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 return 0
             }
         } else if indexPath.section == 1 {
-            if !isAssetView {
+            if !isAssetView && !isLoading {
                 if shownEulerAccount?.healthScore == nil  {
                     return 44
                 } else {
@@ -191,7 +208,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 return 0
             }
         } else if indexPath.section == 2 {
-            if !isAssetView {
+            if !isAssetView && !isLoading {
                 if shownEulerAccount?.supplies == nil || shownEulerAccount?.supplies.count == 0  {
                     return 44
                 } else {
@@ -201,7 +218,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 return 0
             }
         } else if indexPath.section == 3 {
-            if !isAssetView {
+            if !isAssetView && !isLoading {
                 if shownEulerAccount?.borrows == nil || shownEulerAccount?.borrows.count == 0 {
                     return 44
                 } else {
@@ -211,7 +228,12 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 return 0
             }
         } else if indexPath.section == 4 {
-            return 92
+            if !isLoading {
+                return 92
+            } else {
+                return 0
+            }
+            
         }
         return 0
     }
@@ -232,24 +254,61 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = Constants.Colors.viewBackgroundColor
-        let titleLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 200, height: 40))
-        headerView.addSubview(titleLabel)
-        titleLabel.textColor = Constants.Colors.deepRed
-        titleLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
-        
-        if section == 1 {
-            titleLabel.text = "Health Score"
-        } else if section == 2 {
-            titleLabel.text = "Deposits"
-        } else if section == 3 {
-            titleLabel.text = "Outstanding Loans"
-        } else if section == 4 {
-            titleLabel.text = "Assets"
+        if !isLoading {
+            let headerView = UIView()
+            headerView.backgroundColor = Constants.Colors.viewBackgroundColor
+            let titleLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 200, height: 40))
+            headerView.addSubview(titleLabel)
+            titleLabel.textColor = Constants.Colors.deepRed
+            titleLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
+            
+            if section == 1 {
+                titleLabel.text = "Health Score"
+            } else if section == 2 {
+                titleLabel.text = "Deposits"
+                if let supplies = shownEulerAccount?.supplies {
+                    var totalDollarAmount: Float = 0
+                    for supply in supplies {
+                        let amount = Float(supply.amount) ?? 0
+                        totalDollarAmount += amount * (Float(supply.token.price) ?? 0)
+                    }
+                    if totalDollarAmount > 0.01 {
+                        let amountLabel = UILabel(frame: CGRect(x: 118, y: 22, width: 100, height: 40))
+                        amountLabel.textColor = .systemGreen
+                        amountLabel.font = UIFont(name: "Akkurat-BoldItalic", size: 14)
+                        numberFormatter.numberStyle = .currency
+                        numberFormatter.currencyCode = "USD"
+                        numberFormatter.maximumFractionDigits = 0
+                        amountLabel.text = numberFormatter.string(from: NSNumber(value: totalDollarAmount))
+                        headerView.addSubview(amountLabel)
+                    }
+                }
+            } else if section == 3 {
+                titleLabel.text = "Outstanding Loans"
+                if let borrows = shownEulerAccount?.borrows {
+                    var totalDollarAmount: Float = 0
+                    for borrow in borrows {
+                        let amount = Float(borrow.amount) ?? 0
+                        totalDollarAmount += amount * (Float(borrow.token.price) ?? 0)
+                    }
+                    if totalDollarAmount > 0.01 {
+                        let amountLabel = UILabel(frame: CGRect(x: 219, y: 22, width: 100, height: 40))
+                        amountLabel.textColor = .systemGreen
+                        amountLabel.font = UIFont(name: "Akkurat-BoldItalic", size: 14)
+                        numberFormatter.numberStyle = .currency
+                        numberFormatter.currencyCode = "USD"
+                        numberFormatter.maximumFractionDigits = 0
+                        amountLabel.text = numberFormatter.string(from: NSNumber(value: totalDollarAmount))
+                        headerView.addSubview(amountLabel)
+                    }
+                }
+            } else if section == 4 {
+                titleLabel.text = "Assets"
+            }
+            
+            return headerView
         }
-        
-        return headerView
+        return nil
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

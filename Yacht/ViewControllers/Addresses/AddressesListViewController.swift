@@ -11,10 +11,13 @@ import CoreData
 class AddressesListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var addresses: [NSManagedObject] = []
+    let networkManager = NetworkManager()
+    @IBOutlet weak var yachtImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        yachtImage.alpha = 0
         view.backgroundColor = Constants.Colors.viewBackgroundColor
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
           
@@ -48,6 +51,22 @@ class AddressesListViewController: UIViewController {
             
         }
     }
+    
+    func deleteAddressInCoreData(atRow: Int) throws {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let addressToDelete = addresses[atRow]
+        managedContext.delete(addressToDelete)
+        do {
+            try managedContext.save()
+        } catch {
+            throw error
+        }
+        
+    }
 }
 
 extension AddressesListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -78,5 +97,38 @@ extension AddressesListViewController: UITableViewDelegate, UITableViewDataSourc
         vc.deviceId = address.value(forKey: "deviceId") as? String
         self.navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
+            let account = addresses[indexPath.row]
+            let id = account.value(forKey: "id") as? String
+            
+            guard let id = id else { return }
+            
+            networkManager.deleteAccount(id: id) { account, error in
+                if error == nil {
+                    DispatchQueue.main.async { [self] in
+                        do {
+                            try deleteAddressInCoreData(atRow: indexPath.row)
+                            self.addresses.remove(at: indexPath.row)
+                            tableView.deleteRows(at: [indexPath], with: .fade)
+                            tableView.reloadData()
+                            self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                        } catch {
+                            networkManager.showErrorAlert(title: "Core Data Error", message: "Failed to delete account.", vc: self)
+                        }
+                        
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: false)
+                        self.networkManager.showErrorAlert(title: "Network Error", message: "Failed to delete account. Check your network connection", vc: self)
+                    }
+                    // TODO give network fail error message
+                }
+            }
+        }
     }
 }

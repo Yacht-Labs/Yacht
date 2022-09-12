@@ -42,15 +42,21 @@ class HealthScoreTableViewCell: UITableViewCell {
     
     func setHealthScore() {
 
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        
         let totalWidth = Double(redZone.frame.width + blackZone.frame.width)
         let newConstraint = Double(redZone.frame.width) * self.healthScore
         if newConstraint > totalWidth {
             healthConstraint.constant = CGFloat(totalWidth)
+            greenWidth.constant = blackZone.frame.width
+            greenView.alpha = 1
         } else {
             healthConstraint.constant = CGFloat(newConstraint)
         }
         
-        if newConstraint > redZone.frame.width {
+        if newConstraint > redZone.frame.width && newConstraint < totalWidth {
             greenWidth.constant = newConstraint - redZone.frame.width
             greenView.alpha = 1
             tick.backgroundColor = .systemGreen
@@ -58,11 +64,13 @@ class HealthScoreTableViewCell: UITableViewCell {
             tick.backgroundColor = Constants.Colors.mediumRed
         }
         
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 2
+        if self.healthScore > 20 {
+            healthScoreLabel.text = "♾"
+        } else {
+            healthScoreLabel.text = formatter.string(from: NSNumber(value: self.healthScore))
+        }
         
-        healthScoreLabel.text = formatter.string(from: NSNumber(value: self.healthScore))
+        
         
         //tick.alpha = 1
         self.healthScoreLabel.alpha = 1

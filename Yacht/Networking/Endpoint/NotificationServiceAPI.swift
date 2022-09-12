@@ -15,8 +15,10 @@ enum NetworkEnvironment {
 
 public enum NotificationServiceAPI {
     case getEulerTokens
+    
     case postAccount(address: String, deviceId: String, name: String)
     case getAccounts(deviceId: String)
+    case deleteAccount(id: String)
     
     case postEulerNotificationHealth(accountId: String, subAccountId: String, deviceId: String, thresholdValue: Float)
     case getEulerNotificationHealth(deviceId: String)
@@ -64,10 +66,13 @@ extension NotificationServiceAPI: EndPointType {
         switch self {
         case .getEulerTokens:
             return "euler/tokens"
+            
         case .postAccount:
             return "accounts"
         case .getAccounts(let deviceId):
             return "accounts/\(deviceId)"
+        case .deleteAccount(let id):
+            return "accounts/\(id)"
         
         case .postEulerNotificationHealth:
             return "notifications/euler/health"
@@ -98,10 +103,13 @@ extension NotificationServiceAPI: EndPointType {
         switch self {
         case .getEulerTokens:
             return .get
+            
         case .postAccount:
             return .post
         case .getAccounts:
             return .get
+        case .deleteAccount:
+            return .delete
             
         case .postEulerNotificationHealth:
             return .post
@@ -130,6 +138,7 @@ extension NotificationServiceAPI: EndPointType {
         switch self {
         case .getEulerTokens:
             return .request
+            
         case .postAccount(let address, let deviceId, let name):
             return .requestParameters(bodyParameters: [
                 "address": address,
@@ -137,6 +146,8 @@ extension NotificationServiceAPI: EndPointType {
                 "name": name
             ], urlParameters: nil)
         case .getAccounts:
+            return .request
+        case .deleteAccount:
             return .request
             
         case .postEulerNotificationHealth(let accountId, let subAccountId, let deviceId, let thresholdValue):

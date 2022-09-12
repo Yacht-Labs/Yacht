@@ -34,6 +34,10 @@ struct NetworkManager {
         }
     }
     
+    // *********************************
+    // Account Methods
+    // *********************************
+    
     func postAccount(address: String, deviceId: String, name: String, completion: @escaping (_ account: Account?, _ error: String?) -> Void) {
         router.request(.postAccount(address: address, deviceId: deviceId, name: name)) { data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: Account.self)
@@ -44,6 +48,13 @@ struct NetworkManager {
     func getAccounts(deviceId: String, completion: @escaping (_ accounts: [Account]?, _ error: String?) -> Void) {
         router.request(.getAccounts(deviceId: deviceId)) { data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [Account].self)
+            completion(result.0, result.1)
+        }
+    }
+    
+    func deleteAccount(id: String, completion: @escaping (_ account: Account?, _ error: String?) -> Void) {
+        router.request(.deleteAccount(id: id)) { data, response, error in
+            let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: Account.self)
             completion(result.0, result.1)
         }
     }
@@ -189,7 +200,6 @@ struct NetworkManager {
     }
  
     fileprivate func getResult(_ response: HTTPURLResponse) -> Result<String> {
-        print(response)
         switch response.statusCode {
         case 200...299: return .success
         case 401...499: return .failure(NetworkResponse.authenticationError.rawValue)

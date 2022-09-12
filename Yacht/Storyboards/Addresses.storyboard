@@ -93,19 +93,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YachtLogo" translatesAutoresizingMaskIntoConstraints="NO" id="l6C-qv-vXT">
+                                <rect key="frame" x="157" y="425" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="DkR-jK-BWa"/>
+                                    <constraint firstAttribute="width" secondItem="l6C-qv-vXT" secondAttribute="height" multiplier="1:1" id="uOI-4D-g9X"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="geM-Eo-9HJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="geM-Eo-9HJ" firstAttribute="bottom" secondItem="H3O-cx-4ui" secondAttribute="bottom" id="HJa-T9-M8J"/>
                             <constraint firstItem="H3O-cx-4ui" firstAttribute="top" secondItem="geM-Eo-9HJ" secondAttribute="top" constant="20" id="HeB-h4-c38"/>
+                            <constraint firstItem="l6C-qv-vXT" firstAttribute="width" secondItem="l6C-qv-vXT" secondAttribute="height" multiplier="1:1" id="TWC-OR-ZBl"/>
+                            <constraint firstItem="l6C-qv-vXT" firstAttribute="width" secondItem="l6C-qv-vXT" secondAttribute="height" multiplier="1:1" id="cl5-AC-3hT"/>
                             <constraint firstItem="H3O-cx-4ui" firstAttribute="width" secondItem="xpq-Jf-OQd" secondAttribute="width" id="haN-eN-otm"/>
                             <constraint firstItem="H3O-cx-4ui" firstAttribute="centerX" secondItem="geM-Eo-9HJ" secondAttribute="centerX" id="mYJ-LV-oGK"/>
+                            <constraint firstItem="l6C-qv-vXT" firstAttribute="centerY" secondItem="geM-Eo-9HJ" secondAttribute="centerY" id="tCc-dJ-HRO"/>
+                            <constraint firstItem="l6C-qv-vXT" firstAttribute="centerX" secondItem="geM-Eo-9HJ" secondAttribute="centerX" id="u8x-x5-G9a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tfk-d2-6Zi"/>
                     <connections>
                         <outlet property="tableView" destination="H3O-cx-4ui" id="9tU-Yx-BU4"/>
+                        <outlet property="yachtImage" destination="l6C-qv-vXT" id="XYi-Fb-NjU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4c-bt-ZkO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -774,6 +786,20 @@
                                     <constraint firstAttribute="width" constant="100" id="NQq-hP-VCv"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deposits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amZ-ST-cYr">
+                                <rect key="frame" x="80" y="575" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Outstanding Loans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ul-PU-z5w">
+                                <rect key="frame" x="80" y="612" width="193" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KNt-3Q-tf1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

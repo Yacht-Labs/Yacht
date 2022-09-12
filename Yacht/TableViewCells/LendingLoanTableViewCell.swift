@@ -20,6 +20,12 @@ class LendingLoanTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+       
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.itemSize = CGSize(width: 145, height: 168)
@@ -47,10 +53,6 @@ class LendingLoanTableViewCell: UITableViewCell {
         if let emptyLabel = emptyLabel {
             addSubview(emptyLabel)
         }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
         
         collectionView?.reloadData()
     }

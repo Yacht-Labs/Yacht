@@ -64,7 +64,14 @@ class HealthNotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        accountNameLabel.text = accountName
+        var subAccount: String
+        if subAccountId == "0" {
+            subAccount = "Main"
+        } else {
+            subAccount = "Sub \(subAccountId ?? "??")"
+        }
+        
+        accountNameLabel.text = (accountName ?? "Unknown Account") + " - " + subAccount
         yachtImage.alpha = 0
         
         let networkManager = NetworkManager()
@@ -77,7 +84,7 @@ class HealthNotificationViewController: UIViewController {
                     }
                     for notification in notifications {
                         // See if there is any active notification matching current account
-                        if notification.accountId == self.accountId && notification.isActive {
+                        if notification.accountId == self.accountId && notification.isActive && notification.subAccountId == self.subAccountId {
                             DispatchQueue.main.async {
                                 self.notificationId = notification.id
                                 self.slider.setValue(notification.thresholdValue , animated: true)

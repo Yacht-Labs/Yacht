@@ -136,7 +136,13 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
             if let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveNotificationTableViewCell") as? ActiveNotificationTableViewCell {
                 let notification = eulerHealthNotifications[indexPath.row]
                 let account = accounts.first(where: { $0.id == notification.accountId })
-                cell.notificationType.text = account?.name ?? "Unknown Account"
+                var subAccount: String
+                if notification.subAccountId == "0" {
+                    subAccount = "Main"
+                } else {
+                    subAccount = "Sub \(notification.subAccountId ?? "??")"
+                }
+                cell.notificationType.text = (account?.name ?? "Unknown Account") + " - " + subAccount
                 return cell
             }
             
@@ -195,6 +201,7 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
             let notification = eulerHealthNotifications[indexPath.row]
             let account = accounts.first(where: { $0.id == notification.accountId })
             
+            vc.subAccountId = notification.subAccountId
             vc.accountId = notification.accountId
             vc.deviceId = self.deviceId
             vc.accountName = account?.name ?? "??"
@@ -254,7 +261,6 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
                     }
                 }
             }
-             
         }
     }
 }
