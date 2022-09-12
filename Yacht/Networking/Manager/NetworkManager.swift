@@ -53,10 +53,12 @@ struct NetworkManager {
     // *********************************
     
     func postEulerNotificationHealth(accountId: String,
+                                     subAccountId: String,
                                      deviceId: String,
                                      thresholdValue: Float,
                                      completion: @escaping (_ notification: EulerNotificationHealth?, _ error: String?) -> Void) {
         router.request(.postEulerNotificationHealth(accountId: accountId,
+                                                    subAccountId: subAccountId,
                                                     deviceId: deviceId,
                                                     thresholdValue: thresholdValue)) { data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationHealth.self)
@@ -187,6 +189,7 @@ struct NetworkManager {
     }
  
     fileprivate func getResult(_ response: HTTPURLResponse) -> Result<String> {
+        print(response)
         switch response.statusCode {
         case 200...299: return .success
         case 401...499: return .failure(NetworkResponse.authenticationError.rawValue)

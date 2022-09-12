@@ -118,6 +118,11 @@ class AccountDetailViewController: UIViewController {
         }
     }
     
+    func removeEmptyEntries(account: EulerAccount) -> EulerAccount {
+   
+        return account
+    }
+    
     func getEulerTokens() {
         let networkManager = NetworkManager()
         networkManager.getEulerTokens { tokens, error in
@@ -353,6 +358,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "HealthNotificationViewController") as HealthNotificationViewController
             vc.accountId = accountId
+            vc.subAccountId = String(selectedAccountIndex)
             vc.deviceId = deviceId
             vc.accountName = nickname
             self.navigationController?.pushViewController(vc, animated: true)

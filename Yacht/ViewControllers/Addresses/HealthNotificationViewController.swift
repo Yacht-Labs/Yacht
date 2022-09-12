@@ -15,12 +15,14 @@ class HealthNotificationViewController: UIViewController {
     @IBOutlet weak var accountNameLabel: UILabel!
     
     var accountId: String?
+    var subAccountId: String?
     var deviceId: String?
     var accountName: String?
     var notificationId: String?
     
     @IBAction func saveTouched(_ sender: Any) {
         guard let accountId = accountId,
+            let subAccountId = subAccountId,
             let deviceId = deviceId else {
             return
         }
@@ -43,7 +45,7 @@ class HealthNotificationViewController: UIViewController {
             }
         } else {
             // Create new notification
-            networkManager.postEulerNotificationHealth(accountId: accountId, deviceId: deviceId, thresholdValue: (round(slider.value * 100) / 100.0)) { notification, error in
+            networkManager.postEulerNotificationHealth(accountId: accountId, subAccountId: subAccountId, deviceId: deviceId, thresholdValue: (round(slider.value * 100) / 100.0)) { notification, error in
                 if error != nil {
                     DispatchQueue.main.async {
                         networkManager.showErrorAlert(title: "Server Error", message: "Unable to create notification", vc: self)

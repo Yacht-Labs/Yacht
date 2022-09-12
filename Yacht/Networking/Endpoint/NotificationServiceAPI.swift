@@ -18,7 +18,7 @@ public enum NotificationServiceAPI {
     case postAccount(address: String, deviceId: String, name: String)
     case getAccounts(deviceId: String)
     
-    case postEulerNotificationHealth(accountId: String, deviceId: String, thresholdValue: Float)
+    case postEulerNotificationHealth(accountId: String, subAccountId: String, deviceId: String, thresholdValue: Float)
     case getEulerNotificationHealth(deviceId: String)
     case putEulerNotificationHealth(id: String, thresholdValue: Float)
     case deleteEulerNotificationHealth(id: String)
@@ -140,9 +140,10 @@ extension NotificationServiceAPI: EndPointType {
         case .getAccounts:
             return .request
             
-        case .postEulerNotificationHealth(let accountId, let deviceId, let thresholdValue):
+        case .postEulerNotificationHealth(let accountId, let subAccountId, let deviceId, let thresholdValue):
             return .requestParameters(bodyParameters: [
                 "accountId": accountId,
+                "subAccountId": subAccountId,
                 "deviceId": deviceId,
                 "thresholdValue": thresholdValue
             ], urlParameters: nil)

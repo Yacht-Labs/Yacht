@@ -101,16 +101,16 @@ class NotifyThresholdTableViewCell: UITableViewCell {
         numberFormatter.maximumFractionDigits = 2
         switch type {
         case .supplyLower:
-            willNotify.text = "Will notify if Supply APY goes below " + numberFormatter.string(from: NSNumber(value: ((1 - value) * (apy / 1000))))!
+            willNotify.text = "Will notify if Supply APY goes below " + numberFormatter.string(from: NSNumber(value: ((1 - value) * (apy / 100))))!
             return
         case .borrowLower:
-            willNotify.text = "Will notify if Borrow APY goes below " + numberFormatter.string(from: NSNumber(value: ((1 - value) * (apy / 1000))))!
+            willNotify.text = "Will notify if Borrow APY goes below " + numberFormatter.string(from: NSNumber(value: ((1 - value) * (apy / 100))))!
             return
         case .supplyUpper:
-            willNotify.text = "Will notify if Supply APY goes above " + numberFormatter.string(from: NSNumber(value: ((1 + value) * (apy / 1000))))!
+            willNotify.text = "Will notify if Supply APY goes above " + numberFormatter.string(from: NSNumber(value: ((1 + value) * (apy / 100))))!
             return
         case .borrowUpper:
-            willNotify.text = "Will notify if Borrow APY goes above " + numberFormatter.string(from: NSNumber(value: ((1 + value) * (apy / 1000))))!
+            willNotify.text = "Will notify if Borrow APY goes above " + numberFormatter.string(from: NSNumber(value: ((1 + value) * (apy / 100))))!
             return
         case .none:
             return

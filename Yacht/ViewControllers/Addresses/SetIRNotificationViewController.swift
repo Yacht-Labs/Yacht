@@ -211,9 +211,9 @@ extension SetIRNotificationViewController: UITableViewDelegate, UITableViewDataS
         numberFormatter.maximumFractionDigits = 2
 
         if section == 0 {
-            titleLabel.text = "Current " + (symbolValue ?? "??") + " Supply APY: " + (numberFormatter.string(from: NSNumber(value: (supplyAPY / 1000))) ?? "??")
+            titleLabel.text = "Current " + (symbolValue ?? "??") + " Supply APY: " + (numberFormatter.string(from: NSNumber(value: (supplyAPY / 100))) ?? "??")
         } else if section == 1 {
-            titleLabel.text = "Current " + (symbolValue ?? "??") + " Borrow APY: " + (numberFormatter.string(from: NSNumber(value: (borrowAPY / 1000))) ?? "??")
+            titleLabel.text = "Current " + (symbolValue ?? "??") + " Borrow APY: " + (numberFormatter.string(from: NSNumber(value: (borrowAPY / 100))) ?? "??")
         }
         
         return headerView
