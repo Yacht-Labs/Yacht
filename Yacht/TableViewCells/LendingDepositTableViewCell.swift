@@ -110,7 +110,7 @@ extension LendingDepositTableViewCell: UICollectionViewDelegate, UICollectionVie
             
             formatter.numberStyle = .currency
             formatter.currencyCode = "USD"
-            formatter.maximumFractionDigits = 0
+            formatter.maximumFractionDigits = 2
             
             cell.amountDepositedDollars.text = formatter.string(from: NSNumber(value: ((Float(deposit.amount) ?? 0) * (Float(deposit.token.price) ?? 0))))
             cell.riskAdjustedValueDollars.text = formatter.string(from: NSNumber(value: riskAdjustedValue * (Float(deposit.token.price) ?? 0)))

@@ -103,7 +103,7 @@ extension LendingLoanTableViewCell: UICollectionViewDelegate, UICollectionViewDa
             
             formatter.numberStyle = .currency
             formatter.currencyCode = "USD"
-            formatter.maximumFractionDigits = 0
+            formatter.maximumFractionDigits = 2
             
             cell.amountOwedDollars.text = formatter.string(from: NSNumber(value: ((Float(borrow.amount) ?? 0) * (Float(borrow.token.price) ?? 0))))
             

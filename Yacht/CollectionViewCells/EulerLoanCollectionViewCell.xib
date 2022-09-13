@@ -13,9 +13,6 @@
         <array key="Akkurat-Bold.otf">
             <string>Akkurat-Bold</string>
         </array>
-        <array key="Akkurat-Light-Italic.otf">
-            <string>Akkurat-LightItalic</string>
-        </array>
         <array key="Akkurat-Light.otf">
             <string>Akkurat-Light</string>
         </array>
@@ -46,7 +43,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Owed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Zx9-BS-Fib">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Owed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Zx9-BS-Fib">
                         <rect key="frame" x="10" y="68" width="125" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="X6F-tK-Vsr"/>
@@ -55,7 +52,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="5.05 wstETH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="vma-d7-jET">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="5.05 wstETH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="vma-d7-jET">
                         <rect key="frame" x="10" y="84" width="125" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="fGt-p7-NAr"/>
@@ -64,7 +61,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borrow APY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="KzP-tB-GzV">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borrow APY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="KzP-tB-GzV">
                         <rect key="frame" x="10" y="124" width="62.5" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="4Lc-Re-nXD"/>
@@ -83,29 +80,29 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="qqX-gL-98o">
-                        <rect key="frame" x="24" y="140" width="35" height="18"/>
+                        <rect key="frame" x="25" y="140" width="33" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="bfs-8V-stl"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Akkurat-LightItalic" family="Akkurat-LightItalic" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="14"/>
                         <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.2%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="V6U-N4-NKy">
-                        <rect key="frame" x="86.5" y="140" width="35" height="18"/>
+                        <rect key="frame" x="87.5" y="140" width="33" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="ooD-0s-gda"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Akkurat-LightItalic" family="Akkurat-LightItalic" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9,510" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Z0H-Ya-nCG">
-                        <rect key="frame" x="10" y="103" width="125" height="14"/>
+                        <rect key="frame" x="10" y="105" width="125" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="2qg-BB-1du"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="Akkurat-BoldItalic" family="Akkurat-BoldItalic" pointSize="14"/>
                         <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -125,7 +122,7 @@
                 <constraint firstItem="vma-d7-jET" firstAttribute="trailing" secondItem="Zx9-BS-Fib" secondAttribute="trailing" id="JHR-5w-1N9"/>
                 <constraint firstItem="vma-d7-jET" firstAttribute="leading" secondItem="Zx9-BS-Fib" secondAttribute="leading" id="R8J-Ui-R0t"/>
                 <constraint firstItem="3Xz-QF-M04" firstAttribute="bottom" secondItem="umT-3e-yTl" secondAttribute="bottom" id="Uz6-zg-rXe"/>
-                <constraint firstItem="Z0H-Ya-nCG" firstAttribute="top" secondItem="vma-d7-jET" secondAttribute="bottom" constant="1" id="W7a-Wm-NAU"/>
+                <constraint firstItem="Z0H-Ya-nCG" firstAttribute="top" secondItem="vma-d7-jET" secondAttribute="bottom" constant="3" id="W7a-Wm-NAU"/>
                 <constraint firstItem="V6U-N4-NKy" firstAttribute="centerY" secondItem="qqX-gL-98o" secondAttribute="centerY" id="ZkL-5S-Qh3"/>
                 <constraint firstItem="Z0H-Ya-nCG" firstAttribute="trailing" secondItem="vma-d7-jET" secondAttribute="trailing" id="b5d-cl-ovh"/>
                 <constraint firstAttribute="trailing" secondItem="VUe-wp-ZEi" secondAttribute="trailing" constant="10" id="dEI-zn-pR9"/>

@@ -18,6 +18,8 @@ class AssetTableViewCell: UITableViewCell {
     @IBOutlet weak var totalSupplyUSD: UILabel!
     @IBOutlet weak var tier: UILabel!
     @IBOutlet weak var tierContainer: UIView!
+    @IBOutlet weak var eulAPY: UILabel!
+    @IBOutlet weak var totalBorrowsUSD: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

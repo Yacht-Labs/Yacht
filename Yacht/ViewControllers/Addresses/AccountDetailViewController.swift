@@ -229,7 +229,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             }
         } else if indexPath.section == 4 {
             if !isLoading {
-                return 92
+                return 112
             } else {
                 return 0
             }
@@ -265,7 +265,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             if section == 1 {
                 titleLabel.text = "Health Score"
             } else if section == 2 {
-                titleLabel.text = "Deposits"
+                titleLabel.text = "Deposits:"
                 if let supplies = shownEulerAccount?.supplies {
                     var totalDollarAmount: Float = 0
                     for supply in supplies {
@@ -273,9 +273,9 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                         totalDollarAmount += amount * (Float(supply.token.price) ?? 0)
                     }
                     if totalDollarAmount > 0.01 {
-                        let amountLabel = UILabel(frame: CGRect(x: 118, y: 22, width: 100, height: 40))
+                        let amountLabel = UILabel(frame: CGRect(x: 126, y: 20, width: 100, height: 40))
                         amountLabel.textColor = .systemGreen
-                        amountLabel.font = UIFont(name: "Akkurat-BoldItalic", size: 14)
+                        amountLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
                         numberFormatter.numberStyle = .currency
                         numberFormatter.currencyCode = "USD"
                         numberFormatter.maximumFractionDigits = 0
@@ -284,7 +284,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                     }
                 }
             } else if section == 3 {
-                titleLabel.text = "Outstanding Loans"
+                titleLabel.text = "Outstanding Loans:"
                 if let borrows = shownEulerAccount?.borrows {
                     var totalDollarAmount: Float = 0
                     for borrow in borrows {
@@ -292,9 +292,9 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                         totalDollarAmount += amount * (Float(borrow.token.price) ?? 0)
                     }
                     if totalDollarAmount > 0.01 {
-                        let amountLabel = UILabel(frame: CGRect(x: 219, y: 22, width: 100, height: 40))
-                        amountLabel.textColor = .systemGreen
-                        amountLabel.font = UIFont(name: "Akkurat-BoldItalic", size: 14)
+                        let amountLabel = UILabel(frame: CGRect(x: 227, y: 20, width: 100, height: 40))
+                        amountLabel.textColor = Constants.Colors.mediumRed
+                        amountLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
                         numberFormatter.numberStyle = .currency
                         numberFormatter.currencyCode = "USD"
                         numberFormatter.maximumFractionDigits = 0
@@ -375,7 +375,8 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 cell.symbol.text = eulerToken.symbol
                 cell.name.text = eulerToken.name
                 cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(eulerToken.price) ?? 0)) ?? "??")
-                cell.totalSupplyUSD.text = "Total Supply: " + (numberFormatter.string(from: NSNumber(value: Float(eulerToken.totalSupplyUSD ?? "0") ?? 0)) ?? "$0")
+                cell.totalSupplyUSD.text = "Total Supplies: " + (numberFormatter.string(from: NSNumber(value: Float(eulerToken.totalSupplyUSD ?? "0") ?? 0)) ?? "$0")
+                cell.totalBorrowsUSD.text = "Total Borrows: " + (numberFormatter.string(from: NSNumber(value: Float(eulerToken.totalBorrowsUSD ?? "0") ?? 0)) ?? "$0")
                 cell.tier.text = eulerToken.tier
                 
                 switch eulerToken.tier {
@@ -393,6 +394,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 
                 cell.borrowAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.borrowAPY) / 100)))
                 cell.lendAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.supplyAPY) / 100)))
+                cell.eulAPY.text = numberFormatter.string(from: NSNumber(value: (Float(eulerToken.eulAPY) / 100)))
                 
                 guard let urlString = eulerToken.logoURI else { return cell }
                 
