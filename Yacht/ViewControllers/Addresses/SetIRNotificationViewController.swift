@@ -18,6 +18,7 @@ class SetIRNotificationViewController: UIViewController {
     var borrowAPY: Double = 0
     var symbolValue: String?
     var numberFormatter: NumberFormatter = NumberFormatter()
+    var token: EulerToken?
     
     var supplyUpperThreshold: Int = 20
     var supplyLowerThreshold: Int = 20
@@ -84,6 +85,10 @@ class SetIRNotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0.0
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
         yachtImage.alpha = 0
@@ -147,15 +152,73 @@ class SetIRNotificationViewController: UIViewController {
 extension SetIRNotificationViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if section == 0 {
+            return 1
+        } else {
+            return 2
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 112
+        } else {
+            return 100
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell") as? AssetTableViewCell {
+                
+                guard let token = token else { return UITableViewCell() }
+                
+                numberFormatter.numberStyle = .currency
+                numberFormatter.currencyCode = "USD"
+                numberFormatter.maximumFractionDigits = 2
+                
+                cell.symbol.text = token.symbol
+                cell.name.text = token.name
+                cell.price.text = (numberFormatter.string(from: NSNumber(value: Float(token.price) ?? 0)) ?? "??")
+                cell.totalSupplyUSD.text = "Total Supplies: " + (numberFormatter.string(from: NSNumber(value: Float(token.totalSupplyUSD ?? "0") ?? 0)) ?? "$0")
+                cell.totalBorrowsUSD.text = "Total Borrows: " + (numberFormatter.string(from: NSNumber(value: Float(token.totalBorrowsUSD ?? "0") ?? 0)) ?? "$0")
+                cell.tier.text = token.tier
+                
+                switch token.tier {
+                case "collateral":
+                    cell.tierContainer.backgroundColor = Constants.Colors.eulerCollateral
+                case "cross":
+                    cell.tierContainer.backgroundColor = Constants.Colors.eulerCross
+                case "isolated":
+                    cell.tierContainer.backgroundColor = Constants.Colors.eulerIsolated
+                default:
+                    break
+                }
+                
+                numberFormatter.numberStyle = .percent
+                
+                cell.borrowAPY.text = numberFormatter.string(from: NSNumber(value: (Float(token.borrowAPY) / 100)))
+                cell.lendAPY.text = numberFormatter.string(from: NSNumber(value: (Float(token.supplyAPY) / 100)))
+                cell.eulAPY.text = numberFormatter.string(from: NSNumber(value: (Float(token.eulAPY) / 100)))
+                
+                guard let urlString = token.logoURI else { return cell }
+                
+                let url = URL(string: urlString)
+                loadData(url: url!) { (data, _) in
+                    if let data = data {
+                        DispatchQueue.main.async {
+                            cell.tokenImage.layer.cornerRadius = cell.tokenImage.bounds.height / 2
+                            cell.tokenImage.image = UIImage(data: data)
+                        }
+                    }
+                }
+                return cell
+            }
+        } else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyThresholdTableViewCell") as? NotifyThresholdTableViewCell {
                     cell.delegate = self
@@ -173,7 +236,7 @@ extension SetIRNotificationViewController: UITableViewDelegate, UITableViewDataS
                     return cell
                 }
             }
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == 2 {
             if indexPath.row == 0 {
                if let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyThresholdTableViewCell") as? NotifyThresholdTableViewCell {
                    cell.delegate = self
@@ -208,9 +271,9 @@ extension SetIRNotificationViewController: UITableViewDelegate, UITableViewDataS
         numberFormatter.numberStyle = .percent
         numberFormatter.maximumFractionDigits = 2
 
-        if section == 0 {
+        if section == 1 {
             titleLabel.text = "Current " + (symbolValue ?? "??") + " Supply APY: " + (numberFormatter.string(from: NSNumber(value: (supplyAPY / 100))) ?? "??")
-        } else if section == 1 {
+        } else if section == 2 {
             titleLabel.text = "Current " + (symbolValue ?? "??") + " Borrow APY: " + (numberFormatter.string(from: NSNumber(value: (borrowAPY / 100))) ?? "??")
         }
         
@@ -218,7 +281,19 @@ extension SetIRNotificationViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 64
+        if section == 0 {
+            return 0
+        } else {
+            return 64
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 2 {
+            return 200
+        } else {
+            return 0
+        }
     }
     
 }

@@ -365,7 +365,6 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 return cell
             }
         } else if indexPath.section == 4 {
-            // Show search bar on first cell
             if let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell") as? AssetTableViewCell {
                 
                 let eulerToken = shownEulerTokens[indexPath.row]
@@ -442,6 +441,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             vc.borrowAPY = token.borrowAPY
             vc.symbolValue = token.symbol
             vc.deviceId = deviceId
+            vc.token = token
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             return
@@ -485,6 +485,7 @@ extension AccountDetailViewController: EDCollectionViewCellDelegate {
         vc.borrowAPY = deposit?.token.borrowAPY ?? 0
         vc.symbolValue = deposit?.token.symbol ?? ""
         vc.deviceId = deviceId
+        vc.token = deposit?.token
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -500,6 +501,7 @@ extension AccountDetailViewController: ELCollectionViewCellDelegate {
         vc.borrowAPY = borrow?.token.borrowAPY ?? 0
         vc.symbolValue = borrow?.token.symbol ?? ""
         vc.deviceId = deviceId
+        vc.token = borrow?.token
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
