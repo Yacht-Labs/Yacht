@@ -273,13 +273,14 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                         totalDollarAmount += amount * (Float(supply.token.price) ?? 0)
                     }
                     if totalDollarAmount > 0.01 {
-                        let amountLabel = UILabel(frame: CGRect(x: 126, y: 20, width: 100, height: 40))
+                        let amountLabel = UILabel(frame: CGRect(x: 126, y: 20, width: 160, height: 40))
                         amountLabel.textColor = .systemGreen
                         amountLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
                         numberFormatter.numberStyle = .currency
                         numberFormatter.currencyCode = "USD"
                         numberFormatter.maximumFractionDigits = 0
                         amountLabel.text = numberFormatter.string(from: NSNumber(value: totalDollarAmount))
+                        amountLabel.minimumScaleFactor = 0.5
                         headerView.addSubview(amountLabel)
                     }
                 }
@@ -292,13 +293,14 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                         totalDollarAmount += amount * (Float(borrow.token.price) ?? 0)
                     }
                     if totalDollarAmount > 0.01 {
-                        let amountLabel = UILabel(frame: CGRect(x: 227, y: 20, width: 100, height: 40))
+                        let amountLabel = UILabel(frame: CGRect(x: 227, y: 20, width: 160, height: 40))
                         amountLabel.textColor = Constants.Colors.mediumRed
                         amountLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
                         numberFormatter.numberStyle = .currency
                         numberFormatter.currencyCode = "USD"
                         numberFormatter.maximumFractionDigits = 0
                         amountLabel.text = numberFormatter.string(from: NSNumber(value: totalDollarAmount))
+                        amountLabel.minimumScaleFactor = 0.5
                         headerView.addSubview(amountLabel)
                     }
                 }
