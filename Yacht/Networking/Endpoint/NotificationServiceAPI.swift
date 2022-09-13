@@ -53,7 +53,7 @@ extension NotificationServiceAPI: EndPointType {
         switch NetworkManager.environment {
         case .localhost: return "http://192.168.1.66:3000"
         case .staging: return ""
-        case .production: return ""
+        case .production: return "http://yacht-devops.eba-imxs6wr4.us-east-1.elasticbeanstalk.com"
         }
     }
     

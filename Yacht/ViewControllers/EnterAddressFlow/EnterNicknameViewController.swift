@@ -28,16 +28,22 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let networkManager = NetworkManager()
-        
         if appDelegate.deviceId == nil {
-            toastView?.titleLabel.text = "Coming Soon"
+            toastView?.titleLabel.text = "Notifications Disabled"
             toastView?.bodyText.text = "Notifications must be enabled in order to receive alerts. Turn on notifications and hard restart app in order to enable active notifications"
             toastView?.showToast()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.saveAccount(address: address, nickname: nickname, deviceId: self.deviceId)
+            }
         } else if appDelegate.deviceId != nil {
             deviceId = appDelegate.deviceId!
+            saveAccount(address: address, nickname: nickname, deviceId: deviceId)
         }
         
+    }
+    
+    func saveAccount(address: String, nickname: String, deviceId: String) {
+        let networkManager = NetworkManager()
         if checkIfValidNickname(nickname: nickname) {
             networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: false)
             continueButton.isEnabled = false
