@@ -1078,8 +1078,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiC-3o-wyo">
-                                                    <rect key="frame" x="305" y="74.5" width="85" height="11.5"/>
+                                                    <rect key="frame" x="305" y="67.5" width="85" height="25"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="9DH-Ao-qh7"/>
                                                         <constraint firstAttribute="width" constant="85" id="pXH-ZJ-XHJ"/>
                                                     </constraints>
                                                     <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -164,10 +164,29 @@
                                 <color key="textColor" red="0.44967889789999999" green="0.38736963270000002" blue="0.33796423669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nW6-WL-wcY">
+                                <rect key="frame" x="180.5" y="736" width="53" height="28"/>
+                                <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Skip">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="Akkurat-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="skipTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="00L-Ve-Y63"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="43S-rF-khV" firstAttribute="top" secondItem="nW6-WL-wcY" secondAttribute="bottom" constant="30" id="2gW-n0-o7b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F1A-x5-oRk" secondAttribute="trailing" symbolic="YES" id="35v-6F-eAc"/>
                             <constraint firstItem="9Ql-wy-DB9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="8Ty-iA-WxV"/>
                             <constraint firstItem="24j-fC-Njj" firstAttribute="centerY" secondItem="hpk-hd-Plh" secondAttribute="centerY" constant="-20" id="BR1-gc-7cr"/>
@@ -181,6 +200,7 @@
                             <constraint firstItem="hpk-hd-Plh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VHb-wh-vJg"/>
                             <constraint firstItem="ckw-rm-aw7" firstAttribute="leading" secondItem="v8A-QU-7d8" secondAttribute="leading" id="WUo-gT-dfE"/>
                             <constraint firstItem="v8A-QU-7d8" firstAttribute="top" secondItem="F1A-x5-oRk" secondAttribute="bottom" constant="6" id="Zsq-bk-eKR"/>
+                            <constraint firstItem="nW6-WL-wcY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="g5l-9f-qdh"/>
                             <constraint firstItem="24j-fC-Njj" firstAttribute="width" secondItem="hpk-hd-Plh" secondAttribute="width" id="gSO-kJ-QPv"/>
                             <constraint firstItem="F1A-x5-oRk" firstAttribute="top" secondItem="5wh-zA-gEg" secondAttribute="bottom" constant="50" id="ghP-7O-6JO"/>
                             <constraint firstItem="24j-fC-Njj" firstAttribute="centerX" secondItem="hpk-hd-Plh" secondAttribute="centerX" id="ibe-jl-0gn"/>
@@ -199,6 +219,7 @@
                         <outlet property="addressTextField" destination="v8A-QU-7d8" id="RKH-Tv-Gbo"/>
                         <outlet property="continueButton" destination="43S-rF-khV" id="leD-Lq-wmg"/>
                         <outlet property="errorLabel" destination="ckw-rm-aw7" id="chj-Vn-Mvm"/>
+                        <outlet property="skipButton" destination="nW6-WL-wcY" id="nsg-Qt-kVJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -31,45 +31,43 @@ class NotifyThresholdTableViewCell: UITableViewCell {
     }
     
     
-    var type: NotifyThresholdType? {
-        didSet {
-            self.delegate?.sliderValueChanged(type: type!, value: Int(slider.value * 100) )
-            
-            if !isActive {
-                willNotify.text = "Touch activate to set this notification"
-            } else {
-                setWillNotify(value: slider.value)
-            }
-            
-            thresholdLabel.text = numberFormatter.string(from: NSNumber(value: slider.value))
-            
-            switch type {
-            case .supplyLower:
-                changesByText.text = "Notify if Supply APY falls by:"
-            case .supplyUpper:
-                changesByText.text = "Notify if Supply APY rises by:"
-            case .borrowLower:
-                changesByText.text = "Notify if Borrow APY falls by:"
-            case .borrowUpper:
-                changesByText.text = "Notify if Borrow APY rises by:"
-            case .none:
-                changesByText.text = "??"
-            }
-        }
-    }
+    var type: NotifyThresholdType? 
     
     var apy: Float?
     
-    var value: Int? {
-        didSet {
-            if value == 0 {
-                setActive(isActive: false)
-            } else {
-                slider.setValue((Float(value ?? 0) / 100), animated: true)
-                setWillNotify(value: slider.value)
-                thresholdLabel.text = numberFormatter.string(from: NSNumber(value: slider.value))
-            }
-         
+    var value: Int?
+    
+    func updateCellState() {
+        self.delegate?.sliderValueChanged(type: type!, value: Int(slider.value * 100) )
+        
+        if !isActive {
+            willNotify.text = "Touch activate to set this notification"
+        } else {
+            setWillNotify(value: slider.value)
+        }
+        
+        thresholdLabel.text = numberFormatter.string(from: NSNumber(value: slider.value))
+        
+        switch type {
+        case .supplyLower:
+            changesByText.text = "Notify if Supply APY falls by:"
+        case .supplyUpper:
+            changesByText.text = "Notify if Supply APY rises by:"
+        case .borrowLower:
+            changesByText.text = "Notify if Borrow APY falls by:"
+        case .borrowUpper:
+            changesByText.text = "Notify if Borrow APY rises by:"
+        case .none:
+            changesByText.text = "??"
+        }
+        
+        
+        if value == 0 {
+            setActive(isActive: false)
+        } else {
+            slider.setValue((Float(value ?? 0) / 100), animated: true)
+            setWillNotify(value: slider.value)
+            thresholdLabel.text = numberFormatter.string(from: NSNumber(value: slider.value))
         }
     }
     
@@ -93,6 +91,8 @@ class NotifyThresholdTableViewCell: UITableViewCell {
             setWillNotify(value: slider.value)
         }
     }
+    
+
                                                                                    
     func setWillNotify(value: Float) {
         guard let apy = self.apy else {

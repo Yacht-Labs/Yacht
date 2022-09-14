@@ -24,7 +24,7 @@ enum Result<String> {
 }
 
 struct NetworkManager {
-    static let environment: NetworkEnvironment = .localhost
+    static let environment: NetworkEnvironment = .production
     private let router = Router<NotificationServiceAPI>()
     
     func getEulerTokens(completion: @escaping (_ tokens: [EulerToken]?, _ error: String?) -> Void) {

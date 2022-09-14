@@ -20,10 +20,10 @@ class SetIRNotificationViewController: UIViewController {
     var numberFormatter: NumberFormatter = NumberFormatter()
     var token: EulerToken?
     
-    var supplyUpperThreshold: Int = 20
-    var supplyLowerThreshold: Int = 20
-    var borrowUpperThreshold: Int = 20
-    var borrowLowerThreshold: Int = 20
+    var supplyUpperThreshold: Int?
+    var supplyLowerThreshold: Int?
+    var borrowUpperThreshold: Int?
+    var borrowLowerThreshold: Int?
     
     @IBAction func saveTouched(_ sender: Any) {
       
@@ -223,16 +223,18 @@ extension SetIRNotificationViewController: UITableViewDelegate, UITableViewDataS
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyThresholdTableViewCell") as? NotifyThresholdTableViewCell {
                     cell.delegate = self
                     cell.apy = Float(supplyAPY)
-                    cell.value = supplyLowerThreshold
                     cell.type = .supplyLower
+                    cell.value = supplyLowerThreshold
+                    cell.updateCellState()
                     return cell
                 }
             } else if indexPath.row == 1 {
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyThresholdTableViewCell") as? NotifyThresholdTableViewCell {
                     cell.delegate = self
                     cell.apy = Float(supplyAPY)
-                    cell.value = supplyUpperThreshold
                     cell.type = .supplyUpper
+                    cell.value = supplyUpperThreshold
+                    cell.updateCellState()
                     return cell
                 }
             }
@@ -241,16 +243,18 @@ extension SetIRNotificationViewController: UITableViewDelegate, UITableViewDataS
                if let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyThresholdTableViewCell") as? NotifyThresholdTableViewCell {
                    cell.delegate = self
                    cell.apy = Float(borrowAPY)
-                   cell.value = borrowLowerThreshold
                    cell.type = .borrowLower
+                   cell.value = borrowLowerThreshold
+                   cell.updateCellState()
                    return cell
                }
             } else if indexPath.row == 1 {
                if let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyThresholdTableViewCell") as? NotifyThresholdTableViewCell {
                    cell.delegate = self
                    cell.apy = Float(borrowAPY)
-                   cell.value = borrowUpperThreshold
                    cell.type = .borrowUpper
+                   cell.value = borrowUpperThreshold
+                   cell.updateCellState()
                    return cell
                }
            }

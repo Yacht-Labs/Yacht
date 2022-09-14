@@ -12,7 +12,17 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var skipButton: UIButton!
     var fromHome: Bool = false
+    let demoAddress: String = "0xB84Cd93582Cf94B0625C740F7EA441E33bC6FD6F"
+    let demoNickname: String = "Demo Account"
+    let demoDeviceId: String = "NOTIFICATIONS_DISABLED"
+    let demoId: String = "DEMO_ID"
+    
+    @IBAction func skipTouched(_ sender: Any) {
+        let vc = HomeViewController()
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
+    }
     
     @IBAction func continueTouched(_ sender: Any) {
         if checkIfValidEthAddress(address: addressTextField.text!) {
@@ -35,13 +45,19 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        skipButton.isEnabled = false
+        
         if !fromHome {
             if getAddressCount() > 0 {
                 let vc = HomeViewController()
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
+            } else {
+                createDemoAccount()
+                skipButton.isEnabled = true
             }
         }
 
+        skipButton.isEnabled = true
         view.backgroundColor = Constants.Colors.viewBackgroundColor
         errorLabel.alpha = 0
         addressTextField.delegate = self
@@ -59,7 +75,7 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tap)
         
     }
-    
+        
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -123,6 +139,30 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    func createDemoAccount() {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        guard let addressEntity = NSEntityDescription.entity(forEntityName: "Address", in: managedContext) else { return }
+        let newAddress = NSManagedObject(entity: addressEntity, insertInto: managedContext)
+        newAddress.setValue(demoAddress, forKeyPath: "address")
+        newAddress.setValue(demoNickname, forKeyPath: "nickname")
+        newAddress.setValue(demoDeviceId, forKeyPath: "deviceId")
+        newAddress.setValue(demoId, forKeyPath: "id")
+        newAddress.setValue(true, forKeyPath: "isActive")
+        
+        do {
+            try managedContext.save()
+        } catch {
+            print(error)
+        }
+        
+        
+    }
+    
     func deleteAllAccountsInLocalDb()  {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {

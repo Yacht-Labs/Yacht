@@ -867,6 +867,7 @@
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Yacht;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan address QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -900,6 +901,7 @@
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Yacht;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan address QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
