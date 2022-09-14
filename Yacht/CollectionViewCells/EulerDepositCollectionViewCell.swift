@@ -36,8 +36,7 @@ class EulerDepositCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        super.prepareForReuse()
-        
         self.tokenImage.image = nil
+        super.prepareForReuse()
     }
 }
