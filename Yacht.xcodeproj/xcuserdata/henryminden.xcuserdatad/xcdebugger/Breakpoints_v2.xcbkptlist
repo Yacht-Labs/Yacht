@@ -350,8 +350,8 @@
             filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "setWillNotify(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +366,8 @@
             filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "setWillNotify(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -382,8 +382,8 @@
             filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "setWillNotify(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,8 +398,8 @@
             filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "setWillNotify(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -494,8 +494,8 @@
             filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "setActive(isActive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -510,8 +510,8 @@
             filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "setActive(isActive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -881,6 +881,230 @@
             startingLineNumber = "224"
             endingLineNumber = "224"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D06F1A30-EF1D-463D-AEAB-2859E2FD02D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "updateCellState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B83B64AE-6E6B-4AF6-B8D1-318D757A8F1C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/ViewControllers/Addresses/AddressesListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7A05943-B3CB-4C6E-9249-6A2C79046DA8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/ViewControllers/Addresses/AddressesListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF57C3C4-B8C6-4040-8B34-652A2FB37F45"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/ViewControllers/Addresses/AddressesListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4915E8B8-8E68-4E79-834D-716A29A51C9A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/ViewControllers/Addresses/AddressesListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CF6D95F-630C-4694-83C8-BC6A7DCAA000"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "updateCellState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "127BEB0C-9C63-47F0-A8AD-7BBBFBC75702"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "updateCellState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "948C61D4-45C9-4547-8331-FC15C35C0423"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/ViewControllers/Addresses/SetIRNotificationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "saveTouched(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "948C61D4-45C9-4547-8331-FC15C35C0423 - b372b1aca7fc9ca8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yacht.SetIRNotificationViewController.saveTouched(Any) -&gt; ()"
+                  moduleName = "Yacht"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/henryminden/Yacht/Yacht/ViewControllers/Addresses/SetIRNotificationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "948C61D4-45C9-4547-8331-FC15C35C0423 - b372b1aca7fc9ca8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yacht.SetIRNotificationViewController.saveTouched(Any) -&gt; ()"
+                  moduleName = "Yacht"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/henryminden/Yacht/Yacht/ViewControllers/Addresses/SetIRNotificationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B082EB2-3B0F-4BD6-8D24-3E03D3F926F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/ViewControllers/Addresses/SetIRNotificationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
+            landmarkName = "sliderValueChanged(type:value:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DEAAFC44-D7AC-4C88-8553-010AFEF9047E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "onSlide()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95474096-2276-49E5-A975-5EC6A1018254"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "setActive(isActive:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A2CF4039-4025-4392-ACD1-69E7702226CC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yacht/TableViewCells/NotifyThresholdTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "setActive(isActive:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -24,21 +24,17 @@ class NotifyThresholdTableViewCell: UITableViewCell {
     @IBOutlet weak var willNotify: UILabel!
     @IBOutlet weak var activateButton: UIButton!
     var isActive: Bool = true
+    var type: NotifyThresholdType?
+    var apy: Float?
+    var value: Int?
     weak var delegate: NotifyThresholdTableViewCellDelegate?
+    let numberFormatter: NumberFormatter = NumberFormatter()
     
     @IBAction func activateTouched(_ sender: Any) {
         setActive(isActive: !isActive)
     }
     
-    
-    var type: NotifyThresholdType? 
-    
-    var apy: Float?
-    
-    var value: Int?
-    
     func updateCellState() {
-        self.delegate?.sliderValueChanged(type: type!, value: Int(slider.value * 100) )
         
         if !isActive {
             willNotify.text = "Touch activate to set this notification"
@@ -46,7 +42,7 @@ class NotifyThresholdTableViewCell: UITableViewCell {
             setWillNotify(value: slider.value)
         }
         
-        thresholdLabel.text = numberFormatter.string(from: NSNumber(value: slider.value))
+        thresholdLabel.text = "\(Int(slider.value * 100))%"
         
         switch type {
         case .supplyLower:
@@ -67,11 +63,11 @@ class NotifyThresholdTableViewCell: UITableViewCell {
         } else {
             slider.setValue((Float(value ?? 0) / 100), animated: true)
             setWillNotify(value: slider.value)
-            thresholdLabel.text = numberFormatter.string(from: NSNumber(value: slider.value))
+            thresholdLabel.text = "\(Int(slider.value * 100))%"
         }
+        
+        self.delegate?.sliderValueChanged(type: type!, value: value ?? 0 )
     }
-    
-    let numberFormatter: NumberFormatter = NumberFormatter()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -84,8 +80,7 @@ class NotifyThresholdTableViewCell: UITableViewCell {
     
     @objc
     func onSlide() {
-        numberFormatter.maximumFractionDigits = 0
-        thresholdLabel.text = numberFormatter.string(from: NSNumber(value: slider.value))
+        thresholdLabel.text = "\(Int(slider.value * 100))%"
         if let type = type {
             self.delegate?.sliderValueChanged(type: type, value: Int(slider.value * 100))
             setWillNotify(value: slider.value)
@@ -137,7 +132,7 @@ class NotifyThresholdTableViewCell: UITableViewCell {
             self.activateButton.setAttributedTitle(NSAttributedString(string: "Deactivate", attributes: attributes), for: .normal)
             
             self.delegate?.sliderValueChanged(type: type!, value: Int(slider.value * 100))
-            
+            thresholdLabel.text = "\(Int(slider.value * 100))%"
             
             switch type {
             case .supplyLower:
