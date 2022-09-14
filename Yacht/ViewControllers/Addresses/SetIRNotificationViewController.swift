@@ -50,9 +50,10 @@ class SetIRNotificationViewController: UIViewController {
                         networkManager.showErrorAlert(title: "Server Error", message: "Unable to update notification", vc: self)
                     }
                 }
-                DispatchQueue.main.async {
-                    networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
-                    self.saveButton.isEnabled = true
+                DispatchQueue.main.async { [self] in
+                    networkManager.stopThrob(imageView: yachtImage, hiddenThrobber: true)
+                    saveButton.isEnabled = true
+                    navigationController?.popViewController(animated: true)
                 }
             }
             
@@ -72,7 +73,10 @@ class SetIRNotificationViewController: UIViewController {
                         networkManager.showErrorAlert(title: "Server Error", message: "Unable to create notification", vc: self)
                     }
                 } else {
-                    self.notificationId = notification?.id
+                    DispatchQueue.main.async { [self] in
+                        self.notificationId = notification?.id
+                        navigationController?.popViewController(animated: true)
+                    }
                 }
                 DispatchQueue.main.async {
                     networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
@@ -131,6 +135,7 @@ class SetIRNotificationViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.saveButton.isEnabled = true
                     networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                    
                 }
             }
         }

@@ -23,7 +23,7 @@ class NotifyThresholdTableViewCell: UITableViewCell {
     @IBOutlet weak var changesByText: UILabel!
     @IBOutlet weak var willNotify: UILabel!
     @IBOutlet weak var activateButton: UIButton!
-    var isActive: Bool = true
+    var isActive: Bool = false
     var type: NotifyThresholdType?
     var apy: Float?
     var value: Int?
@@ -36,10 +36,10 @@ class NotifyThresholdTableViewCell: UITableViewCell {
     
     func updateCellState() {
         
-        if !isActive {
-            willNotify.text = "Touch activate to set this notification"
+        if value == 0 || value == nil {
+            setActive(isActive: false)
         } else {
-            setWillNotify(value: slider.value)
+            setActive(isActive: true)
         }
         
         thresholdLabel.text = "\(Int(slider.value * 100))%"
@@ -55,15 +55,6 @@ class NotifyThresholdTableViewCell: UITableViewCell {
             changesByText.text = "Notify if Borrow APY rises by:"
         case .none:
             changesByText.text = "??"
-        }
-        
-        
-        if value == 0 {
-            setActive(isActive: false)
-        } else {
-            slider.setValue((Float(value ?? 0) / 100), animated: true)
-            setWillNotify(value: slider.value)
-            thresholdLabel.text = "\(Int(slider.value * 100))%"
         }
         
         self.delegate?.sliderValueChanged(type: type!, value: value ?? 0 )
@@ -114,8 +105,9 @@ class NotifyThresholdTableViewCell: UITableViewCell {
 
     func setActive(isActive: Bool) {
         if isActive {
-            if self.value == 0 {
-                self.value = 20
+            
+            if value == 0 || value == nil {
+                value = 20
             }
             
             thresholdLabel.alpha = 1
