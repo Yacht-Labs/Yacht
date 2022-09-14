@@ -34,4 +34,10 @@ class EulerDepositCollectionViewCell: UICollectionViewCell {
         contentView.layer.borderColor = Constants.Colors.lightGray.cgColor
         contentView.clipsToBounds = true
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.tokenImage.image = nil
+    }
 }

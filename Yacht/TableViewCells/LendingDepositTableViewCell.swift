@@ -86,7 +86,6 @@ extension LendingDepositTableViewCell: UICollectionViewDelegate, UICollectionVie
                 loadData(url: url!) { (data, _) in
                     if let data = data {
                         DispatchQueue.main.async {
-                            cell.tokenImage.image = nil
                             cell.tokenImage.image = UIImage(data: data)
                         }
                     }
