@@ -17,7 +17,7 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     let demoAddress: String = "0xB84Cd93582Cf94B0625C740F7EA441E33bC6FD6F"
     let demoNickname: String = "Demo Account"
     let demoDeviceId: String = "NOTIFICATIONS_DISABLED"
-    let demoId: String = "DEMO_ID"
+    
     
     @IBAction func skipTouched(_ sender: Any) {
         let vc = HomeViewController()
@@ -145,20 +145,26 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let managedContext = appDelegate.persistentContainer.viewContext
-        guard let addressEntity = NSEntityDescription.entity(forEntityName: "Address", in: managedContext) else { return }
-        let newAddress = NSManagedObject(entity: addressEntity, insertInto: managedContext)
-        newAddress.setValue(demoAddress, forKeyPath: "address")
-        newAddress.setValue(demoNickname, forKeyPath: "nickname")
-        newAddress.setValue(demoDeviceId, forKeyPath: "deviceId")
-        newAddress.setValue(demoId, forKeyPath: "id")
-        newAddress.setValue(true, forKeyPath: "isActive")
-        
-        do {
-            try managedContext.save()
-        } catch {
-            print(error)
+        let networkManager = NetworkManager()
+        networkManager.postAccount(address: demoAddress, deviceId: appDelegate.deviceId ?? demoDeviceId, name: demoNickname) { account, error in
+
+            let managedContext = appDelegate.persistentContainer.viewContext
+            guard let addressEntity = NSEntityDescription.entity(forEntityName: "Address", in: managedContext) else { return }
+            let newAddress = NSManagedObject(entity: addressEntity, insertInto: managedContext)
+            newAddress.setValue(self.demoAddress, forKeyPath: "address")
+            newAddress.setValue(self.demoNickname, forKeyPath: "nickname")
+            newAddress.setValue(self.demoDeviceId, forKeyPath: "deviceId")
+            newAddress.setValue(account?.id ?? Constants.Demo.demoId, forKeyPath: "id")
+            newAddress.setValue(true, forKeyPath: "isActive")
+            
+            do {
+                try managedContext.save()
+            } catch {
+                print(error)
+            }
         }
+        
+
         
         
     }

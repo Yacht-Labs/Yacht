@@ -35,8 +35,8 @@ class EulerDepositCollectionViewCell: UICollectionViewCell {
         contentView.clipsToBounds = true
     }
     
-    override func prepareForReuse() {
-        self.tokenImage.image = nil
-        super.prepareForReuse()
-    }
+//    override func prepareForReuse() {
+//        self.tokenImage.image = nil
+//        super.prepareForReuse()
+//    }
 }

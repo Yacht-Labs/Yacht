@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class SetIRNotificationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -213,14 +214,8 @@ extension SetIRNotificationViewController: UITableViewDelegate, UITableViewDataS
                 guard let urlString = token.logoURI else { return cell }
                 
                 let url = URL(string: urlString)
-                loadData(url: url!) { (data, _) in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            cell.tokenImage.layer.cornerRadius = cell.tokenImage.bounds.height / 2
-                            cell.tokenImage.image = UIImage(data: data)
-                        }
-                    }
-                }
+                cell.tokenImage.layer.cornerRadius = cell.tokenImage.bounds.height / 2
+                Nuke.loadImage(with: url!, into: cell.tokenImage)
                 return cell
             }
         } else if indexPath.section == 1 {

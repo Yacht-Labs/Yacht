@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 protocol ELCollectionViewCellDelegate: AnyObject {
     func elCollectionViewCellTapped(collectionviewcell: EulerLoanCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingLoanTableViewCell)
@@ -84,14 +85,7 @@ extension LendingLoanTableViewCell: UICollectionViewDelegate, UICollectionViewDa
             
             if let urlString = borrow.token.logoURI {
                 let url = URL(string: urlString)
-                loadData(url: url!) { (data, _) in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            cell.tokenImage.image = nil
-                            cell.tokenImage.image = UIImage(data: data)
-                        }
-                    }
-                }
+                Nuke.loadImage(with: url!, into: cell.tokenImage)
             }
             cell.tokenName.text = borrow.token.name
             

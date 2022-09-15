@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 protocol EDCollectionViewCellDelegate: AnyObject {
     func edCollectionViewCellTapped(collectionviewcell: EulerDepositCollectionViewCell?, index: Int, didGetTappedInTableViewCell: LendingDepositTableViewCell)
@@ -83,13 +84,7 @@ extension LendingDepositTableViewCell: UICollectionViewDelegate, UICollectionVie
             
             if let urlString = deposit.token.logoURI {
                 let url = URL(string: urlString)
-                loadData(url: url!) { (data, _) in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            cell.tokenImage.image = UIImage(data: data)
-                        }
-                    }
-                }
+                Nuke.loadImage(with: url!, into: cell.tokenImage)
             }
             cell.tokenName.text = deposit.token.name
             

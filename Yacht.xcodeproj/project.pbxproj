@@ -78,6 +78,8 @@
 		7FEA2D8228C7B71900FF6DAB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */; };
 		7FEA2D8428C7ED6000FF6DAB /* CopyAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */; };
 		7FEA2D8628CA50D500FF6DAB /* SubAccountSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */; };
+		7FEA2D8828D27D5300FF6DAB /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8728D27D5300FF6DAB /* DownloadManager.swift */; };
+		7FEA2D8B28D2C34E00FF6DAB /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 7FEA2D8A28D2C34E00FF6DAB /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +176,7 @@
 		7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAddressTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAccountSelectViewController.swift; sourceTree = "<group>"; };
+		7FEA2D8728D27D5300FF6DAB /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FEA2D8B28D2C34E00FF6DAB /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				7F5F837728B91C91008B8EDB /* LocalStorageManager.swift */,
+				7FEA2D8728D27D5300FF6DAB /* DownloadManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -507,6 +512,9 @@
 			dependencies = (
 			);
 			name = Yacht;
+			packageProductDependencies = (
+				7FEA2D8A28D2C34E00FF6DAB /* Nuke */,
+			);
 			productName = Yacht;
 			productReference = 7F2891C128B52E9B00B501B6 /* Yacht.app */;
 			productType = "com.apple.product-type.application";
@@ -579,6 +587,9 @@
 				Base,
 			);
 			mainGroup = 7F2891B828B52E9B00B501B6;
+			packageReferences = (
+				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = 7F2891C228B52E9B00B501B6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -676,6 +687,7 @@
 				7F5F837328B91963008B8EDB /* NetworkSelectTableViewCell.swift in Sources */,
 				7F5F835228B7C5E4008B8EDB /* EulerDepositCollectionViewCell.swift in Sources */,
 				7F28920828B5394900B501B6 /* EnterAddressViewController.swift in Sources */,
+				7FEA2D8828D27D5300FF6DAB /* DownloadManager.swift in Sources */,
 				7F5F837528B91A65008B8EDB /* NetworkSelectViewController.swift in Sources */,
 				7F5F83AA28BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift in Sources */,
 				7F5F835828B7C856008B8EDB /* LendingLoanTableViewCell.swift in Sources */,
@@ -1040,6 +1052,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7FEA2D8A28D2C34E00FF6DAB /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7F2891CD28B52E9B00B501B6 /* Yacht.xcdatamodeld */ = {

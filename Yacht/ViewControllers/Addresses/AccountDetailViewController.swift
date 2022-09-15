@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class AccountDetailViewController: UIViewController {
 
@@ -56,7 +57,7 @@ class AccountDetailViewController: UIViewController {
         searchController?.searchResultsUpdater = self
         searchController?.delegate = self
         searchController?.obscuresBackgroundDuringPresentation = false
-        searchController?.searchBar.placeholder = "Search Assets"
+        searchController?.searchBar.placeholder = "Search Tokens"
         searchController?.searchBar.searchTextField.font = UIFont(name: "Akkurat-Regular", size: 14)
         
         definesPresentationContext = true
@@ -65,6 +66,14 @@ class AccountDetailViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchPressed))
         
         getEulerAccount()
+        
+        DataLoader.sharedUrlCache.diskCapacity = 0
+        let pipeline = ImagePipeline {
+          let dataCache = try? DataCache(name: "com.raywenderlich.Far-Out-Photos.datacache")
+          dataCache?.sizeLimit = 200 * 1024 * 1024
+          $0.dataCache = dataCache
+        }
+        ImagePipeline.shared = pipeline
     }
         
     func changeSubAccount(row: Int) {
@@ -305,7 +314,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                     }
                 }
             } else if section == 4 {
-                titleLabel.text = "Assets"
+                titleLabel.text = "Tokens"
             }
             
             return headerView
@@ -400,14 +409,8 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 guard let urlString = eulerToken.logoURI else { return cell }
                 
                 let url = URL(string: urlString)
-                loadData(url: url!) { (data, _) in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            cell.tokenImage.layer.cornerRadius = cell.tokenImage.bounds.height / 2
-                            cell.tokenImage.image = UIImage(data: data)
-                        }
-                    }
-                }
+                cell.tokenImage.layer.cornerRadius = cell.tokenImage.bounds.height / 2
+                Nuke.loadImage(with: url!, into: cell.tokenImage)
                 return cell
             }
  

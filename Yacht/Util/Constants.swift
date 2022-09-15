@@ -31,6 +31,10 @@ struct Constants {
         
     }
     
+    struct Demo {
+        static let demoId = "DEMO_ID"
+    }
+    
     struct LocalStorage {
         static let chainId = "chainId"
     }

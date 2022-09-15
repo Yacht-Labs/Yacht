@@ -104,10 +104,22 @@ extension AddressesListViewController: UITableViewDelegate, UITableViewDataSourc
             networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
             let account = addresses[indexPath.row]
             let id = account.value(forKey: "id") as? String
-            let deviceId = account.value(forKey: "deviceId") as? String
-            guard let id = id,
-                    let deviceId = deviceId
+            
+            guard let id = id
                     else { return }
+            
+            if id == Constants.Demo.demoId {
+                do {
+                    try deleteAddressInCoreData(atRow: indexPath.row)
+                    self.addresses.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    tableView.reloadData()
+                    self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                } catch {
+                    networkManager.showErrorAlert(title: "Core Data Error", message: "Failed to delete account.", vc: self)
+                }
+                return 
+            }
             
             networkManager.deleteAccount(id: id) { account, error in
                 if error == nil {
@@ -127,8 +139,6 @@ extension AddressesListViewController: UITableViewDelegate, UITableViewDataSourc
                     DispatchQueue.main.async { [self] in
                         self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
                         self.networkManager.showErrorAlert(title: "Network Error", message: "Failed to delete account. Check your network connection", vc: self)
-                       
-                        
                     }
                 
                 }

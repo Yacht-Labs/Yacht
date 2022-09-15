@@ -29,7 +29,6 @@ func download(url: URL, toFile file: URL, completion: @escaping (Error?) -> Void
                 at: tempURL,
                 to: file
             )
-
             completion(nil)
         }
 
@@ -43,7 +42,7 @@ func download(url: URL, toFile file: URL, completion: @escaping (Error?) -> Void
     task.resume()
 }
 
-func loadData(url: URL, completion: @escaping (Data?, Error?) -> Void) {
+func loadData(url: URL, completion: @escaping (Data?, Error?, URL) -> Void) {
     // Compute a path to the URL in the cache
     let fileCachePath = FileManager.default.temporaryDirectory
         .appendingPathComponent(
@@ -54,24 +53,29 @@ func loadData(url: URL, completion: @escaping (Data?, Error?) -> Void) {
     // If the image exists in the cache,
     // load the image from the cache and exit
     
-    do {
-        if let data = try Data(contentsOf: fileCachePath) as Data? {
-            completion(data, nil)
-            return
+//    do {
+//        if let data = try Data(contentsOf: fileCachePath) as Data? {
+//            completion(data, nil)
+//            return
+//        }
+//    } catch {
+//        completion(nil, error)
+//    }
+
+    let offset = DispatchTimeInterval.seconds(Int.random(in: 1..<5))
+    DispatchQueue.main.asyncAfter(deadline: .now() + offset) {
+        download(url: url, toFile: fileCachePath) { (error) in
+            do {
+                let data = try Data(contentsOf: fileCachePath)
+                completion(data, error, url)
+            } catch {
+                completion(nil, error, url)
+            }
         }
-    } catch {
-        completion(nil, error)
     }
     
     // If the image does not exist in the cache,
     // download the image to the cache
-    download(url: url, toFile: fileCachePath) { (error) in
-        do {
-            let data = try Data(contentsOf: fileCachePath)
-            completion(data, error)
-        } catch {
-            completion(nil, error)
-        }
-    }
+
 }
 
