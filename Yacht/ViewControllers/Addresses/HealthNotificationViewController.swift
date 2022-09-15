@@ -36,11 +36,14 @@ class HealthNotificationViewController: UIViewController {
                 if error != nil {
                     DispatchQueue.main.async {
                         networkManager.showErrorAlert(title: "Server Error", message: "Unable to update notification", vc: self)
+                        networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                        self.saveButton.isEnabled = true
                     }
-                }
-                DispatchQueue.main.async {
-                    networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
-                    self.saveButton.isEnabled = true
+                } else {
+                    DispatchQueue.main.async {
+                        self.notificationId = notification?.id
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 }
             }
         } else {
@@ -49,13 +52,15 @@ class HealthNotificationViewController: UIViewController {
                 if error != nil {
                     DispatchQueue.main.async {
                         networkManager.showErrorAlert(title: "Server Error", message: "Unable to create notification", vc: self)
+                        networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                        self.saveButton.isEnabled = true
                     }
                 } else {
-                    self.notificationId = notification?.id
-                }
-                DispatchQueue.main.async {
-                    networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
-                    self.saveButton.isEnabled = true
+                    DispatchQueue.main.async {
+                        self.notificationId = notification?.id
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    
                 }
             }
         }

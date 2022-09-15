@@ -60,7 +60,10 @@ class ActiveNotificationsViewController: UIViewController {
                 if !accounts.isEmpty {
                     self.accounts = accounts
                     self.getTokens(deviceId: deviceId)
+                } else {
+                    self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
                 }
+                    
             } else {
                 DispatchQueue.main.async {
                     self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
