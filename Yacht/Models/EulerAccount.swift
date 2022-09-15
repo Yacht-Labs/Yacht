@@ -32,7 +32,7 @@ extension EulerAccount: Decodable {
         borrows = try values.decode([EulerLoan].self, forKey: .borrows)
         healthScore = try values.decode(Double.self, forKey: .healthScore)
         subAccountId = try values.decode(Int.self, forKey: .subAccountId)
-        subAccountAddress = try values.decode(String.self, forKey: .subAccountAddress)
+        subAccountAddress = try values.decodeIfPresent(String.self, forKey: .subAccountAddress)
     }
     
 }
