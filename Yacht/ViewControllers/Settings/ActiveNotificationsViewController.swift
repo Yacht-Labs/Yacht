@@ -59,17 +59,15 @@ class ActiveNotificationsViewController: UIViewController {
                 }
                 if !accounts.isEmpty {
                     self.accounts = accounts
-                    self.getTokens(deviceId: deviceId)
-                } else {
-                    self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
                 }
-                    
+                
             } else {
                 DispatchQueue.main.async {
                     self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
                     self.networkManager.showErrorAlert(title: "Server Error", message: "Failed to get accounts for device", vc: self)
                 }
             }
+            self.getTokens(deviceId: deviceId)
         }
     }
     
@@ -145,7 +143,7 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
                 } else {
                     subAccount = "Sub \(notification.subAccountId ?? "??")"
                 }
-                cell.notificationType.text = (account?.name ?? "Unknown Account") + " - " + subAccount
+                cell.notificationType.text = (account?.name ?? "Demo Account") + " - " + subAccount
                 return cell
             }
             

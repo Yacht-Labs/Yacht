@@ -11,6 +11,7 @@ import CoreData
 class AddressesListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var addresses: [NSManagedObject] = []
+
     let networkManager = NetworkManager()
     @IBOutlet weak var yachtImage: UIImageView!
     
@@ -25,6 +26,8 @@ class AddressesListViewController: UIViewController {
         tableView.dataSource = self
 
         loadAddresses()
+        
+        
 
     }
         
@@ -89,12 +92,18 @@ extension AddressesListViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let address = addresses[indexPath.row]
         
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let deviceId = appDelegate.deviceId ?? Constants.Demo.demoDeviceId
+        
         let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "AccountDetailViewController") as AccountDetailViewController
         vc.address = address.value(forKey: "address") as? String
         vc.nickname = address.value(forKey: "nickname") as? String
         vc.accountId = address.value(forKey: "id") as? String
-        vc.deviceId = address.value(forKey: "deviceId") as? String
+        vc.deviceId = deviceId
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

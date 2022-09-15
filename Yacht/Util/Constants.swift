@@ -33,6 +33,7 @@ struct Constants {
     
     struct Demo {
         static let demoId = "DEMO_ID"
+        static let demoDeviceId = "NOTIFICATIONS_DISABLED"
     }
     
     struct LocalStorage {

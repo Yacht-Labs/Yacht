@@ -19,6 +19,7 @@ class HealthNotificationViewController: UIViewController {
     var deviceId: String?
     var accountName: String?
     var notificationId: String?
+    var toastView: ToastView?
     
     @IBAction func saveTouched(_ sender: Any) {
         guard let accountId = accountId,
@@ -26,6 +27,14 @@ class HealthNotificationViewController: UIViewController {
             let deviceId = deviceId else {
             return
         }
+        
+        if deviceId == Constants.Demo.demoDeviceId {
+            toastView?.titleLabel.text = "Notifications Disabled"
+            toastView?.bodyText.text = "Notifications must be enabled in order to receive alerts. Turn on notifications and hard restart app in order to enable active notifications"
+            toastView?.showToast()
+            return 
+        }
+        
         let networkManager = NetworkManager()
         self.saveButton.isEnabled = false
         networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
@@ -75,6 +84,10 @@ class HealthNotificationViewController: UIViewController {
         } else {
             subAccount = "Sub \(subAccountId ?? "??")"
         }
+        
+        toastView = ToastView.init(frame: CGRect(x: self.view.frame.origin.x, y: self.view.bounds.height, width: self.view.frame.size.width, height: 80))
+        toastView?.parentViewHeight = self.view.bounds.height
+        self.view.addSubview(toastView!)
         
         accountNameLabel.text = (accountName ?? "Unknown Account") + " - " + subAccount
         yachtImage.alpha = 0

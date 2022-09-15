@@ -16,7 +16,7 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     var fromHome: Bool = false
     let demoAddress: String = "0xB84Cd93582Cf94B0625C740F7EA441E33bC6FD6F"
     let demoNickname: String = "Demo Account"
-    let demoDeviceId: String = "NOTIFICATIONS_DISABLED"
+    let demoDeviceId: String = Constants.Demo.demoDeviceId
     
     
     @IBAction func skipTouched(_ sender: Any) {

@@ -13,7 +13,7 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var yachtImage: UIImageView!
-    var deviceId: String = "NOTIFICATIONS_DISABLED"
+    var deviceId: String = Constants.Demo.demoDeviceId
     var address: String?
     var toastView: ToastView?
     

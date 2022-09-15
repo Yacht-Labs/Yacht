@@ -20,6 +20,7 @@ class SetIRNotificationViewController: UIViewController {
     var symbolValue: String?
     var numberFormatter: NumberFormatter = NumberFormatter()
     var token: EulerToken?
+    var toastView: ToastView?
     
     var supplyUpperThreshold: Int?
     var supplyLowerThreshold: Int?
@@ -32,6 +33,14 @@ class SetIRNotificationViewController: UIViewController {
             let tokenAddress = tokenAddress else {
             return
         }
+        
+        if deviceId == Constants.Demo.demoDeviceId {
+            toastView?.titleLabel.text = "Notifications Disabled"
+            toastView?.bodyText.text = "Notifications must be enabled in order to receive alerts. Turn on notifications and hard restart app in order to enable active notifications"
+            toastView?.showToast()
+            return
+        }
+        
         let networkManager = NetworkManager()
         self.saveButton.isEnabled = false
         networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
@@ -93,6 +102,10 @@ class SetIRNotificationViewController: UIViewController {
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0.0
         }
+        
+        toastView = ToastView.init(frame: CGRect(x: self.view.frame.origin.x, y: self.view.bounds.height, width: self.view.frame.size.width, height: 80))
+        toastView?.parentViewHeight = self.view.bounds.height
+        self.view.addSubview(toastView!)
         
         tableView.delegate = self
         tableView.dataSource = self
