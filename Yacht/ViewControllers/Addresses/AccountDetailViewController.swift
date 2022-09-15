@@ -150,7 +150,7 @@ class AccountDetailViewController: UIViewController {
                 }
             }
             
-            cleanAccounts.append(EulerAccount(supplies: cleanSupplies, borrows: cleanBorrows, healthScore: account.healthScore, subAccountId: account.subAccountId))
+            cleanAccounts.append(EulerAccount(supplies: cleanSupplies, borrows: cleanBorrows, healthScore: account.healthScore, subAccountId: account.subAccountId, subAccountAddress: account.subAccountAddress))
         }
         
         return cleanAccounts
@@ -325,8 +325,8 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "CopyAddressTableViewCell") as? CopyAddressTableViewCell {
-                let prefix = String((address ?? "0x0000000000000000000000000000000000000000").prefix(6))
-                let suffix = String((address ?? "0x0000000000000000000000000000000000000000").suffix(4))
+                let prefix = String((shownEulerAccount?.subAccountAddress ?? "0x0000000000000000000000000000000000000000").prefix(6))
+                let suffix = String((shownEulerAccount?.subAccountAddress ?? "0x0000000000000000000000000000000000000000").suffix(4))
                 cell.address.text = prefix + "..." + suffix
                 if shownEulerAccount?.subAccountId == 0 || shownEulerAccount?.subAccountId == nil {
                     cell.account.text = "Main"

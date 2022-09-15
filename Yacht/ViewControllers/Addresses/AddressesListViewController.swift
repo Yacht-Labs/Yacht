@@ -26,8 +26,6 @@ class AddressesListViewController: UIViewController {
         tableView.dataSource = self
 
         loadAddresses()
-        
-        
 
     }
         
@@ -73,8 +71,45 @@ class AddressesListViewController: UIViewController {
 }
 
 extension AddressesListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    
+        let headerView = UIView()
+        headerView.backgroundColor = Constants.Colors.viewBackgroundColor
+        let titleLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 200, height: 40))
+        headerView.addSubview(titleLabel)
+        titleLabel.textColor = Constants.Colors.deepRed
+        titleLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
+            
+        if section == 0 {
+            titleLabel.text = "Euler"
+        } else if section == 1 {
+            titleLabel.text = "Compound"
+        } else if section == 2 {
+            titleLabel.text = "AAVE"
+        } else if section == 3 {
+            titleLabel.text = "Maker"
+        }
+        
+        return headerView
+     
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return addresses.count
+        if section == 0 {
+            return addresses.count
+        } else {
+            return 1
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -142,14 +177,12 @@ extension AddressesListViewController: UITableViewDelegate, UITableViewDataSourc
                         } catch {
                             networkManager.showErrorAlert(title: "Core Data Error", message: "Failed to delete account.", vc: self)
                         }
-                        
                     }
                 } else {
                     DispatchQueue.main.async { [self] in
                         self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
                         self.networkManager.showErrorAlert(title: "Network Error", message: "Failed to delete account. Check your network connection", vc: self)
                     }
-                
                 }
             }
         }
