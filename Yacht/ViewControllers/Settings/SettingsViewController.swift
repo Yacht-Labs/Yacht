@@ -21,6 +21,28 @@ class SettingsViewController: UIViewController {
         toastView = ToastView.init(frame: CGRect(x: self.view.frame.origin.x, y: self.view.bounds.height, width: self.view.frame.size.width, height: 80))
         toastView?.parentViewHeight = self.view.bounds.height
         self.view.addSubview(toastView!)
+        
+        let environmentText: String
+        switch BuildConfiguration.shared.environment {
+        case .devDebug, .devRelease:
+            environmentText = "DEV"
+        case .stageDebug, .stageRelease:
+            environmentText = "STAGE"
+        case .prodDebug, .prodRelease:
+            environmentText = ""
+        }
+        
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "??"
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "??"
+
+        let versionView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 64))
+        let versionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 64))
+        versionLabel.textAlignment = .center
+        versionLabel.font = UIFont(name: "Akkurat-Bold", size: 14)
+        versionLabel.textColor = Constants.Colors.lightGray
+        versionLabel.text = "Yacht v\(version) (\(build)) \(environmentText)"
+        versionView.addSubview(versionLabel)
+        tableView.tableFooterView = versionView
     
     }
     
@@ -44,7 +66,7 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,6 +76,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingNetworkTableViewCell") as? SettingNetworkTableViewCell {
+                cell.type.text = "Network:"
                 if chainId == 0 {
                     cell.network.text = ""
                 } else {
@@ -66,6 +89,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         if indexPath.row == 1 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingNetworkTableViewCell") as? SettingNetworkTableViewCell {
+                cell.type.text = "DeFi Protocol:"
+                cell.network.text = "Euler"
+                return cell
+            }
+        }
+        if indexPath.row == 2 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingNotificationTableViewCell") as? SettingNotificationTableViewCell {
                 return cell
             }
@@ -75,11 +105,16 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            toastView?.titleLabel.text = "Coming Soon"
-            toastView?.bodyText.text = "Support for additional networks is on our roadmap! Follow us on twitter @Yacht_Labs for release updates"
-            toastView?.showToast()
+            let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "NetworkSelectViewController") as NetworkSelectViewController
+            vc.chainId = chainId
+            self.navigationController?.pushViewController(vc, animated: true)
             
         } else if indexPath.row == 1 {
+            let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ProtocolSelectViewController") as ProtocolSelectViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 2 {
             let storyboard = UIStoryboard(name: "Settings", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "ActiveNotificationsViewController") as ActiveNotificationsViewController
             self.navigationController?.pushViewController(vc, animated: true)

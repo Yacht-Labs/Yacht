@@ -47,6 +47,13 @@ struct Constants {
         (11155111, "Sepolia")
     ]
     
+    static let defiProtocolNames: [String] = [
+        "Euler",
+        "Compound",
+        "AAVE",
+        "Maker"
+    ]
+    
     static let tokenImage: [String:String] = [
         "0x6b175474e89094c44da98b954eedeac495271d0f":"https://i.imgur.com/vzlX0HQ.png", // DAI
         "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599":"https://i.imgur.com/5jpMTcv.png", // wBTC

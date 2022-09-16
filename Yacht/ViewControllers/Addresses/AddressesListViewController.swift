@@ -27,6 +27,8 @@ class AddressesListViewController: UIViewController {
 
         loadAddresses()
 
+        print(BuildConfiguration.shared.network)
+
     }
         
     @objc func addTapped() {
@@ -72,35 +74,35 @@ class AddressesListViewController: UIViewController {
 
 extension AddressesListViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44
-    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 44
+//    }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    
-        let headerView = UIView()
-        headerView.backgroundColor = Constants.Colors.viewBackgroundColor
-        let titleLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 200, height: 40))
-        headerView.addSubview(titleLabel)
-        titleLabel.textColor = Constants.Colors.deepRed
-        titleLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
-            
-        if section == 0 {
-            titleLabel.text = "Euler"
-        } else if section == 1 {
-            titleLabel.text = "Compound"
-        } else if section == 2 {
-            titleLabel.text = "AAVE"
-        } else if section == 3 {
-            titleLabel.text = "Maker"
-        }
-        
-        return headerView
-     
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//
+//        let headerView = UIView()
+//        headerView.backgroundColor = Constants.Colors.viewBackgroundColor
+//        let titleLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 200, height: 40))
+//        headerView.addSubview(titleLabel)
+//        titleLabel.textColor = Constants.Colors.deepRed
+//        titleLabel.font = UIFont(name: "Akkurat-Bold", size: 22)
+//
+//        if section == 0 {
+//            titleLabel.text = "Euler"
+//        } else if section == 1 {
+//            titleLabel.text = "Compound"
+//        } else if section == 2 {
+//            titleLabel.text = "AAVE"
+//        } else if section == 3 {
+//            titleLabel.text = "Maker"
+//        }
+//
+//        return headerView
+//
+//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -24,9 +24,9 @@ enum Result<String> {
 }
 
 struct NetworkManager {
-    static let environment: NetworkEnvironment = .localhost
+    static let environment: NetworkEnvironment = BuildConfiguration.shared.network
     private let router = Router<NotificationServiceAPI>()
-    
+
     func getEulerTokens(completion: @escaping (_ tokens: [EulerToken]?, _ error: String?) -> Void) {
         router.request(.getEulerTokens) { data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [EulerToken].self)

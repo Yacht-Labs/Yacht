@@ -1,15 +1,14 @@
 //
-//  NetworkSelectViewController.swift
+//  ProtocolSelectViewController.swift
 //  Yacht
 //
-//  Created by Henry Minden on 8/26/22.
+//  Created by Henry Minden on 9/16/22.
 //
 
 import UIKit
 
-class NetworkSelectViewController: UIViewController {
+class ProtocolSelectViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var chainId: Int!
     var toastView: ToastView?
     
     override func viewDidLoad() {
@@ -22,30 +21,26 @@ class NetworkSelectViewController: UIViewController {
         toastView?.parentViewHeight = self.view.bounds.height
         self.view.addSubview(toastView!)
         
-        navigationItem.title = "Select Network"
+        navigationItem.title = "Select DeFi Protocol"
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.contentInsetAdjustmentBehavior = .never
     }
-
 }
 
-extension NetworkSelectViewController: UITableViewDelegate, UITableViewDataSource {
+extension ProtocolSelectViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Constants.evmChainNames.count
+        return Constants.defiProtocolNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "NetworkSelectTableViewCell") as? NetworkSelectTableViewCell {
-            let chainTuple = Constants.evmChainNames[indexPath.row]
-            if chainTuple.0 != chainId {
-                cell.checkImage.isHidden = true
-            } else {
-                cell.checkImage.isHidden = false
-            }
-            cell.network.text = chainTuple.1
+            cell.network.text = Constants.defiProtocolNames[indexPath.row]
             
-            if indexPath.row != 0 {
+            if indexPath.row == 0 {
+                cell.checkImage.isHidden = false
+            } else {
                 cell.network.textColor = Constants.Colors.lightGray
+                cell.checkImage.isHidden = true
             }
             
             return cell
@@ -54,14 +49,8 @@ extension NetworkSelectViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /* let chainTuple = Constants.evmChainNames[indexPath.row]
-        chainId = chainTuple.0
-        let lsm = LocalStorageManager()
-        lsm.setSelectedChainId(chainId: chainId)
-        tableView.reloadData() */
-        
         toastView?.titleLabel.text = "Coming Soon"
-        toastView?.bodyText.text = "Support for additional blockchains is on our roadmap! Follow us on twitter @Yacht_Labs for release updates"
+        toastView?.bodyText.text = "Support for additional DeFi protocols is on our roadmap! Follow us on twitter @Yacht_Labs for release updates"
         toastView?.showToast()
     }
     

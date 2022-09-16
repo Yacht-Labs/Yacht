@@ -274,7 +274,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             if section == 1 {
                 titleLabel.text = "Health Score"
             } else if section == 2 {
-                titleLabel.text = "Deposits:"
+                titleLabel.text = "Deposits"
                 if let supplies = shownEulerAccount?.supplies {
                     var totalDollarAmount: Float = 0
                     for supply in supplies {
@@ -294,7 +294,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                     }
                 }
             } else if section == 3 {
-                titleLabel.text = "Outstanding Loans:"
+                titleLabel.text = "Outstanding Loans"
                 if let borrows = shownEulerAccount?.borrows {
                     var totalDollarAmount: Float = 0
                     for borrow in borrows {

@@ -55,9 +55,11 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
                 createDemoAccount()
                 skipButton.isEnabled = true
             }
+        } else {
+            skipButton.isHidden = true
         }
 
-        skipButton.isEnabled = true
+
         view.backgroundColor = Constants.Colors.viewBackgroundColor
         errorLabel.alpha = 0
         addressTextField.delegate = self

@@ -9,6 +9,7 @@ import UIKit
 
 class SettingNetworkTableViewCell: UITableViewCell {
     @IBOutlet weak var network: UILabel!
+    @IBOutlet weak var type: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

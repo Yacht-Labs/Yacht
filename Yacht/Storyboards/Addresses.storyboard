@@ -304,7 +304,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrapped staked ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWI-46-Ezw">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrapped staked ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWI-46-Ezw">
                                                     <rect key="frame" x="80" y="30" width="152" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="2hd-zc-qso"/>
@@ -396,6 +396,7 @@
                                                 <constraint firstItem="gDA-ue-n0d" firstAttribute="leading" secondItem="vCz-Ht-rz6" secondAttribute="leading" id="Wos-bc-XJE"/>
                                                 <constraint firstItem="sBw-La-WNf" firstAttribute="trailing" secondItem="TXf-mj-Vik" secondAttribute="trailing" id="ZsU-tY-2zZ"/>
                                                 <constraint firstItem="mPx-2F-q8n" firstAttribute="leading" secondItem="VyE-Dd-yj8" secondAttribute="trailing" constant="8" id="ZwK-AD-Qhh"/>
+                                                <constraint firstItem="TXf-mj-Vik" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CWI-46-Ezw" secondAttribute="trailing" constant="10" id="abd-dT-8MW"/>
                                                 <constraint firstItem="iq7-Oo-htX" firstAttribute="centerY" secondItem="mPx-2F-q8n" secondAttribute="centerY" id="aeR-yH-qco"/>
                                                 <constraint firstItem="VyE-Dd-yj8" firstAttribute="leading" secondItem="vCz-Ht-rz6" secondAttribute="trailing" constant="8" id="djY-hf-6Fi"/>
                                                 <constraint firstItem="Q7A-bi-d4X" firstAttribute="top" secondItem="sBw-La-WNf" secondAttribute="top" id="efO-ce-giN"/>
