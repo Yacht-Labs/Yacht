@@ -211,7 +211,7 @@ struct NetworkManager {
     
     func throbImageview(imageView: UIImageView, hiddenThrobber: Bool) {
         if hiddenThrobber {
-            imageView.alpha = 0.6
+            imageView.alpha = 0.8
         }
 
         UIView.animate(withDuration: 1.0, delay:0, options: [.repeat, .autoreverse], animations: {

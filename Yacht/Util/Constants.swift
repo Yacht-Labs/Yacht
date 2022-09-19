@@ -44,7 +44,11 @@ struct Constants {
         (1,"Ethereum Mainnet"),
         (3, "Ropsten"),
         (5, "Goerli"),
-        (11155111, "Sepolia")
+        (11155111, "Sepolia"),
+        (10, "Optimism"),
+        (42161, "Arbitrum"),
+        (137, "Polygon"),
+        (1284, "Moonbeam"),
     ]
     
     static let defiProtocolNames: [String] = [
