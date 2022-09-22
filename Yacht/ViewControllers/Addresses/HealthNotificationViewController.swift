@@ -13,6 +13,7 @@ class HealthNotificationViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var yachtImage: UIImageView!
     @IBOutlet weak var accountNameLabel: UILabel!
+    @IBOutlet weak var snoozedLabel: UILabel!
     
     var accountId: String?
     var subAccountId: String?
@@ -77,7 +78,9 @@ class HealthNotificationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        snoozedLabel.alpha = 0
+        
         var subAccount: String
         if subAccountId == "0" {
             subAccount = "Main"
@@ -104,6 +107,17 @@ class HealthNotificationViewController: UIViewController {
                         // See if there is any active notification matching current account
                         if notification.accountId == self.accountId && notification.isActive && notification.subAccountId == self.subAccountId {
                             DispatchQueue.main.async {
+                                if notification.seen {
+                                    self.snoozedLabel.alpha = 1
+                                    
+                                    let font = UIFont(name: "Akkurat-Bold", size: 12)
+                                    let attributes: [NSAttributedString.Key: Any] = [
+                                        .font: font!,
+                                        .foregroundColor: Constants.Colors.viewBackgroundColor
+                                    ]
+                                    self.saveButton.setAttributedTitle(NSAttributedString(string: "Reset", attributes: attributes), for: .normal)
+                                }
+                                self.saveButton.isEnabled = true
                                 self.notificationId = notification.id
                                 self.slider.setValue(notification.thresholdValue , animated: true)
                                 self.healthScoreLabel.text = String(notification.thresholdValue)

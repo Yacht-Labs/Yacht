@@ -664,6 +664,16 @@
                                 <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently snoozed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpr-TB-TtT">
+                                <rect key="frame" x="24" y="264" width="146" height="34"/>
+                                <color key="tintColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="93s-PS-xgU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-LightItalic" family="Akkurat-LightItalic" pointSize="18"/>
+                                <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dM0-KJ-fcz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -679,9 +689,11 @@
                             <constraint firstItem="HbE-Q7-9pG" firstAttribute="centerX" secondItem="dM0-KJ-fcz" secondAttribute="centerX" id="SLC-J9-QNy"/>
                             <constraint firstItem="gfB-BG-TWP" firstAttribute="top" secondItem="dM0-KJ-fcz" secondAttribute="top" constant="100" id="Z6j-xQ-LDh"/>
                             <constraint firstItem="qVY-sR-Um2" firstAttribute="centerX" secondItem="dM0-KJ-fcz" secondAttribute="centerX" id="bp3-Ep-ubC"/>
+                            <constraint firstItem="gpr-TB-TtT" firstAttribute="leading" secondItem="gfB-BG-TWP" secondAttribute="leading" id="ddB-GT-iaI"/>
                             <constraint firstItem="dM0-KJ-fcz" firstAttribute="trailing" secondItem="1yV-Cg-b9C" secondAttribute="trailing" constant="24" id="gtf-t0-dtb"/>
                             <constraint firstItem="1yV-Cg-b9C" firstAttribute="top" secondItem="gfB-BG-TWP" secondAttribute="bottom" constant="20" id="pOs-zd-Nnk"/>
                             <constraint firstItem="2h6-Ny-pzG" firstAttribute="leading" secondItem="dM0-KJ-fcz" secondAttribute="leading" constant="20" id="qOk-0S-ABg"/>
+                            <constraint firstItem="gpr-TB-TtT" firstAttribute="top" secondItem="1yV-Cg-b9C" secondAttribute="bottom" constant="36" id="ylh-3b-Iu7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -689,6 +701,7 @@
                         <outlet property="healthScoreLabel" destination="SZr-DF-hwI" id="p2J-Cu-k3l"/>
                         <outlet property="saveButton" destination="HbE-Q7-9pG" id="tQR-u3-ZLg"/>
                         <outlet property="slider" destination="1yV-Cg-b9C" id="Dj9-yA-daB"/>
+                        <outlet property="snoozedLabel" destination="gpr-TB-TtT" id="xpS-Ic-PWc"/>
                         <outlet property="yachtImage" destination="qVY-sR-Um2" id="hVT-Ug-GMi"/>
                     </connections>
                 </viewController>
