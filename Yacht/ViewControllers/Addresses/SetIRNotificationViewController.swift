@@ -22,6 +22,8 @@ class SetIRNotificationViewController: UIViewController {
     var token: EulerToken?
     var toastView: ToastView?
     
+    var supplySetpoint: Float?
+    var borrowSetpoint: Float?
     var supplyUpperThreshold: Int?
     var supplyLowerThreshold: Int?
     var borrowUpperThreshold: Int?
@@ -136,7 +138,8 @@ class SetIRNotificationViewController: UIViewController {
                         if notification.tokenAddress == self.tokenAddress && notification.isActive  {
                             DispatchQueue.main.async {
                                 self.notificationId = notification.id
-                                
+                                self.supplySetpoint = notification.supplyAPY
+                                self.borrowSetpoint = notification.borrowAPY
                                 self.borrowUpperThreshold = notification.borrowUpperThreshold ?? 0
                                 self.borrowLowerThreshold = notification.borrowLowerThreshold ?? 0
                                 self.supplyUpperThreshold = notification.supplyUpperThreshold ?? 0
@@ -289,9 +292,18 @@ extension SetIRNotificationViewController: UITableViewDelegate, UITableViewDataS
         numberFormatter.maximumFractionDigits = 2
 
         if section == 1 {
-            titleLabel.text = "Current " + (symbolValue ?? "??") + " Supply APY: " + (numberFormatter.string(from: NSNumber(value: (supplyAPY / 100))) ?? "??")
+            if self.notificationId != nil {
+                titleLabel.text = "Supply Setpoint APY: " + (numberFormatter.string(from: NSNumber(value: ((self.supplySetpoint ?? 0) / 100))) ?? "??")
+            } else {
+                titleLabel.text = "Current " + (symbolValue ?? "??") + " Supply APY: " + (numberFormatter.string(from: NSNumber(value: (supplyAPY / 100))) ?? "??")
+            }
+            
         } else if section == 2 {
-            titleLabel.text = "Current " + (symbolValue ?? "??") + " Borrow APY: " + (numberFormatter.string(from: NSNumber(value: (borrowAPY / 100))) ?? "??")
+            if self.notificationId != nil {
+                titleLabel.text = "Borrow Setpoint APY: " + (numberFormatter.string(from: NSNumber(value: ((self.supplySetpoint ?? 0) / 100))) ?? "??")
+            } else {
+                titleLabel.text = "Current " + (symbolValue ?? "??") + " Borrow APY: " + (numberFormatter.string(from: NSNumber(value: (borrowAPY / 100))) ?? "??")
+            }
         }
         
         return headerView

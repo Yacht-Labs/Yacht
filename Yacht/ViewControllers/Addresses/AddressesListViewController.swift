@@ -28,7 +28,7 @@ class AddressesListViewController: UIViewController {
         loadAddresses()
 
         print(BuildConfiguration.shared.network)
-        triggerLocalNetworkPrivacyAlert()
+  
 
     }
         
