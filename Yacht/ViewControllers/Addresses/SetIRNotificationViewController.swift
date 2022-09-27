@@ -300,7 +300,7 @@ extension SetIRNotificationViewController: UITableViewDelegate, UITableViewDataS
             
         } else if section == 2 {
             if self.notificationId != nil {
-                titleLabel.text = "Borrow Setpoint APY: " + (numberFormatter.string(from: NSNumber(value: ((self.supplySetpoint ?? 0) / 100))) ?? "??")
+                titleLabel.text = "Borrow Setpoint APY: " + (numberFormatter.string(from: NSNumber(value: ((self.borrowSetpoint ?? 0) / 100))) ?? "??")
             } else {
                 titleLabel.text = "Current " + (symbolValue ?? "??") + " Borrow APY: " + (numberFormatter.string(from: NSNumber(value: (borrowAPY / 100))) ?? "??")
             }

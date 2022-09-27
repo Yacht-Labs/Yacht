@@ -70,7 +70,6 @@ class HealthNotificationViewController: UIViewController {
                         self.notificationId = notification?.id
                         self.navigationController?.popViewController(animated: true)
                     }
-                    
                 }
             }
         }
