@@ -66,7 +66,7 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -100,6 +100,20 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         }
+        if indexPath.row == 3 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsSocialTableViewCell") as? SettingsSocialTableViewCell {
+                cell.socialNetwork.text = "Join our Discord"
+                cell.socialImage.image = UIImage(named: "Discord")
+                return cell
+            }
+        }
+        if indexPath.row == 4 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsSocialTableViewCell") as? SettingsSocialTableViewCell {
+                cell.socialNetwork.text = "Follow us on Twitter"
+                cell.socialImage.image = UIImage(named: "Twitter")
+                return cell
+            }
+        }
         return UITableViewCell()
     }
     
@@ -118,7 +132,24 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             let storyboard = UIStoryboard(name: "Settings", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "ActiveNotificationsViewController") as ActiveNotificationsViewController
             self.navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 3 {
+            if let url = URL(string: "https://discord.gg/hqt5PNkxKN") {
+                UIApplication.shared.open(url)
+            }
+        } else if indexPath.row == 4 {
+            let appURL = URL(string: "twitter://user?screen_name=Yacht_Labs")
+            guard let appURL = appURL else {
+                return
+            }
+            if UIApplication.shared.canOpenURL(appURL) {
+                UIApplication.shared.open(appURL)
+            } else {
+                let webURL = URL(string: "https://twitter.com/Yacht_Labs")
+                guard let webURL = webURL else {
+                    return
+                }
+                UIApplication.shared.open(webURL)
+            }
         }
-                    
     }
 }

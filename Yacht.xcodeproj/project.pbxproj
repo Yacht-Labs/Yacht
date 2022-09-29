@@ -72,6 +72,7 @@
 		7F5F83A428BD0586008B8EDB /* EulerAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A328BD0586008B8EDB /* EulerAccount.swift */; };
 		7F5F83AA28BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */; };
 		7F5F83AC28BE712D008B8EDB /* SetIRNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */; };
+		7F6D55BC28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */; };
 		7FEA2D8228C7B71900FF6DAB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */; };
 		7FEA2D8428C7ED6000FF6DAB /* CopyAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */; };
 		7FEA2D8628CA50D500FF6DAB /* SubAccountSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */; };
@@ -168,6 +169,7 @@
 		7F5F83A328BD0586008B8EDB /* EulerAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerAccount.swift; sourceTree = "<group>"; };
 		7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyThresholdTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIRNotificationViewController.swift; sourceTree = "<group>"; };
+		7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSocialTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAddressTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAccountSelectViewController.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				7F0E3A9128C2ADBB0024FDB8 /* EmptyNotificationTableViewCell.swift */,
 				7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */,
 				7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */,
+				7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				7F5F835428B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift in Sources */,
 				7F5F83A428BD0586008B8EDB /* EulerAccount.swift in Sources */,
 				7F5F836F28B90B75008B8EDB /* SettingNetworkTableViewCell.swift in Sources */,
+				7F6D55BC28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift in Sources */,
 				7F5F833E28B6C4F3008B8EDB /* EnterNicknameViewController.swift in Sources */,
 				7F5F838828B94B69008B8EDB /* JSONParameterEncoder.swift in Sources */,
 				7F5F837328B91963008B8EDB /* NetworkSelectTableViewCell.swift in Sources */,
@@ -871,7 +875,7 @@
 				BUNDLE_ID_SUFFIX = .dev;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -907,7 +911,7 @@
 				BUNDLE_ID_SUFFIX = .dev;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -1080,7 +1084,7 @@
 				BUNDLE_ID_SUFFIX = "";
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -1215,7 +1219,7 @@
 				BUNDLE_ID_SUFFIX = .stage;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -1344,7 +1348,7 @@
 				BUNDLE_ID_SUFFIX = .stage;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -1473,7 +1477,7 @@
 				BUNDLE_ID_SUFFIX = "";
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;

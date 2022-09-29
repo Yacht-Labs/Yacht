@@ -101,6 +101,39 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsSocialTableViewCell" id="4fJ-SH-Lt9" customClass="SettingsSocialTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="164.5" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4fJ-SH-Lt9" id="7Ns-Jh-m4q">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on Twitter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2l-kH-ChL">
+                                                    <rect key="frame" x="24" y="20" width="186" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="20"/>
+                                                    <color key="textColor" red="0.16068330410000001" green="0.065973155199999994" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QUQ-cd-DGx">
+                                                    <rect key="frame" x="356" y="13" width="34" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="34" id="RD2-jf-DjD"/>
+                                                        <constraint firstAttribute="width" secondItem="QUQ-cd-DGx" secondAttribute="height" multiplier="1:1" id="lQ9-dq-ILg"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="QUQ-cd-DGx" secondAttribute="trailing" constant="24" id="GKs-sk-OHr"/>
+                                                <constraint firstItem="QUQ-cd-DGx" firstAttribute="centerY" secondItem="7Ns-Jh-m4q" secondAttribute="centerY" id="OSN-A8-P6M"/>
+                                                <constraint firstItem="C2l-kH-ChL" firstAttribute="leading" secondItem="7Ns-Jh-m4q" secondAttribute="leading" constant="24" id="gRE-7F-n3h"/>
+                                                <constraint firstItem="C2l-kH-ChL" firstAttribute="centerY" secondItem="7Ns-Jh-m4q" secondAttribute="centerY" id="jEZ-bB-7dX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="socialImage" destination="QUQ-cd-DGx" id="zmp-q8-sh2"/>
+                                            <outlet property="socialNetwork" destination="C2l-kH-ChL" id="Pi5-Kn-K6t"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
