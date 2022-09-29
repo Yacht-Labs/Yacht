@@ -345,8 +345,10 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 }
                 if shownEulerAccount?.healthScore == nil  {
                     cell.emptyLabel?.alpha = 1
+                    cell.chevron.alpha = 0
                 } else {
                     cell.emptyLabel?.alpha = 0
+                    cell.chevron.alpha = 1
                 }
                 return cell
             }
@@ -428,13 +430,15 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
                 toastView?.showToast()
             }
         case 1:
-            let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "HealthNotificationViewController") as HealthNotificationViewController
-            vc.accountId = accountId
-            vc.subAccountId = String(selectedAccountIndex)
-            vc.deviceId = deviceId
-            vc.accountName = nickname
-            self.navigationController?.pushViewController(vc, animated: true)
+            if shownEulerAccount?.healthScore != nil  {
+                let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "HealthNotificationViewController") as HealthNotificationViewController
+                vc.accountId = accountId
+                vc.subAccountId = String(selectedAccountIndex)
+                vc.deviceId = deviceId
+                vc.accountName = nickname
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         case 4:
             let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController

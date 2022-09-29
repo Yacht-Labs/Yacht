@@ -209,6 +209,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="blackZone" destination="10L-7I-hcZ" id="cGU-Hs-qMq"/>
+                                            <outlet property="chevron" destination="NO7-6O-XJv" id="N59-zL-KZf"/>
                                             <outlet property="greenView" destination="GM0-fc-i8f" id="YzB-jR-hli"/>
                                             <outlet property="greenWidth" destination="ETE-Q8-ikM" id="bBo-sq-hke"/>
                                             <outlet property="healthConstraint" destination="Uhi-Vh-YtM" id="FDz-y5-ufL"/>

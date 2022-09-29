@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15571F55A4E252B7BAC1D337 /* libPods-Yacht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BCD6E72ABD860BB65C01F8 /* libPods-Yacht.a */; };
 		7F0E3A8428BFAF730024FDB8 /* ActiveNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8328BFAF730024FDB8 /* ActiveNotificationsViewController.swift */; };
 		7F0E3A8628BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8528BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift */; };
 		7F0E3A8828BFDC2D0024FDB8 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8728BFDC2D0024FDB8 /* UINavigationControllerExtension.swift */; };
@@ -79,6 +80,7 @@
 		7FEA2D8B28D2C34E00FF6DAB /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 7FEA2D8A28D2C34E00FF6DAB /* Nuke */; };
 		7FEA2D8D28D4BCC900FF6DAB /* ProtocolSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8C28D4BCC900FF6DAB /* ProtocolSelectViewController.swift */; };
 		7FEA2D9F28D4CD7500FF6DAB /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D9E28D4CD7500FF6DAB /* BuildConfiguration.swift */; };
+		BBA01BA3F97ADD91AC6C5296 /* libPods-Yacht-YachtTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EE35F9D47618E9DF64DED1 /* libPods-Yacht-YachtTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15723ABFA7B323ECDCEB5B62 /* Pods-Yacht-YachtTests.dev-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.dev-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.dev-release.xcconfig"; sourceTree = "<group>"; };
+		17765D126941B07C2289D88E /* Pods-Yacht-YachtTests.prod-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.prod-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.prod-debug.xcconfig"; sourceTree = "<group>"; };
+		1CE4BF91E0011E325B3549AA /* Pods-Yacht.stage-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.stage-debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.stage-debug.xcconfig"; sourceTree = "<group>"; };
+		230B00B3E346364D370C14C1 /* Pods-Yacht.prod-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.prod-debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.prod-debug.xcconfig"; sourceTree = "<group>"; };
+		33EE35F9D47618E9DF64DED1 /* libPods-Yacht-YachtTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yacht-YachtTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D0D3DF71C1602D186A33F2C /* Pods-Yacht-YachtTests.stage-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.stage-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.stage-debug.xcconfig"; sourceTree = "<group>"; };
+		4772E6AC5E9E15C77655B256 /* Pods-Yacht.dev-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.dev-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.dev-release.xcconfig"; sourceTree = "<group>"; };
+		4F8494B41D2DBB5267EC2DCB /* Pods-Yacht.dev-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.dev-debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.dev-debug.xcconfig"; sourceTree = "<group>"; };
+		5921460F914468E6E2B87987 /* Pods-Yacht-YachtTests.stage-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.stage-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.stage-release.xcconfig"; sourceTree = "<group>"; };
+		6F496B4FE7AED9754720397E /* Pods-Yacht.stage-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.stage-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.stage-release.xcconfig"; sourceTree = "<group>"; };
 		7F0E3A8328BFAF730024FDB8 /* ActiveNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNotificationsViewController.swift; sourceTree = "<group>"; };
 		7F0E3A8528BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		7F0E3A8728BFDC2D0024FDB8 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
@@ -175,6 +187,10 @@
 		7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAccountSelectViewController.swift; sourceTree = "<group>"; };
 		7FEA2D8C28D4BCC900FF6DAB /* ProtocolSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolSelectViewController.swift; sourceTree = "<group>"; };
 		7FEA2D9E28D4CD7500FF6DAB /* BuildConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
+		97BEE9497886E253DEE0005E /* Pods-Yacht-YachtTests.prod-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.prod-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.prod-release.xcconfig"; sourceTree = "<group>"; };
+		E5BCD6E72ABD860BB65C01F8 /* libPods-Yacht.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yacht.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E82F8E91819BD24667478C3F /* Pods-Yacht-YachtTests.dev-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.dev-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.dev-debug.xcconfig"; sourceTree = "<group>"; };
+		FB27AD26AD033BC7889DD6BA /* Pods-Yacht.prod-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.prod-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.prod-release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FEA2D8B28D2C34E00FF6DAB /* Nuke in Frameworks */,
+				15571F55A4E252B7BAC1D337 /* libPods-Yacht.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBA01BA3F97ADD91AC6C5296 /* libPods-Yacht-YachtTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +221,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F8DCFE14C5DAA2B1F5C5E07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5BCD6E72ABD860BB65C01F8 /* libPods-Yacht.a */,
+				33EE35F9D47618E9DF64DED1 /* libPods-Yacht-YachtTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7F0E3A8928BFF9610024FDB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +254,8 @@
 				7F2891DD28B52EA000B501B6 /* YachtTests */,
 				7F2891E728B52EA000B501B6 /* YachtUITests */,
 				7F2891C228B52E9B00B501B6 /* Products */,
+				8CD0EF4D291C5C0D53BF0FD4 /* Pods */,
+				1F8DCFE14C5DAA2B1F5C5E07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -493,6 +522,26 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		8CD0EF4D291C5C0D53BF0FD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F8494B41D2DBB5267EC2DCB /* Pods-Yacht.dev-debug.xcconfig */,
+				1CE4BF91E0011E325B3549AA /* Pods-Yacht.stage-debug.xcconfig */,
+				230B00B3E346364D370C14C1 /* Pods-Yacht.prod-debug.xcconfig */,
+				4772E6AC5E9E15C77655B256 /* Pods-Yacht.dev-release.xcconfig */,
+				6F496B4FE7AED9754720397E /* Pods-Yacht.stage-release.xcconfig */,
+				FB27AD26AD033BC7889DD6BA /* Pods-Yacht.prod-release.xcconfig */,
+				E82F8E91819BD24667478C3F /* Pods-Yacht-YachtTests.dev-debug.xcconfig */,
+				3D0D3DF71C1602D186A33F2C /* Pods-Yacht-YachtTests.stage-debug.xcconfig */,
+				17765D126941B07C2289D88E /* Pods-Yacht-YachtTests.prod-debug.xcconfig */,
+				15723ABFA7B323ECDCEB5B62 /* Pods-Yacht-YachtTests.dev-release.xcconfig */,
+				5921460F914468E6E2B87987 /* Pods-Yacht-YachtTests.stage-release.xcconfig */,
+				97BEE9497886E253DEE0005E /* Pods-Yacht-YachtTests.prod-release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -500,9 +549,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F2891EE28B52EA000B501B6 /* Build configuration list for PBXNativeTarget "Yacht" */;
 			buildPhases = (
+				615E16CA73A5112E4480B5F3 /* [CP] Check Pods Manifest.lock */,
 				7F2891BD28B52E9B00B501B6 /* Sources */,
 				7F2891BE28B52E9B00B501B6 /* Frameworks */,
 				7F2891BF28B52E9B00B501B6 /* Resources */,
+				BFD793AEB03EF0A692B90ADC /* [CP] Embed Pods Frameworks */,
+				2AEC59368167F545DCF07E96 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -520,9 +572,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F2891F128B52EA000B501B6 /* Build configuration list for PBXNativeTarget "YachtTests" */;
 			buildPhases = (
+				C8B005778E3F9C1BFFD431F9 /* [CP] Check Pods Manifest.lock */,
 				7F2891D628B52EA000B501B6 /* Sources */,
 				7F2891D728B52EA000B501B6 /* Frameworks */,
 				7F2891D828B52EA000B501B6 /* Resources */,
+				68259F7218A8BCDA6D79E9B2 /* [CP] Embed Pods Frameworks */,
+				2DCC0F0EA44662FFEE7D1166 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -585,7 +640,7 @@
 			);
 			mainGroup = 7F2891B828B52E9B00B501B6;
 			packageReferences = (
-				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */,
+				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */,
 			);
 			productRefGroup = 7F2891C228B52E9B00B501B6 /* Products */;
 			projectDirPath = "";
@@ -635,6 +690,121 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2AEC59368167F545DCF07E96 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DCC0F0EA44662FFEE7D1166 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		615E16CA73A5112E4480B5F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yacht-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68259F7218A8BCDA6D79E9B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFD793AEB03EF0A692B90ADC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8B005778E3F9C1BFFD431F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yacht-YachtTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7F2891BD28B52E9B00B501B6 /* Sources */ = {
@@ -756,7 +926,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -786,6 +956,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -805,6 +976,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Yacht;
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -817,7 +989,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -847,6 +1019,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -859,6 +1032,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = Yacht;
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -868,6 +1042,7 @@
 		};
 		7F2891EF28B52EA000B501B6 /* DEV-Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F8494B41D2DBB5267EC2DCB /* Pods-Yacht.dev-debug.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "Yacht Dev";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
@@ -875,7 +1050,7 @@
 				BUNDLE_ID_SUFFIX = .dev;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -904,6 +1079,7 @@
 		};
 		7F2891F028B52EA000B501B6 /* DEV-Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4772E6AC5E9E15C77655B256 /* Pods-Yacht.dev-release.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "Yacht Dev";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
@@ -911,7 +1087,7 @@
 				BUNDLE_ID_SUFFIX = .dev;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -940,6 +1116,7 @@
 		};
 		7F2891F228B52EA000B501B6 /* DEV-Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E82F8E91819BD24667478C3F /* Pods-Yacht-YachtTests.dev-debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -960,6 +1137,7 @@
 		};
 		7F2891F328B52EA000B501B6 /* DEV-Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15723ABFA7B323ECDCEB5B62 /* Pods-Yacht-YachtTests.dev-release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1020,7 +1198,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1050,6 +1228,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1069,6 +1248,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Yacht;
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1077,6 +1257,7 @@
 		};
 		7FEA2D8F28D4C93D00FF6DAB /* PROD-Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 230B00B3E346364D370C14C1 /* Pods-Yacht.prod-debug.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = Yacht;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
@@ -1084,7 +1265,7 @@
 				BUNDLE_ID_SUFFIX = "";
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -1113,6 +1294,7 @@
 		};
 		7FEA2D9028D4C93D00FF6DAB /* PROD-Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17765D126941B07C2289D88E /* Pods-Yacht-YachtTests.prod-debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1155,7 +1337,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1185,6 +1367,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1204,6 +1387,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Yacht;
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1212,6 +1396,7 @@
 		};
 		7FEA2D9328D4C95B00FF6DAB /* STAGE-Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CE4BF91E0011E325B3549AA /* Pods-Yacht.stage-debug.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "Yacht Stg";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
@@ -1219,7 +1404,7 @@
 				BUNDLE_ID_SUFFIX = .stage;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -1248,6 +1433,7 @@
 		};
 		7FEA2D9428D4C95B00FF6DAB /* STAGE-Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D0D3DF71C1602D186A33F2C /* Pods-Yacht-YachtTests.stage-debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1290,7 +1476,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1320,6 +1506,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1332,6 +1519,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = Yacht;
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1341,6 +1529,7 @@
 		};
 		7FEA2D9728D4C98B00FF6DAB /* STAGE-Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F496B4FE7AED9754720397E /* Pods-Yacht.stage-release.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "Yacht Stg";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
@@ -1348,7 +1537,7 @@
 				BUNDLE_ID_SUFFIX = .stage;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -1377,6 +1566,7 @@
 		};
 		7FEA2D9828D4C98B00FF6DAB /* STAGE-Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5921460F914468E6E2B87987 /* Pods-Yacht-YachtTests.stage-release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1419,7 +1609,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1449,6 +1639,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1461,6 +1652,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = Yacht;
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1470,6 +1662,7 @@
 		};
 		7FEA2D9B28D4C99100FF6DAB /* PROD-Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB27AD26AD033BC7889DD6BA /* Pods-Yacht.prod-release.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = Yacht;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
@@ -1477,7 +1670,7 @@
 				BUNDLE_ID_SUFFIX = "";
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
@@ -1506,6 +1699,7 @@
 		};
 		7FEA2D9C28D4C99100FF6DAB /* PROD-Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97BEE9497886E253DEE0005E /* Pods-Yacht-YachtTests.prod-release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1600,7 +1794,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */ = {
+		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
@@ -1613,7 +1807,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		7FEA2D8A28D2C34E00FF6DAB /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */;
+			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */;
 			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -16,6 +16,7 @@ class HealthScoreTableViewCell: UITableViewCell {
     @IBOutlet weak var redZone: UIView!
     @IBOutlet weak var blackZone: UIView!
     @IBOutlet weak var greenView: UIView!
+    @IBOutlet weak var chevron: UIImageView!
     
     var healthScore: Double = 0
     
@@ -28,7 +29,7 @@ class HealthScoreTableViewCell: UITableViewCell {
         blackZone.alpha = 0
         greenView.alpha = 0
         
-        emptyLabel = UILabel(frame: CGRect(x: 40, y: 4, width: self.bounds.width - 80, height: self.bounds.height - 8))
+        emptyLabel = UILabel(frame: CGRect(x: 20, y: 4, width: self.bounds.width - 40, height: self.bounds.height - 8))
         emptyLabel?.text = "Euler health score associated with this address will appear here"
         emptyLabel?.textColor = Constants.Colors.oliveDrab
         emptyLabel?.font = UIFont(name: "Akkurat-LightItalic", size: 14)

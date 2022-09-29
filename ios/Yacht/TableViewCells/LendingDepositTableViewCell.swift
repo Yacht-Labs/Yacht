@@ -40,7 +40,7 @@ class LendingDepositTableViewCell: UITableViewCell {
         let cellNib = UINib(nibName: "EulerDepositCollectionViewCell", bundle: nil)
         collectionView?.register(cellNib, forCellWithReuseIdentifier: "EulerDepositCollectionViewCell")
         
-        emptyLabel = UILabel(frame: CGRect(x: 40, y: 4, width: self.bounds.width - 80, height: self.bounds.height - 8))
+        emptyLabel = UILabel(frame: CGRect(x: 20, y: 4, width: self.bounds.width - 40, height: self.bounds.height - 8))
         emptyLabel?.text = "Active deposits on Euler associated with this address will appear here"
         emptyLabel?.textColor = Constants.Colors.oliveDrab
         emptyLabel?.font = UIFont(name: "Akkurat-LightItalic", size: 14)
