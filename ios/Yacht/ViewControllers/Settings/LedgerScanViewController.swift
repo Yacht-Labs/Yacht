@@ -17,6 +17,10 @@ class LedgerScanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "Scanning for Devices"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.contentInsetAdjustmentBehavior = .never
+        
         tableView.delegate = self
         tableView.dataSource = self
         

@@ -6,6 +6,7 @@
     "start": "yarn react-native start"
   },
   "dependencies": {
+    "@ledgerhq/hw-app-eth": "^6.29.9",
     "@ledgerhq/react-native-hw-transport-ble": "^6.27.8",
     "buffer": "^6.0.3",
     "react": "18.1.0",
