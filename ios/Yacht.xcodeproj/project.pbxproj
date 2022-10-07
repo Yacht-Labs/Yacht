@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15571F55A4E252B7BAC1D337 /* libPods-Yacht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BCD6E72ABD860BB65C01F8 /* libPods-Yacht.a */; };
+		03382A049959DC2AAFC4B966 /* libPods-Yacht-YachtTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0C62C10247A2EF725E0FA2 /* libPods-Yacht-YachtTests.a */; };
+		326252A3EAB9BCE4CA423F0A /* libPods-Yacht.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F87B35CEF0DAE2462B6F43D /* libPods-Yacht.a */; };
 		7F0E3A8428BFAF730024FDB8 /* ActiveNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8328BFAF730024FDB8 /* ActiveNotificationsViewController.swift */; };
 		7F0E3A8628BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8528BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift */; };
 		7F0E3A8828BFDC2D0024FDB8 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E3A8728BFDC2D0024FDB8 /* UINavigationControllerExtension.swift */; };
@@ -74,13 +75,17 @@
 		7F5F83AA28BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */; };
 		7F5F83AC28BE712D008B8EDB /* SetIRNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */; };
 		7F6D55BC28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */; };
+		7FA20ADA28EF3EF60044F2FA /* LedgerScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20AD928EF3EF60044F2FA /* LedgerScanViewController.swift */; };
+		7FA20ADE28EF62D70044F2FA /* WalletBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20ADD28EF62D70044F2FA /* WalletBridge.m */; };
+		7FA20AE028EF634C0044F2FA /* WalletBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20ADF28EF634C0044F2FA /* WalletBridge.swift */; };
+		7FA20AE228EF66D60044F2FA /* GetReactRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20AE128EF66D60044F2FA /* GetReactRootView.swift */; };
+		7FA20AE428EF6B3A0044F2FA /* LedgerScanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20AE328EF6B3A0044F2FA /* LedgerScanTableViewCell.swift */; };
 		7FEA2D8228C7B71900FF6DAB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */; };
 		7FEA2D8428C7ED6000FF6DAB /* CopyAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */; };
 		7FEA2D8628CA50D500FF6DAB /* SubAccountSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */; };
 		7FEA2D8B28D2C34E00FF6DAB /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 7FEA2D8A28D2C34E00FF6DAB /* Nuke */; };
 		7FEA2D8D28D4BCC900FF6DAB /* ProtocolSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D8C28D4BCC900FF6DAB /* ProtocolSelectViewController.swift */; };
 		7FEA2D9F28D4CD7500FF6DAB /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA2D9E28D4CD7500FF6DAB /* BuildConfiguration.swift */; };
-		BBA01BA3F97ADD91AC6C5296 /* libPods-Yacht-YachtTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EE35F9D47618E9DF64DED1 /* libPods-Yacht-YachtTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,16 +106,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15723ABFA7B323ECDCEB5B62 /* Pods-Yacht-YachtTests.dev-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.dev-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.dev-release.xcconfig"; sourceTree = "<group>"; };
-		17765D126941B07C2289D88E /* Pods-Yacht-YachtTests.prod-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.prod-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.prod-debug.xcconfig"; sourceTree = "<group>"; };
-		1CE4BF91E0011E325B3549AA /* Pods-Yacht.stage-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.stage-debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.stage-debug.xcconfig"; sourceTree = "<group>"; };
-		230B00B3E346364D370C14C1 /* Pods-Yacht.prod-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.prod-debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.prod-debug.xcconfig"; sourceTree = "<group>"; };
-		33EE35F9D47618E9DF64DED1 /* libPods-Yacht-YachtTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yacht-YachtTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D0D3DF71C1602D186A33F2C /* Pods-Yacht-YachtTests.stage-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.stage-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.stage-debug.xcconfig"; sourceTree = "<group>"; };
-		4772E6AC5E9E15C77655B256 /* Pods-Yacht.dev-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.dev-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.dev-release.xcconfig"; sourceTree = "<group>"; };
-		4F8494B41D2DBB5267EC2DCB /* Pods-Yacht.dev-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.dev-debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.dev-debug.xcconfig"; sourceTree = "<group>"; };
-		5921460F914468E6E2B87987 /* Pods-Yacht-YachtTests.stage-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.stage-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.stage-release.xcconfig"; sourceTree = "<group>"; };
-		6F496B4FE7AED9754720397E /* Pods-Yacht.stage-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.stage-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.stage-release.xcconfig"; sourceTree = "<group>"; };
+		0F13F8B5870B3A7FF627CB54 /* Pods-Yacht-YachtTests.dev-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.dev-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.dev-debug.xcconfig"; sourceTree = "<group>"; };
+		183D5E1641CE1A14DB4514A5 /* Pods-Yacht.prod-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.prod-debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.prod-debug.xcconfig"; sourceTree = "<group>"; };
+		1B179C5A86F46202BB59F49C /* Pods-Yacht-YachtTests.prod-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.prod-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.prod-debug.xcconfig"; sourceTree = "<group>"; };
+		3F87B35CEF0DAE2462B6F43D /* libPods-Yacht.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yacht.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48252A89F39F87E6A825DC82 /* Pods-Yacht-YachtTests.prod-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.prod-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.prod-release.xcconfig"; sourceTree = "<group>"; };
+		4E8AE193C2C208F7B7B042BA /* Pods-Yacht-YachtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.release.xcconfig"; sourceTree = "<group>"; };
+		572585B3555C6F30AC134E87 /* Pods-Yacht.prod-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.prod-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.prod-release.xcconfig"; sourceTree = "<group>"; };
+		623FAE093093170E72DE047B /* Pods-Yacht-YachtTests.dev-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.dev-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.dev-release.xcconfig"; sourceTree = "<group>"; };
+		7E0C62C10247A2EF725E0FA2 /* libPods-Yacht-YachtTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yacht-YachtTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0E3A8328BFAF730024FDB8 /* ActiveNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNotificationsViewController.swift; sourceTree = "<group>"; };
 		7F0E3A8528BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		7F0E3A8728BFDC2D0024FDB8 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
@@ -182,15 +186,26 @@
 		7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyThresholdTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIRNotificationViewController.swift; sourceTree = "<group>"; };
 		7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSocialTableViewCell.swift; sourceTree = "<group>"; };
+		7FA20AD928EF3EF60044F2FA /* LedgerScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerScanViewController.swift; sourceTree = "<group>"; };
+		7FA20ADC28EF62D60044F2FA /* Yacht-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Yacht-Bridging-Header.h"; sourceTree = "<group>"; };
+		7FA20ADD28EF62D70044F2FA /* WalletBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletBridge.m; sourceTree = "<group>"; };
+		7FA20ADF28EF634C0044F2FA /* WalletBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBridge.swift; sourceTree = "<group>"; };
+		7FA20AE128EF66D60044F2FA /* GetReactRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReactRootView.swift; sourceTree = "<group>"; };
+		7FA20AE328EF6B3A0044F2FA /* LedgerScanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerScanTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAddressTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAccountSelectViewController.swift; sourceTree = "<group>"; };
 		7FEA2D8C28D4BCC900FF6DAB /* ProtocolSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolSelectViewController.swift; sourceTree = "<group>"; };
 		7FEA2D9E28D4CD7500FF6DAB /* BuildConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
-		97BEE9497886E253DEE0005E /* Pods-Yacht-YachtTests.prod-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.prod-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.prod-release.xcconfig"; sourceTree = "<group>"; };
-		E5BCD6E72ABD860BB65C01F8 /* libPods-Yacht.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yacht.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E82F8E91819BD24667478C3F /* Pods-Yacht-YachtTests.dev-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.dev-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.dev-debug.xcconfig"; sourceTree = "<group>"; };
-		FB27AD26AD033BC7889DD6BA /* Pods-Yacht.prod-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.prod-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.prod-release.xcconfig"; sourceTree = "<group>"; };
+		879A5664596948B3E7C76ED1 /* Pods-Yacht.stage-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.stage-debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.stage-debug.xcconfig"; sourceTree = "<group>"; };
+		8AACBE4A97A1A443BB3D28AE /* Pods-Yacht-YachtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C19D78215EF1CE2A4FF47CE /* Pods-Yacht.dev-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.dev-debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.dev-debug.xcconfig"; sourceTree = "<group>"; };
+		96FD907A92E2DAAA0C588381 /* Pods-Yacht.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.release.xcconfig"; sourceTree = "<group>"; };
+		A51A220864B15F3789ADBF4E /* Pods-Yacht.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.debug.xcconfig"; sourceTree = "<group>"; };
+		C058EE14ACAFD89B17F39D22 /* Pods-Yacht.stage-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.stage-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.stage-release.xcconfig"; sourceTree = "<group>"; };
+		CA79AF723CBB1ED1F1DD1FF2 /* Pods-Yacht-YachtTests.stage-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.stage-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.stage-release.xcconfig"; sourceTree = "<group>"; };
+		E981E0BA137FBEB8BB0CED88 /* Pods-Yacht.dev-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.dev-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.dev-release.xcconfig"; sourceTree = "<group>"; };
+		F9947894E6BF66B3D2434EF1 /* Pods-Yacht-YachtTests.stage-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.stage-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.stage-debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FEA2D8B28D2C34E00FF6DAB /* Nuke in Frameworks */,
-				15571F55A4E252B7BAC1D337 /* libPods-Yacht.a in Frameworks */,
+				326252A3EAB9BCE4CA423F0A /* libPods-Yacht.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBA01BA3F97ADD91AC6C5296 /* libPods-Yacht-YachtTests.a in Frameworks */,
+				03382A049959DC2AAFC4B966 /* libPods-Yacht-YachtTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,11 +236,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F8DCFE14C5DAA2B1F5C5E07 /* Frameworks */ = {
+		674D5AAE58D9E473E3B83796 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E5BCD6E72ABD860BB65C01F8 /* libPods-Yacht.a */,
-				33EE35F9D47618E9DF64DED1 /* libPods-Yacht-YachtTests.a */,
+				3F87B35CEF0DAE2462B6F43D /* libPods-Yacht.a */,
+				7E0C62C10247A2EF725E0FA2 /* libPods-Yacht-YachtTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -255,7 +270,7 @@
 				7F2891E728B52EA000B501B6 /* YachtUITests */,
 				7F2891C228B52E9B00B501B6 /* Products */,
 				8CD0EF4D291C5C0D53BF0FD4 /* Pods */,
-				1F8DCFE14C5DAA2B1F5C5E07 /* Frameworks */,
+				674D5AAE58D9E473E3B83796 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -281,6 +296,7 @@
 				7F5F837628B91C6A008B8EDB /* Managers */,
 				7F5F837928B94721008B8EDB /* Models */,
 				7F5F837E28B94AD6008B8EDB /* Networking */,
+				7FA20ADB28EF629D0044F2FA /* ReactNativeBridge */,
 				7F0E3A8928BFF9610024FDB8 /* Views */,
 				7F28920628B538F400B501B6 /* ViewControllers */,
 				7F2891C428B52E9B00B501B6 /* AppDelegate.swift */,
@@ -406,6 +422,7 @@
 				7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */,
 				7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */,
 				7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */,
+				7FA20AE328EF6B3A0044F2FA /* LedgerScanTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -440,6 +457,7 @@
 				7F5F837428B91A65008B8EDB /* NetworkSelectViewController.swift */,
 				7F0E3A8328BFAF730024FDB8 /* ActiveNotificationsViewController.swift */,
 				7FEA2D8C28D4BCC900FF6DAB /* ProtocolSelectViewController.swift */,
+				7FA20AD928EF3EF60044F2FA /* LedgerScanViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -522,23 +540,37 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		7FA20ADB28EF629D0044F2FA /* ReactNativeBridge */ = {
+			isa = PBXGroup;
+			children = (
+				7FA20ADD28EF62D70044F2FA /* WalletBridge.m */,
+				7FA20ADF28EF634C0044F2FA /* WalletBridge.swift */,
+				7FA20ADC28EF62D60044F2FA /* Yacht-Bridging-Header.h */,
+				7FA20AE128EF66D60044F2FA /* GetReactRootView.swift */,
+			);
+			path = ReactNativeBridge;
+			sourceTree = "<group>";
+		};
 		8CD0EF4D291C5C0D53BF0FD4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4F8494B41D2DBB5267EC2DCB /* Pods-Yacht.dev-debug.xcconfig */,
-				1CE4BF91E0011E325B3549AA /* Pods-Yacht.stage-debug.xcconfig */,
-				230B00B3E346364D370C14C1 /* Pods-Yacht.prod-debug.xcconfig */,
-				4772E6AC5E9E15C77655B256 /* Pods-Yacht.dev-release.xcconfig */,
-				6F496B4FE7AED9754720397E /* Pods-Yacht.stage-release.xcconfig */,
-				FB27AD26AD033BC7889DD6BA /* Pods-Yacht.prod-release.xcconfig */,
-				E82F8E91819BD24667478C3F /* Pods-Yacht-YachtTests.dev-debug.xcconfig */,
-				3D0D3DF71C1602D186A33F2C /* Pods-Yacht-YachtTests.stage-debug.xcconfig */,
-				17765D126941B07C2289D88E /* Pods-Yacht-YachtTests.prod-debug.xcconfig */,
-				15723ABFA7B323ECDCEB5B62 /* Pods-Yacht-YachtTests.dev-release.xcconfig */,
-				5921460F914468E6E2B87987 /* Pods-Yacht-YachtTests.stage-release.xcconfig */,
-				97BEE9497886E253DEE0005E /* Pods-Yacht-YachtTests.prod-release.xcconfig */,
+				8C19D78215EF1CE2A4FF47CE /* Pods-Yacht.dev-debug.xcconfig */,
+				879A5664596948B3E7C76ED1 /* Pods-Yacht.stage-debug.xcconfig */,
+				183D5E1641CE1A14DB4514A5 /* Pods-Yacht.prod-debug.xcconfig */,
+				E981E0BA137FBEB8BB0CED88 /* Pods-Yacht.dev-release.xcconfig */,
+				C058EE14ACAFD89B17F39D22 /* Pods-Yacht.stage-release.xcconfig */,
+				572585B3555C6F30AC134E87 /* Pods-Yacht.prod-release.xcconfig */,
+				0F13F8B5870B3A7FF627CB54 /* Pods-Yacht-YachtTests.dev-debug.xcconfig */,
+				F9947894E6BF66B3D2434EF1 /* Pods-Yacht-YachtTests.stage-debug.xcconfig */,
+				1B179C5A86F46202BB59F49C /* Pods-Yacht-YachtTests.prod-debug.xcconfig */,
+				623FAE093093170E72DE047B /* Pods-Yacht-YachtTests.dev-release.xcconfig */,
+				CA79AF723CBB1ED1F1DD1FF2 /* Pods-Yacht-YachtTests.stage-release.xcconfig */,
+				48252A89F39F87E6A825DC82 /* Pods-Yacht-YachtTests.prod-release.xcconfig */,
+				A51A220864B15F3789ADBF4E /* Pods-Yacht.debug.xcconfig */,
+				8AACBE4A97A1A443BB3D28AE /* Pods-Yacht-YachtTests.debug.xcconfig */,
+				96FD907A92E2DAAA0C588381 /* Pods-Yacht.release.xcconfig */,
+				4E8AE193C2C208F7B7B042BA /* Pods-Yacht-YachtTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -549,12 +581,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F2891EE28B52EA000B501B6 /* Build configuration list for PBXNativeTarget "Yacht" */;
 			buildPhases = (
-				615E16CA73A5112E4480B5F3 /* [CP] Check Pods Manifest.lock */,
+				DA60FA5BE7097AA96AE653FF /* [CP] Check Pods Manifest.lock */,
 				7F2891BD28B52E9B00B501B6 /* Sources */,
 				7F2891BE28B52E9B00B501B6 /* Frameworks */,
 				7F2891BF28B52E9B00B501B6 /* Resources */,
-				BFD793AEB03EF0A692B90ADC /* [CP] Embed Pods Frameworks */,
-				2AEC59368167F545DCF07E96 /* [CP] Copy Pods Resources */,
+				E02011C831BC7FEF2BF7138C /* [CP] Embed Pods Frameworks */,
+				8F72991CAF696FDFE4CA2249 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -572,12 +604,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F2891F128B52EA000B501B6 /* Build configuration list for PBXNativeTarget "YachtTests" */;
 			buildPhases = (
-				C8B005778E3F9C1BFFD431F9 /* [CP] Check Pods Manifest.lock */,
+				FCCBCFF5D396F475A218B180 /* [CP] Check Pods Manifest.lock */,
 				7F2891D628B52EA000B501B6 /* Sources */,
 				7F2891D728B52EA000B501B6 /* Frameworks */,
 				7F2891D828B52EA000B501B6 /* Resources */,
-				68259F7218A8BCDA6D79E9B2 /* [CP] Embed Pods Frameworks */,
-				2DCC0F0EA44662FFEE7D1166 /* [CP] Copy Pods Resources */,
+				6A7B5FD3A4BB48F1F19065BF /* [CP] Embed Pods Frameworks */,
+				2D55E1F6DCEB5CE69744C0A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -613,12 +645,13 @@
 		7F2891B928B52E9B00B501B6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = NO;
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					7F2891C028B52E9B00B501B6 = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1340;
 					};
 					7F2891D928B52EA000B501B6 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -640,7 +673,7 @@
 			);
 			mainGroup = 7F2891B828B52E9B00B501B6;
 			packageReferences = (
-				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */,
+				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 7F2891C228B52E9B00B501B6 /* Products */;
 			projectDirPath = "";
@@ -692,24 +725,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2AEC59368167F545DCF07E96 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2DCC0F0EA44662FFEE7D1166 /* [CP] Copy Pods Resources */ = {
+		2D55E1F6DCEB5CE69744C0A2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -726,7 +742,41 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		615E16CA73A5112E4480B5F3 /* [CP] Check Pods Manifest.lock */ = {
+		6A7B5FD3A4BB48F1F19065BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F72991CAF696FDFE4CA2249 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA60FA5BE7097AA96AE653FF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -748,24 +798,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		68259F7218A8BCDA6D79E9B2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BFD793AEB03EF0A692B90ADC /* [CP] Embed Pods Frameworks */ = {
+		E02011C831BC7FEF2BF7138C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -782,7 +815,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C8B005778E3F9C1BFFD431F9 /* [CP] Check Pods Manifest.lock */ = {
+		FCCBCFF5D396F475A218B180 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -814,6 +847,7 @@
 				7F5F834628B70DD0008B8EDB /* AddressesListViewController.swift in Sources */,
 				7FEA2D8428C7ED6000FF6DAB /* CopyAddressTableViewCell.swift in Sources */,
 				7F0E3A8E28BFF9A20024FDB8 /* ToastView.swift in Sources */,
+				7FA20AE028EF634C0044F2FA /* WalletBridge.swift in Sources */,
 				7FEA2D9F28D4CD7500FF6DAB /* BuildConfiguration.swift in Sources */,
 				7F0E3A8428BFAF730024FDB8 /* ActiveNotificationsViewController.swift in Sources */,
 				7F5F837D28B947BD008B8EDB /* EulerToken.swift in Sources */,
@@ -835,6 +869,7 @@
 				7F5F839C28B9671F008B8EDB /* Account.swift in Sources */,
 				7F5F838728B94B69008B8EDB /* ParameterEncoding.swift in Sources */,
 				7F5F839A28B94B9A008B8EDB /* NetworkRouter.swift in Sources */,
+				7FA20ADE28EF62D70044F2FA /* WalletBridge.m in Sources */,
 				7F5F839728B94B9A008B8EDB /* HTTPTask.swift in Sources */,
 				7F0E3A8628BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift in Sources */,
 				7F5F839E28B9B04B008B8EDB /* EulerNotificationHealth.swift in Sources */,
@@ -842,13 +877,16 @@
 				7F5F839028B94B8F008B8EDB /* NetworkManager.swift in Sources */,
 				7F5F83A228BCFEE2008B8EDB /* EulerLoan.swift in Sources */,
 				7F5F837128B90B85008B8EDB /* SettingNotificationTableViewCell.swift in Sources */,
+				7FA20AE228EF66D60044F2FA /* GetReactRootView.swift in Sources */,
 				7F5F839828B94B9A008B8EDB /* EndPointType.swift in Sources */,
 				7F5F839928B94B9A008B8EDB /* HTTPMethod.swift in Sources */,
 				7F2891CF28B52E9B00B501B6 /* Yacht.xcdatamodeld in Sources */,
+				7FA20AE428EF6B3A0044F2FA /* LedgerScanTableViewCell.swift in Sources */,
 				7F5F835428B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift in Sources */,
 				7F5F83A428BD0586008B8EDB /* EulerAccount.swift in Sources */,
 				7F5F836F28B90B75008B8EDB /* SettingNetworkTableViewCell.swift in Sources */,
 				7F6D55BC28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift in Sources */,
+				7FA20ADA28EF3EF60044F2FA /* LedgerScanViewController.swift in Sources */,
 				7F5F833E28B6C4F3008B8EDB /* EnterNicknameViewController.swift in Sources */,
 				7F5F838828B94B69008B8EDB /* JSONParameterEncoder.swift in Sources */,
 				7F5F837328B91963008B8EDB /* NetworkSelectTableViewCell.swift in Sources */,
@@ -923,10 +961,11 @@
 		7F2891EC28B52EA000B501B6 /* DEV-Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -986,10 +1025,11 @@
 		7F2891ED28B52EA000B501B6 /* DEV-Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1042,19 +1082,22 @@
 		};
 		7F2891EF28B52EA000B501B6 /* DEV-Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F8494B41D2DBB5267EC2DCB /* Pods-Yacht.dev-debug.xcconfig */;
+			baseConfigurationReference = 8C19D78215EF1CE2A4FF47CE /* Pods-Yacht.dev-debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APP_DISPLAY_NAME = "Yacht Dev";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_ID_SUFFIX = .dev;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yacht;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We use bluetooth to connect to your Ledger device";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan address QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1068,10 +1111,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YachtLabs.Yacht${BUNDLE_ID_SUFFIX}";
 				PRODUCT_NAME = Yacht;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Yacht/ReactNativeBridge/Yacht-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1079,19 +1124,22 @@
 		};
 		7F2891F028B52EA000B501B6 /* DEV-Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4772E6AC5E9E15C77655B256 /* Pods-Yacht.dev-release.xcconfig */;
+			baseConfigurationReference = E981E0BA137FBEB8BB0CED88 /* Pods-Yacht.dev-release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APP_DISPLAY_NAME = "Yacht Dev";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_ID_SUFFIX = .dev;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yacht;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We use bluetooth to connect to your Ledger device";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan address QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1105,10 +1153,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YachtLabs.Yacht${BUNDLE_ID_SUFFIX}";
 				PRODUCT_NAME = Yacht;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Yacht/ReactNativeBridge/Yacht-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1116,7 +1165,7 @@
 		};
 		7F2891F228B52EA000B501B6 /* DEV-Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E82F8E91819BD24667478C3F /* Pods-Yacht-YachtTests.dev-debug.xcconfig */;
+			baseConfigurationReference = 0F13F8B5870B3A7FF627CB54 /* Pods-Yacht-YachtTests.dev-debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1137,7 +1186,7 @@
 		};
 		7F2891F328B52EA000B501B6 /* DEV-Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15723ABFA7B323ECDCEB5B62 /* Pods-Yacht-YachtTests.dev-release.xcconfig */;
+			baseConfigurationReference = 623FAE093093170E72DE047B /* Pods-Yacht-YachtTests.dev-release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1192,13 +1241,297 @@
 			};
 			name = "DEV-Release";
 		};
-		7FEA2D8E28D4C93D00FF6DAB /* PROD-Debug */ = {
+		7FD1CFBF28F05E6800363447 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Yacht;
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7FD1CFC028F05E6800363447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A51A220864B15F3789ADBF4E /* Pods-Yacht.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				APP_DISPLAY_NAME = "Yacht Dev";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUNDLE_ID_SUFFIX = .dev;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Yacht/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Yacht;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We use bluetooth to connect to your Ledger device";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan address QR codes";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = EnterAddressFlow;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.YachtLabs.Yacht${BUNDLE_ID_SUFFIX}";
+				PRODUCT_NAME = Yacht;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Yacht/ReactNativeBridge/Yacht-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7FD1CFC128F05E6800363447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AACBE4A97A1A443BB3D28AE /* Pods-Yacht-YachtTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YachtLabs.YachtTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yacht.app/Yacht";
+			};
+			name = Debug;
+		};
+		7FD1CFC228F05E6800363447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YachtLabs.YachtUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Yacht;
+			};
+			name = Debug;
+		};
+		7FD1CFC328F0719400363447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = Yacht;
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FD1CFC428F0719400363447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96FD907A92E2DAAA0C588381 /* Pods-Yacht.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				APP_DISPLAY_NAME = Yacht;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUNDLE_ID_SUFFIX = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Yacht/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Yacht;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We use bluetooth to connect to your Ledger device";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan address QR codes";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = EnterAddressFlow;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.YachtLabs.Yacht${BUNDLE_ID_SUFFIX}";
+				PRODUCT_NAME = Yacht;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Yacht/ReactNativeBridge/Yacht-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7FD1CFC528F0719400363447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E8AE193C2C208F7B7B042BA /* Pods-Yacht-YachtTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YachtLabs.YachtTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yacht.app/Yacht";
+			};
+			name = Release;
+		};
+		7FD1CFC628F0719400363447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5L887TA4YC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YachtLabs.YachtUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Yacht;
+			};
+			name = Release;
+		};
+		7FEA2D8E28D4C93D00FF6DAB /* PROD-Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1257,19 +1590,22 @@
 		};
 		7FEA2D8F28D4C93D00FF6DAB /* PROD-Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 230B00B3E346364D370C14C1 /* Pods-Yacht.prod-debug.xcconfig */;
+			baseConfigurationReference = 183D5E1641CE1A14DB4514A5 /* Pods-Yacht.prod-debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APP_DISPLAY_NAME = Yacht;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_ID_SUFFIX = "";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yacht;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We use bluetooth to connect to your Ledger device";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan address QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1283,10 +1619,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YachtLabs.Yacht${BUNDLE_ID_SUFFIX}";
 				PRODUCT_NAME = Yacht;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Yacht/ReactNativeBridge/Yacht-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1294,7 +1632,7 @@
 		};
 		7FEA2D9028D4C93D00FF6DAB /* PROD-Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17765D126941B07C2289D88E /* Pods-Yacht-YachtTests.prod-debug.xcconfig */;
+			baseConfigurationReference = 1B179C5A86F46202BB59F49C /* Pods-Yacht-YachtTests.prod-debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1334,10 +1672,11 @@
 		7FEA2D9228D4C95B00FF6DAB /* STAGE-Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1396,19 +1735,22 @@
 		};
 		7FEA2D9328D4C95B00FF6DAB /* STAGE-Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CE4BF91E0011E325B3549AA /* Pods-Yacht.stage-debug.xcconfig */;
+			baseConfigurationReference = 879A5664596948B3E7C76ED1 /* Pods-Yacht.stage-debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APP_DISPLAY_NAME = "Yacht Stg";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_ID_SUFFIX = .stage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yacht;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We use bluetooth to connect to your Ledger device";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan address QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1422,10 +1764,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YachtLabs.Yacht${BUNDLE_ID_SUFFIX}";
 				PRODUCT_NAME = Yacht;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Yacht/ReactNativeBridge/Yacht-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1433,7 +1777,7 @@
 		};
 		7FEA2D9428D4C95B00FF6DAB /* STAGE-Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D0D3DF71C1602D186A33F2C /* Pods-Yacht-YachtTests.stage-debug.xcconfig */;
+			baseConfigurationReference = F9947894E6BF66B3D2434EF1 /* Pods-Yacht-YachtTests.stage-debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1473,10 +1817,11 @@
 		7FEA2D9628D4C98B00FF6DAB /* STAGE-Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1529,19 +1874,22 @@
 		};
 		7FEA2D9728D4C98B00FF6DAB /* STAGE-Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F496B4FE7AED9754720397E /* Pods-Yacht.stage-release.xcconfig */;
+			baseConfigurationReference = C058EE14ACAFD89B17F39D22 /* Pods-Yacht.stage-release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APP_DISPLAY_NAME = "Yacht Stg";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_ID_SUFFIX = .stage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yacht;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We use bluetooth to connect to your Ledger device";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan address QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1555,10 +1903,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YachtLabs.Yacht${BUNDLE_ID_SUFFIX}";
 				PRODUCT_NAME = Yacht;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Yacht/ReactNativeBridge/Yacht-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1566,7 +1915,7 @@
 		};
 		7FEA2D9828D4C98B00FF6DAB /* STAGE-Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5921460F914468E6E2B87987 /* Pods-Yacht-YachtTests.stage-release.xcconfig */;
+			baseConfigurationReference = CA79AF723CBB1ED1F1DD1FF2 /* Pods-Yacht-YachtTests.stage-release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1606,10 +1955,11 @@
 		7FEA2D9A28D4C99100FF6DAB /* PROD-Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1662,19 +2012,22 @@
 		};
 		7FEA2D9B28D4C99100FF6DAB /* PROD-Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB27AD26AD033BC7889DD6BA /* Pods-Yacht.prod-release.xcconfig */;
+			baseConfigurationReference = 572585B3555C6F30AC134E87 /* Pods-Yacht.prod-release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				APP_DISPLAY_NAME = Yacht;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon${BUNDLE_ID_SUFFIX}";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_ID_SUFFIX = "";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Yacht/Yacht.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5L887TA4YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Yacht/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yacht;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We use bluetooth to connect to your Ledger device";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera to scan address QR codes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1688,10 +2041,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YachtLabs.Yacht${BUNDLE_ID_SUFFIX}";
 				PRODUCT_NAME = Yacht;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Yacht/ReactNativeBridge/Yacht-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1699,7 +2053,7 @@
 		};
 		7FEA2D9C28D4C99100FF6DAB /* PROD-Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97BEE9497886E253DEE0005E /* Pods-Yacht-YachtTests.prod-release.xcconfig */;
+			baseConfigurationReference = 48252A89F39F87E6A825DC82 /* Pods-Yacht-YachtTests.prod-release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1743,58 +2097,66 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F2891EC28B52EA000B501B6 /* DEV-Debug */,
+				7FD1CFBF28F05E6800363447 /* Debug */,
 				7FEA2D9228D4C95B00FF6DAB /* STAGE-Debug */,
 				7FEA2D8E28D4C93D00FF6DAB /* PROD-Debug */,
 				7F2891ED28B52EA000B501B6 /* DEV-Release */,
 				7FEA2D9628D4C98B00FF6DAB /* STAGE-Release */,
 				7FEA2D9A28D4C99100FF6DAB /* PROD-Release */,
+				7FD1CFC328F0719400363447 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "DEV-Release";
+			defaultConfigurationName = Debug;
 		};
 		7F2891EE28B52EA000B501B6 /* Build configuration list for PBXNativeTarget "Yacht" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F2891EF28B52EA000B501B6 /* DEV-Debug */,
+				7FD1CFC028F05E6800363447 /* Debug */,
 				7FEA2D9328D4C95B00FF6DAB /* STAGE-Debug */,
 				7FEA2D8F28D4C93D00FF6DAB /* PROD-Debug */,
 				7F2891F028B52EA000B501B6 /* DEV-Release */,
 				7FEA2D9728D4C98B00FF6DAB /* STAGE-Release */,
 				7FEA2D9B28D4C99100FF6DAB /* PROD-Release */,
+				7FD1CFC428F0719400363447 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "DEV-Release";
+			defaultConfigurationName = Debug;
 		};
 		7F2891F128B52EA000B501B6 /* Build configuration list for PBXNativeTarget "YachtTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F2891F228B52EA000B501B6 /* DEV-Debug */,
+				7FD1CFC128F05E6800363447 /* Debug */,
 				7FEA2D9428D4C95B00FF6DAB /* STAGE-Debug */,
 				7FEA2D9028D4C93D00FF6DAB /* PROD-Debug */,
 				7F2891F328B52EA000B501B6 /* DEV-Release */,
 				7FEA2D9828D4C98B00FF6DAB /* STAGE-Release */,
 				7FEA2D9C28D4C99100FF6DAB /* PROD-Release */,
+				7FD1CFC528F0719400363447 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "DEV-Release";
+			defaultConfigurationName = Debug;
 		};
 		7F2891F428B52EA000B501B6 /* Build configuration list for PBXNativeTarget "YachtUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F2891F528B52EA000B501B6 /* DEV-Debug */,
+				7FD1CFC228F05E6800363447 /* Debug */,
 				7FEA2D9528D4C95B00FF6DAB /* STAGE-Debug */,
 				7FEA2D9128D4C93D00FF6DAB /* PROD-Debug */,
 				7F2891F628B52EA000B501B6 /* DEV-Release */,
 				7FEA2D9928D4C98B00FF6DAB /* STAGE-Release */,
 				7FEA2D9D28D4C99100FF6DAB /* PROD-Release */,
+				7FD1CFC628F0719400363447 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "DEV-Release";
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */ = {
+		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
@@ -1807,7 +2169,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		7FEA2D8A28D2C34E00FF6DAB /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */;
+			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */

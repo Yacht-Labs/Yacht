@@ -36,6 +36,13 @@ struct Constants {
         static let demoDeviceId = "NOTIFICATIONS_DISABLED"
     }
     
+    struct Environment {
+        // static let localhost = "172.16.1.104:8081"
+        static let localhost = "192.168.1.66:8081"
+        // static let localhost = "192.168.50.39:8081"
+
+    }
+    
     struct LocalStorage {
         static let chainId = "chainId"
     }

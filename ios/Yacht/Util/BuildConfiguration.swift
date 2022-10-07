@@ -8,10 +8,12 @@
 import Foundation
 
 enum Environment: String {
+    case debug = "Debug"
     case devDebug = "DEV-Debug"
     case stageDebug = "STAGE-Debug"
     case prodDebug = "PROD-Debug"
     
+    case release = "Release"
     case devRelease = "DEV-Release"
     case stageRelease = "STAGE-Release"
     case prodRelease = "PROD-Release"
@@ -23,11 +25,11 @@ class BuildConfiguration {
     
     var network: NetworkEnvironment { 
             switch environment {
-            case .devDebug, .devRelease:
+            case .devDebug, .devRelease, .debug:
                 return NetworkEnvironment.localhost
             case .stageDebug, .stageRelease:
                 return NetworkEnvironment.staging
-            case .prodDebug, .prodRelease:
+            case .prodDebug, .prodRelease, .release:
                 return NetworkEnvironment.production
             }
         }

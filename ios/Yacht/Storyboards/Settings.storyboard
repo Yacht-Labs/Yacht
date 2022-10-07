@@ -224,6 +224,74 @@
             </objects>
             <point key="canvasLocation" x="1701" y="106"/>
         </scene>
+        <!--Ledger Scan View Controller-->
+        <scene sceneID="78t-w6-ymp">
+            <objects>
+                <viewController storyboardIdentifier="LedgerScanViewController" id="cPs-CS-jSj" customClass="LedgerScanViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jhc-fl-tgO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock your Ledger Nano X and make sure Bluetooth is enabled on your phone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs3-dW-tNY">
+                                <rect key="frame" x="40" y="54" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5Vq-Up-NJ8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="16"/>
+                                <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="70L-9b-F92">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LedgerScanTableViewCell" id="wkS-AS-nJE" customClass="LedgerScanTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wkS-AS-nJE" id="2qG-cI-AGb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ledger Device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHa-mc-GwJ">
+                                                    <rect key="frame" x="155.5" y="22" width="103.5" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Regular" family="Akkurat" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WHa-mc-GwJ" firstAttribute="centerX" secondItem="2qG-cI-AGb" secondAttribute="centerX" id="9Rk-so-58s"/>
+                                                <constraint firstItem="WHa-mc-GwJ" firstAttribute="centerY" secondItem="2qG-cI-AGb" secondAttribute="centerY" id="p6s-rX-Bfo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deviceName" destination="WHa-mc-GwJ" id="l8M-UE-t6e"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gal-hK-f5S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="70L-9b-F92" firstAttribute="width" secondItem="jhc-fl-tgO" secondAttribute="width" id="D34-r9-gAP"/>
+                            <constraint firstItem="70L-9b-F92" firstAttribute="top" secondItem="Gal-hK-f5S" secondAttribute="top" constant="60" id="Psj-FR-VgE"/>
+                            <constraint firstItem="Gal-hK-f5S" firstAttribute="bottom" secondItem="70L-9b-F92" secondAttribute="bottom" id="Rg7-PR-0NT"/>
+                            <constraint firstItem="70L-9b-F92" firstAttribute="centerX" secondItem="Gal-hK-f5S" secondAttribute="centerX" id="V5s-Mq-son"/>
+                            <constraint firstItem="Vs3-dW-tNY" firstAttribute="centerX" secondItem="Gal-hK-f5S" secondAttribute="centerX" id="bd3-AD-mqw"/>
+                            <constraint firstItem="Vs3-dW-tNY" firstAttribute="width" secondItem="jhc-fl-tgO" secondAttribute="width" constant="-80" id="hl4-8q-SVs"/>
+                            <constraint firstItem="Vs3-dW-tNY" firstAttribute="top" secondItem="Gal-hK-f5S" secondAttribute="top" constant="10" id="rnt-0O-RfU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="70L-9b-F92" id="kv5-bF-AVB"/>
+                        <outlet property="topMessage" destination="Vs3-dW-tNY" id="cJR-HQ-eIV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rk7-yU-ZMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700.0000000000002" y="751.33928571428567"/>
+        </scene>
         <!--Active Notifications View Controller-->
         <scene sceneID="sOB-Se-avU">
             <objects>

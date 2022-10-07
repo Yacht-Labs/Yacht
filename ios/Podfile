@@ -3,6 +3,15 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 target 'Yacht' do
+  project 'Yacht',
+    'DEV-debug' => :debug,
+    'STAGE-debug' => :debug,
+    'PROD-debug' => :debug,
+    'DEV-release' => :release,
+    'STAGE-release' => :release,
+    'PROD-release' => :release,
+    'Debug' => :debug,
+    'Release' => :release
   config = use_native_modules!
   # Flags change depending on the env values.
   flags = get_default_flags()
@@ -17,7 +26,7 @@ target 'Yacht' do
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
     # you should disable the next line.
-    :flipper_configuration => FlipperConfiguration.enabled(['dev-debug','stage-debug','prod-debug']),
+    :flipper_configuration => FlipperConfiguration.enabled(['DEV-debug','STAGE-debug','PROD-debug','Debug']),
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
@@ -33,5 +42,7 @@ target 'Yacht' do
       :mac_catalyst_enabled => false
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+    
   end
+
 end

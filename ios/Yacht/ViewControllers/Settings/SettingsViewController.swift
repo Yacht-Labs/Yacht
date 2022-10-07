@@ -24,11 +24,11 @@ class SettingsViewController: UIViewController {
         
         let environmentText: String
         switch BuildConfiguration.shared.environment {
-        case .devDebug, .devRelease:
+        case .devDebug, .devRelease, .debug:
             environmentText = "DEV"
         case .stageDebug, .stageRelease:
             environmentText = "STAGE"
-        case .prodDebug, .prodRelease:
+        case .prodDebug, .prodRelease, .release:
             environmentText = ""
         }
         
@@ -66,7 +66,7 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -102,12 +102,19 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         if indexPath.row == 3 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsSocialTableViewCell") as? SettingsSocialTableViewCell {
+                cell.socialNetwork.text = "Connect Ledger"
+                cell.socialImage.image = UIImage(named: "LedgerLogo")
+                return cell
+            }
+        }
+        if indexPath.row == 4 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsSocialTableViewCell") as? SettingsSocialTableViewCell {
                 cell.socialNetwork.text = "Join our Discord"
                 cell.socialImage.image = UIImage(named: "Discord")
                 return cell
             }
         }
-        if indexPath.row == 4 {
+        if indexPath.row == 5 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsSocialTableViewCell") as? SettingsSocialTableViewCell {
                 cell.socialNetwork.text = "Follow us on Twitter"
                 cell.socialImage.image = UIImage(named: "Twitter")
@@ -133,10 +140,15 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             let vc = storyboard.instantiateViewController(identifier: "ActiveNotificationsViewController") as ActiveNotificationsViewController
             self.navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 3 {
+            let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "LedgerScanViewController") as LedgerScanViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else if indexPath.row == 4 {
             if let url = URL(string: "https://discord.gg/hqt5PNkxKN") {
                 UIApplication.shared.open(url)
             }
-        } else if indexPath.row == 4 {
+        } else if indexPath.row == 5 {
             let appURL = URL(string: "twitter://user?screen_name=Yacht_Labs")
             guard let appURL = appURL else {
                 return
