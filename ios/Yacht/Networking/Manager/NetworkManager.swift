@@ -23,13 +23,13 @@ enum Result<String> {
     case failure(String)
 }
 
-struct NetworkManager {
+class NetworkManager {
     static let environment: NetworkEnvironment = BuildConfiguration.shared.network
     private let router = Router<NotificationServiceAPI>()
     private var throbberImage: UIImageView?
  
     func getEulerTokens(completion: @escaping (_ tokens: [EulerToken]?, _ error: String?) -> Void) {
-        router.request(.getEulerTokens) { data, response, error in
+        router.request(.getEulerTokens) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [EulerToken].self)
             completion(result.0, result.1)
         }
@@ -40,21 +40,21 @@ struct NetworkManager {
     // *********************************
     
     func postAccount(address: String, deviceId: String, name: String, completion: @escaping (_ account: Account?, _ error: String?) -> Void) {
-        router.request(.postAccount(address: address, deviceId: deviceId, name: name)) { data, response, error in
+        router.request(.postAccount(address: address, deviceId: deviceId, name: name)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: Account.self)
             completion(result.0, result.1)
         }
     }
     
     func getAccounts(deviceId: String, completion: @escaping (_ accounts: [Account]?, _ error: String?) -> Void) {
-        router.request(.getAccounts(deviceId: deviceId)) { data, response, error in
+        router.request(.getAccounts(deviceId: deviceId)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [Account].self)
             completion(result.0, result.1)
         }
     }
     
     func deleteAccount(id: String, completion: @escaping (_ account: Account?, _ error: String?) -> Void) {
-        router.request(.deleteAccount(id: id)) { data, response, error in
+        router.request(.deleteAccount(id: id)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: Account.self)
             completion(result.0, result.1)
         }
@@ -72,28 +72,28 @@ struct NetworkManager {
         router.request(.postEulerNotificationHealth(accountId: accountId,
                                                     subAccountId: subAccountId,
                                                     deviceId: deviceId,
-                                                    thresholdValue: thresholdValue)) { data, response, error in
+                                                    thresholdValue: thresholdValue)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationHealth.self)
             completion(result.0, result.1)
         }
     }
     
     func getEulerNotificationHealth(deviceId: String, completion: @escaping (_ notifications: [EulerNotificationHealth]?, _ error: String?) -> Void) {
-        router.request(.getEulerNotificationHealth(deviceId: deviceId)) { data, response, error in
+        router.request(.getEulerNotificationHealth(deviceId: deviceId)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [EulerNotificationHealth].self)
             completion(result.0, result.1)
         }
     }
     
     func putEulerNotificationHealth(id: String, thresholdValue: Float, completion: @escaping (_ notification: EulerNotificationHealth?, _ error: String?) -> Void) {
-        router.request(.putEulerNotificationHealth(id: id, thresholdValue: thresholdValue)) { data, response, error in
+        router.request(.putEulerNotificationHealth(id: id, thresholdValue: thresholdValue)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationHealth.self)
             completion(result.0, result.1)
         }
     }
     
     func deleteEulerNotificationHealth(id: String, completion: @escaping (_ notification: EulerNotificationHealth?, _ error: String?) -> Void) {
-        router.request(.deleteEulerNotificationHealth(id: id)) { data, response, error in
+        router.request(.deleteEulerNotificationHealth(id: id)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationHealth.self)
             completion(result.0, result.1)
         }
@@ -121,14 +121,14 @@ struct NetworkManager {
                                                 borrowLowerThreshold: borrowLowerThreshold,
                                                 borrowUpperThreshold: borrowUpperThreshold,
                                                 supplyLowerThreshold: supplyLowerThreshold,
-                                                supplyUpperThreshold: supplyUpperThreshold)) { data, response, error in
+                                                supplyUpperThreshold: supplyUpperThreshold)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationIR.self)
             completion(result.0, result.1)
         }
     }
     
     func getEulerNotificationIR(deviceId: String, completion: @escaping (_ notifications: [EulerNotificationIR]?, _ error: String?) -> Void) {
-        router.request(.getEulerNotificationIR(deviceId: deviceId)) { data, response, error in
+        router.request(.getEulerNotificationIR(deviceId: deviceId)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [EulerNotificationIR].self)
             completion(result.0, result.1)
         }
@@ -150,14 +150,14 @@ struct NetworkManager {
                                                 borrowUpperThreshold: borrowUpperThreshold,
                                                 supplyLowerThreshold: supplyLowerThreshold,
                                                 supplyUpperThreshold: supplyUpperThreshold,
-                                                isActive: isActive)) { data, response, error in
+                                                isActive: isActive)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationIR.self)
             completion(result.0, result.1)
         }
     }
     
     func deleteEulerNotificationIR(id: String, completion: @escaping (_ notification: EulerNotificationIR?, _ error: String?) -> Void) {
-        router.request(.deleteEulerNotificationIR(id: id)) { data, response, error in
+        router.request(.deleteEulerNotificationIR(id: id)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: EulerNotificationIR.self)
             completion(result.0, result.1)
         }
@@ -168,7 +168,7 @@ struct NetworkManager {
     //*********************************
     
     func getEulerAccounts(address: String, completion: @escaping (_ accounts: [EulerAccount]?, _ error: String?) -> Void) {
-        router.request(.getEulerAccount(address: address)) { data, response, error in
+        router.request(.getEulerAccount(address: address)) { [self] data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [EulerAccount].self)
             completion(result.0, result.1)
         }
@@ -210,53 +210,59 @@ struct NetworkManager {
         }
     }
     
+    private func swingSail() {
+        guard let throbberImage = throbberImage else {
+            return
+        }
+        
+        UIView.animate(withDuration: 0.8, delay: 0, options: .curveEaseInOut) {
+            throbberImage.transform3D = CATransform3DMakeRotation(0.8, 0, 1, 0)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.8, delay: 0, options: .curveEaseInOut) {
+                throbberImage.transform3D = CATransform3DMakeRotation(-0.8, 0, 1, 0)
+            } completion: { _ in
+                self.swingSail()
+            }
+        }
+    }
+    
     func throbImageview(parentView: UIView, hiddenThrobber: Bool) {
-//        if hiddenThrobber {
-//            imageView.alpha = 0.8
-//        }
-//
-//        UIView.animate(withDuration: 1.0, delay:0, options: [.repeat, .autoreverse], animations: {
-//            imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-//        }, completion: nil)
-//
-        let imageView = UIImageView(frame: CGRect(x: -100, y: -100, width: 200, height: 200))
-        imageView.alpha = 0
-        imageView.image = UIImage(named: "YachtLogo")
-        imageView.contentMode = .scaleAspectFit
+
+        throbberImage = UIImageView(frame: CGRect(x: -100, y: -100, width: 200, height: 200))
+        
+        guard let throbberImage = throbberImage else {
+            return
+        }
+
+        throbberImage.alpha = 0
+        throbberImage.image = UIImage(named: "YachtLogo")
+        throbberImage.contentMode = .scaleAspectFit
         let transformLayer = CATransformLayer()
         var perspective = CATransform3DIdentity
         perspective.m34 = -1 / 500
         transformLayer.transform = perspective
         transformLayer.position = CGPoint(x: parentView.bounds.midX, y: parentView.bounds.midY)
         transformLayer.anchorPointZ = -100
-        transformLayer.addSublayer(imageView.layer)
+        transformLayer.addSublayer(throbberImage.layer)
         parentView.layer.addSublayer(transformLayer)
         
-        let fadeInAnim = CABasicAnimation(keyPath: "opacity")
-        fadeInAnim.fromValue = 0
-        fadeInAnim.toValue = 1
-        fadeInAnim.duration = 1
-        fadeInAnim.repeatCount = 1
-        imageView.layer.add(fadeInAnim, forKey: "opacity")
-   
-        let anim = CABasicAnimation(keyPath: "transform")
-        anim.fromValue = CATransform3DMakeRotation(0.8, 0, 1, 0)
-        anim.toValue = CATransform3DMakeRotation(-0.8, 0, 1, 0)
-        anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        anim.beginTime = 1
-        anim.duration = 1
-        anim.autoreverses = true
-        anim.repeatCount = .greatestFiniteMagnitude
-        imageView.layer.add(anim, forKey: "transform")
-       
-        
+        UIView.animate(withDuration: 0.2, delay: 0) {
+            throbberImage.alpha = 1
+        } completion: { _ in
+            self.swingSail()
+        }
     }
     
     func stopThrob(imageView: UIImageView, hiddenThrobber: Bool) {
-        if hiddenThrobber {
-            imageView.alpha = 0
+        guard let throbberImage = throbberImage else {
+            return
         }
-        imageView.layer.removeAllAnimations()
+        
+        UIView.animate(withDuration: 1.0, delay: 0) {
+            throbberImage.alpha = 0
+        } completion: { _ in
+            throbberImage.layer.removeAllAnimations()
+        }
     }
     
     func showErrorAlert(title: String, message: String, vc: UIViewController) {
