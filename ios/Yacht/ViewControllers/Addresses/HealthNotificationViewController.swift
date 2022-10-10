@@ -21,6 +21,7 @@ class HealthNotificationViewController: UIViewController {
     var accountName: String?
     var notificationId: String?
     var toastView: ToastView?
+    let networkManager = NetworkManager()
     
     @IBAction func saveTouched(_ sender: Any) {
         guard let accountId = accountId,
@@ -36,17 +37,16 @@ class HealthNotificationViewController: UIViewController {
             return 
         }
         
-        let networkManager = NetworkManager()
         self.saveButton.isEnabled = false
-        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
+        networkManager.throbImageview(parentView: self.view)
         
         if let notificationId = notificationId {
             // Update existing notification
             networkManager.putEulerNotificationHealth(id: notificationId, thresholdValue: (round(slider.value * 100) / 100.0)) { notification, error in
                 if error != nil {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [self] in
                         networkManager.showErrorAlert(title: "Server Error", message: "Unable to update notification", vc: self)
-                        networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                        networkManager.stopThrob()
                         self.saveButton.isEnabled = true
                     }
                 } else {
@@ -60,9 +60,9 @@ class HealthNotificationViewController: UIViewController {
             // Create new notification
             networkManager.postEulerNotificationHealth(accountId: accountId, subAccountId: subAccountId, deviceId: deviceId, thresholdValue: (round(slider.value * 100) / 100.0)) { notification, error in
                 if error != nil {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [self] in
                         networkManager.showErrorAlert(title: "Server Error", message: "Unable to create notification", vc: self)
-                        networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                        networkManager.stopThrob()
                         self.saveButton.isEnabled = true
                     }
                 } else {
@@ -94,7 +94,6 @@ class HealthNotificationViewController: UIViewController {
         accountNameLabel.text = (accountName ?? "Unknown Account") + " - " + subAccount
         yachtImage.alpha = 0
         
-        let networkManager = NetworkManager()
         self.saveButton.isEnabled = false
         if let deviceId = deviceId {
             networkManager.getEulerNotificationHealth(deviceId: deviceId) { notifications, error in
@@ -145,6 +144,7 @@ class HealthNotificationViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = saveButton.bounds
         gradientLayer.colors = [Constants.Colors.mediumRed.cgColor, Constants.Colors.deepRed.cgColor]

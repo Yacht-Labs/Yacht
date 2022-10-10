@@ -226,7 +226,7 @@ class NetworkManager {
         }
     }
     
-    func throbImageview(parentView: UIView, hiddenThrobber: Bool) {
+    func throbImageview(parentView: UIView) {
 
         throbberImage = UIImageView(frame: CGRect(x: -100, y: -100, width: 200, height: 200))
         
@@ -253,7 +253,7 @@ class NetworkManager {
         }
     }
     
-    func stopThrob(imageView: UIImageView, hiddenThrobber: Bool) {
+    func stopThrob() {
         guard let throbberImage = throbberImage else {
             return
         }

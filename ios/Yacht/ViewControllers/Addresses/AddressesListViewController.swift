@@ -173,7 +173,7 @@ extension AddressesListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
+            networkManager.throbImageview(parentView: self.view)
             let account = addresses[indexPath.row]
             let id = account.value(forKey: "id") as? String
             
@@ -186,7 +186,7 @@ extension AddressesListViewController: UITableViewDelegate, UITableViewDataSourc
                     self.addresses.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                     tableView.reloadData()
-                    self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                    self.networkManager.stopThrob()
                 } catch {
                     networkManager.showErrorAlert(title: "Core Data Error", message: "Failed to delete account.", vc: self)
                 }
@@ -201,14 +201,14 @@ extension AddressesListViewController: UITableViewDelegate, UITableViewDataSourc
                             self.addresses.remove(at: indexPath.row)
                             tableView.deleteRows(at: [indexPath], with: .fade)
                             tableView.reloadData()
-                            self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                            self.networkManager.stopThrob()
                         } catch {
                             networkManager.showErrorAlert(title: "Core Data Error", message: "Failed to delete account.", vc: self)
                         }
                     }
                 } else {
                     DispatchQueue.main.async { [self] in
-                        self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                        self.networkManager.stopThrob()
                         self.networkManager.showErrorAlert(title: "Network Error", message: "Failed to delete account. Check your network connection", vc: self)
                     }
                 }

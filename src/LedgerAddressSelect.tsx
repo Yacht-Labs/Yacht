@@ -32,7 +32,7 @@ class LedgerAddressSelect extends Component {
         try {
           if (!this.state.transport || !this.state.eth) {
             const transport = await TransportBLE.open(deviceId);
-            const eth = new AppEth(transport);
+            const eth = new AppEth(transport); // This is the problematic call
             this.setState({
               transport,
               eth,

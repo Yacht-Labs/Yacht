@@ -32,6 +32,8 @@
 		7F28920528B5346200B501B6 /* Akkurat-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891FF28B5346200B501B6 /* Akkurat-Bold-Italic.otf */; };
 		7F28920828B5394900B501B6 /* EnterAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28920728B5394900B501B6 /* EnterAddressViewController.swift */; };
 		7F28920B28B53A0000B501B6 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28920A28B53A0000B501B6 /* QRScannerViewController.swift */; };
+		7F332E7E28F4ADE200AD1570 /* LedgerAddressSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F332E7D28F4ADE200AD1570 /* LedgerAddressSelectViewController.swift */; };
+		7F332E8028F4B12200AD1570 /* LedgerAddressSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F332E7F28F4B12200AD1570 /* LedgerAddressSelectTableViewCell.swift */; };
 		7F5F833728B66358008B8EDB /* EnterAddressViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F833628B66358008B8EDB /* EnterAddressViewControllerTests.swift */; };
 		7F5F833C28B6BC21008B8EDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F833B28B6BC21008B8EDB /* Constants.swift */; };
 		7F5F833E28B6C4F3008B8EDB /* EnterNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F833D28B6C4F3008B8EDB /* EnterNicknameViewController.swift */; };
@@ -143,6 +145,8 @@
 		7F2891FF28B5346200B501B6 /* Akkurat-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Akkurat-Bold-Italic.otf"; sourceTree = "<group>"; };
 		7F28920728B5394900B501B6 /* EnterAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAddressViewController.swift; sourceTree = "<group>"; };
 		7F28920A28B53A0000B501B6 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		7F332E7D28F4ADE200AD1570 /* LedgerAddressSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerAddressSelectViewController.swift; sourceTree = "<group>"; };
+		7F332E7F28F4B12200AD1570 /* LedgerAddressSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerAddressSelectTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F833628B66358008B8EDB /* EnterAddressViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAddressViewControllerTests.swift; sourceTree = "<group>"; };
 		7F5F833928B697B8008B8EDB /* Yacht.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Yacht.entitlements; sourceTree = "<group>"; };
 		7F5F833B28B6BC21008B8EDB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -193,7 +197,7 @@
 		7FA20ADF28EF634C0044F2FA /* WalletBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBridge.swift; sourceTree = "<group>"; };
 		7FA20AE128EF66D60044F2FA /* GetReactRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReactRootView.swift; sourceTree = "<group>"; };
 		7FA20AE328EF6B3A0044F2FA /* LedgerScanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerScanTableViewCell.swift; sourceTree = "<group>"; };
-		7FD1CFC728F085DE00363447 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = main.jsbundle; sourceTree = SOURCE_ROOT; };
+		7FD1CFC728F085DE00363447 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = SOURCE_ROOT; };
 		7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAddressTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAccountSelectViewController.swift; sourceTree = "<group>"; };
@@ -426,6 +430,7 @@
 				7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */,
 				7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */,
 				7FA20AE328EF6B3A0044F2FA /* LedgerScanTableViewCell.swift */,
+				7F332E7F28F4B12200AD1570 /* LedgerAddressSelectTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				7F0E3A8328BFAF730024FDB8 /* ActiveNotificationsViewController.swift */,
 				7FEA2D8C28D4BCC900FF6DAB /* ProtocolSelectViewController.swift */,
 				7FA20AD928EF3EF60044F2FA /* LedgerScanViewController.swift */,
+				7F332E7D28F4ADE200AD1570 /* LedgerAddressSelectViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -676,7 +682,7 @@
 			);
 			mainGroup = 7F2891B828B52E9B00B501B6;
 			packageReferences = (
-				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */,
+				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */,
 			);
 			productRefGroup = 7F2891C228B52E9B00B501B6 /* Products */;
 			projectDirPath = "";
@@ -869,6 +875,7 @@
 				7F5F83A028B9B15E008B8EDB /* EulerNotificationIR.swift in Sources */,
 				7F5F834B28B7C263008B8EDB /* AccountDetailViewController.swift in Sources */,
 				7F2891C528B52E9B00B501B6 /* AppDelegate.swift in Sources */,
+				7F332E8028F4B12200AD1570 /* LedgerAddressSelectTableViewCell.swift in Sources */,
 				7F28920B28B53A0000B501B6 /* QRScannerViewController.swift in Sources */,
 				7F5F839C28B9671F008B8EDB /* Account.swift in Sources */,
 				7F5F838728B94B69008B8EDB /* ParameterEncoding.swift in Sources */,
@@ -890,6 +897,7 @@
 				7F5F83A428BD0586008B8EDB /* EulerAccount.swift in Sources */,
 				7F5F836F28B90B75008B8EDB /* SettingNetworkTableViewCell.swift in Sources */,
 				7F6D55BC28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift in Sources */,
+				7F332E7E28F4ADE200AD1570 /* LedgerAddressSelectViewController.swift in Sources */,
 				7FA20ADA28EF3EF60044F2FA /* LedgerScanViewController.swift in Sources */,
 				7F5F833E28B6C4F3008B8EDB /* EnterNicknameViewController.swift in Sources */,
 				7F5F838828B94B69008B8EDB /* JSONParameterEncoder.swift in Sources */,
@@ -2160,7 +2168,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */ = {
+		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
@@ -2173,7 +2181,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		7FEA2D8A28D2C34E00FF6DAB /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */;
+			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */;
 			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -38,6 +38,7 @@ class SubAccountSelectViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = selectButton.bounds
         gradientLayer.colors = [Constants.Colors.mediumRed.cgColor, Constants.Colors.deepRed.cgColor]

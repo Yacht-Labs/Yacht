@@ -16,6 +16,7 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
     var deviceId: String = Constants.Demo.demoDeviceId
     var address: String?
     var toastView: ToastView?
+    let networkManager = NetworkManager()
     
     @IBAction func continueTouched(_ sender: Any) {
         guard let address = address,
@@ -43,9 +44,8 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
     }
     
     func saveAccount(address: String, nickname: String, deviceId: String) {
-        let networkManager = NetworkManager()
         if checkIfValidNickname(nickname: nickname) {
-            networkManager.throbImageview(parentView: self.view, hiddenThrobber: false)
+            networkManager.throbImageview(parentView: self.view)
             continueButton.isEnabled = false
             networkManager.postAccount(address: address, deviceId: deviceId, name: nickname) { account, error in
                 if error == nil {
@@ -56,9 +56,9 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: false)
+                        self.networkManager.stopThrob()
                         self.continueButton.isEnabled = true
-                        networkManager.showErrorAlert(title: "Network Error", message: "Failed to save. Check your network connection", vc: self)
+                        self.networkManager.showErrorAlert(title: "Network Error", message: "Failed to save. Check your network connection", vc: self)
                     }
                     // TODO give network fail error message
                 }
@@ -99,6 +99,7 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = continueButton.bounds
         gradientLayer.colors = [Constants.Colors.mediumRed.cgColor, Constants.Colors.deepRed.cgColor]

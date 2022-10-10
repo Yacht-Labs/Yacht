@@ -12,6 +12,7 @@ class SetIRNotificationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var yachtImage: UIImageView!
+    let networkManager = NetworkManager()
     var deviceId: String?
     var notificationId: String?
     var tokenAddress: String?
@@ -43,9 +44,8 @@ class SetIRNotificationViewController: UIViewController {
             return
         }
         
-        let networkManager = NetworkManager()
         self.saveButton.isEnabled = false
-        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
+        networkManager.throbImageview(parentView: self.view)
         
         if let notificationId = notificationId {
             // Update existing notification
@@ -58,12 +58,12 @@ class SetIRNotificationViewController: UIViewController {
                                                   supplyUpperThreshold: supplyUpperThreshold,
                                                   isActive: true) { notification, error in
                 if error != nil {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [self] in
                         networkManager.showErrorAlert(title: "Server Error", message: "Unable to update notification", vc: self)
                     }
                 }
                 DispatchQueue.main.async { [self] in
-                    networkManager.stopThrob(imageView: yachtImage, hiddenThrobber: true)
+                    networkManager.stopThrob()
                     saveButton.isEnabled = true
                     navigationController?.popViewController(animated: true)
                 }
@@ -81,7 +81,7 @@ class SetIRNotificationViewController: UIViewController {
                                                    supplyLowerThreshold: supplyLowerThreshold,
                                                    supplyUpperThreshold: supplyUpperThreshold) { notification, error in
                 if error != nil {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [self] in
                         networkManager.showErrorAlert(title: "Server Error", message: "Unable to create notification", vc: self)
                     }
                 } else {
@@ -90,9 +90,9 @@ class SetIRNotificationViewController: UIViewController {
                         navigationController?.popViewController(animated: true)
                     }
                 }
-                DispatchQueue.main.async {
-                    networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
-                    self.saveButton.isEnabled = true
+                DispatchQueue.main.async { [self] in
+                    networkManager.stopThrob()
+                    saveButton.isEnabled = true
                 }
             }
         }
@@ -125,8 +125,7 @@ class SetIRNotificationViewController: UIViewController {
         saveButton.setAttributedTitle(NSAttributedString(string: "Save", attributes: attributes), for: .normal)
         
         self.saveButton.isEnabled = false
-        let networkManager = NetworkManager()
-        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
+        networkManager.throbImageview(parentView: self.view)
         if let deviceId = deviceId {
             networkManager.getEulerNotificationIR(deviceId: deviceId) { notifications, error in
                 if error == nil {
@@ -151,7 +150,7 @@ class SetIRNotificationViewController: UIViewController {
                 }
                 DispatchQueue.main.async {
                     self.saveButton.isEnabled = true
-                    networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                    self.networkManager.stopThrob()
                     
                 }
             }
@@ -159,6 +158,7 @@ class SetIRNotificationViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = saveButton.bounds
         gradientLayer.colors = [Constants.Colors.mediumRed.cgColor, Constants.Colors.deepRed.cgColor]

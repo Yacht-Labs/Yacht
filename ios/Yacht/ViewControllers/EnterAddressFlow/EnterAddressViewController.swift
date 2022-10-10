@@ -17,7 +17,7 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     let demoAddress: String = "0xB84Cd93582Cf94B0625C740F7EA441E33bC6FD6F"
     let demoNickname: String = "Demo Account"
     let demoDeviceId: String = Constants.Demo.demoDeviceId
-    
+    let networkManager = NetworkManager()
     
     @IBAction func skipTouched(_ sender: Any) {
         let vc = HomeViewController()
@@ -84,6 +84,7 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = continueButton.bounds
         gradientLayer.colors = [Constants.Colors.mediumRed.cgColor, Constants.Colors.deepRed.cgColor]
@@ -147,7 +148,6 @@ class EnterAddressViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let networkManager = NetworkManager()
         networkManager.postAccount(address: demoAddress, deviceId: appDelegate.deviceId ?? demoDeviceId, name: demoNickname) { account, error in
 
             let managedContext = appDelegate.persistentContainer.viewContext

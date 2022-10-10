@@ -31,6 +31,11 @@ class WalletBridge: RCTEventEmitter {
     func returnLedgerDevice(_ device: NSDictionary) {
         NotificationCenter.default.post(name: NSNotification.Name("return.ledger.device"), object: device)
     }
+    
+    @objc
+    func returnComponentLoaded() {
+        NotificationCenter.default.post(name: NSNotification.Name("return.component.loaded"), object: nil)
+    }
 
     override func supportedEvents() -> [String]! {
         return [

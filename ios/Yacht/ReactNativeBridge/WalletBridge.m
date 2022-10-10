@@ -13,5 +13,7 @@
 
 RCT_EXTERN_METHOD(returnLedgerAccount:(NSDictionary*)account)
 RCT_EXTERN_METHOD(returnLedgerDevice:(NSDictionary*)device)
+RCT_EXTERN_METHOD(returnComponentLoaded)
+RCT_EXTERN_METHOD(sendDeviceId)
 
 @end

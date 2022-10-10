@@ -105,7 +105,7 @@ class AccountDetailViewController: UIViewController {
     }
     
     func getEulerAccount() {
-        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
+        networkManager.throbImageview(parentView: self.view)
         networkManager.getEulerAccounts(address: address ?? "0x0000000000000000000000000000000000000000") { accounts, error in
             if error == nil {
                 let sortedAccounts = accounts?.sorted { $0.subAccountId < $1.subAccountId }  ?? []
@@ -157,7 +157,6 @@ class AccountDetailViewController: UIViewController {
     }
     
     func getEulerTokens() {
-        let networkManager = NetworkManager()
         networkManager.getEulerTokens { tokens, error in
             if error == nil {
                 self.allEulerTokens = tokens ?? []
@@ -170,7 +169,7 @@ class AccountDetailViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 self.isLoading = false
-                self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                self.networkManager.stopThrob()
             }
         }
     }

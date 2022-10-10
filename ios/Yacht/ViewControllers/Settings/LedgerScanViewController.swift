@@ -11,9 +11,8 @@ import React
 class LedgerScanViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topMessage: UILabel!
-    @IBOutlet weak var yachtImage: UIImageView!
-    
     var devices: [(String, String)] = []
+    let networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +28,11 @@ class LedgerScanViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(wbReturnLedgerDevice(_:)), name: NSNotification.Name("return.ledger.device"), object: nil)
         
-        let networkManager = NetworkManager()
-        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
+        
+        networkManager.throbImageview(parentView: self.view)
         
     }
-    
+        
     @objc func wbReturnLedgerDevice(_ notification: Notification) {
 
         guard let parsedDictionary = notification.object as? [String: Any],
@@ -45,24 +44,25 @@ class LedgerScanViewController: UIViewController {
         devices.append((localName, id))
         DispatchQueue.main.async {
             self.topMessage.text = "Select your device below"
+            self.networkManager.stopThrob()
             self.tableView.reloadData()
         }
-        
     }
 
 }
 
 extension LedgerScanViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let deviceData = devices[indexPath.row]
         let deviceId = deviceData.1
-        print(deviceId)
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "LedgerAddressSelectViewController") as LedgerAddressSelectViewController
+        vc.deviceId = deviceId
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension LedgerScanViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return devices.count
     }
@@ -73,9 +73,8 @@ extension LedgerScanViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LedgerScanTableViewCell", for: indexPath) as? LedgerScanTableViewCell else {
             return UITableViewCell()
         }
-        
+    
         cell.deviceName.text = deviceData.0
-        
         return cell
     }
     

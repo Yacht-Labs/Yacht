@@ -12,6 +12,9 @@
         <array key="Akkurat-Bold.otf">
             <string>Akkurat-Bold</string>
         </array>
+        <array key="Akkurat-Light.otf">
+            <string>Akkurat-Light</string>
+        </array>
         <array key="Akkurat-Regular.ttf">
             <string>Akkurat-Regular</string>
         </array>
@@ -275,10 +278,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="70L-9b-F92" firstAttribute="width" secondItem="jhc-fl-tgO" secondAttribute="width" id="D34-r9-gAP"/>
-                            <constraint firstItem="70L-9b-F92" firstAttribute="top" secondItem="Gal-hK-f5S" secondAttribute="top" constant="60" id="Psj-FR-VgE"/>
                             <constraint firstItem="Gal-hK-f5S" firstAttribute="bottom" secondItem="70L-9b-F92" secondAttribute="bottom" id="Rg7-PR-0NT"/>
                             <constraint firstItem="70L-9b-F92" firstAttribute="centerX" secondItem="Gal-hK-f5S" secondAttribute="centerX" id="V5s-Mq-son"/>
                             <constraint firstItem="Vs3-dW-tNY" firstAttribute="centerX" secondItem="Gal-hK-f5S" secondAttribute="centerX" id="bd3-AD-mqw"/>
+                            <constraint firstItem="70L-9b-F92" firstAttribute="top" secondItem="Vs3-dW-tNY" secondAttribute="bottom" constant="10" id="hZj-RK-st4"/>
                             <constraint firstItem="Vs3-dW-tNY" firstAttribute="width" secondItem="jhc-fl-tgO" secondAttribute="width" constant="-80" id="hl4-8q-SVs"/>
                             <constraint firstItem="Vs3-dW-tNY" firstAttribute="top" secondItem="Gal-hK-f5S" secondAttribute="top" constant="10" id="rnt-0O-RfU"/>
                         </constraints>
@@ -291,6 +294,119 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rk7-yU-ZMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1700.0000000000002" y="751.33928571428567"/>
+        </scene>
+        <!--Ledger Address Select View Controller-->
+        <scene sceneID="ytb-5t-fBj">
+            <objects>
+                <viewController storyboardIdentifier="LedgerAddressSelectViewController" id="qCC-G6-Fe9" customClass="LedgerAddressSelectViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5n1-BF-B3d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JKv-Sq-kCA">
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LedgerAddressSelectTableViewCell" id="Pw6-m4-v6K" customClass="LedgerAddressSelectTableViewCell" customModule="Yacht" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pw6-m4-v6K" id="2yr-lo-KHe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twR-Yw-71U">
+                                                    <rect key="frame" x="24" y="9" width="342" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="K2d-Rd-KZS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0xBB7E929741621944e1D38cF1C8654D8cF34943fc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="vy0-ir-vvc">
+                                                    <rect key="frame" x="24" y="29" width="342" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="4GQ-Qh-Vyq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Akkurat-Light" family="Akkurat-Light" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iWC-kD-4sF">
+                                                    <rect key="frame" x="370" y="20.5" width="20" height="19"/>
+                                                    <color key="tintColor" red="0.44967889789999999" green="0.38736963270000002" blue="0.33796423669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="iWC-kD-4sF" secondAttribute="height" multiplier="1:1" id="FbA-GF-ODI"/>
+                                                        <constraint firstAttribute="width" constant="20" id="GgC-r0-wky"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vy0-ir-vvc" firstAttribute="trailing" secondItem="twR-Yw-71U" secondAttribute="trailing" id="64F-nC-n9e"/>
+                                                <constraint firstItem="twR-Yw-71U" firstAttribute="centerY" secondItem="2yr-lo-KHe" secondAttribute="centerY" constant="-10" id="Cub-jH-kcl"/>
+                                                <constraint firstItem="twR-Yw-71U" firstAttribute="leading" secondItem="2yr-lo-KHe" secondAttribute="leading" constant="24" id="LQ0-Eu-u7o"/>
+                                                <constraint firstItem="iWC-kD-4sF" firstAttribute="width" secondItem="iWC-kD-4sF" secondAttribute="height" multiplier="1:1" id="MYN-1G-BNH"/>
+                                                <constraint firstAttribute="trailing" secondItem="twR-Yw-71U" secondAttribute="trailing" constant="48" id="Wt2-bS-36o"/>
+                                                <constraint firstItem="vy0-ir-vvc" firstAttribute="leading" secondItem="twR-Yw-71U" secondAttribute="leading" id="ZmF-YZ-igJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="iWC-kD-4sF" secondAttribute="trailing" constant="24" id="fHM-VZ-3y6"/>
+                                                <constraint firstItem="vy0-ir-vvc" firstAttribute="centerY" secondItem="2yr-lo-KHe" secondAttribute="centerY" constant="10" id="ho1-V4-8L2"/>
+                                                <constraint firstItem="iWC-kD-4sF" firstAttribute="centerY" secondItem="2yr-lo-KHe" secondAttribute="centerY" id="y4E-bF-fvg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="accountName" destination="twR-Yw-71U" id="XD4-WM-bps"/>
+                                            <outlet property="address" destination="vy0-ir-vvc" id="8KI-Ev-cvi"/>
+                                            <outlet property="check" destination="iWC-kD-4sF" id="iZp-ne-yyx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep the Ethereum application open on your Ledger device" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V10-RJ-2K7">
+                                <rect key="frame" x="40" y="54" width="334" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Jzb-ch-Dz7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="16"/>
+                                <color key="textColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfh-0r-7Yc">
+                                <rect key="frame" x="18" y="794" width="378" height="58"/>
+                                <color key="backgroundColor" red="0.74201482529999996" green="0.0" blue="0.049477718769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="dV1-ie-yx4"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Continue">
+                                    <fontDescription key="titleFontDescription" name="Akkurat-Bold" family="Akkurat-Bold" pointSize="18"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bbi-d7-WGV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V10-RJ-2K7" firstAttribute="centerX" secondItem="Bbi-d7-WGV" secondAttribute="centerX" id="5aH-rO-Xjv"/>
+                            <constraint firstItem="lfh-0r-7Yc" firstAttribute="width" secondItem="5n1-BF-B3d" secondAttribute="width" constant="-36" id="DjY-tp-8Wt"/>
+                            <constraint firstItem="JKv-Sq-kCA" firstAttribute="width" secondItem="5n1-BF-B3d" secondAttribute="width" id="Iqx-Qr-ejg"/>
+                            <constraint firstItem="Bbi-d7-WGV" firstAttribute="bottom" secondItem="lfh-0r-7Yc" secondAttribute="bottom" constant="10" id="hZA-pb-xJi"/>
+                            <constraint firstItem="V10-RJ-2K7" firstAttribute="top" secondItem="Bbi-d7-WGV" secondAttribute="top" constant="10" id="hdj-B9-3LY"/>
+                            <constraint firstItem="V10-RJ-2K7" firstAttribute="width" secondItem="5n1-BF-B3d" secondAttribute="width" constant="-80" id="kMc-hU-NQo"/>
+                            <constraint firstItem="Bbi-d7-WGV" firstAttribute="bottom" secondItem="JKv-Sq-kCA" secondAttribute="bottom" id="wrX-5R-jmi"/>
+                            <constraint firstItem="JKv-Sq-kCA" firstAttribute="top" secondItem="V10-RJ-2K7" secondAttribute="bottom" constant="10" id="yQW-Y3-OTD"/>
+                            <constraint firstItem="lfh-0r-7Yc" firstAttribute="centerX" secondItem="Bbi-d7-WGV" secondAttribute="centerX" id="ymQ-fl-XBV"/>
+                            <constraint firstItem="JKv-Sq-kCA" firstAttribute="centerX" secondItem="Bbi-d7-WGV" secondAttribute="centerX" id="zbR-jb-wx7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="lfh-0r-7Yc" id="nDJ-g7-PGK"/>
+                        <outlet property="tableView" destination="JKv-Sq-kCA" id="3RV-g5-usi"/>
+                        <outlet property="topMessage" destination="V10-RJ-2K7" id="PVp-rb-FxI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="05g-bW-Puk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2369.5652173913045" y="750.66964285714278"/>
         </scene>
         <!--Active Notifications View Controller-->
         <scene sceneID="sOB-Se-avU">

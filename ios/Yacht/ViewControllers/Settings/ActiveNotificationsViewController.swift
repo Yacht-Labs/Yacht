@@ -48,12 +48,12 @@ class ActiveNotificationsViewController: UIViewController {
     }
         
     func getAccounts(deviceId: String) {
-        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
+        networkManager.throbImageview(parentView: self.view)
         networkManager.getAccounts(deviceId: deviceId) { accounts, error in
             if error == nil {
                 guard let accounts = accounts else {
                     DispatchQueue.main.async {
-                        self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                        self.networkManager.stopThrob()
                     }
                     return
                 }
@@ -63,7 +63,7 @@ class ActiveNotificationsViewController: UIViewController {
                 
             } else {
                 DispatchQueue.main.async {
-                    self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                    self.networkManager.stopThrob()
                     self.networkManager.showErrorAlert(title: "Server Error", message: "Failed to get accounts for device", vc: self)
                 }
             }
@@ -105,12 +105,12 @@ class ActiveNotificationsViewController: UIViewController {
             if error == nil {
                 DispatchQueue.main.async {
                     self.eulerIRNotifications = notifications ?? []
-                    self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                    self.networkManager.stopThrob()
                     self.tableView.reloadData()
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                    self.networkManager.stopThrob()
                     self.networkManager.showErrorAlert(title: "Server Error", message: "Failed to get Euler IR notifications for device", vc: self)
                 }
             }
@@ -226,7 +226,7 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
+            networkManager.throbImageview(parentView: self.view)
             if indexPath.section == 0 {
                 let notification = eulerHealthNotifications[indexPath.row]
                 networkManager.deleteEulerNotificationHealth(id: notification.id) { notification, error in
@@ -235,12 +235,12 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
                             self.eulerHealthNotifications.remove(at: indexPath.row)
                             tableView.deleteRows(at: [indexPath], with: .fade)
                             tableView.reloadData()
-                            self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                            self.networkManager.stopThrob()
                         }
                     } else {
                         DispatchQueue.main.async {
                             self.networkManager.showErrorAlert(title: "Server Error", message: "Failed to delete notification", vc: self)
-                            self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                            self.networkManager.stopThrob()
                         }
                     }
                     
@@ -253,12 +253,12 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
                             self.eulerIRNotifications.remove(at: indexPath.row)
                             tableView.deleteRows(at: [indexPath], with: .fade)
                             tableView.reloadData()
-                            self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                            self.networkManager.stopThrob()
                         }
                     } else {
                         DispatchQueue.main.async {
                             self.networkManager.showErrorAlert(title: "Server Error", message: "Failed to delete notification", vc: self)
-                            self.networkManager.stopThrob(imageView: self.yachtImage, hiddenThrobber: true)
+                            self.networkManager.stopThrob()
                         }
                     }
                 }
