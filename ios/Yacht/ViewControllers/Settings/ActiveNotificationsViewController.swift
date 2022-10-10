@@ -48,7 +48,7 @@ class ActiveNotificationsViewController: UIViewController {
     }
         
     func getAccounts(deviceId: String) {
-        networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
+        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
         networkManager.getAccounts(deviceId: deviceId) { accounts, error in
             if error == nil {
                 guard let accounts = accounts else {
@@ -226,7 +226,7 @@ extension ActiveNotificationsViewController: UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
+            networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
             if indexPath.section == 0 {
                 let notification = eulerHealthNotifications[indexPath.row]
                 networkManager.deleteEulerNotificationHealth(id: notification.id) { notification, error in

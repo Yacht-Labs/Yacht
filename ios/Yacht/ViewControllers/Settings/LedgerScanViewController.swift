@@ -11,6 +11,7 @@ import React
 class LedgerScanViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topMessage: UILabel!
+    @IBOutlet weak var yachtImage: UIImageView!
     
     var devices: [(String, String)] = []
     
@@ -27,6 +28,10 @@ class LedgerScanViewController: UIViewController {
         self.view.addSubview(getReactRootView(moduleName: "LedgerConnect"))
         
         NotificationCenter.default.addObserver(self, selector: #selector(wbReturnLedgerDevice(_:)), name: NSNotification.Name("return.ledger.device"), object: nil)
+        
+        let networkManager = NetworkManager()
+        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
+        
     }
     
     @objc func wbReturnLedgerDevice(_ notification: Notification) {

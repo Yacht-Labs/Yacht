@@ -173,7 +173,7 @@ extension AddressesListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
+            networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
             let account = addresses[indexPath.row]
             let id = account.value(forKey: "id") as? String
             

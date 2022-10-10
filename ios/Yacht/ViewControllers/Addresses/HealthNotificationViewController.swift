@@ -38,7 +38,7 @@ class HealthNotificationViewController: UIViewController {
         
         let networkManager = NetworkManager()
         self.saveButton.isEnabled = false
-        networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
+        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
         
         if let notificationId = notificationId {
             // Update existing notification

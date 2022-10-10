@@ -26,7 +26,8 @@ enum Result<String> {
 struct NetworkManager {
     static let environment: NetworkEnvironment = BuildConfiguration.shared.network
     private let router = Router<NotificationServiceAPI>()
-
+    private var throbberImage: UIImageView?
+ 
     func getEulerTokens(completion: @escaping (_ tokens: [EulerToken]?, _ error: String?) -> Void) {
         router.request(.getEulerTokens) { data, response, error in
             let result = handleNetworkResponse(data: data, response: response, error: error, responseModelType: [EulerToken].self)
@@ -209,14 +210,46 @@ struct NetworkManager {
         }
     }
     
-    func throbImageview(imageView: UIImageView, hiddenThrobber: Bool) {
-        if hiddenThrobber {
-            imageView.alpha = 0.8
-        }
-
-        UIView.animate(withDuration: 1.0, delay:0, options: [.repeat, .autoreverse], animations: {
-            imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        }, completion: nil)
+    func throbImageview(parentView: UIView, hiddenThrobber: Bool) {
+//        if hiddenThrobber {
+//            imageView.alpha = 0.8
+//        }
+//
+//        UIView.animate(withDuration: 1.0, delay:0, options: [.repeat, .autoreverse], animations: {
+//            imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+//        }, completion: nil)
+//
+        let imageView = UIImageView(frame: CGRect(x: -100, y: -100, width: 200, height: 200))
+        imageView.alpha = 0
+        imageView.image = UIImage(named: "YachtLogo")
+        imageView.contentMode = .scaleAspectFit
+        let transformLayer = CATransformLayer()
+        var perspective = CATransform3DIdentity
+        perspective.m34 = -1 / 500
+        transformLayer.transform = perspective
+        transformLayer.position = CGPoint(x: parentView.bounds.midX, y: parentView.bounds.midY)
+        transformLayer.anchorPointZ = -100
+        transformLayer.addSublayer(imageView.layer)
+        parentView.layer.addSublayer(transformLayer)
+        
+        let fadeInAnim = CABasicAnimation(keyPath: "opacity")
+        fadeInAnim.fromValue = 0
+        fadeInAnim.toValue = 1
+        fadeInAnim.duration = 1
+        fadeInAnim.repeatCount = 1
+        imageView.layer.add(fadeInAnim, forKey: "opacity")
+   
+        let anim = CABasicAnimation(keyPath: "transform")
+        anim.fromValue = CATransform3DMakeRotation(0.8, 0, 1, 0)
+        anim.toValue = CATransform3DMakeRotation(-0.8, 0, 1, 0)
+        anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        anim.beginTime = 1
+        anim.duration = 1
+        anim.autoreverses = true
+        anim.repeatCount = .greatestFiniteMagnitude
+        imageView.layer.add(anim, forKey: "transform")
+       
+        
     }
     
     func stopThrob(imageView: UIImageView, hiddenThrobber: Bool) {

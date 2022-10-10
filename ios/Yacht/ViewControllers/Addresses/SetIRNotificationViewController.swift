@@ -45,7 +45,7 @@ class SetIRNotificationViewController: UIViewController {
         
         let networkManager = NetworkManager()
         self.saveButton.isEnabled = false
-        networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
+        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
         
         if let notificationId = notificationId {
             // Update existing notification
@@ -126,7 +126,7 @@ class SetIRNotificationViewController: UIViewController {
         
         self.saveButton.isEnabled = false
         let networkManager = NetworkManager()
-        networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
+        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
         if let deviceId = deviceId {
             networkManager.getEulerNotificationIR(deviceId: deviceId) { notifications, error in
                 if error == nil {

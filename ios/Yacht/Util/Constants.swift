@@ -9,9 +9,7 @@ import Foundation
 import UIKit
 
 struct Constants {
- 
     struct Colors {
-        
         static let viewBackgroundColor = UIColor(red: 255/255, green: 254/255, blue: 250/255, alpha: 255/255)
         static let primaryColor = UIColor(red: 38/255, green: 18/255, blue: 1/255, alpha: 255/255)
         static let secondaryColor = UIColor(red: 175/255, green: 203/255, blue: 255/255, alpha: 255/255)
@@ -28,7 +26,6 @@ struct Constants {
         static let eulerCollateral = UIColor(red: 38/255, green: 205/255, blue: 204/255, alpha: 255/255)
         static let eulerCross = UIColor(red: 255/255, green: 185/255, blue: 68/255, alpha: 255/255)
         static let eulerIsolated = UIColor(red: 238/255, green: 100/255, blue: 96/255, alpha: 255/255)
-        
     }
     
     struct Demo {
@@ -38,9 +35,9 @@ struct Constants {
     
     struct Environment {
         // static let localhost = "172.16.1.104:8081"
-        static let localhost = "192.168.1.66:8081"
+        // static let localhost = "192.168.1.66:8081"
+        static let localhost = "10.200.1.78:8081"
         // static let localhost = "192.168.50.39:8081"
-
     }
     
     struct LocalStorage {

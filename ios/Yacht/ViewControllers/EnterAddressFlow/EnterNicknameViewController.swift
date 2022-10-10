@@ -45,7 +45,7 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
     func saveAccount(address: String, nickname: String, deviceId: String) {
         let networkManager = NetworkManager()
         if checkIfValidNickname(nickname: nickname) {
-            networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: false)
+            networkManager.throbImageview(parentView: self.view, hiddenThrobber: false)
             continueButton.isEnabled = false
             networkManager.postAccount(address: address, deviceId: deviceId, name: nickname) { account, error in
                 if error == nil {

@@ -105,7 +105,7 @@ class AccountDetailViewController: UIViewController {
     }
     
     func getEulerAccount() {
-        networkManager.throbImageview(imageView: yachtImage, hiddenThrobber: true)
+        networkManager.throbImageview(parentView: self.view, hiddenThrobber: true)
         networkManager.getEulerAccounts(address: address ?? "0x0000000000000000000000000000000000000000") { accounts, error in
             if error == nil {
                 let sortedAccounts = accounts?.sorted { $0.subAccountId < $1.subAccountId }  ?? []
