@@ -24,6 +24,8 @@ class LedgerAddressSelectViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        selectedAddresses = [Int](repeating: 0, count: maxAccounts)
+        
         canContinue(status: false)
         let font = UIFont(name: "Akkurat-Bold", size: 18)
         let attributes: [NSAttributedString.Key: Any] = [
@@ -42,6 +44,14 @@ class LedgerAddressSelectViewController: UIViewController {
         self.view.addSubview(getReactRootView(moduleName: "LedgerAddressSelect"))
         
         networkManager.throbImageview(parentView: self.view)
+    }
+    
+    @IBAction func continueTouched(_ sender: Any) {
+        
+    }
+    
+    func addLedgerAccount() {
+        
     }
     
     private func canContinue(status: Bool) {

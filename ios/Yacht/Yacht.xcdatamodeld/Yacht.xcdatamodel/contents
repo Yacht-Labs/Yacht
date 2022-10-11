@@ -5,9 +5,10 @@
         <attribute name="deviceId" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isLedger" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Address" positionX="-54" positionY="-9" width="128" height="104"/>
+        <element name="Address" positionX="-54" positionY="-9" width="128" height="119"/>
     </elements>
 </model>

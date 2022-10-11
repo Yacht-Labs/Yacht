@@ -6,6 +6,8 @@ import { Device } from "react-native-ble-plx";
 import { LedgerError } from "./types";
 import { getErrorMessage } from "./utils";
 
+
+
 const LedgerBridgeEvents = new NativeEventEmitter(NativeModules.WalletBridge);
 
 class LedgerAddressSelect extends Component {
@@ -32,6 +34,7 @@ class LedgerAddressSelect extends Component {
         try {
           if (!this.state.transport || !this.state.eth) {
             const transport = await TransportBLE.open(deviceId);
+            
             const eth = new AppEth(transport); // This is the problematic call
             this.setState({
               transport,
@@ -60,7 +63,6 @@ class LedgerAddressSelect extends Component {
         }
       }
     );
-
     NativeModules.WalletBridge.returnComponentLoaded();
   }
 

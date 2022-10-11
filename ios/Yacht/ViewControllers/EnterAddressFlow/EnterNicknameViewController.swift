@@ -49,8 +49,9 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
             continueButton.isEnabled = false
             networkManager.postAccount(address: address, deviceId: deviceId, name: nickname) { account, error in
                 if error == nil {
-                    DispatchQueue.main.async { [self] in
-                        createAddressInCoreData(address: address, nickname: nickname, deviceId: deviceId, id: account?.id ?? "")
+                    DispatchQueue.main.async { 
+                        let lsm = LocalStorageManager()
+                        lsm.createAddressInCoreData(address: address, nickname: nickname, deviceId: deviceId, id: account?.id ?? "", isLedger: false)
                         let vc = HomeViewController()
                         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc)
                     }
@@ -123,28 +124,7 @@ class EnterNicknameViewController: UIViewController, UITextFieldDelegate {
     func checkIfValidNickname(nickname: String) -> Bool {
         return nickname.count <= 40
     }
-    
-    func createAddressInCoreData(address: String, nickname: String, deviceId: String, id: String) {
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        guard let addressEntity = NSEntityDescription.entity(forEntityName: "Address", in: managedContext) else { return }
-        let newAddress = NSManagedObject(entity: addressEntity, insertInto: managedContext)
-        newAddress.setValue(address, forKeyPath: "address")
-        newAddress.setValue(nickname, forKeyPath: "nickname")
-        newAddress.setValue(deviceId, forKeyPath: "deviceId")
-        newAddress.setValue(id, forKeyPath: "id")
-        newAddress.setValue(true, forKeyPath: "isActive")
         
-        do {
-            try managedContext.save()
-        } catch {
-            print(error)
-        }
-    }
-    
     func getAddressCount() -> Int {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
