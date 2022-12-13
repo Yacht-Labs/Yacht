@@ -35,7 +35,7 @@ struct Constants {
     
     struct Environment {
         // static let localhost = "172.16.1.104:8081"
-        static let localhost = "10.200.1.184:8081"
+        static let localhost = "172.20.10.5:8081"
         // static let localhost = "10.200.1.78:8081"
         // static let localhost = "192.168.50.39:8081"
     }

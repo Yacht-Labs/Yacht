@@ -15,6 +15,7 @@ class AssetManagerViewController: UIViewController {
     var symbolValue: String?
     var deviceId: String?
     var token: EulerToken?
+    @IBOutlet weak var reactSkeletonView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class AssetManagerViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
        
         let reactView = getReactRootView(moduleName: "EulerAssetManager")
-        reactView.frame = self.view.frame
+        reactView.frame = reactSkeletonView.frame
         self.view.addSubview(reactView)
     }
     

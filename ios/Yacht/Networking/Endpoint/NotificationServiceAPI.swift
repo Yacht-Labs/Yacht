@@ -51,7 +51,7 @@ extension NotificationServiceAPI: EndPointType {
     
     var environmentBaseURL: String {
         switch NetworkManager.environment {
-        case .localhost: return "http://192.168.1.66:3000"
+        case .localhost: return "http://172.20.10.5:3000"
         case .staging: return ""
         case .production: return "https://api.yachtlabs.io"
         }
