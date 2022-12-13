@@ -1081,6 +1081,21 @@
             </objects>
             <point key="canvasLocation" x="5814" y="98"/>
         </scene>
+        <!--Asset Manager View Controller-->
+        <scene sceneID="wxB-67-SLx">
+            <objects>
+                <viewController storyboardIdentifier="AssetManagerViewController" id="Y8h-qR-Swe" customClass="AssetManagerViewController" customModule="Yacht" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EGx-a5-mFV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="plT-nU-laz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Hm-Zl-NcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6591" y="98"/>
+        </scene>
     </scenes>
     <resources>
         <image name="EulerLogo" width="96" height="90"/>

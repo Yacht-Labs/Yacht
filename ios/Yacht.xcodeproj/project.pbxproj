@@ -77,6 +77,7 @@
 		7F5F83AA28BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */; };
 		7F5F83AC28BE712D008B8EDB /* SetIRNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */; };
 		7F6D55BC28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */; };
+		7F8B3861294918F90061754D /* AssetManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8B3860294918F90061754D /* AssetManagerViewController.swift */; };
 		7FA20ADA28EF3EF60044F2FA /* LedgerScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20AD928EF3EF60044F2FA /* LedgerScanViewController.swift */; };
 		7FA20ADE28EF62D70044F2FA /* WalletBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20ADD28EF62D70044F2FA /* WalletBridge.m */; };
 		7FA20AE028EF634C0044F2FA /* WalletBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20ADF28EF634C0044F2FA /* WalletBridge.swift */; };
@@ -191,6 +192,7 @@
 		7F5F83A928BE70A3008B8EDB /* NotifyThresholdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyThresholdTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIRNotificationViewController.swift; sourceTree = "<group>"; };
 		7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSocialTableViewCell.swift; sourceTree = "<group>"; };
+		7F8B3860294918F90061754D /* AssetManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManagerViewController.swift; sourceTree = "<group>"; };
 		7FA20AD928EF3EF60044F2FA /* LedgerScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerScanViewController.swift; sourceTree = "<group>"; };
 		7FA20ADC28EF62D60044F2FA /* Yacht-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Yacht-Bridging-Header.h"; sourceTree = "<group>"; };
 		7FA20ADD28EF62D70044F2FA /* WalletBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletBridge.m; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				7F5F835F28B80EDC008B8EDB /* HealthNotificationViewController.swift */,
 				7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */,
 				7FEA2D8528CA50D500FF6DAB /* SubAccountSelectViewController.swift */,
+				7F8B3860294918F90061754D /* AssetManagerViewController.swift */,
 			);
 			path = Addresses;
 			sourceTree = "<group>";
@@ -682,7 +685,7 @@
 			);
 			mainGroup = 7F2891B828B52E9B00B501B6;
 			packageReferences = (
-				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */,
+				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 7F2891C228B52E9B00B501B6 /* Products */;
 			projectDirPath = "";
@@ -885,6 +888,7 @@
 				7F0E3A8628BFB1220024FDB8 /* ActiveNotificationTableViewCell.swift in Sources */,
 				7F5F839E28B9B04B008B8EDB /* EulerNotificationHealth.swift in Sources */,
 				7F2891C728B52E9B00B501B6 /* SceneDelegate.swift in Sources */,
+				7F8B3861294918F90061754D /* AssetManagerViewController.swift in Sources */,
 				7F5F839028B94B8F008B8EDB /* NetworkManager.swift in Sources */,
 				7F5F83A228BCFEE2008B8EDB /* EulerLoan.swift in Sources */,
 				7F5F837128B90B85008B8EDB /* SettingNotificationTableViewCell.swift in Sources */,
@@ -2168,7 +2172,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */ = {
+		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
@@ -2181,7 +2185,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		7FEA2D8A28D2C34E00FF6DAB /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */;
+			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
