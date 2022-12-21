@@ -29,6 +29,7 @@
 		<string>Akkurat-Bold.otf</string>
 		<string>Akkurat-Light-Italic.otf</string>
 		<string>Akkurat-Light.otf</string>
+		<string>Akkurat-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

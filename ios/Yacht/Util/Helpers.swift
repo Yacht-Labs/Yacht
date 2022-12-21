@@ -8,74 +8,40 @@
 import Foundation
 import UIKit
 
-func download(url: URL, toFile file: URL, completion: @escaping (Error?) -> Void) {
-    // Download the remote URL to a file
-    let task = URLSession.shared.downloadTask(with: url) {
-        (tempURL, _, error) in
-        // Early exit on error
-        guard let tempURL = tempURL else {
-            completion(error)
-            return
-        }
+func getIPAddress() -> String? {
+    var address : String?
 
-        do {
-            // Remove any existing document at file
-            if FileManager.default.fileExists(atPath: file.path) {
-                try FileManager.default.removeItem(at: file)
-            }
+    // Get list of all interfaces on the local machine:
+    var ifaddr : UnsafeMutablePointer<ifaddrs>?
+    guard getifaddrs(&ifaddr) == 0 else { return nil }
+    guard let firstAddr = ifaddr else { return nil }
 
-            // Copy the tempURL to file
-            try FileManager.default.copyItem(
-                at: tempURL,
-                to: file
-            )
-            completion(nil)
-        }
+    // For each interface ...
+    for ifptr in sequence(first: firstAddr, next: { $0.pointee.ifa_next }) {
+        let interface = ifptr.pointee
 
-        // Handle potential file system errors
-        catch let fileError {
-            completion(fileError)
-        }
-    }
+        // Check for IPv4 or IPv6 interface:
+        let addrFamily = interface.ifa_addr.pointee.sa_family
+        if addrFamily == UInt8(AF_INET) || addrFamily == UInt8(AF_INET6) {
 
-    // Start the download
-    task.resume()
-}
+            // Check interface name:
+            // wifi = ["en0"]
+            // wired = ["en2", "en3", "en4"]
+            // cellular = ["pdp_ip0","pdp_ip1","pdp_ip2","pdp_ip3"]
+            
+            let name = String(cString: interface.ifa_name)
+            if  name == "en0" || name == "en2" || name == "en3" || name == "en4" || name == "pdp_ip0" || name == "pdp_ip1" || name == "pdp_ip2" || name == "pdp_ip3" {
 
-func loadData(url: URL, completion: @escaping (Data?, Error?, URL) -> Void) {
-    // Compute a path to the URL in the cache
-    let fileCachePath = FileManager.default.temporaryDirectory
-        .appendingPathComponent(
-            url.lastPathComponent,
-            isDirectory: false
-        )
-    
-    // If the image exists in the cache,
-    // load the image from the cache and exit
-    
-//    do {
-//        if let data = try Data(contentsOf: fileCachePath) as Data? {
-//            completion(data, nil)
-//            return
-//        }
-//    } catch {
-//        completion(nil, error)
-//    }
-
-    let offset = DispatchTimeInterval.seconds(Int.random(in: 1..<5))
-    DispatchQueue.main.asyncAfter(deadline: .now() + offset) {
-        download(url: url, toFile: fileCachePath) { (error) in
-            do {
-                let data = try Data(contentsOf: fileCachePath)
-                completion(data, error, url)
-            } catch {
-                completion(nil, error, url)
+                // Convert interface address to a human readable string:
+                var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+                getnameinfo(interface.ifa_addr, socklen_t(interface.ifa_addr.pointee.sa_len),
+                            &hostname, socklen_t(hostname.count),
+                            nil, socklen_t(0), NI_NUMERICHOST)
+                address = String(cString: hostname)
             }
         }
     }
-    
-    // If the image does not exist in the cache,
-    // download the image to the cache
+    freeifaddrs(ifaddr)
 
+    return address
 }
-
