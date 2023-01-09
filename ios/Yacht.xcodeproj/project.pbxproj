@@ -78,6 +78,7 @@
 		7F5F83AC28BE712D008B8EDB /* SetIRNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */; };
 		7F6D55BC28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */; };
 		7F8B3861294918F90061754D /* AssetManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8B3860294918F90061754D /* AssetManagerViewController.swift */; };
+		7F8B3863294A2E060061754D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8B3862294A2E060061754D /* Helpers.swift */; };
 		7FA20ADA28EF3EF60044F2FA /* LedgerScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20AD928EF3EF60044F2FA /* LedgerScanViewController.swift */; };
 		7FA20ADE28EF62D70044F2FA /* WalletBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20ADD28EF62D70044F2FA /* WalletBridge.m */; };
 		7FA20AE028EF634C0044F2FA /* WalletBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20ADF28EF634C0044F2FA /* WalletBridge.swift */; };
@@ -111,12 +112,17 @@
 
 /* Begin PBXFileReference section */
 		0F13F8B5870B3A7FF627CB54 /* Pods-Yacht-YachtTests.dev-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.dev-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.dev-debug.xcconfig"; sourceTree = "<group>"; };
+		128BC88DBA0943FFB599A451 /* Akkurat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Akkurat-Regular.ttf"; path = "../src/assets/fonts/Akkurat-Regular.ttf"; sourceTree = "<group>"; };
+		149484C4D0CC47BDB1709FE1 /* Akkurat-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Akkurat-Light.otf"; path = "../src/assets/fonts/Akkurat-Light.otf"; sourceTree = "<group>"; };
 		183D5E1641CE1A14DB4514A5 /* Pods-Yacht.prod-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.prod-debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.prod-debug.xcconfig"; sourceTree = "<group>"; };
 		1B179C5A86F46202BB59F49C /* Pods-Yacht-YachtTests.prod-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.prod-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.prod-debug.xcconfig"; sourceTree = "<group>"; };
+		2B91CB29F2F04AA18F79128E /* Akkurat-Light-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Akkurat-Light-Italic.otf"; path = "../src/assets/fonts/Akkurat-Light-Italic.otf"; sourceTree = "<group>"; };
 		3F87B35CEF0DAE2462B6F43D /* libPods-Yacht.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yacht.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		458637F884584E8E83C1D822 /* Akkurat-Bold-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Akkurat-Bold-Italic.otf"; path = "../src/assets/fonts/Akkurat-Bold-Italic.otf"; sourceTree = "<group>"; };
 		48252A89F39F87E6A825DC82 /* Pods-Yacht-YachtTests.prod-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.prod-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.prod-release.xcconfig"; sourceTree = "<group>"; };
 		4E8AE193C2C208F7B7B042BA /* Pods-Yacht-YachtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.release.xcconfig"; sourceTree = "<group>"; };
 		572585B3555C6F30AC134E87 /* Pods-Yacht.prod-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.prod-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.prod-release.xcconfig"; sourceTree = "<group>"; };
+		5C0D18B81E42431BB9B47826 /* Akkurat-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Akkurat-Bold.otf"; path = "../src/assets/fonts/Akkurat-Bold.otf"; sourceTree = "<group>"; };
 		623FAE093093170E72DE047B /* Pods-Yacht-YachtTests.dev-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.dev-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.dev-release.xcconfig"; sourceTree = "<group>"; };
 		7E0C62C10247A2EF725E0FA2 /* libPods-Yacht-YachtTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yacht-YachtTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0E3A8328BFAF730024FDB8 /* ActiveNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNotificationsViewController.swift; sourceTree = "<group>"; };
@@ -193,12 +199,15 @@
 		7F5F83AB28BE712D008B8EDB /* SetIRNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIRNotificationViewController.swift; sourceTree = "<group>"; };
 		7F6D55BB28E3A49700EFBE85 /* SettingsSocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSocialTableViewCell.swift; sourceTree = "<group>"; };
 		7F8B3860294918F90061754D /* AssetManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManagerViewController.swift; sourceTree = "<group>"; };
+		7F8B3862294A2E060061754D /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		7FA20AD928EF3EF60044F2FA /* LedgerScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerScanViewController.swift; sourceTree = "<group>"; };
 		7FA20ADC28EF62D60044F2FA /* Yacht-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Yacht-Bridging-Header.h"; sourceTree = "<group>"; };
 		7FA20ADD28EF62D70044F2FA /* WalletBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletBridge.m; sourceTree = "<group>"; };
 		7FA20ADF28EF634C0044F2FA /* WalletBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBridge.swift; sourceTree = "<group>"; };
 		7FA20AE128EF66D60044F2FA /* GetReactRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReactRootView.swift; sourceTree = "<group>"; };
 		7FA20AE328EF6B3A0044F2FA /* LedgerScanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerScanTableViewCell.swift; sourceTree = "<group>"; };
+		7FAFFE322967296100714EB0 /* hermes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermes.xcframework; path = "Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework"; sourceTree = "<group>"; };
+		7FAFFE34296729A800714EB0 /* libReact-hermes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-hermes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD1CFC728F085DE00363447 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = SOURCE_ROOT; };
 		7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -212,6 +221,7 @@
 		A51A220864B15F3789ADBF4E /* Pods-Yacht.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.debug.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.debug.xcconfig"; sourceTree = "<group>"; };
 		C058EE14ACAFD89B17F39D22 /* Pods-Yacht.stage-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.stage-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.stage-release.xcconfig"; sourceTree = "<group>"; };
 		CA79AF723CBB1ED1F1DD1FF2 /* Pods-Yacht-YachtTests.stage-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.stage-release.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.stage-release.xcconfig"; sourceTree = "<group>"; };
+		D9F7C66CA4BC418CBDC56F1B /* BookmaniaRegular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BookmaniaRegular.otf; path = ../src/assets/fonts/BookmaniaRegular.otf; sourceTree = "<group>"; };
 		E981E0BA137FBEB8BB0CED88 /* Pods-Yacht.dev-release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht.dev-release.xcconfig"; path = "Target Support Files/Pods-Yacht/Pods-Yacht.dev-release.xcconfig"; sourceTree = "<group>"; };
 		F9947894E6BF66B3D2434EF1 /* Pods-Yacht-YachtTests.stage-debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yacht-YachtTests.stage-debug.xcconfig"; path = "Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests.stage-debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,10 +257,25 @@
 		674D5AAE58D9E473E3B83796 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FAFFE34296729A800714EB0 /* libReact-hermes.a */,
+				7FAFFE322967296100714EB0 /* hermes.xcframework */,
 				3F87B35CEF0DAE2462B6F43D /* libPods-Yacht.a */,
 				7E0C62C10247A2EF725E0FA2 /* libPods-Yacht-YachtTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69F7F322D2B84643BD8955B4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				458637F884584E8E83C1D822 /* Akkurat-Bold-Italic.otf */,
+				5C0D18B81E42431BB9B47826 /* Akkurat-Bold.otf */,
+				2B91CB29F2F04AA18F79128E /* Akkurat-Light-Italic.otf */,
+				149484C4D0CC47BDB1709FE1 /* Akkurat-Light.otf */,
+				D9F7C66CA4BC418CBDC56F1B /* BookmaniaRegular.otf */,
+				128BC88DBA0943FFB599A451 /* Akkurat-Regular.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		7F0E3A8928BFF9610024FDB8 /* Views */ = {
@@ -279,6 +304,7 @@
 				7F2891C228B52E9B00B501B6 /* Products */,
 				8CD0EF4D291C5C0D53BF0FD4 /* Pods */,
 				674D5AAE58D9E473E3B83796 /* Frameworks */,
+				69F7F322D2B84643BD8955B4 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -407,6 +433,7 @@
 		7F5F833A28B6BBF0008B8EDB /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				7F8B3862294A2E060061754D /* Helpers.swift */,
 				7F5F833B28B6BC21008B8EDB /* Constants.swift */,
 				7F0E3A8728BFDC2D0024FDB8 /* UINavigationControllerExtension.swift */,
 				7FEA2D9E28D4CD7500FF6DAB /* BuildConfiguration.swift */,
@@ -597,8 +624,8 @@
 				7F2891BD28B52E9B00B501B6 /* Sources */,
 				7F2891BE28B52E9B00B501B6 /* Frameworks */,
 				7F2891BF28B52E9B00B501B6 /* Resources */,
-				E02011C831BC7FEF2BF7138C /* [CP] Embed Pods Frameworks */,
 				8F72991CAF696FDFE4CA2249 /* [CP] Copy Pods Resources */,
+				2D8EC679FB568124D971F391 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -620,8 +647,8 @@
 				7F2891D628B52EA000B501B6 /* Sources */,
 				7F2891D728B52EA000B501B6 /* Frameworks */,
 				7F2891D828B52EA000B501B6 /* Resources */,
-				6A7B5FD3A4BB48F1F19065BF /* [CP] Embed Pods Frameworks */,
 				2D55E1F6DCEB5CE69744C0A2 /* [CP] Copy Pods Resources */,
+				C37D81962696C5FE4AD66BBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -755,21 +782,21 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A7B5FD3A4BB48F1F19065BF /* [CP] Embed Pods Frameworks */ = {
+		2D8EC679FB568124D971F391 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8F72991CAF696FDFE4CA2249 /* [CP] Copy Pods Resources */ = {
@@ -787,6 +814,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C37D81962696C5FE4AD66BBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA60FA5BE7097AA96AE653FF /* [CP] Check Pods Manifest.lock */ = {
@@ -809,23 +853,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E02011C831BC7FEF2BF7138C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FCCBCFF5D396F475A218B180 /* [CP] Check Pods Manifest.lock */ = {
@@ -914,6 +941,7 @@
 				7F5F835828B7C856008B8EDB /* LendingLoanTableViewCell.swift in Sources */,
 				7FEA2D8228C7B71900FF6DAB /* SearchTableViewCell.swift in Sources */,
 				7F5F834428B70D5F008B8EDB /* AddressTableViewCell.swift in Sources */,
+				7F8B3863294A2E060061754D /* Helpers.swift in Sources */,
 				7FEA2D8628CA50D500FF6DAB /* SubAccountSelectViewController.swift in Sources */,
 				7F5F835C28B7D628008B8EDB /* HealthScoreTableViewCell.swift in Sources */,
 				7F5F833C28B6BC21008B8EDB /* Constants.swift in Sources */,

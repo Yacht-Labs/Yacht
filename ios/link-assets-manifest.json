@@ -1,0 +1,29 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Akkurat-Bold-Italic.otf",
+      "sha1": "7bbb59e2812ad6d631fc55a380eb9f2d5c184bf7"
+    },
+    {
+      "path": "src/assets/fonts/Akkurat-Bold.otf",
+      "sha1": "6cbed247a67752bd1f7e76303e1973fd32a2dca5"
+    },
+    {
+      "path": "src/assets/fonts/Akkurat-Light-Italic.otf",
+      "sha1": "1cd70d51bb5be04a398ae28a6ff5abec99e3a23d"
+    },
+    {
+      "path": "src/assets/fonts/Akkurat-Light.otf",
+      "sha1": "cbf6cee72452b39ffee9f67793cf90fe56bb2854"
+    },
+    {
+      "path": "src/assets/fonts/Akkurat-Regular.ttf",
+      "sha1": "d9348ccf865e17605b33e36ee032876eb45f8d49"
+    },
+    {
+      "path": "src/assets/fonts/BookmaniaRegular.otf",
+      "sha1": "c138585cce1f2320c975020982c22e76a842ee07"
+    }
+  ]
+}

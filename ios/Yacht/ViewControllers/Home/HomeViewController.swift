@@ -16,6 +16,8 @@ class HomeViewController: UITabBarController {
         view.backgroundColor = Constants.Colors.viewBackgroundColor
         tabBar.tintColor = Constants.Colors.mediumRed
         setupVCs()
+        
+      
     }
     
 

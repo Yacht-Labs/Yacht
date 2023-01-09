@@ -34,10 +34,17 @@ struct Constants {
     }
     
     struct Environment {
-        // static let localhost = "172.16.1.104:8081"
-        static let localhost = "10.200.1.184:8081"
-        // static let localhost = "10.200.1.78:8081"
-        // static let localhost = "192.168.50.39:8081"
+        struct ReactNative {
+            // static let localhost = "http://172.16.1.104:8081"
+            static let localhost = "http://192.168.1.66:8081"
+            // static let localhost = "http://10.200.1.78:8081"
+            // static let localhost = "http://192.168.50.39:8081"
+        }
+        
+        struct Node {
+            static let localhost = "http://192.168.1.66:3000"
+            static let production = "https://api.yachtlabs.io"
+        }
     }
     
     struct LocalStorage {
