@@ -206,6 +206,8 @@
 		7FA20ADF28EF634C0044F2FA /* WalletBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBridge.swift; sourceTree = "<group>"; };
 		7FA20AE128EF66D60044F2FA /* GetReactRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReactRootView.swift; sourceTree = "<group>"; };
 		7FA20AE328EF6B3A0044F2FA /* LedgerScanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerScanTableViewCell.swift; sourceTree = "<group>"; };
+		7FAFFE322967296100714EB0 /* hermes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermes.xcframework; path = "Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework"; sourceTree = "<group>"; };
+		7FAFFE34296729A800714EB0 /* libReact-hermes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-hermes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD1CFC728F085DE00363447 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = SOURCE_ROOT; };
 		7FEA2D8128C7B71900FF6DAB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA2D8328C7ED6000FF6DAB /* CopyAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -255,6 +257,8 @@
 		674D5AAE58D9E473E3B83796 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FAFFE34296729A800714EB0 /* libReact-hermes.a */,
+				7FAFFE322967296100714EB0 /* hermes.xcframework */,
 				3F87B35CEF0DAE2462B6F43D /* libPods-Yacht.a */,
 				7E0C62C10247A2EF725E0FA2 /* libPods-Yacht-YachtTests.a */,
 			);
@@ -620,8 +624,8 @@
 				7F2891BD28B52E9B00B501B6 /* Sources */,
 				7F2891BE28B52E9B00B501B6 /* Frameworks */,
 				7F2891BF28B52E9B00B501B6 /* Resources */,
-				E02011C831BC7FEF2BF7138C /* [CP] Embed Pods Frameworks */,
 				8F72991CAF696FDFE4CA2249 /* [CP] Copy Pods Resources */,
+				2D8EC679FB568124D971F391 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -643,8 +647,8 @@
 				7F2891D628B52EA000B501B6 /* Sources */,
 				7F2891D728B52EA000B501B6 /* Frameworks */,
 				7F2891D828B52EA000B501B6 /* Resources */,
-				6A7B5FD3A4BB48F1F19065BF /* [CP] Embed Pods Frameworks */,
 				2D55E1F6DCEB5CE69744C0A2 /* [CP] Copy Pods Resources */,
+				C37D81962696C5FE4AD66BBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -778,21 +782,21 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A7B5FD3A4BB48F1F19065BF /* [CP] Embed Pods Frameworks */ = {
+		2D8EC679FB568124D971F391 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8F72991CAF696FDFE4CA2249 /* [CP] Copy Pods Resources */ = {
@@ -810,6 +814,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C37D81962696C5FE4AD66BBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht-YachtTests/Pods-Yacht-YachtTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA60FA5BE7097AA96AE653FF /* [CP] Check Pods Manifest.lock */ = {
@@ -832,23 +853,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E02011C831BC7FEF2BF7138C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yacht/Pods-Yacht-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FCCBCFF5D396F475A218B180 /* [CP] Check Pods Manifest.lock */ = {
