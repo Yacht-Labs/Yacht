@@ -32,6 +32,8 @@
 		7F28920528B5346200B501B6 /* Akkurat-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F2891FF28B5346200B501B6 /* Akkurat-Bold-Italic.otf */; };
 		7F28920828B5394900B501B6 /* EnterAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28920728B5394900B501B6 /* EnterAddressViewController.swift */; };
 		7F28920B28B53A0000B501B6 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F28920A28B53A0000B501B6 /* QRScannerViewController.swift */; };
+		7F2CD20F296DD6A3000CA26E /* LitSwap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2CD20E296DD6A3000CA26E /* LitSwap.storyboard */; };
+		7F2CD214296DD83B000CA26E /* CreateLitSwapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2CD213296DD83B000CA26E /* CreateLitSwapViewController.swift */; };
 		7F332E7E28F4ADE200AD1570 /* LedgerAddressSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F332E7D28F4ADE200AD1570 /* LedgerAddressSelectViewController.swift */; };
 		7F332E8028F4B12200AD1570 /* LedgerAddressSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F332E7F28F4B12200AD1570 /* LedgerAddressSelectTableViewCell.swift */; };
 		7F5F833728B66358008B8EDB /* EnterAddressViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F833628B66358008B8EDB /* EnterAddressViewControllerTests.swift */; };
@@ -152,6 +154,8 @@
 		7F2891FF28B5346200B501B6 /* Akkurat-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Akkurat-Bold-Italic.otf"; sourceTree = "<group>"; };
 		7F28920728B5394900B501B6 /* EnterAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAddressViewController.swift; sourceTree = "<group>"; };
 		7F28920A28B53A0000B501B6 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		7F2CD20E296DD6A3000CA26E /* LitSwap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LitSwap.storyboard; sourceTree = "<group>"; };
+		7F2CD213296DD83B000CA26E /* CreateLitSwapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLitSwapViewController.swift; sourceTree = "<group>"; };
 		7F332E7D28F4ADE200AD1570 /* LedgerAddressSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerAddressSelectViewController.swift; sourceTree = "<group>"; };
 		7F332E7F28F4B12200AD1570 /* LedgerAddressSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerAddressSelectTableViewCell.swift; sourceTree = "<group>"; };
 		7F5F833628B66358008B8EDB /* EnterAddressViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAddressViewControllerTests.swift; sourceTree = "<group>"; };
@@ -368,6 +372,7 @@
 				7F2891CA28B52E9B00B501B6 /* EnterAddressFlow.storyboard */,
 				7F5F834728B7A7FA008B8EDB /* Addresses.storyboard */,
 				7F5F836528B8482E008B8EDB /* Settings.storyboard */,
+				7F2CD20E296DD6A3000CA26E /* LitSwap.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 		7F28920628B538F400B501B6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F2CD210296DD702000CA26E /* LitSwap */,
 				7F5F834928B7AB1A008B8EDB /* Addresses */,
 				7F28920928B539DB00B501B6 /* EnterAddressFlow */,
 				7F5F836B28B8493C008B8EDB /* Home */,
@@ -412,6 +418,14 @@
 				7F5F833D28B6C4F3008B8EDB /* EnterNicknameViewController.swift */,
 			);
 			path = EnterAddressFlow;
+			sourceTree = "<group>";
+		};
+		7F2CD210296DD702000CA26E /* LitSwap */ = {
+			isa = PBXGroup;
+			children = (
+				7F2CD213296DD83B000CA26E /* CreateLitSwapViewController.swift */,
+			);
+			path = LitSwap;
 			sourceTree = "<group>";
 		};
 		7F5F833528B66319008B8EDB /* ViewControllers */ = {
@@ -743,6 +757,7 @@
 				7F28920128B5346200B501B6 /* Akkurat-Light.otf in Resources */,
 				7F5F835028B7C47D008B8EDB /* EulerLoanCollectionViewCell.xib in Resources */,
 				7FD1CFC828F085DE00363447 /* main.jsbundle in Resources */,
+				7F2CD20F296DD6A3000CA26E /* LitSwap.storyboard in Resources */,
 				7F2891CC28B52E9B00B501B6 /* EnterAddressFlow.storyboard in Resources */,
 				7F5F836628B8482E008B8EDB /* Settings.storyboard in Resources */,
 			);
@@ -924,6 +939,7 @@
 				7F5F839928B94B9A008B8EDB /* HTTPMethod.swift in Sources */,
 				7F2891CF28B52E9B00B501B6 /* Yacht.xcdatamodeld in Sources */,
 				7FA20AE428EF6B3A0044F2FA /* LedgerScanTableViewCell.swift in Sources */,
+				7F2CD214296DD83B000CA26E /* CreateLitSwapViewController.swift in Sources */,
 				7F5F835428B7C75F008B8EDB /* EulerLoanCollectionViewCell.swift in Sources */,
 				7F5F83A428BD0586008B8EDB /* EulerAccount.swift in Sources */,
 				7F5F836F28B90B75008B8EDB /* SettingNetworkTableViewCell.swift in Sources */,

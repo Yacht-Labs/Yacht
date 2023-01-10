@@ -1,15 +1,9 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
-export default function YachtButton({ onPress, title, type }) {
-    let bc;
-    if (type == 'info') {
-        bc = '#736356';
-    } else if (type == 'action') {
-        bc = '#AD1D1D';
-    }
+export default function YachtButton({ onPress, title, style }) {
     return (
-        <View style={[{ backgroundColor: bc }, styles.buttonContainer]}>
+        <View style={[style, styles.buttonContainer]}>
         <TouchableOpacity 
             onPress={onPress} 
             activeOpacity={0.8} >
@@ -27,7 +21,6 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     buttonContainer: {
-        flex: 1,
         justifyContent: 'center',
         elevation: 8,
         borderRadius: 10,

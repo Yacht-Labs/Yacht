@@ -27,11 +27,15 @@ class HomeViewController: UITabBarController {
         
         let storyboard2 = UIStoryboard(name: "Settings", bundle: nil)
         let vc2 = storyboard2.instantiateViewController(identifier: "SettingsViewController") as SettingsViewController
+        
+        let storyboard3 = UIStoryboard(name: "LitSwap", bundle: nil)
+        let vc3 = storyboard3.instantiateViewController(identifier: "CreateLitSwapViewController") as CreateLitSwapViewController
  
-
         viewControllers = [
             createNavController(for: vc1, tabTitle: "Accounts", viewTitle: "Accounts", image: UIImage(systemName: "house")!),
             createNavController(for: vc2, tabTitle: "Settings", viewTitle: "Settings", image: UIImage(systemName: "gearshape")!),
+            createNavController(for: vc3, tabTitle: "Swaps", viewTitle: "Lit Yacht Swap", image: UIImage(systemName: "rectangle.2.swap")!),
+            
         ]
     }
     
