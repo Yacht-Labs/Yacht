@@ -1,19 +1,28 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import YachtTextInput from "./YachtTextInput";
+import { AVAILABLE_CHAINS } from "../constants";
 
-export default function SwapParamCard({ onPressChainSelect, isOrigin }) {
+export default function SwapParamCard({ onPressChainSelect, isOrigin, params, setParams }) {
+    let chainName;
+    if(params.chain === '') {
+        chainName = 'Select Chain';
+    } else {
+        const chainObj = AVAILABLE_CHAINS.find(x => x.litChainId === params.chain)
+        chainName = chainObj?.label;
+    }
+
     return (
       <View style={styles.card}>
         <Text style={styles.heading}>{ isOrigin ? 'ORIGIN ' : 'DESTINATION'}</Text>
         <TouchableOpacity 
             onPress={onPressChainSelect} 
             activeOpacity={0.8} >
-            <Text style={styles.chainSelect}>Select Chain</Text>
+            <Text style={styles.chainSelect}>{chainName}</Text>
         </TouchableOpacity>
-        <YachtTextInput style={styles.input} label={'Token Address'} />
-        <YachtTextInput style={styles.input} label={'Amount'} />
-        { !isOrigin && <YachtTextInput style={styles.input} label={'Recipient Address'} />}
+        <YachtTextInput params={params} setParams={setParams} style={styles.input} label={'Token Address'} inputKey={"tokenAddress"} />
+        <YachtTextInput params={params} setParams={setParams} style={styles.input} label={'Amount'} inputKey={"amount"} />
+        { !isOrigin && <YachtTextInput params={params} setParams={setParams} style={styles.input} label={'Recipient Address'} inputKey={"counterPartyAddress"}/>}
       </View>);
 }
 

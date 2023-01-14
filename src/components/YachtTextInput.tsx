@@ -1,12 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import { View, StyleSheet, Text, TextInput } from "react-native";
 
-export default function YachtTextInput({ label, onChangeText, style }) {
+export default function YachtTextInput({ label, style, params, setParams, inputKey }) {
+    
     return (
         <View style={style}>
             <Text style={styles.label}>{label}</Text>
             <TextInput  style={styles.input}
-                        onChangeText={onChangeText} />
+                        value={params[inputKey]}
+                        onChangeText={(text) => setParams({
+                            ...params,
+                            [inputKey]: text
+                        })} />
         </View>
     );
 };
