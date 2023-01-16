@@ -726,7 +726,7 @@
 			);
 			mainGroup = 7F2891B828B52E9B00B501B6;
 			packageReferences = (
-				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */,
+				7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */,
 			);
 			productRefGroup = 7F2891C228B52E9B00B501B6 /* Products */;
 			projectDirPath = "";
@@ -2216,7 +2216,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */ = {
+		7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
@@ -2229,7 +2229,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		7FEA2D8A28D2C34E00FF6DAB /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke" */;
+			package = 7FEA2D8928D2C34E00FF6DAB /* XCRemoteSwiftPackageReference "Nuke.git" */;
 			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -20,7 +20,7 @@ export default function SwapParamCard({ onPressChainSelect, isOrigin, params, se
             activeOpacity={0.8} >
             <Text style={styles.chainSelect}>{chainName}</Text>
         </TouchableOpacity>
-        <YachtTextInput params={params} setParams={setParams} style={styles.input} label={'Token Address'} inputKey={"tokenAddress"} />
+        <YachtTextInput params={params} setParams={setParams} style={styles.input} label={'Token Contract Address'} inputKey={"tokenAddress"} />
         <YachtTextInput params={params} setParams={setParams} style={styles.input} label={'Amount'} inputKey={"amount"} />
         { !isOrigin && <YachtTextInput params={params} setParams={setParams} style={styles.input} label={'Recipient Address'} inputKey={"counterPartyAddress"}/>}
       </View>);
