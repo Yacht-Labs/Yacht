@@ -31,10 +31,15 @@ class HomeViewController: UITabBarController {
         let storyboard3 = UIStoryboard(name: "LitSwap", bundle: nil)
         let vc3 = storyboard3.instantiateViewController(identifier: "CreateLitSwapViewController") as CreateLitSwapViewController
  
+        //let nc3 = UINavigationController(rootViewController: vc3)
+        vc3.tabBarItem.title = "Swaps"
+        vc3.tabBarItem.image = UIImage(systemName: "rectangle.2.swap")!
+        
         viewControllers = [
             createNavController(for: vc1, tabTitle: "Accounts", viewTitle: "Accounts", image: UIImage(systemName: "house")!),
             createNavController(for: vc2, tabTitle: "Settings", viewTitle: "Settings", image: UIImage(systemName: "gearshape")!),
-            createNavController(for: vc3, tabTitle: "Swaps", viewTitle: "New Lit Yacht Swap", image: UIImage(systemName: "rectangle.2.swap")!),
+            vc3
+//            createNavController(for: vc3, tabTitle: "Swaps", viewTitle: "New Lit Yacht Swap", image: UIImage(systemName: "rectangle.2.swap")!),
             
         ]
     }
@@ -46,8 +51,8 @@ class HomeViewController: UITabBarController {
           let navController = UINavigationController(rootViewController: rootViewController)
           navController.tabBarItem.title = tabTitle
           navController.tabBarItem.image = image
-          navController.navigationBar.prefersLargeTitles = true
-          rootViewController.navigationItem.title = viewTitle
+          //navController.navigationBar.prefersLargeTitles = true
+          //rootViewController.navigationItem.title = viewTitle
           return navController
       }
 

@@ -3,6 +3,9 @@ import { View, StyleSheet, Text, ScrollView, Image } from "react-native";
 import SwapParamCard from "../components/SwapParamCard";
 import YachtButton from "../components/YachtButton";
 import SelectChainModal from "../components/SelectChainModal";
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { useHeaderHeight } from '@react-navigation/elements'
+import { useNavigation } from '@react-navigation/native';
 
 export default function CreateLitSwapView() {
     const [chainAParams, setChainAParams] = useState({
@@ -23,19 +26,21 @@ export default function CreateLitSwapView() {
 
     const [modalVisible, setModalVisible] = useState(false);
     const [isSelectingChainA, setIsSelectingChainA] = useState(false);
+    const nav = useNavigation();
 
     async function createSwapPressed() {
-        const response = await fetch('https://api.yachtlabs.io/lit/mintSwapPkp', {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                chainAParams,
-                chainBParams,
-            }),
-        });
+        // const response = await fetch('https://api.yachtlabs.io/lit/mintSwapPkp', {
+        //     method: 'POST',
+        //     headers: {
+        //         Accept: 'application/json',
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //         chainAParams,
+        //         chainBParams,
+        //     }),
+        // });
+        nav.navigate('Send Tokens To Swap');
     }
 
     function specificChainSelected(litChainId: string) {
@@ -48,8 +53,10 @@ export default function CreateLitSwapView() {
         setModalVisible(true);
     }
 
+    const headerHeight = useHeaderHeight();
+
     return (
-        <View style={styles.mainContainer}>
+        <SafeAreaView style={[{paddingTop: headerHeight}, styles.mainContainer]}>
             <ScrollView>
                 <View style={styles.scrollContainer}>
                     <SwapParamCard params={chainAParams} setParams={setChainAParams} isOrigin={true} onPressChainSelect={() => selectChainTouched(true)} />
@@ -59,9 +66,9 @@ export default function CreateLitSwapView() {
                     <SwapParamCard params={chainBParams} setParams={setChainBParams} isOrigin={false} onPressChainSelect={() => selectChainTouched(false)}/>
                 </View>
             </ScrollView>
-            <YachtButton style={styles.button} onPress={createSwapPressed()} title={'Create Swap'} />
+            <YachtButton style={styles.button} onPress={() => createSwapPressed()} title={'Create Swap'} />
             <SelectChainModal modalVisible={modalVisible} dismissPressed={() => setModalVisible(false)} onPressSpecificChain={(litChainId: string) => specificChainSelected(litChainId)} />
-        </View>
+        </SafeAreaView>
     );
 }
 
@@ -71,7 +78,8 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flexDirection: 'column',
-    marginBottom: 100
+    marginBottom: 80,
+    // paddingTop: 100
   },
   test: {
     fontSize: 50,

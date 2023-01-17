@@ -16,8 +16,9 @@ class CreateLitSwapViewController: UIViewController {
         let statusBarHeight = getStatusBarHeight()
         let totalHeight = navHeight + statusBarHeight
         let heightOffset = totalHeight + 60
-        let reactView = getReactRootView(moduleName: "CreateLitSwapView")
-        reactView.frame = CGRect(x: 0, y: totalHeight, width: self.view.frame.width, height: self.view.frame.height - heightOffset)
+        let reactView = getReactRootView(moduleName: "LitSwapNavigator")
+//        reactView.frame = CGRect(x: 0, y: totalHeight, width: self.view.frame.width, height: self.view.frame.height - heightOffset)
+        reactView.frame = self.view.frame
         self.view.addSubview(reactView)
     }
 
