@@ -440,7 +440,7 @@ extension AccountDetailViewController: UITableViewDataSource, UITableViewDelegat
             }
         case 4:
             let storyboard = UIStoryboard(name: "Addresses", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "AssetManagerViewController") as AssetManagerViewController
+            let vc = storyboard.instantiateViewController(identifier: "SetIRNotificationViewController") as SetIRNotificationViewController
             let token = shownEulerTokens[indexPath.row]
             vc.tokenAddress = token.address
             vc.supplyAPY = token.supplyAPY
