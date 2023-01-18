@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { View, StyleSheet, Text, ScrollView, Image } from "react-native";
 import SwapParamCard from "../components/SwapParamCard";
 import YachtButton from "../components/YachtButton";
@@ -6,6 +6,7 @@ import SelectChainModal from "../components/SelectChainModal";
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useHeaderHeight } from '@react-navigation/elements'
 import { useNavigation } from '@react-navigation/native';
+import SwapContext from '../context/SwapContext';
 
 export default function CreateLitSwapView() {
     const [chainAParams, setChainAParams] = useState({
@@ -26,6 +27,8 @@ export default function CreateLitSwapView() {
 
     const [modalVisible, setModalVisible] = useState(false);
     const [isSelectingChainA, setIsSelectingChainA] = useState(false);
+    const [swapContext, setSwapContext] = useContext(SwapContext);
+
     const nav = useNavigation();
 
     async function createSwapPressed() {
@@ -40,6 +43,7 @@ export default function CreateLitSwapView() {
         //         chainBParams,
         //     }),
         // });
+        setSwapContext({ chainAParams, chainBParams })
         nav.navigate('Send Tokens To Swap');
     }
 
@@ -78,8 +82,8 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flexDirection: 'column',
-    marginBottom: 80,
-    // paddingTop: 100
+    flex: 1,
+    marginBottom: 20
   },
   test: {
     fontSize: 50,
@@ -97,6 +101,5 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: '#FF4F13',
     marginHorizontal: 10,
-    marginBottom: 200
   }
 });

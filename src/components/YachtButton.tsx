@@ -3,13 +3,13 @@ import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default function YachtButton({ onPress, title, style }) {
     return (
-        <View style={[style, styles.buttonContainer]}>
         <TouchableOpacity 
             onPress={onPress} 
             activeOpacity={0.8} >
-            <Text style={styles.buttonText}>{title}</Text>
+            <View style={[style, styles.buttonContainer]}>
+                <Text style={styles.buttonText}>{title}</Text>
+            </View>
         </TouchableOpacity>
-        </View>
     );
 }
 
