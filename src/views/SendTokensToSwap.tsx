@@ -4,24 +4,25 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useHeaderHeight } from '@react-navigation/elements'
 import { useNavigation } from '@react-navigation/native';           
 import YachtButton from "../components/YachtButton";
-import SwapContext from "../context/SwapContext";
+import {SwapContext} from "../context/SwapContext";
+import Clipboard from '@react-native-clipboard/clipboard';
 
 export default function SendTokensToSwap() {
     const headerHeight = useHeaderHeight();
     const [swapContext, setSwapContext] = useContext(SwapContext); 
     const nav = useNavigation();
-
+    console.log(swapContext)
     return (
         <SafeAreaView style={[{ paddingTop: headerHeight}, styles.mainContainer]}>
             <ScrollView style={styles.topContainer}>
                 <Text style={styles.topText}>This transaction will send {swapContext.chainAParams.amount} tokens to the swap PKP. Once the counterparty sends their {swapContext.chainBParams.amount} tokens to the swap PKP, your swap is ready.</Text>
+                <YachtButton onPress={() => Clipboard.setString(swapContext.address)} style={styles.pkpCopyButton} title={swapContext.address} />
                 <View style={styles.figureContainer}>
                     <Image style={styles.swapFigure} source={require('../assets/images/swapFigure1.png')} />
                 </View>
                 <Text style={styles.bottomText}>If the swap is not completed by the counterparty within 72 hours your tokens will be returned to you.
                 </Text>      
             </ScrollView>
-
             <YachtButton onPress={() => nav.navigate('Complete Swap')} style={styles.button} title={'Send'} />
         </SafeAreaView>
     );
@@ -42,8 +43,8 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         fontFamily: 'Akkurat',
         fontSize: 16,
-        paddingBottom: 20
-    },
+        paddingBottom: 8
+        },
     bottomText: {
         paddingHorizontal: 20,
         paddingTop: 20,
@@ -63,5 +64,11 @@ const styles = StyleSheet.create({
         height: 50,
         backgroundColor: '#FF4F13',
         marginHorizontal: 10,
-      }
+    },
+    pkpCopyButton: {
+        marginVertical: 8,
+        height: 40,
+        backgroundColor: '#78A1BB',
+        marginHorizontal: 10,
+    }
 });

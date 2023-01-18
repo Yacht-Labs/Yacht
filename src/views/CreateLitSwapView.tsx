@@ -6,7 +6,7 @@ import SelectChainModal from "../components/SelectChainModal";
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useHeaderHeight } from '@react-navigation/elements'
 import { useNavigation } from '@react-navigation/native';
-import SwapContext from '../context/SwapContext';
+import { SwapContext } from '../context/SwapContext';
 
 export default function CreateLitSwapView() {
     const [chainAParams, setChainAParams] = useState({
@@ -24,7 +24,8 @@ export default function CreateLitSwapView() {
         decimals: "",
         tokenAddress: "",
     });
-
+    const [disableButton, setDisableButton] = useState(false);
+    const [fetching, setFetching] = useState(false);
     const [modalVisible, setModalVisible] = useState(false);
     const [isSelectingChainA, setIsSelectingChainA] = useState(false);
     const [swapContext, setSwapContext] = useContext(SwapContext);
@@ -32,19 +33,30 @@ export default function CreateLitSwapView() {
     const nav = useNavigation();
 
     async function createSwapPressed() {
-        // const response = await fetch('https://api.yachtlabs.io/lit/mintSwapPkp', {
-        //     method: 'POST',
-        //     headers: {
-        //         Accept: 'application/json',
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //         chainAParams,
-        //         chainBParams,
-        //     }),
-        // });
-        setSwapContext({ chainAParams, chainBParams })
+        setFetching(true)
+        setDisableButton(true)
+        try {
+        const response = await fetch('https://api.yachtlabs.io/lit/mintSwapPkp', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chainAParams,
+                chainBParams,
+            }),
+        });
+        const data = await response.json();
+        setFetching(false);
+        setDisableButton(false);
+        setSwapContext({ chainAParams, chainBParams, ...data });
         nav.navigate('Send Tokens To Swap');
+      } catch(err) {
+        console.log(err)
+        setFetching(false);
+        setDisableButton(false);
+      }
     }
 
     function specificChainSelected(litChainId: string) {
@@ -70,7 +82,7 @@ export default function CreateLitSwapView() {
                     <SwapParamCard params={chainBParams} setParams={setChainBParams} isOrigin={false} onPressChainSelect={() => selectChainTouched(false)}/>
                 </View>
             </ScrollView>
-            <YachtButton style={styles.button} onPress={() => createSwapPressed()} title={'Create Swap'} />
+            <YachtButton disabled={disableButton} style={styles.button} onPress={() => createSwapPressed()} title={'Create Swap'} fetching={fetching}/>
             <SelectChainModal modalVisible={modalVisible} dismissPressed={() => setModalVisible(false)} onPressSpecificChain={(litChainId: string) => specificChainSelected(litChainId)} />
         </SafeAreaView>
     );

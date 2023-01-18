@@ -4,32 +4,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CreateLitSwapView from '../views/CreateLitSwapView';
 import SendTokensToSwap from '../views/SendTokensToSwap';
 import CompleteSwap from '../views/CompleteSwap';
-import SwapContext from '../context/SwapContext';
+import { SwapContextProvider } from '../context/SwapContext';
 
 const Stack = createNativeStackNavigator();
 
 export default function LitSwapNavigator() {
-    const swapData = {
-        chainAParams: {
-            counterPartyAddress: "",
-            chain: "",
-            amount: "",
-            decimals: "",
-            tokenAddress: "",
-        },
-        chainBParams: {
-            counterPartyAddress: "",
-            chain: "",
-            amount: "",
-            decimals: "",
-            tokenAddress: "",
-        },
-    }
-
-    const [swapContext, setSwapContext] = useState(swapData);
 
     return(
-        <SwapContext.Provider value={[swapContext, setSwapContext]}>
+        <SwapContextProvider>
             <NavigationContainer>
                 <Stack.Navigator
                     screenOptions={{
@@ -48,6 +30,6 @@ export default function LitSwapNavigator() {
                     <Stack.Screen name="Complete Swap" component={CompleteSwap} />
                 </Stack.Navigator>
             </NavigationContainer>
-        </SwapContext.Provider>
+        </SwapContextProvider>
     );
 };

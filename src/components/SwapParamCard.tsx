@@ -2,6 +2,7 @@ import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import YachtTextInput from "./YachtTextInput";
 import { AVAILABLE_CHAINS } from "../constants";
+import YachtButton from "./YachtButton";
 
 export default function SwapParamCard({ onPressChainSelect, isOrigin, params, setParams }) {
     let chainName;
@@ -15,13 +16,13 @@ export default function SwapParamCard({ onPressChainSelect, isOrigin, params, se
     return (
       <View style={styles.card}>
         <Text style={styles.heading}>{ isOrigin ? 'ORIGIN ' : 'DESTINATION'}</Text>
-        <TouchableOpacity 
-            onPress={onPressChainSelect} 
-            activeOpacity={0.8} >
-            <Text style={styles.chainSelect}>{chainName}</Text>
-        </TouchableOpacity>
+        <YachtButton onPress={onPressChainSelect} title={chainName} style={styles.chainSelectButton}/>
         <YachtTextInput params={params} setParams={setParams} style={styles.input} label={'Token Contract Address'} inputKey={"tokenAddress"} />
-        <YachtTextInput params={params} setParams={setParams} style={styles.input} label={'Amount'} inputKey={"amount"} />
+        <View style={styles.amountDecimalContainer}>
+            <YachtTextInput params={params} setParams={setParams} style={styles.halfInput} label={'Amount'} inputKey={"amount"} />
+            <YachtTextInput params={params} setParams={setParams} style={[styles.halfInput, {marginRight: 20 }]} label={'Decimals'} inputKey={"decimals"} />
+        </View>
+        
         { !isOrigin && <YachtTextInput params={params} setParams={setParams} style={styles.input} label={'Recipient Address'} inputKey={"counterPartyAddress"}/>}
       </View>);
 }
@@ -52,5 +53,20 @@ const styles = StyleSheet.create({
     input: {
         marginTop: 16,
         marginHorizontal: 20
+    },
+    halfInput: {
+        flex: 1,
+        marginLeft: 20,
+        marginTop: 16,
+        marginBottom: 10
+    },
+    amountDecimalContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    chainSelectButton: {
+        backgroundColor: '#78A1BB',
+        marginHorizontal: 20,
+        marginTop: 8
     }
 });
