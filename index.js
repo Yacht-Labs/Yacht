@@ -1,4 +1,6 @@
-import "./polyfill";
+//import "./polyfill";
+import "react-native-get-random-values";
+import "@ethersproject/shims";
 import { AppRegistry } from "react-native";
 // import LedgerConnect from "./src/LedgerConnect";
 // import LedgerAddressSelect from "./src/LedgerAddressSelect";

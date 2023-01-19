@@ -127,3 +127,7 @@ package-lock.json
 
 # Local testing for typescript files
 jsRunner.ts
+
+# stuff that is private
+.env
+env.ts

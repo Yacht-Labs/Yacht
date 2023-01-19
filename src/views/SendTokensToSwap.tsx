@@ -6,12 +6,36 @@ import { useNavigation } from '@react-navigation/native';
 import YachtButton from "../components/YachtButton";
 import {SwapContext} from "../context/SwapContext";
 import Clipboard from '@react-native-clipboard/clipboard';
+import { ethers } from "ethers";
+import { getID_TO_PROVIDER } from "../utils/getProviderByChain";
+import { AVAILABLE_CHAINS } from "../constants";
+import { PRIVATE_KEY } from "../../env";
 
 export default function SendTokensToSwap() {
     const headerHeight = useHeaderHeight();
     const [swapContext, setSwapContext] = useContext(SwapContext); 
+    const [disableButton, setDisableButton] = useState(false);
+    const [fetching, setFetching] = useState(false);
     const nav = useNavigation();
-    console.log(swapContext)
+    
+    async function sendERC20Tokens() {
+        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainAParams.chain)?.chainId;
+        const provider = getID_TO_PROVIDER(chainId);
+        const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
+        const contract = new ethers.Contract(swapContext.chainAParams.tokenAddress, [
+            "function transfer(address to, uint amount) public returns (bool)"
+        ], wallet);
+        const tx = await contract.transfer(swapContext.address, swapContext.chainAParams.amount);
+        console.log(tx);
+    }
+
+    async function handleSend() {
+        setFetching(true);
+        setDisableButton(true);
+        await sendERC20Tokens();
+        nav.navigate('Complete Swap');
+    }
+
     return (
         <SafeAreaView style={[{ paddingTop: headerHeight}, styles.mainContainer]}>
             <ScrollView style={styles.topContainer}>
@@ -23,7 +47,7 @@ export default function SendTokensToSwap() {
                 <Text style={styles.bottomText}>If the swap is not completed by the counterparty within 72 hours your tokens will be returned to you.
                 </Text>      
             </ScrollView>
-            <YachtButton onPress={() => nav.navigate('Complete Swap')} style={styles.button} title={'Send'} />
+            <YachtButton disabled={disableButton} fetching={fetching} onPress={() => handleSend()} style={styles.button} title={'Send'} />
         </SafeAreaView>
     );
 }
