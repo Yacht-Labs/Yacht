@@ -7,10 +7,11 @@ interface YachtButtonProps {
     title: string,
     style: StyleProp<ViewStyle>,
     disabled: boolean,
-    fetching: boolean
+    fetching: boolean,
+    textStyle: StyleProp<ViewStyle>
 }
 
-export default function YachtButton({ onPress, title, style, disabled, fetching }: YachtButtonProps) {
+export default function YachtButton({ onPress, title, style, disabled, fetching, textStyle }: YachtButtonProps) {
     const animatedValue = useRef(new Animated.Value(0)).current;
     const scale = animatedValue.interpolate({inputRange: [0, 1], outputRange: [1, .9]});
     const pulse = () => {
@@ -29,34 +30,17 @@ export default function YachtButton({ onPress, title, style, disabled, fetching 
         return animation;
     }
 
-    // const animation = useSharedValue(0);
-    // const pulse = () => {
-    //     animation.value = withRepeat(
-    //         withTiming(1, {
-    //             duration: 2000,
-    //             easing: Easing.linear
-    //         }),
-    //         1,true
-    //     )
-    // }
-
     useEffect(() => {
         return fetching ? pulse().start() : pulse().stop();
     }, [fetching])
     
-    // const animatedStyles = useAnimatedStyle(() => {
-    //     const scale = interpolate(animation.value, [0, 1], [1, 1.1],Extrapolation.CLAMP)
-    //     return {
-    //         transform: [{scale}],
-    //     }
-    // })
     return (
         <TouchableOpacity 
             onPress={onPress}
             disabled={disabled || fetching} 
             activeOpacity={0.8} >
             <Animated.View style={[style, styles.buttonContainer, disabled && {backgroundColor: 'gray'}, fetching && {transform: [{scale}]}]}>
-                <Text style={styles.buttonText}>{title}</Text>
+                <Text style={[styles.buttonText, textStyle]}>{title}</Text>
             </Animated.View>
         </TouchableOpacity>
     );

@@ -24,8 +24,7 @@ export default function CreateLitSwapView() {
         decimals: "",
         tokenAddress: "",
     });
-    const [disableButton, setDisableButton] = useState(false);
-    const [fetching, setFetching] = useState(false);
+    const [creatingSwap, setCreatingSwap] = useState(false);
     const [modalVisible, setModalVisible] = useState(false);
     const [isSelectingChainA, setIsSelectingChainA] = useState(false);
     const [swapContext, setSwapContext] = useContext(SwapContext);
@@ -33,8 +32,7 @@ export default function CreateLitSwapView() {
     const nav = useNavigation();
 
     async function createSwapPressed() {
-        setFetching(true)
-        setDisableButton(true)
+        setCreatingSwap(true);
         try {
         const response = await fetch('https://api.yachtlabs.io/lit/mintSwapPkp', {
             method: 'POST',
@@ -48,14 +46,12 @@ export default function CreateLitSwapView() {
             }),
         });
         const data = await response.json();
-        setFetching(false);
-        setDisableButton(false);
+        setCreatingSwap(false);
         setSwapContext({ chainAParams, chainBParams, ...data });
         nav.navigate('Send Tokens To Swap');
       } catch(err) {
         console.log(err)
-        setFetching(false);
-        setDisableButton(false);
+        setCreatingSwap(false);
       }
     }
 
@@ -82,7 +78,7 @@ export default function CreateLitSwapView() {
                     <SwapParamCard params={chainBParams} setParams={setChainBParams} isOrigin={false} onPressChainSelect={() => selectChainTouched(false)}/>
                 </View>
             </ScrollView>
-            <YachtButton disabled={disableButton} style={styles.button} onPress={() => createSwapPressed()} title={'Create Swap'} fetching={fetching}/>
+            <YachtButton disabled={creatingSwap} style={styles.button} onPress={() => createSwapPressed()} title={'Create Swap'} fetching={creatingSwap}/>
             <SelectChainModal modalVisible={modalVisible} dismissPressed={() => setModalVisible(false)} onPressSpecificChain={(litChainId: string) => specificChainSelected(litChainId)} />
         </SafeAreaView>
     );
