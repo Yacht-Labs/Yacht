@@ -8,9 +8,7 @@ export const getID_TO_PROVIDER = (id: number): JsonRpcProvider => {
         "https://eth-goerli.g.alchemy.com/v2/RZYixkcKT7io37tj7KCobPlyVB1IOciO"
       );
     case 80001: // Mumbai
-      return new JsonRpcProvider(
-        "https://endpoints.omniatech.io/v1/matic/mumbai/public"
-      );
+      return new JsonRpcProvider("https://rpc.ankr.com/polygon_mumbai");
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }

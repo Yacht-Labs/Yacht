@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { View, StyleSheet, Text, TouchableOpacity, StyleProp, ViewStyle, Animated } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity, StyleProp, ViewStyle, TextStyle, Animated } from "react-native";
 
 
 interface YachtButtonProps {
@@ -8,7 +8,7 @@ interface YachtButtonProps {
     style: StyleProp<ViewStyle>,
     disabled: boolean,
     fetching: boolean,
-    textStyle: StyleProp<ViewStyle>
+    textStyle: StyleProp<TextStyle>  
 }
 
 export default function YachtButton({ onPress, title, style, disabled, fetching, textStyle }: YachtButtonProps) {

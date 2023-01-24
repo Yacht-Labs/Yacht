@@ -25,7 +25,8 @@ export default function SendTokensToSwap() {
         const contract = new ethers.Contract(swapContext.chainAParams.tokenAddress, [
             "function transfer(address to, uint amount) public returns (bool)"
         ], wallet);
-        const tx = await contract.transfer(swapContext.address, swapContext.chainAParams.amount);
+        const amountWei = ethers.utils.parseUnits(swapContext.chainAParams.amount, swapContext.chainAParams.decimals);
+        const tx = await contract.transfer(swapContext.address, amountWei);
         console.log(tx);
     }
 
@@ -33,6 +34,8 @@ export default function SendTokensToSwap() {
         setFetching(true);
         setDisableButton(true);
         await sendERC20Tokens();
+        setFetching(false);
+        setDisableButton(false);
         nav.navigate('Complete Swap');
     }
 
@@ -40,7 +43,7 @@ export default function SendTokensToSwap() {
         <SafeAreaView style={[{ paddingTop: headerHeight}, styles.mainContainer]}>
             <ScrollView style={styles.topContainer}>
                 <Text style={styles.topText}>This transaction will send {swapContext.chainAParams.amount} tokens to the swap PKP. Once the counterparty sends their {swapContext.chainBParams.amount} tokens to the swap PKP, your swap is ready.</Text>
-                <YachtButton onPress={() => Clipboard.setString(swapContext.address)} style={styles.pkpCopyButton} title={swapContext.address} />
+                <YachtButton onPress={() => Clipboard.setString(swapContext.address)} style={styles.pkpCopyButton} textStyle={styles.pkpCopyButtonText} title={swapContext.address} />
                 <View style={styles.figureContainer}>
                     <Image style={styles.swapFigure} source={require('../assets/images/swapFigure1.png')} />
                 </View>
@@ -68,12 +71,16 @@ const styles = StyleSheet.create({
         fontFamily: 'Akkurat',
         fontSize: 16,
         paddingBottom: 8
-        },
+    },
     bottomText: {
         paddingHorizontal: 20,
         paddingTop: 20,
         fontFamily: 'Akkurat-LightItalic',
         fontSize: 16
+    },
+    pkpCopyButtonText: {
+        fontFamily: 'Akkurat',
+        fontSize: 12,
     },
     swapFigure: {
         height: 320,

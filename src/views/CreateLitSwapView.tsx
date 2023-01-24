@@ -34,7 +34,7 @@ export default function CreateLitSwapView() {
     async function createSwapPressed() {
         setCreatingSwap(true);
         try {
-        const response = await fetch('https://api.yachtlabs.io/lit/mintSwapPkp', {
+        const response = await fetch('http://localhost:3000/lit/mintSwapPkp', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

@@ -5,6 +5,7 @@ import CreateLitSwapView from '../views/CreateLitSwapView';
 import SendTokensToSwap from '../views/SendTokensToSwap';
 import CompleteSwap from '../views/CompleteSwap';
 import { SwapContextProvider } from '../context/SwapContext';
+import MySwaps from '../views/MySwaps';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +25,8 @@ export default function LitSwapNavigator() {
                             backgroundColor: 'white'
                         },
                         headerTransparent: true
-                }}>
+                }}> 
+                    <Stack.Screen name="My Swaps" component={MySwaps} />
                     <Stack.Screen name="New Lit Yacht Swap" component={CreateLitSwapView} />
                     <Stack.Screen name="Send Tokens To Swap" component={SendTokensToSwap} />
                     <Stack.Screen name="Complete Swap" component={CompleteSwap} />
@@ -33,3 +35,5 @@ export default function LitSwapNavigator() {
         </SwapContextProvider>
     );
 };
+
+// 
