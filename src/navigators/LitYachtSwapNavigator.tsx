@@ -26,7 +26,7 @@ export default function LitSwapNavigator() {
                         },
                         headerTransparent: true
                 }}> 
-                    <Stack.Screen name="My Swaps" component={MySwaps} />
+                    <Stack.Screen name="Create Lit Swap" component={CreateLitSwapView} />
                     <Stack.Screen name="New Lit Yacht Swap" component={CreateLitSwapView} />
                     <Stack.Screen name="Send Tokens To Swap" component={SendTokensToSwap} />
                     <Stack.Screen name="Complete Swap" component={CompleteSwap} />
@@ -36,4 +36,4 @@ export default function LitSwapNavigator() {
     );
 };
 
-// 
+// <Stack.Screen name="My Swaps" component={MySwaps} />

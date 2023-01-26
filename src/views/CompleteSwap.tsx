@@ -54,27 +54,30 @@ export default function CompleteSwap() {
         setPkpBalance(parsed);
     };
 
+    const fetchMaxFeePerGas = async () => {
+        const gas = await getMaxFeePerGas();
+        setMaxFeePerGas(gas);
+    }
+
+    const fetchRequiredGas = async () => {
+        const gas = await getRequiredGas();
+        const parsedFloat = parseFloat(gas) * 1.5;
+        const parsed = parsedFloat.toFixed(6);
+        setRequiredGas(parsed);
+        setSendGasDisabled(false);
+    }
+
+    const fetchWalletBalance = async () => {
+        const bal = await getBalanceOfAddress(swapContext.chainAParams.counterPartyAddress);
+        const parsed = parseFloat(bal).toFixed(6);
+        setWalletBalance(parsed);
+    };
+
     useEffect(() => {
-
+        fetchMaxFeePerGas();
         fetchPkpBalance();
-
-        const fetchWalletBalance = async () => {
-            const bal = await getBalanceOfAddress(swapContext.chainAParams.counterPartyAddress);
-            const parsed = parseFloat(bal).toFixed(6);
-            setWalletBalance(parsed);
-        };
         fetchWalletBalance();
-
-        const fetchRequiredGas = async () => {
-            const gas = await getRequiredGas();
-            const parsedFloat = parseFloat(gas[0]) * 1.5;
-            const parsed = parsedFloat.toFixed(6);
-            setRequiredGas(parsed);
-            setMaxFeePerGas(gas[1]);
-            setSendGasDisabled(false);
-        }
-        fetchRequiredGas();
-        
+        checkSwapStatus();        
     },[]);
 
     async function getBalanceOfAddress(address: string): Promise<string> {
@@ -85,7 +88,14 @@ export default function CompleteSwap() {
         return balanceInEth.toString();
     }
 
-    async function getRequiredGas(): Promise<[string, string]> {
+    async function getMaxFeePerGas(): Promise<string> {
+        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
+        const provider = getID_TO_PROVIDER(chainId) as ethers.providers.JsonRpcProvider;
+        const maxFeePerGas =(await provider.getFeeData()).maxFeePerGas as BigNumber;
+        return maxFeePerGas.toString();
+    }
+
+    async function getRequiredGas(): Promise<string> {
         const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
         const provider = getID_TO_PROVIDER(chainId) as ethers.providers.JsonRpcProvider;
         const maxFeePerGas =(await provider.getFeeData()).maxFeePerGas as BigNumber;
@@ -101,29 +111,36 @@ export default function CompleteSwap() {
         const totalGas = (maxFeePerGas.mul(transferGasEstimate).toString());
         console.log(totalGas);
         const formatted = ethers.utils.formatUnits(totalGas, swapContext.chainBParams.decimals) ;
-        return [formatted, maxFeePerGas.toString()];
+        return formatted;
 
     }
 
     async function getSwapStatus(): Promise<SwapStatusResponse> {
         try {
-            const response = await fetch('https://api.yachtlabs.io/lit/runLitAction', {
+            const body = JSON.stringify({
+                pkpPublicKey: swapContext.pkpPublicKey,
+                chainAMaxFeePerGas: maxFeePerGas,
+                chainBMaxFeePerGas: maxFeePerGas,
+            })
+            console.log({body})
+            const response = await fetch('http://localhost:3000/lit/runLitAction', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    pkpPublicKey: swapContext.publicKey,
-                    chainAMaxFeePerGas: maxFeePerGas,
-                    chainBMaxFeePerGas: maxFeePerGas,
+                    pkpPublicKey: swapContext.pkpPublicKey,
+                    chainAMaxFeePerGas: "44000000001",
+                    chainBMaxFeePerGas: "44000000001",
                 }),
             });
+            //console.log(response)
             const data = await response.json();
-            console.log(data);
+            //console.log(data);
             return data;
         } catch(err) {
-            console.log(err);
+            console.log({err});
             return { response: 'error', signatures: {} };
         }
     }
@@ -136,18 +153,22 @@ export default function CompleteSwap() {
             setSwapIsReady(false);
         } else {
             setCheckingStatus(false);
+            console.log(status)
             setLitResponse(status);
             setSwapIsReady(true);
+            fetchRequiredGas();
         }
     }
 
+    console.log(litResponse);
+
     async function sendERC20TokensFromPKP() {
         const provider = getID_TO_PROVIDER(litResponse.response.chainBTransaction.chainId);
-         //let chainBTx = litResponse.response.chainBTransaction;
-        // chainBTx.gasLimit = "36458";
         const signedTx = serialize(litResponse.response.chainBTransaction, litResponse.signatures.chainBSignature.signature)
         const tx = await provider.sendTransaction(signedTx);
-        console.log(tx);
+        console.log({tx});
+        const receipt = await tx.wait(1);
+        console.log({receipt});
     }
 
     async function sendGasToPKP() {
@@ -168,9 +189,8 @@ export default function CompleteSwap() {
         setSendingGas(false);
         fetchPkpBalance();
     }
+    console.log(swapContext);
 
-    console.log(swapContext); 
-  
     return (
         <SafeAreaView style={[{ paddingTop: headerHeight}, styles.mainContainer]}>
             <View style={styles.topArea}>
@@ -179,12 +199,12 @@ export default function CompleteSwap() {
                         { swapIsReady ? <Image style={styles.swapDot} source={require('../assets/images/SwapReadyDot.png')} /> : <Image style={styles.swapDot} source={require('../assets/images/SwapNotReadyDot.png')} /> }
                         { swapIsReady ? <Text style={styles.swapReadyText}>Swap is Ready</Text> : <Text style={styles.swapReadyText}>Swap is Not Ready</Text> }    
                     </View>
-                    <YachtButton onPress={() => checkSwapStatus()} disabled={checkingStatus || sendGasDisabled} fetching={checkingStatus} style={styles.checkStatusButton} title={'Re-Check Status'} textStyle={styles.checkStatusButtonText} />
+                    <YachtButton onPress={() => checkSwapStatus()} disabled={checkingStatus} fetching={checkingStatus} style={styles.checkStatusButton} title={'Re-Check Status'} textStyle={styles.checkStatusButtonText} />
                 </View>
                 <View style={styles.figureContainer}>
                     <Image style={styles.swapFigure} source={require('../assets/images/swapFigure2.png')} />
                 </View>
-                <PkpGasCard style={styles.pkpGasCard} symbol={symbol} pkpBalance={pkpBalance} walletBalance={walletBalance} requiredBalance={requiredGas} disabled={sendGasDisabled} sendingGas={sendingGas} onSendGas={() => sendGasTouched()} />
+                { swapIsReady && <PkpGasCard style={styles.pkpGasCard} symbol={symbol} pkpBalance={pkpBalance} walletBalance={walletBalance} requiredBalance={requiredGas} disabled={sendGasDisabled} sendingGas={sendingGas} onSendGas={() => sendGasTouched()} /> }
             </View>
             <YachtButton onPress={() => sendERC20TokensFromPKP()} disabled={!swapIsReady} style={styles.button} title={'Receive'} />
         </SafeAreaView>

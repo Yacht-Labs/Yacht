@@ -68,8 +68,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         marginTop: 10,
         marginHorizontal: 20,
-        backgroundColor: '#CBD8DD',
-        padding: 10
+        backgroundColor: '#F5F5F5',
+        padding: 10,
+        borderRadius: 10,
     },
     infoRow: {
         flexDirection: 'row',

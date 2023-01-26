@@ -18,6 +18,8 @@
     "buffer": "^6.0.3",
     "dotenv": "^16.0.3",
     "ethers": "^5.7.2",
+    "lottie-ios": "3.4.0",
+    "lottie-react-native": "^5.1.4",
     "react": "18.1.0",
     "react-native": "0.71.0-rc.4",
     "react-native-ble-plx": "^2.0.3",

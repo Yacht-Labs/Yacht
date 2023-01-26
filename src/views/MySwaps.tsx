@@ -1,9 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
-import { View, StyleSheet, Text, FlatList } from "react-native";
+import { View, StyleSheet, Text, FlatList, Dimensions } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useHeaderHeight } from '@react-navigation/elements'
 import { SwapContext } from '../context/SwapContext';
 import SwapTableCard from "../components/SwapTableCard";
+import LottieView from 'lottie-react-native';
+import { getID_TO_PROVIDER } from "../utils/getProviderByChain";
+import { AVAILABLE_CHAINS } from "../constants";
+import { ethers } from "ethers";
+import { useNavigation } from '@react-navigation/native'; 
 
 // const myAddress = '0x7EbE22f5c45f814B888076cBe6395C8f81fDB026';
 const myAddress = '0xE1b89ef648A6068fb4e7bCd943E3a9f4Dc5c530b';
@@ -28,6 +33,8 @@ export default function MySwaps() {
     const [swapContext, setSwapContext] = useContext(SwapContext);
     const [mySwaps, setMySwaps] = useState<[SwapObject] | []>([]);
     const headerHeight = useHeaderHeight();
+    const [loading, setLoading] = useState(false);
+    const nav = useNavigation();
 
     useEffect(() => {
         getMySwaps();
@@ -44,8 +51,28 @@ export default function MySwaps() {
         }
     }
 
-    function handleSwapPressed(swapObject: SwapObject) {
-        console.log(swapObject);
+    async function checkERC20BalanceOfAddress(holderAddress: string, tokenAddress: string, chainId: number): Promise<string> {
+        const provider = getID_TO_PROVIDER(chainId);
+        const abi = ['function balanceOf(address owner) view returns (uint256)'];
+        const contract = new ethers.Contract(tokenAddress, abi, provider);
+        const balance = await contract.balanceOf(holderAddress);
+        return balance;
+    }
+
+    async function handleSwapPressed(swapObject: SwapObject) {
+        setLoading(true);
+        setSwapContext(swapObject);
+        const chainIdA = AVAILABLE_CHAINS.find(x => x.litChainId === swapObject.chainAParams.chain)?.chainId;
+        const pkpBalanceA = await checkERC20BalanceOfAddress(swapObject.address, swapObject.chainAParams.tokenAddress, parseInt(chainIdA));
+        const pkpBalanceAFormatted = ethers.utils.formatUnits(pkpBalanceA, parseInt(swapObject.chainAParams.decimals));
+        const pkpBalanceAFormattedNumber = parseFloat(pkpBalanceAFormatted);
+        if (pkpBalanceAFormattedNumber < parseFloat(swapObject.chainAParams.amount)) {
+            setLoading(false);
+            nav.navigate('Send Tokens To Swap');
+            return;
+        }
+
+        nav.navigate('Complete Swap');
     }
 
     return (
@@ -73,7 +100,12 @@ export default function MySwaps() {
                     <SwapTableCard swapObject={swapObject} onPressSwap={ (swapObject) => handleSwapPressed(swapObject) } />);}}
                         keyExtractor={item => item.pkpPublicKey}
             />
+            { loading &&
+            <View style={styles.animationContainer}>
+                <LottieView style={styles.chartAnimation}source={require('../assets/animations/party.json')} autoPlay loop />
+            </View>}
         </SafeAreaView>
+        
     );
 }
 
@@ -81,4 +113,18 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    chartAnimation: {
+        width: 200,
+        height: 200,
+    },
+    animationContainer: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        height: '100%',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
+
 });

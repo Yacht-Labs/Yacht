@@ -46,6 +46,7 @@ export default function CreateLitSwapView() {
             }),
         });
         const data = await response.json();
+        console.log(data)
         setCreatingSwap(false);
         setSwapContext({ chainAParams, chainBParams, ...data });
         nav.navigate('Send Tokens To Swap');
