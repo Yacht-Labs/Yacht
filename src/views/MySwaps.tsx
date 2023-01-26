@@ -71,7 +71,7 @@ export default function MySwaps() {
             nav.navigate('Send Tokens To Swap');
             return;
         }
-
+        setLoading(false);
         nav.navigate('Complete Swap');
     }
 
