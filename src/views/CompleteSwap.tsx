@@ -9,15 +9,10 @@ import { AVAILABLE_CHAINS } from "../constants";
 import { getID_TO_PROVIDER } from "../utils/getProviderByChain";
 import { ethers, BigNumber, FixedNumber } from "ethers";
 import { PRIVATE_KEY } from "../../env";
-import { serialize } from "@ethersproject/transactions";
-import PkpGasCard from "../components/PkpGasCard";
-import { from } from "rxjs";
 
-export interface GasConfig {
-    maxFeePerGas: string;
-    maxPriorityFeePerGas: string;
-    gasLimit: string;
-  };
+import PkpGasCard from "../components/PkpGasCard";
+// import { from } from "rxjs";
+import { getNativeBalanceOfAddress, getGasConfigForERC20Transfer, GasConfig, sendNativeCoinToAddress, serializeSignatureAndSendTransaction, getERC20Symbol, getTokenBalanceOfAddress } from "../utils/evmInteractions";
 
 interface LitSignature {
     dataSigned: string,
@@ -42,30 +37,44 @@ interface SwapStatusResponse {
 export default function CompleteSwap() {
     const headerHeight = useHeaderHeight();
     const [swapIsReady, setSwapIsReady] = useState(false);
+    const [statusText, setStatusText] = useState<string>("Swap not ready");
     const [checkingStatus, setCheckingStatus] = useState(false);
     const [receiving, setReceiving] = useState(false);
     const [litResponse, setLitResponse] = useState<SwapStatusResponse | undefined>(undefined);
     const [pkpBalance, setPkpBalance] = useState<string>("0");
     const [walletBalance, setWalletBalance] = useState<string>("0");
     const [requiredGas, setRequiredGas] = useState<string>("0");
-    //const [maxFeePerGas, setMaxFeePerGas] = useState<string>("0");
-    //const [maxPriorityFeePerGas, setMaxPriorityFeePerGas] = useState<string>("0");
-    //const [gasLimit, setGasLimit] = useState<string>("0");
+    const [walletSymbol, setWalletSymbol] = useState<string>("");
+    const [walletTokenBalance, setWalletTokenBalance] = useState<string>("0");
     const [swapContext, setSwapContext] = useContext(SwapContext); 
     const [sendGasDisabled, setSendGasDisabled] = useState(true);
     const [sendingGas, setSendingGas] = useState(false);
 
     const symbol = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.symbol;
 
+    const fetchWalletSymbol = async () => {
+        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
+        const symbol = await getERC20Symbol(swapContext.chainBParams.tokenAddress, chainId);
+        setWalletSymbol(symbol);
+    };
+
+    const fetchWalletTokenBalance = async () => {
+        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
+        const bal = await getTokenBalanceOfAddress(swapContext.chainAParams.counterPartyAddress, swapContext.chainBParams.tokenAddress, chainId, swapContext.chainBParams.decimals);
+        const parsed = parseFloat(bal).toFixed(3);
+        setWalletTokenBalance(parsed);
+    };
+
     const fetchPkpBalance = async () => {
-        const bal = await getBalanceOfAddress(swapContext.address);
+        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
+        const bal = await getNativeBalanceOfAddress(swapContext.address, chainId);
         const parsed = parseFloat(bal).toFixed(6);
         setPkpBalance(parsed);
     };
 
     const configRequiredGas = async ({gasConfig} : {gasConfig: GasConfig}) => {
         const sumGas = BigNumber.from(gasConfig.maxFeePerGas).add(BigNumber.from(gasConfig.maxPriorityFeePerGas));
-        const totalGas = sumGas.mul(BigNumber.from(gasConfig.gasLimit));
+        const totalGas = sumGas.mul(BigNumber.from(gasConfig.gasLimit)).mul(BigNumber.from(2));
         const parsed = ethers.utils.formatUnits(totalGas.toString(), swapContext.chainBParams.decimals).toString();
         const fixed = parseFloat(parsed).toFixed(6);
         setRequiredGas(fixed);
@@ -73,7 +82,8 @@ export default function CompleteSwap() {
     }
 
     const fetchWalletBalance = async () => {
-        const bal = await getBalanceOfAddress(swapContext.chainAParams.counterPartyAddress);
+        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
+        const bal = await getNativeBalanceOfAddress(swapContext.chainAParams.counterPartyAddress, chainId);
         const parsed = parseFloat(bal).toFixed(6);
         setWalletBalance(parsed);
     };
@@ -81,48 +91,13 @@ export default function CompleteSwap() {
     useEffect(() => {
         (async () => {
             console.log(swapContext);
+            await checkSwapStatus();
             await fetchPkpBalance();
             await fetchWalletBalance();
-            await checkSwapStatus();
+            await fetchWalletSymbol();
+            await fetchWalletTokenBalance();
         })();       
     },[]);
-
-    async function getBalanceOfAddress(address: string): Promise<string> {
-        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
-        const provider = getID_TO_PROVIDER(chainId);
-        const balance = await provider.getBalance(address);
-        const balanceInEth = ethers.utils.formatEther(balance);
-        return balanceInEth.toString();
-    }
-
-    async function getGasConfig(): Promise<GasConfig> {
-        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
-        const provider = getID_TO_PROVIDER(chainId) as ethers.providers.JsonRpcProvider;
-        
-        let fetchedMaxFeePerGas;
-        let fetchedMaxPriorityFeePerGas;
-        if(chainId === 80001) {
-            const gasPrices = await fetch('https://gasstation-mumbai.matic.today/v2');
-            const gasPricesJson = await gasPrices.json();
-            fetchedMaxFeePerGas = ethers.utils.parseUnits(gasPricesJson.fast.maxFee.toFixed(4).toString(), 'gwei') as BigNumber;
-            fetchedMaxPriorityFeePerGas = ethers.utils.parseUnits(gasPricesJson.fast.maxPriorityFee.toFixed(4).toString(), 'gwei') as BigNumber;
-        } else {
-            const feeData = await provider.getFeeData();
-            fetchedMaxFeePerGas = feeData.maxFeePerGas as BigNumber;
-            fetchedMaxPriorityFeePerGas = feeData.maxPriorityFeePerGas as BigNumber;
-        }
-
-        const erc20Abi = [
-            "function transfer(address to, uint256 value) public returns (bool)",
-        ]
-        const amount = ethers.utils.parseUnits(swapContext.chainBParams.amount, swapContext.chainBParams.decimals).toString();
-        const tokenContract = new ethers.Contract(swapContext.chainBParams.tokenAddress, erc20Abi, provider);
-        const transferGasEstimate = await tokenContract.estimateGas.transfer(swapContext.chainAParams.counterPartyAddress, amount, {
-            from: swapContext.address,
-        })
-
-        return { maxFeePerGas: fetchedMaxFeePerGas.mul(BigNumber.from(2)).toString(), maxPriorityFeePerGas: fetchedMaxPriorityFeePerGas.toString(), gasLimit: transferGasEstimate.toString() };
-    }
 
     async function getSwapStatus({gasConfig} : {gasConfig: GasConfig}): Promise<SwapStatusResponse> {
         try {
@@ -159,63 +134,55 @@ export default function CompleteSwap() {
         setCheckingStatus(true);
         const status = await getSwapStatus({ gasConfig: { maxFeePerGas: '0', maxPriorityFeePerGas: '0', gasLimit: '0' } });
         if (status.response == 'error' || status.response == 'Conditions for swap not met!') {
+            console.log(status)
             setCheckingStatus(false);
             setSwapIsReady(false);
+            setStatusText("Swap Not Ready");
         } else {
             setCheckingStatus(false);
-            const gasConfig = await getGasConfig();
+            const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
+            const gasConfig = await getGasConfigForERC20Transfer(swapContext.chainBParams.amount, swapContext.chainBParams.tokenAddress, swapContext.chainAParams.counterPartyAddress, swapContext.address, swapContext.chainBParams.decimals, chainId);
             const gasAdjustedStatus = await getSwapStatus({gasConfig});
             setLitResponse(gasAdjustedStatus);
             configRequiredGas({gasConfig});
             setSwapIsReady(true);
+            setStatusText("Swap Is Ready");
         }
     }
 
     async function sendERC20TokensFromPKP() {
         setReceiving(true);
-        const provider = getID_TO_PROVIDER(litResponse.response.chainBTransaction.chainId);
-        const signedTx = serialize(litResponse.response.chainBTransaction, litResponse.signatures.chainBSignature.signature)
-        const tx = await provider.sendTransaction(signedTx);
-        console.log({tx});
-        const receipt = await tx.wait(1);
+        const receipt = await serializeSignatureAndSendTransaction(litResponse.response.chainBTransaction.chainId, litResponse.signatures.chainBSignature.signature, litResponse.response.chainBTransaction);
         console.log({receipt});
+        await fetchWalletTokenBalance();
+        setStatusText("Swap Complete");
         setReceiving(false);
-    }
-
-    async function sendGasToPKP() {
-        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
-        const provider = getID_TO_PROVIDER(chainId) as ethers.providers.JsonRpcProvider;    
-        const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
-        const amount = ethers.utils.parseUnits(requiredGas, swapContext.chainBParams.decimals);
-        const tx = await wallet.sendTransaction({
-            to: swapContext.address,
-            value: amount,
-        });
-        const receipt = await tx.wait(1);
     }
 
     async function sendGasTouched() {
         setSendingGas(true);
-        await sendGasToPKP();
+        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
+        await sendNativeCoinToAddress(chainId, swapContext.address, ethers.utils.parseUnits(requiredGas, swapContext.chainBParams.decimals));
         setSendingGas(false);
         fetchPkpBalance();
+        fetchWalletBalance();
     }
     
-
+    console.log(litResponse);
     return (
         <SafeAreaView style={[{ paddingTop: headerHeight}, styles.mainContainer]}>
             <View style={styles.topArea}>
                 <View style={styles.swapStatusContainer}>
                     <View style={styles.swapStatusLeft}>
                         { swapIsReady ? <Image style={styles.swapDot} source={require('../assets/images/SwapReadyDot.png')} /> : <Image style={styles.swapDot} source={require('../assets/images/SwapNotReadyDot.png')} /> }
-                        { swapIsReady ? <Text style={styles.swapReadyText}>Swap is Ready</Text> : <Text style={styles.swapReadyText}>Swap is Not Ready</Text> }    
+                        <Text style={styles.swapReadyText}>{statusText}</Text>  
                     </View>
                     <YachtButton onPress={() => checkSwapStatus()} disabled={checkingStatus} fetching={checkingStatus} style={styles.checkStatusButton} title={'Re-Check Status'} textStyle={styles.checkStatusButtonText} />
                 </View>
                 <View style={styles.figureContainer}>
                     <Image style={styles.swapFigure} source={require('../assets/images/swapFigure2.png')} />
                 </View>
-                { swapIsReady && <PkpGasCard style={styles.pkpGasCard} symbol={symbol} pkpBalance={pkpBalance} walletBalance={walletBalance} requiredBalance={requiredGas} disabled={sendGasDisabled} sendingGas={sendingGas} onSendGas={() => sendGasTouched()} /> }
+                { swapIsReady && <PkpGasCard style={styles.pkpGasCard} symbol={symbol} pkpBalance={pkpBalance} walletBalance={walletBalance} requiredBalance={requiredGas} disabled={sendGasDisabled} sendingGas={sendingGas} onSendGas={() => sendGasTouched()} walletTokenBalance={walletTokenBalance} tokenSymbol={walletSymbol} /> }
             </View>
             <YachtButton onPress={() => sendERC20TokensFromPKP()} disabled={!swapIsReady || receiving} fetching={receiving} style={styles.button} title={'Receive'} />
         </SafeAreaView>

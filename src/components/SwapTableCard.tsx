@@ -6,6 +6,7 @@ import { getID_TO_PROVIDER } from "../utils/getProviderByChain";
 import { ethers } from "ethers";
 import { LitSwapChainParams, PKPInfo } from "../context/SwapContext";
 import { SwapObject } from "../views/MySwaps"; 
+import { getERC20Symbol } from "../utils/evmInteractions";
 
 interface SwapTableCardProps {
     swapObject: SwapObject;
@@ -16,18 +17,12 @@ export default function SwapTableCard({ swapObject, onPressSwap }: SwapTableCard
     const [originSymbol, setOriginSymbol] = useState<string>('');
     const [destinationSymbol, setDestinationSymbol] = useState<string>('');
     
-    async function getSymbol(tokenAddress: string, litNetwork: string): Promise<string> {
-        const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === litNetwork)?.chainId;
-        const provider = getID_TO_PROVIDER(chainId) as ethers.providers.JsonRpcProvider;  
-        const contract = new ethers.Contract(tokenAddress, ['function symbol() view returns (string)'], provider);
-        const symbol = await contract.symbol();
-        return symbol;
-    }
-
     useEffect(() => {
         async function getSymbols() {
-            const originSymbol = await getSymbol(swapObject.chainAParams.tokenAddress, swapObject.chainAParams.chain);
-            const destinationSymbol = await getSymbol(swapObject.chainBParams.tokenAddress, swapObject.chainBParams.chain);
+            const chainIdA = AVAILABLE_CHAINS.find(x => x.litChainId === swapObject.chainAParams.chain)?.chainId;
+            const chainIdB = AVAILABLE_CHAINS.find(x => x.litChainId === swapObject.chainBParams.chain)?.chainId;
+            const originSymbol = await getERC20Symbol(swapObject.chainAParams.tokenAddress, chainIdA);
+            const destinationSymbol = await getERC20Symbol(swapObject.chainBParams.tokenAddress, chainIdB);
             setOriginSymbol(originSymbol);
             setDestinationSymbol(destinationSymbol);
         }

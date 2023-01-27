@@ -11,15 +11,18 @@ interface PkpGasCardProps {
     onSendGas: () => Promise<void>,
     sendingGas: boolean,
     disabled: boolean,
+    tokenSymbol: string,
+    walletTokenBalance: string,
 }
 
-export default function PkpGasCard({ style, symbol, pkpBalance, requiredBalance, walletBalance, onSendGas, sendingGas, disabled }: PkpGasCardProps) {
+export default function PkpGasCard({ style, symbol, pkpBalance, requiredBalance, walletBalance, onSendGas, sendingGas, disabled, tokenSymbol, walletTokenBalance }: PkpGasCardProps) {
     return (
         <View style={[styles.container, style]}>
             <View style={styles.pkpGasLeft}>
                 <PkpGasRow label={`PKP ${symbol} Balance`} value={pkpBalance} />
                 <PkpGasRow label={`PKP ${symbol} Required`} value={requiredBalance} />
                 <PkpGasRow label={`Wallet ${symbol} Balance`} value={walletBalance} />
+                <PkpGasRow label={`Wallet ${tokenSymbol} Balance`} value={walletTokenBalance} />
             </View>
             <View style={styles.buttonContainer}>
                 <YachtButton onPress={onSendGas} disabled={disabled || sendingGas} fetching={sendingGas} style={styles.sendGasButton} textStyle={styles.sendGasButtonText} title={'Send Gas to PKP'} />
