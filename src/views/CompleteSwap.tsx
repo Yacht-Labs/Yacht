@@ -14,9 +14,9 @@ import PkpGasCard from "../components/PkpGasCard";
 import { from } from "rxjs";
 
 export interface GasConfig {
-    maxFeePerGas: BigNumber | string;
-    maxPriorityFeePerGas: BigNumber | string;
-    gasLimit: BigNumber | string;
+    maxFeePerGas: string;
+    maxPriorityFeePerGas: string;
+    gasLimit: string;
   };
 
 interface LitSignature {
@@ -48,9 +48,9 @@ export default function CompleteSwap() {
     const [pkpBalance, setPkpBalance] = useState<string>("0");
     const [walletBalance, setWalletBalance] = useState<string>("0");
     const [requiredGas, setRequiredGas] = useState<string>("0");
-    const [maxFeePerGas, setMaxFeePerGas] = useState<string>("0");
-    const [maxPriorityFeePerGas, setMaxPriorityFeePerGas] = useState<string>("0");
-    const [gasLimit, setGasLimit] = useState<string>("0");
+    //const [maxFeePerGas, setMaxFeePerGas] = useState<string>("0");
+    //const [maxPriorityFeePerGas, setMaxPriorityFeePerGas] = useState<string>("0");
+    //const [gasLimit, setGasLimit] = useState<string>("0");
     const [swapContext, setSwapContext] = useContext(SwapContext); 
     const [sendGasDisabled, setSendGasDisabled] = useState(true);
     const [sendingGas, setSendingGas] = useState(false);
@@ -63,11 +63,12 @@ export default function CompleteSwap() {
         setPkpBalance(parsed);
     };
 
-    const fetchRequiredGas = async () => {
-        const gas = await getRequiredGas();
-        const parsedFloat = parseFloat(gas) * 2;
-        const parsed = parsedFloat.toFixed(6);
-        setRequiredGas(parsed);
+    const configRequiredGas = async ({gasConfig} : {gasConfig: GasConfig}) => {
+        const sumGas = BigNumber.from(gasConfig.maxFeePerGas).add(BigNumber.from(gasConfig.maxPriorityFeePerGas));
+        const totalGas = sumGas.mul(BigNumber.from(gasConfig.gasLimit));
+        const parsed = ethers.utils.formatUnits(totalGas.toString(), swapContext.chainBParams.decimals).toString();
+        const fixed = parseFloat(parsed).toFixed(6);
+        setRequiredGas(fixed);
         setSendGasDisabled(false);
     }
 
@@ -94,7 +95,7 @@ export default function CompleteSwap() {
         return balanceInEth.toString();
     }
 
-    async function getRequiredGas(): Promise<string> {
+    async function getGasConfig(): Promise<GasConfig> {
         const chainId = AVAILABLE_CHAINS.find(x => x.litChainId === swapContext.chainBParams.chain)?.chainId;
         const provider = getID_TO_PROVIDER(chainId) as ethers.providers.JsonRpcProvider;
         
@@ -111,8 +112,6 @@ export default function CompleteSwap() {
             fetchedMaxPriorityFeePerGas = feeData.maxPriorityFeePerGas as BigNumber;
         }
 
-        setMaxFeePerGas(fetchedMaxFeePerGas.mul(BigNumber.from(2)).toString());
-        setMaxPriorityFeePerGas(fetchedMaxPriorityFeePerGas.mul(BigNumber.from(1)).toString());
         const erc20Abi = [
             "function transfer(address to, uint256 value) public returns (bool)",
         ]
@@ -121,29 +120,23 @@ export default function CompleteSwap() {
         const transferGasEstimate = await tokenContract.estimateGas.transfer(swapContext.chainAParams.counterPartyAddress, amount, {
             from: swapContext.address,
         })
-        setGasLimit(transferGasEstimate.mul(BigNumber.from(1)).toString());
-        console.log(transferGasEstimate.toString())
-        console.log({gasLimit})
-        const sumGasPrice = fetchedMaxFeePerGas.add(fetchedMaxPriorityFeePerGas);
-        const totalGas = (sumGasPrice.mul((transferGasEstimate.mul(BigNumber.from(1))).toString()));
-        const formatted = ethers.utils.formatUnits(totalGas, swapContext.chainBParams.decimals) ;
-        return formatted;
 
+        return { maxFeePerGas: fetchedMaxFeePerGas.mul(BigNumber.from(2)).toString(), maxPriorityFeePerGas: fetchedMaxPriorityFeePerGas.toString(), gasLimit: transferGasEstimate.toString() };
     }
 
-    async function getSwapStatus(): Promise<SwapStatusResponse> {
+    async function getSwapStatus({gasConfig} : {gasConfig: GasConfig}): Promise<SwapStatusResponse> {
         try {
             const body = JSON.stringify({
                 pkpPublicKey: swapContext.pkpPublicKey,
                 chainAGasConfig: {
-                    maxFeePerGas, 
-                    maxPriorityFeePerGas,
-                    gasLimit,
+                    maxFeePerGas: gasConfig.maxFeePerGas, 
+                    maxPriorityFeePerGas: gasConfig.maxPriorityFeePerGas,
+                    gasLimit: gasConfig.gasLimit,
                 },
                 chainBGasConfig: {
-                    maxFeePerGas, 
-                    maxPriorityFeePerGas,
-                    gasLimit,
+                    maxFeePerGas: gasConfig.maxFeePerGas, 
+                    maxPriorityFeePerGas: gasConfig.maxPriorityFeePerGas,
+                    gasLimit: gasConfig.gasLimit,
                 }
             });
             const response = await fetch('http://localhost:3000/lit/runLitAction', {
@@ -164,20 +157,16 @@ export default function CompleteSwap() {
 
     async function checkSwapStatus() {
         setCheckingStatus(true);
-        const status = await getSwapStatus();
+        const status = await getSwapStatus({ gasConfig: { maxFeePerGas: '0', maxPriorityFeePerGas: '0', gasLimit: '0' } });
         if (status.response == 'error' || status.response == 'Conditions for swap not met!') {
             setCheckingStatus(false);
             setSwapIsReady(false);
         } else {
             setCheckingStatus(false);
-            console.log("updating gas");
-            await fetchRequiredGas();
-            console.log({gasLimit, maxFeePerGas, maxPriorityFeePerGas});
-            
-            const gasAdjustedStatus = await getSwapStatus();
-            
+            const gasConfig = await getGasConfig();
+            const gasAdjustedStatus = await getSwapStatus({gasConfig});
             setLitResponse(gasAdjustedStatus);
-            console.log(gasAdjustedStatus);
+            configRequiredGas({gasConfig});
             setSwapIsReady(true);
         }
     }
