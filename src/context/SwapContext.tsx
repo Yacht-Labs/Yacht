@@ -7,6 +7,7 @@ export interface LitSwapChainParams {
     amount: string;
     decimals: string;
     tokenAddress: string;
+    symbol: string;
   },
   chainBParams: {
     counterPartyAddress: string;
@@ -14,6 +15,7 @@ export interface LitSwapChainParams {
     amount: string;
     decimals: string;
     tokenAddress: string;
+    symbol: string;
   }
 }
 
@@ -30,6 +32,7 @@ const swapData = {
       amount: "",
       decimals: "",
       tokenAddress: "",
+      symbol: "",
   },
   chainBParams: {
       counterPartyAddress: "",
@@ -37,6 +40,7 @@ const swapData = {
       amount: "",
       decimals: "",
       tokenAddress: "",
+      symbol: "",
   },
   address: "",
   publicKey: "",

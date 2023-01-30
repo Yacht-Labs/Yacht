@@ -152,3 +152,19 @@ export async function getERC20Symbol(
   const symbol = await contract.symbol();
   return symbol;
 }
+
+export async function getERC20Decimals(
+  tokenAddress: string,
+  chainId: number
+): Promise<number> {
+  const provider = getID_TO_PROVIDER(
+    chainId
+  ) as ethers.providers.JsonRpcProvider;
+  const contract = new ethers.Contract(
+    tokenAddress,
+    ["function decimals() view returns (uint8)"],
+    provider
+  );
+  const decimals = await contract.decimals();
+  return decimals;
+}
