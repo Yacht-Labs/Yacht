@@ -50,12 +50,14 @@ export default function CreateLitSwapView() {
         }),
       });
       const data = await response.json();
-      console.log(data);
+      console.log("data: ", data);
       setCreatingSwap(false);
       setSwapContext({ chainAParams, chainBParams, ...data });
       nav.navigate("Send Tokens To Swap");
     } catch (err) {
-      console.log(err);
+      console.log("error: ", err);
+      console.log("chainA:", chainAParams);
+      console.log("chainB:", chainBParams);
       setCreatingSwap(false);
     }
   }

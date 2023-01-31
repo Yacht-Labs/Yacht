@@ -218,10 +218,35 @@ export default function CompleteSwap() {
 
   async function sendERC20TokensFromPKP() {
     setReceiving(true);
+    let chainId;
+    let signature;
+    let transaction;
+    const iface = new ethers.utils.Interface(
+      '["function transfer(address to, uint256 value) external returns (bool)"]'
+    );
+    const data = iface.decodeFunctionData(
+      "transfer",
+      litResponse.response.chainBTransaction.data
+    );
+    const sendingBTxToCounterParty = data[0];
+    if (
+      sendingBTxToCounterParty == swapContext.chainAParams.counterPartyAddress
+    ) {
+      console.log("working");
+      // in this case we know the user is actually the counterparty A so we want the chainB transaction
+      chainId = litResponse.response.chainBTransaction.chainId;
+      signature = litResponse.signatures.chainBSignature.signature;
+      transaction = litResponse.response.chainBTransaction;
+    } else {
+      // in this case we know the user is actually the counterparty B so we want the chainA transaction
+      chainId = litResponse.response.chainATransaction.chainId;
+      signature = litResponse.signatures.chainASignature.signature;
+      transaction = litResponse.response.chainATransaction;
+    }
     const receipt = await serializeSignatureAndSendTransaction(
-      litResponse.response.chainBTransaction.chainId,
-      litResponse.signatures.chainBSignature.signature,
-      litResponse.response.chainBTransaction
+      chainId,
+      signature,
+      transaction
     );
     console.log({ receipt });
     await fetchWalletTokenBalance();
@@ -244,7 +269,6 @@ export default function CompleteSwap() {
     fetchWalletBalance();
   }
 
-  console.log(litResponse);
   return (
     <SafeAreaView style={[{ paddingTop: headerHeight }, styles.mainContainer]}>
       <View style={styles.topArea}>
