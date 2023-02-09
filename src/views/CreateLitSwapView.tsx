@@ -9,6 +9,10 @@ import { useNavigation } from "@react-navigation/native";
 import { SwapContext } from "../context/SwapContext";
 import { getERC20Symbol, getERC20Decimals } from "../utils/evmInteractions";
 import { AVAILABLE_CHAINS } from "../constants";
+import { ENVIRONMENT } from "../../env";
+
+const serverDomain =
+  ENVIRONMENT === "prod" ? "https://api.yachtlabs.io" : "http://localhost:3000";
 
 export default function CreateLitSwapView() {
   const [chainAParams, setChainAParams] = useState({
@@ -38,7 +42,7 @@ export default function CreateLitSwapView() {
   async function createSwapPressed() {
     setCreatingSwap(true);
     try {
-      const response = await fetch("https://api.yachtlabs.io/lit/mintSwapPkp", {
+      const response = await fetch(`${serverDomain}/lit/mintSwapPkp`, {
         method: "POST",
         headers: {
           Accept: "application/json",

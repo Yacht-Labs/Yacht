@@ -9,6 +9,10 @@ import { AVAILABLE_CHAINS } from "../constants";
 import { getID_TO_PROVIDER } from "../utils/getProviderByChain";
 import { ethers, BigNumber, FixedNumber } from "ethers";
 import { PRIVATE_KEY } from "../../env";
+import { ENVIRONMENT } from "../../env";
+
+const serverDomain =
+  ENVIRONMENT === "prod" ? "https://api.yachtlabs.io" : "http://localhost:3000";
 
 import PkpGasCard from "../components/PkpGasCard";
 // import { from } from "rxjs";
@@ -49,6 +53,7 @@ interface SwapStatusResponse {
 export default function CompleteSwap() {
   const headerHeight = useHeaderHeight();
   const [swapIsReady, setSwapIsReady] = useState(false);
+  const [isClawingBack, setIsClawingBack] = useState(false);
   const [statusText, setStatusText] = useState<string>("Swap not ready");
   const [checkingStatus, setCheckingStatus] = useState(false);
   const [receiving, setReceiving] = useState(false);
@@ -64,39 +69,61 @@ export default function CompleteSwap() {
   const [sendGasDisabled, setSendGasDisabled] = useState(true);
   const [sendingGas, setSendingGas] = useState(false);
 
-  const symbol = AVAILABLE_CHAINS.find(
-    (x) => x.litChainId === swapContext.chainBParams.chain
-  )?.symbol;
+  const symbol = isClawingBack
+    ? AVAILABLE_CHAINS.find(
+        (x) => x.litChainId === swapContext.chainAParams.chain
+      )?.symbol
+    : AVAILABLE_CHAINS.find(
+        (x) => x.litChainId === swapContext.chainBParams.chain
+      )?.symbol;
 
-  const fetchWalletSymbol = async () => {
-    const chainId = AVAILABLE_CHAINS.find(
-      (x) => x.litChainId === swapContext.chainBParams.chain
-    )?.chainId;
-    const symbol = await getERC20Symbol(
-      swapContext.chainBParams.tokenAddress,
-      chainId
-    );
+  const fetchWalletSymbol = async (isClawback: boolean) => {
+    const chainId = isClawback
+      ? AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainAParams.chain
+        )?.chainId
+      : AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainBParams.chain
+        )?.chainId;
+    const token = isClawback
+      ? swapContext.chainAParams.tokenAddress
+      : swapContext.chainBParams.tokenAddress;
+    const symbol = await getERC20Symbol(token, chainId);
     setWalletSymbol(symbol);
   };
 
-  const fetchWalletTokenBalance = async () => {
-    const chainId = AVAILABLE_CHAINS.find(
-      (x) => x.litChainId === swapContext.chainBParams.chain
-    )?.chainId;
+  const fetchWalletTokenBalance = async (isClawback: boolean) => {
+    const chainId = isClawback
+      ? AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainAParams.chain
+        )?.chainId
+      : AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainBParams.chain
+        )?.chainId;
+    const tokenAddress = isClawback
+      ? swapContext.chainAParams.tokenAddress
+      : swapContext.chainBParams.tokenAddress;
+    const decimals = isClawback
+      ? swapContext.chainAParams.decimals
+      : swapContext.chainBParams.decimals;
     const bal = await getTokenBalanceOfAddress(
       swapContext.chainAParams.counterPartyAddress,
-      swapContext.chainBParams.tokenAddress,
+      tokenAddress,
       chainId,
-      swapContext.chainBParams.decimals
+      decimals
     );
     const parsed = parseFloat(bal).toFixed(3);
     setWalletTokenBalance(parsed);
   };
 
-  const fetchPkpBalance = async () => {
-    const chainId = AVAILABLE_CHAINS.find(
-      (x) => x.litChainId === swapContext.chainBParams.chain
-    )?.chainId;
+  const fetchPkpBalance = async (isClawback: boolean) => {
+    const chainId = isClawback
+      ? AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainAParams.chain
+        )?.chainId
+      : AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainBParams.chain
+        )?.chainId;
     const bal = await getNativeBalanceOfAddress(swapContext.address, chainId);
     const parsed = parseFloat(bal).toFixed(6);
     setPkpBalance(parsed);
@@ -117,10 +144,14 @@ export default function CompleteSwap() {
     setSendGasDisabled(false);
   };
 
-  const fetchWalletBalance = async () => {
-    const chainId = AVAILABLE_CHAINS.find(
-      (x) => x.litChainId === swapContext.chainBParams.chain
-    )?.chainId;
+  const fetchWalletBalance = async (isClawback: boolean) => {
+    const chainId = isClawback
+      ? AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainAParams.chain
+        )?.chainId
+      : AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainBParams.chain
+        )?.chainId;
     const bal = await getNativeBalanceOfAddress(
       swapContext.chainAParams.counterPartyAddress,
       chainId
@@ -133,10 +164,10 @@ export default function CompleteSwap() {
     (async () => {
       console.log(swapContext);
       await checkSwapStatus();
-      await fetchPkpBalance();
-      await fetchWalletBalance();
-      await fetchWalletSymbol();
-      await fetchWalletTokenBalance();
+      await fetchPkpBalance(isClawingBack);
+      await fetchWalletBalance(isClawingBack);
+      await fetchWalletSymbol(isClawingBack);
+      await fetchWalletTokenBalance(isClawingBack);
     })();
   }, []);
 
@@ -159,23 +190,28 @@ export default function CompleteSwap() {
           gasLimit: gasConfig.gasLimit,
         },
       });
-      const response = await fetch(
-        "https://api.yachtlabs.io/lit/runLitAction",
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body,
-        }
-      );
+      const response = await fetch(`${serverDomain}/lit/runLitAction`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body,
+      });
       const data = await response.json();
       return data;
     } catch (err) {
       console.log({ err });
       return { response: "error", signatures: {} };
     }
+  }
+
+  async function decodeTransferData(data: string): Promise<[string]> {
+    const iface = new ethers.utils.Interface(
+      '["function transfer(address to, uint256 value) external returns (bool)"]'
+    );
+    const decodedData = iface.decodeFunctionData("transfer", data);
+    return decodedData as [string];
   }
 
   async function checkSwapStatus() {
@@ -191,28 +227,106 @@ export default function CompleteSwap() {
       status.response == "error" ||
       status.response == "Conditions for swap not met!"
     ) {
-      console.log(status);
       setCheckingStatus(false);
       setSwapIsReady(false);
       setStatusText("Swap Not Ready");
     } else {
-      setCheckingStatus(false);
-      const chainId = AVAILABLE_CHAINS.find(
-        (x) => x.litChainId === swapContext.chainBParams.chain
-      )?.chainId;
-      const gasConfig = await getGasConfigForERC20Transfer(
-        swapContext.chainBParams.amount,
-        swapContext.chainBParams.tokenAddress,
-        swapContext.chainAParams.counterPartyAddress,
-        swapContext.address,
-        swapContext.chainBParams.decimals,
-        chainId
-      );
-      const gasAdjustedStatus = await getSwapStatus({ gasConfig });
-      setLitResponse(gasAdjustedStatus);
-      configRequiredGas({ gasConfig });
-      setSwapIsReady(true);
-      setStatusText("Swap Is Ready");
+      if (
+        status.response.chainATransaction == undefined ||
+        status.response.chainBTransaction == undefined
+      ) {
+        // this means clawback is ready for one counter party
+        if (status.response.chainATransaction == undefined) {
+          const counterPartyAddress = await decodeTransferData(
+            status.response.chainBTransaction.data
+          );
+          if (
+            counterPartyAddress.toLowerCase() ==
+            swapContext.chainAParams.counterPartyAddress.toLowerCase()
+          ) {
+            // this means the Clawback is for the current user
+            const amount = ethers.utils.formatUnits(
+              decodedData[1],
+              status.response.chainBTransaction.decimals
+            );
+            const gasConfig = await getGasConfigForERC20Transfer(
+              amount,
+              status.response.chainBTransaction.to,
+              decodedData[0],
+              swapContext.address,
+              status.response.chainBTransaction.decimals,
+              status.response.chainBTransaction.chainId
+            );
+            const gasAdjustedStatus = await getSwapStatus({ gasConfig });
+            await fetchWalletSymbol(true);
+            await fetchWalletTokenBalance(true);
+            await fetchWalletBalance(true);
+            await fetchPkpBalance(true);
+            setLitResponse(gasAdjustedStatus);
+            configRequiredGas({ gasConfig });
+            setSwapIsReady(true);
+            setStatusText("Clawback Is Ready");
+            setIsClawingBack(true);
+            setCheckingStatus(false);
+          }
+        } else {
+          const decodedData = await decodeTransferData(
+            status.response.chainATransaction.data
+          );
+          const counterPartyAddress = decodedData[0];
+          if (
+            counterPartyAddress.toLowerCase() ==
+            swapContext.chainAParams.counterPartyAddress.toLowerCase()
+          ) {
+            // this means the Clawback is for the current user
+            const amount = ethers.utils.formatUnits(
+              decodedData[1],
+              status.response.chainATransaction.decimals
+            );
+
+            const gasConfig = await getGasConfigForERC20Transfer(
+              amount,
+              status.response.chainATransaction.to,
+              decodedData[0],
+              swapContext.address,
+              status.response.chainATransaction.decimals,
+              status.response.chainATransaction.chainId
+            );
+            const gasAdjustedStatus = await getSwapStatus({ gasConfig });
+            await fetchWalletSymbol(true);
+            await fetchWalletTokenBalance(true);
+            await fetchWalletBalance(true);
+            await fetchPkpBalance(true);
+            setLitResponse(gasAdjustedStatus);
+            configRequiredGas({ gasConfig });
+            setSwapIsReady(true);
+            setStatusText("Clawback Is Ready");
+            setIsClawingBack(true);
+            setCheckingStatus(false);
+          }
+        }
+      } else {
+        // This means swap is ready
+        console.log(status);
+        const chainId = AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainBParams.chain
+        )?.chainId;
+        const gasConfig = await getGasConfigForERC20Transfer(
+          swapContext.chainBParams.amount,
+          swapContext.chainBParams.tokenAddress,
+          swapContext.chainAParams.counterPartyAddress,
+          swapContext.address,
+          swapContext.chainBParams.decimals,
+          chainId
+        );
+        const gasAdjustedStatus = await getSwapStatus({ gasConfig });
+        await fetchWalletSymbol(true);
+        setLitResponse(gasAdjustedStatus);
+        configRequiredGas({ gasConfig });
+        setSwapIsReady(true);
+        setStatusText("Swap Is Ready");
+        setCheckingStatus(false);
+      }
     }
   }
 
@@ -221,16 +335,13 @@ export default function CompleteSwap() {
     let chainId;
     let signature;
     let transaction;
-    const iface = new ethers.utils.Interface(
-      '["function transfer(address to, uint256 value) external returns (bool)"]'
-    );
-    const data = iface.decodeFunctionData(
-      "transfer",
+    const decodedData = await decodeTransferData(
       litResponse.response.chainBTransaction.data
     );
-    const sendingBTxToCounterParty = data[0];
+    const sendingBTxToCounterParty = decodedData[0];
     if (
-      sendingBTxToCounterParty == swapContext.chainAParams.counterPartyAddress
+      sendingBTxToCounterParty.toLowerCase() ==
+      swapContext.chainAParams.counterPartyAddress.toLowerCase()
     ) {
       console.log("working");
       // in this case we know the user is actually the counterparty A so we want the chainB transaction
@@ -249,24 +360,55 @@ export default function CompleteSwap() {
       transaction
     );
     console.log({ receipt });
-    await fetchWalletTokenBalance();
+    await fetchWalletTokenBalance(false);
     setStatusText("Swap Complete");
+    setReceiving(false);
+  }
+
+  async function sendClawbackERC20TokensFromPKP() {
+    setReceiving(true);
+    let chainId;
+    let signature;
+    let transaction;
+    if (litResponse.response.chainATransaction == undefined) {
+      // in this case we know the user is actually the counterparty B so we want the chainB transaction
+      chainId = litResponse.response.chainBTransaction.chainId;
+      signature = litResponse.signatures.chainBSignature.signature;
+      transaction = litResponse.response.chainBTransaction;
+    } else {
+      // in this case we know the user is actually the counterparty A so we want the chainA transaction
+      chainId = litResponse.response.chainATransaction.chainId;
+      signature = litResponse.signatures.chainASignature.signature;
+      transaction = litResponse.response.chainATransaction;
+    }
+    const receipt = await serializeSignatureAndSendTransaction(
+      chainId,
+      signature,
+      transaction
+    );
+    console.log({ receipt });
+    await fetchWalletTokenBalance(true);
+    setStatusText("Clawback Complete");
     setReceiving(false);
   }
 
   async function sendGasTouched() {
     setSendingGas(true);
-    const chainId = AVAILABLE_CHAINS.find(
-      (x) => x.litChainId === swapContext.chainBParams.chain
-    )?.chainId;
+    const chainId = isClawingBack
+      ? AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainAParams.chain
+        )?.chainId
+      : AVAILABLE_CHAINS.find(
+          (x) => x.litChainId === swapContext.chainBParams.chain
+        )?.chainId;
     await sendNativeCoinToAddress(
       chainId,
       swapContext.address,
       ethers.utils.parseUnits(requiredGas, swapContext.chainBParams.decimals)
     );
     setSendingGas(false);
-    fetchPkpBalance();
-    fetchWalletBalance();
+    fetchPkpBalance(isClawingBack);
+    fetchWalletBalance(isClawingBack);
   }
 
   return (
@@ -318,7 +460,11 @@ export default function CompleteSwap() {
         )}
       </View>
       <YachtButton
-        onPress={() => sendERC20TokensFromPKP()}
+        onPress={() => {
+          isClawingBack
+            ? sendClawbackERC20TokensFromPKP()
+            : sendERC20TokensFromPKP();
+        }}
         disabled={!swapIsReady || receiving}
         fetching={receiving}
         style={styles.button}

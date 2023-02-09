@@ -91,12 +91,12 @@ export async function getGasConfigForERC20Transfer(
   );
   const transferGasEstimate = await tokenContract.estimateGas.transfer(
     to,
-    amount,
+    amountInWei,
     {
       from: from,
     }
   );
-
+  console.log(transferGasEstimate);
   return {
     maxFeePerGas: fetchedMaxFeePerGas.mul(BigNumber.from(2)).toString(),
     maxPriorityFeePerGas: fetchedMaxPriorityFeePerGas.toString(),

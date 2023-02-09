@@ -9,10 +9,13 @@ import { getID_TO_PROVIDER } from "../utils/getProviderByChain";
 import { AVAILABLE_CHAINS } from "../constants";
 import { ethers } from "ethers";
 import { useNavigation } from "@react-navigation/native";
+import { ENVIRONMENT } from "../../env";
 
 // const myAddress = '0x7EbE22f5c45f814B888076cBe6395C8f81fDB026';
-const myAddress = "0xE1b89ef648A6068fb4e7bCd943E3a9f4Dc5c530b";
-
+const myAddress = "0xe1b89ef648a6068fb4e7bcd943e3a9f4dc5c530b";
+const serverDomain =
+  ENVIRONMENT === "prod" ? "https://api.yachtlabs.io" : "http://localhost:3000";
+console.log(serverDomain);
 interface SwapParams {
   counterPartyAddress: string;
   chain: string;
@@ -43,7 +46,7 @@ export default function MySwaps() {
   async function getMySwaps() {
     try {
       const response = await fetch(
-        `https://api.yachtlabs.io/lit/swapObjects/${myAddress}`
+        `${serverDomain}/lit/swapObjects/${myAddress}`
       );
       const data = await response.json();
       setMySwaps(data);
