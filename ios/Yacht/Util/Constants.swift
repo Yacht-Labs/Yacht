@@ -42,7 +42,7 @@ struct Constants {
         }
         
         struct Node {
-            static let localhost = "http://192.168.1.66:3000"
+            static let localhost = "http://192.168.1.69:3000"
             static let production = "https://api.yachtlabs.io"
         }
     }

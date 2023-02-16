@@ -9,14 +9,14 @@ import { useNavigation } from "@react-navigation/native";
 import { SwapContext } from "../context/SwapContext";
 import { getERC20Symbol, getERC20Decimals } from "../utils/evmInteractions";
 import { AVAILABLE_CHAINS } from "../constants";
-import { ENVIRONMENT } from "../../env";
+import { ENVIRONMENT, MY_ADDRESS } from "../../env";
 
 const serverDomain =
   ENVIRONMENT === "prod" ? "https://api.yachtlabs.io" : "http://localhost:3000";
 
 export default function CreateLitSwapView() {
   const [chainAParams, setChainAParams] = useState({
-    counterPartyAddress: "0xE1b89ef648A6068fb4e7bCd943E3a9f4Dc5c530b",
+    counterPartyAddress: MY_ADDRESS,
     chain: "",
     amount: "",
     decimals: "",

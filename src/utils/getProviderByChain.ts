@@ -3,9 +3,17 @@ import { JsonRpcProvider } from "@ethersproject/providers";
 
 export const getID_TO_PROVIDER = (id: number): JsonRpcProvider => {
   switch (id) {
+    case 1: // Ethereum
+      return new JsonRpcProvider(
+        "https://eth-mainnet.g.alchemy.com/v2/zMWZNdJWyrQH64Xhh8y-RuAVzIgVDzwv"
+      );
     case 5: // Goerli
       return new JsonRpcProvider(
         "https://eth-goerli.g.alchemy.com/v2/RZYixkcKT7io37tj7KCobPlyVB1IOciO"
+      );
+    case 137: // Polygon
+      return new JsonRpcProvider(
+        "https://polygon-mainnet.g.alchemy.com/v2/mQxfeGUvOcApPp8JXpVa-PLhSUw_EgM9"
       );
     case 80001: // Mumbai
       return new JsonRpcProvider(
