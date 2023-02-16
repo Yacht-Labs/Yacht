@@ -33,8 +33,36 @@ export default function SendTokensToSwap() {
       swapContext.chainAParams.amount,
       swapContext.chainAParams.decimals
     );
-    const tx = await contract.transfer(swapContext.address, amountWei);
-    console.log(tx);
+    if(chainId == 137 || chainId == 80001){
+      let maxFeePerGas = ethers.BigNumber.from(40000000000) // fallback to 40 gwei
+      let maxPriorityFeePerGas = ethers.BigNumber.from(40000000000) // fallback to 40 gwei
+      let url;
+      if(chainId == 137) {
+        console.log("polygon");
+        url = 'https://gasstation-mainnet.matic.network/v2'
+      } else {
+        console.log("mumbai");
+        url = 'https://gasstation-mumbai.matic.today/v2'
+      }
+      const gasPrices = await fetch(url);
+      const data = await gasPrices.json();
+      maxFeePerGas = ethers.utils.parseUnits(
+        Math.ceil(data.fast.maxFee) + '',
+        'gwei'
+      )
+      maxPriorityFeePerGas = ethers.utils.parseUnits(
+        Math.ceil(data.fast.maxPriorityFee) + '',
+        'gwei'
+      )
+      const tx = await contract.transfer(swapContext.address, amountWei, {
+        maxFeePerGas,
+        maxPriorityFeePerGas 
+      });
+      console.log(tx);
+      } else {
+        const tx = await contract.transfer(swapContext.address, amountWei);
+        console.log(tx);
+      }
   }
 
   async function handleSend() {

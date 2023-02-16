@@ -36,7 +36,7 @@ struct Constants {
     struct Environment {
         struct ReactNative {
             // static let localhost = "http://172.16.1.104:8081"
-            static let localhost = "http://192.168.1.66:8081"
+            static let localhost = "http://192.168.1.69:8081"
             // static let localhost = "http://10.200.1.78:8081"
             // static let localhost = "http://192.168.50.39:8081"
         }
