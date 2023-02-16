@@ -103,10 +103,15 @@ export default function MySwaps() {
         renderItem={({ item }) => {
           let originParams: SwapParams;
           let destinationParams: SwapParams;
-          if (item.chainAParams.counterPartyAddress === MY_ADDRESS) {
+          if (
+            item.chainAParams.counterPartyAddress.toLowerCase() ===
+            MY_ADDRESS.toLowerCase()
+          ) {
+            console.log("right");
             originParams = item.chainAParams;
             destinationParams = item.chainBParams;
           } else {
+            console.log("wrong");
             originParams = item.chainBParams;
             destinationParams = item.chainAParams;
           }
