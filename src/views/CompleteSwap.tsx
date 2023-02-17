@@ -135,7 +135,7 @@ export default function CompleteSwap() {
     );
     const totalGas = sumGas
       .mul(BigNumber.from(gasConfig.gasLimit))
-      .mul(BigNumber.from(2));
+      .mul(BigNumber.from(1));
     const parsed = ethers.utils
       .formatUnits(totalGas.toString(), swapContext.chainBParams.decimals)
       .toString();
