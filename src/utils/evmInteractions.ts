@@ -98,9 +98,9 @@ export async function getGasConfigForERC20Transfer(
   );
   console.log(transferGasEstimate);
   return {
-    maxFeePerGas: fetchedMaxFeePerGas.mul(BigNumber.from(2)).toString(),
+    maxFeePerGas: fetchedMaxFeePerGas.mul(BigNumber.from(1)).toString(),
     maxPriorityFeePerGas: fetchedMaxPriorityFeePerGas.toString(),
-    gasLimit: transferGasEstimate.mul(BigNumber.from(2)).toString(),
+    gasLimit: transferGasEstimate.mul(BigNumber.from(1)).toString(),
   };
 }
 
@@ -114,12 +114,44 @@ export async function sendNativeCoinToAddress(
   ) as ethers.providers.JsonRpcProvider;
   const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
 
-  const tx = await wallet.sendTransaction({
-    to: toAddress,
-    value: amountInWei,
-  });
-  const receipt = await tx.wait(1);
-  return receipt;
+  if (chainId == 137 || chainId == 80001) {
+    let maxFeePerGas = ethers.BigNumber.from(40000000000); // fallback to 40 gwei
+    let maxPriorityFeePerGas = ethers.BigNumber.from(40000000000); // fallback to 40 gwei
+    let url;
+    if (chainId == 137) {
+      console.log("polygon");
+      url = "https://gasstation-mainnet.matic.network/v2";
+    } else {
+      console.log("mumbai");
+      url = "https://gasstation-mumbai.matic.today/v2";
+    }
+    const gasPrices = await fetch(url);
+    const data = await gasPrices.json();
+    maxFeePerGas = ethers.utils.parseUnits(
+      Math.ceil(data.fast.maxFee) + "",
+      "gwei"
+    );
+    maxPriorityFeePerGas = ethers.utils.parseUnits(
+      Math.ceil(data.fast.maxPriorityFee) + "",
+      "gwei"
+    );
+    const tx = await wallet.sendTransaction({
+      to: toAddress,
+      value: amountInWei,
+      maxFeePerGas,
+      maxPriorityFeePerGas,
+    });
+    const receipt = await tx.wait(1);
+    return receipt;
+    console.log(tx);
+  } else {
+    const tx = await wallet.sendTransaction({
+      to: toAddress,
+      value: amountInWei,
+    });
+    const receipt = await tx.wait(1);
+    return receipt;
+  }
 }
 
 export async function serializeSignatureAndSendTransaction(
